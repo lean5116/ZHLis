@@ -22,4 +22,9 @@ public class LLogisticsServiceImpl implements LLogisticsService {
     public List<LLogisticsDetailVO> getLlogisticsDetail(String wlbh) {
         return lLoginsticsMapper.getLlogisticsDetail(wlbh);
     }
+
+    @Override
+    public LLogistics getLlogisticsByWlbh(LLogistics lLogistics) {
+        return lLoginsticsMapper.getLlogisticsByWlbh(lLogistics);
+    }
 }

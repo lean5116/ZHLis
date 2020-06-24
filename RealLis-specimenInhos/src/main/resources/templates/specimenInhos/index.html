@@ -196,7 +196,7 @@
 <div id="specimenLogisticsToolbar" class="fixed-table-toolbar">
     <div class="form-inline">
         <button type="button" class="btn btn-default" style="width: 110px;margin: auto auto"  onclick="createLogistics()"><i class="fa fa-ambulance"></i> 创建物流</button>
-        <button type="button" class="btn btn-success" style="width: 110px;margin: auto auto"  onclick="printlogistics()"><i class="fa fa-ambulance"></i> 补打条码</button>
+        <button type="button" class="btn btn-success" style="width: 110px;margin: auto auto"  onclick="printlogistics()"><i class="fa fa fa-print"></i> 补打条码</button>
         <button type="button" class="btn btn-primary" style="width: 110px;margin: auto auto"  onclick="alert('开始运送')"><i class="fa fa-ambulance"></i> 开始运送</button>
     </div>
 </div>
@@ -329,7 +329,9 @@
                 {field: 'bednum', title: '床号', align: 'center'},
                 {field:'patientname',title:'病人姓名' ,align: 'center'},
                 { field: 'barcode',  title: '条码号'  ,align: 'center' },
-                {field: 'examname', title: '检验目的' },
+                {field: 'examname', title: '检验目的' , formatter: function(value, row, index) {
+                        return $.table.tooltip(value);
+                    }},
                 // { field: 'status',  title: '状态',  align: 'center', formatter: 'statusFormatter'  },
                 { field: 'requettime', title: '申请时间' ,align: 'center' },
                 { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter ,align: 'center'},
@@ -356,7 +358,9 @@
                 { field: 'barcode',  title: '条码号'  ,align: 'center' },
                 { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
                 {field: 'patientid', title: '住院号', align: 'center'},
-                {field: 'examname', title: '项目内容'},
+                {field: 'examname', title: '项目内容', formatter: function(value, row, index) {
+                        return $.table.tooltip(value);
+                    }},
                 { field: 'specimencode', title: '样本类型' ,formatter:specimencodeFormatter },
                 // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
                 { field: 'samplingtime', title: '采集时间' ,sortable: true },
@@ -371,7 +375,9 @@
                 {field: 'bednum', title: '床号', align: 'center'},
                 {field:'patientname',title:'病人姓名'},
                 { field: 'barcode',  title: '条码号'  ,align: 'center' },
-                {field: 'examname', title: '项目内容'},
+                {field: 'examname', title: '项目内容', formatter: function(value, row, index) {
+                        return $.table.tooltip(value);
+                    }},
                 { field: 'specimencode', title: '样本类型' ,formatter:specimencodeFormatter },
                 { field: 'samplingtime', title: '采集时间' ,sortable: true },
                 { field: 'samplingdoctor', title: '采集人'  },
@@ -386,7 +392,9 @@
                 {field:'patientname',title:'病人姓名'},
                 { field: 'barcode',  title: '条码号'  ,align: 'center' },
                 {field: 'patientid', title: '住院号', align: 'center'},
-                {field: 'examname', title: '项目内容'},
+                {field: 'examname', title: '项目内容', formatter: function(value, row, index) {
+                        return $.table.tooltip(value);
+                    }},
                 { field: 'specimencode', title: '样本类型' ,formatter:specimencodeFormatter },
                 { field: 'samplingtime', title: '采集时间' ,sortable: true },
                 { field: 'samplingdoctor', title: '采集人'  },
@@ -400,7 +408,9 @@
                 {field: 'bednum', title: '床号', align: 'center'},
                 {field:'patientname',title:'病人姓名'},
                 { field: 'barcode',  title: '条码号'  ,align: 'center' },
-                {field: 'examname', title: '检验目的'},
+                {field: 'examname', title: '检验目的', formatter: function(value, row, index) {
+                        return $.table.tooltip(value);
+                    }},
                 { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
                 { field: 'bzxx', title: '备注信息'   },
                 // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
@@ -432,7 +442,9 @@
                 { field: 'overTime', title: '超时时间' ,align:'center',formatter:function (value,row,index) {
                         return '<span class="label label-danger">'+value+'</span>';
                     } },
-                {field: 'examname', title: '检验目的'},
+                {field: 'examname', title: '检验目的', formatter: function(value, row, index) {
+                        return $.table.tooltip(value);
+                    }},
                 { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
                 { field: 'bzxx', title: '备注信息'   },
                 // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },

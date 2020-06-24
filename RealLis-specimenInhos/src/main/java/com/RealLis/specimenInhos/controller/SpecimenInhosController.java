@@ -150,6 +150,15 @@ public class SpecimenInhosController extends BaseController {
     public String LogisticDetail(@PathVariable  String wlbh,@PathVariable String wlzt, Model model){
         model.addAttribute("wlbh",wlbh);
         model.addAttribute("wlzt",wlzt);
+        LLogistics lLogistics = new LLogistics();
+        lLogistics.setWlbh(wlbh);
+        LLogistics logisticses = lLogisticsService.getLlogisticsByWlbh(lLogistics);
+        if(logisticses!=null ){
+            model.addAttribute("cjsj",logisticses.getCjsj());
+            model.addAttribute("dbsj",logisticses.getDbsj());
+            model.addAttribute("yssj",logisticses.getYssj());
+            model.addAttribute("ddsj",logisticses.getDdsj());
+        }
         return "specimenInhos/LogisticsDetail";
     }
 
