@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.RealLis.specimenInhos.mapper.LSampletypeMapper">
+
+    <resultMap type="com.RealLis.specimenInhos.domain.LSampletype" id="LSampletypeMap">
+        <result property="sampletype" column="SAMPLETYPE" />
+        <result property="sampledescribe" column="SAMPLEDESCRIBE" />
+        <result property="extendtype" column="EXTENDTYPE" />
+        <result property="zdm" column="ZDM" />
+        <result property="py" column="PY" />
+        <result property="wb" column="WB" />
+        <result property="typeorder" column="TYPEORDER" />
+        <result property="abbrEn" column="ABBR_EN"/>
+        <result property="isblood" column="ISBLOOD" />
+        <result property="tjsy" column="TJSY" />
+    </resultMap>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="getLSampleType" resultMap="LSampletypeMap">
+        select
+          SAMPLETYPE, SAMPLEDESCRIBE, EXTENDTYPE, ZDM, PY, WB, TYPEORDER, ABBR_EN, ISBLOOD, TJSY
+        from ZHLIS.L_SAMPLETYPE
+        <where>
+            <if test="sampletype != null">
+                and SAMPLETYPE = #{sampletype}
+            </if>
+            <if test="sampledescribe != null">
+                and SAMPLEDESCRIBE = #{sampledescribe}
+            </if>
+            <if test="extendtype != null">
+                and EXTENDTYPE = #{extendtype}
+            </if>
+            <if test="zdm != null">
+                and ZDM = #{zdm}
+            </if>
+            <if test="py != null">
+                and PY = #{py}
+            </if>
+            <if test="wb != null">
+                and WB = #{wb}
+            </if>
+            <if test="typeorder != null">
+                and TYPEORDER = #{typeorder}
+            </if>
+            <if test="abbrEn != null">
+                and ABBR_EN = #{abbrEn}
+            </if>
+            <if test="isblood != null">
+                and ISBLOOD = #{isblood}
+            </if>
+            <if test="tjsy != null">
+                and TJSY = #{tjsy}
+            </if>
+        </where>
+    </select>
+
+
+
+</mapper>

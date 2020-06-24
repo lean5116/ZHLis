@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="include :: header('物流详情')" />
+    <th:block th:include="include :: jquery-steps-css" />
+</head>
+<body  class="gray-bg" style="overflow-x: auto">
+<div class="wrapper wrapper-content animated fadeIn">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5 style="font-size: large">住院标本 <small class="m-l-sm">物流详情</small></h5>
+                    <div class="ibox-tools">
+
+
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div id="wizard">
+                            <h1>第一步</h1>
+                            <div class="step-content">
+                                <div class="text-center m-t-md">
+                                    <h2>第一步</h2>
+                                    <p>
+                                        这是第一步的内容
+                                    </p>
+                                </div>
+                            </div>
+
+                            <h1>第二步</h1>
+                            <div class="step-content">
+                                <div class="text-center m-t-md">
+                                    <h2>第二步</h2>
+                                    <p>
+                                        这是第二步的内容
+                                    </p>
+                                </div>
+                            </div>
+
+                            <h1>第三步</h1>
+                            <div class="step-content">
+                                <div class="text-center m-t-md">
+                                    <h2>第三步</h2>
+                                    <p>
+                                        这是第三步的内容
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col-sm-12 select-table table-bordered" >
+            <table id="lLoginsticsDetail"></table>
+        </div>
+    </div>
+</div>
+
+
+<th:block th:include="include :: footer" />
+<th:block th:include="include :: jquery-steps-js" />
+</body>
+<script th:inline="javascript">
+        var prefix = ctx + "specimenInhos";
+        var wlbh = [[${wlbh}]]
+        $("#wizard").steps();
+        function tableInit() {
+            var columns=[
+                {field: 'wlbh', title: '物流编号', align: 'center'},
+                {field: 'tmh', title: '条码号', align: 'left'},
+                {field: 'patientName', title: '病人姓名', align: 'left'},
+                {field: 'examinaim', title: '检验项目', align: 'left'},
+
+            ]
+            var options={
+                url:prefix+'/lLoginsticsDetail/list/'+wlbh,
+                id: "lLoginsticsDetail",
+                modalName: "物流详情",
+                columns: columns,
+            };
+            $.table.init(options);
+        }
+        $(function() {
+            tableInit();
+        });
+</script>
+
+</html>

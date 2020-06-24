@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.RealLis.specimenInhos.mapper.ViLisBarcodeInfoMapper">
+
+    <resultMap type="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo" id="ViLisBarcodeInfoMap">
+        <result property="barcode" column="BARCODE" />
+        <result property="requestmode" column="REQUESTMODE" />
+        <result property="requestdoctor" column="REQUESTDOCTOR"/>
+        <result property="requettime" column="REQUETTIME"  />
+        <result property="department" column="DEPARTMENT" />
+        <result property="bednum" column="BEDNUM" />
+        <result property="patienttype" column="PATIENTTYPE" />
+        <result property="patientid" column="PATIENTID" />
+        <result property="patientname" column="PATIENTNAME" />
+        <result property="patientsex" column="PATIENTSEX" />
+        <result property="birthday" column="BIRTHDAY" />
+        <result property="patientage" column="PATIENTAGE" />
+        <result property="ageunit" column="AGEUNIT" />
+        <result property="specimencode" column="SPECIMENCODE" />
+        <result property="barclass" column="BARCLASS" />
+        <result property="examcode" column="EXAMCODE" />
+        <result property="examname" column="EXAMNAME" />
+        <result property="cost" column="COST" />
+        <result property="coststatus" column="COSTSTATUS" />
+        <result property="samplingtime" column="SAMPLINGTIME" />
+        <result property="samplingdoctor" column="SAMPLINGDOCTOR" />
+        <result property="receivertime" column="RECEIVERTIME" />
+        <result property="labdoctor" column="LABDOCTOR"/>
+        <result property="barstatus" column="BARSTATUS" />
+        <result property="canceler" column="CANCELER" />
+        <result property="canceltime" column="CANCELTIME" />
+        <result property="diagnostic" column="DIAGNOSTIC"/>
+    </resultMap>
+    <select id="queryAll" resultMap="ViLisBarcodeInfoMap" parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
+        select
+        BARCODE, REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID, PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST, COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME, DIAGNOSTIC
+        from ZHLIS.VI_LIS_BARCODE_INFO
+        <where>
+<!--            <if test="params.beginTime != null and params.beginTime != ''">-->
+<!--                and SAMPLINGTIME &gt;=  to_date(#{params.beginTime},'yyyy-MM-dd HH24:mi:ss')-->
+<!--            </if>-->
+<!--            <if test="params.endTime != null and params.endTime != ''">-->
+<!--                and SAMPLINGTIME  &lt;= to_date(#{params.endTime},'yyyy-MM-dd HH24:mi:ss')-->
+<!--            </if>-->
+            <if test="department!=null and department !=''">
+                and department = #{department}
+            </if>
+            <if test="startRequettime!=null">
+                and REQUETTIME &gt; #{startRequettime}
+            </if>
+            <if test="endRequettime!=null">
+                and REQUETTIME  &lt; #{endRequettime}
+            </if>
+            <if test="startSamplingtime!=null">
+                and SAMPLINGTIME &gt; #{startSamplingtime}
+            </if>
+            <if test="endSamplingtime!=null">
+                and SAMPLINGTIME &lt; #{endSamplingtime}
+            </if>
+            <if test="sampleState!=null and sampleState !=''">
+                and Barstatus in (${sampleState})
+            </if>
+            <if test="searchValue!=null and searchValue!=''">
+                and BARCODE like concat(concat('%',#{searchValue,jdbcType=VARCHAR}),'%')
+            </if>
+        </where>
+        order by  BEDNUM
+    </select>
+
+
+    <select id="getInfoByBarcode" resultMap="ViLisBarcodeInfoMap" parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
+        select
+        BARCODE, REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID, PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST, COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME, DIAGNOSTIC
+        from ZHLIS.VI_LIS_BARCODE_INFO
+        <where>
+            <if test="department!=null and department !=''">
+                and department = #{department}
+            </if>
+            <if test="startRequettime!=null">
+                and REQUETTIME &gt; #{startRequettime}
+            </if>
+            <if test="endRequettime!=null">
+                and REQUETTIME  &lt; #{endRequettime}
+            </if>
+            <if test="startSamplingtime!=null">
+                and SAMPLINGTIME &gt; #{startSamplingtime}
+            </if>
+            <if test="endSamplingtime!=null">
+                and SAMPLINGTIME &lt; #{endSamplingtime}
+            </if>
+            <if test="sampleState!=null and sampleState !=''">
+                and Barstatus in (${sampleState})
+            </if>
+            <if test="searchValue!=null and searchValue!=''">
+                and BARCODE like concat(concat('%',#{searchValue,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="barcode!=null and barcode !=''">
+                and BARCODE = #{barcode}
+            </if>
+            and rownum &lt; 2
+        </where>
+        order by  BEDNUM
+    </select>
+
+</mapper>

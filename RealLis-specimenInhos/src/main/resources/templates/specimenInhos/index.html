@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="include :: header('住院标本管理')" />
+    <th:block th:include="include :: datetimepicker-css" />
+    <th:block th:include="include :: bootstrap-editable-css" />
+</head>
+<body  class="gray-bg" style="min-width: 1000px;overflow-x: auto">
+<div class="wrapper wrapper-content animated fadeIn">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5 style="font-size: large">住院标本 <small class="m-l-sm">住院标本</small></h5>
+                    <div class="ibox-tools">
+                        <a class="btn btn-default fa fa-indent"  th:text="${department}">
+
+                        </a>
+                        <a class="btn btn-default fa fa-user-md" th:text="${userCode}">
+
+                        </a>
+
+
+                    </div>
+                </div>
+                <div class="ibox-content">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-inline" role="form">
+                                <form id="dateSpan">
+                                    <div class="form-group">
+                                        <label class="font-noraml">开始时间:</label>
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                            <input type="text" class="form-control" id="startDate" name = "params[beginTime]" placeholder="yyyy-MM-dd HH:mm:ss" readonly lay-verify="required|date">
+                                        </div>
+                                    </div>
+                                    <div class="form-group" style="margin-top: 10px">
+                                        <label class="font-noraml">结束时间:</label>
+                                        <div class="input-group date">
+                                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                            <input type="text" class="form-control" id="endDate" name="params[endTime]" placeholder="yyyy-MM-dd HH:mm:ss" readonly lay-verify="required|date">
+                                        </div>
+                                    </div>
+                                    <input name="department" th:value="${department}" hidden>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="form-inline"  >
+                                <div class="form-group"   >
+                                    <label for="buttons">功能选项:</label>
+                                    <div id = "buttons" >
+
+                                        <button type="button" class="btn btn-primary" style="width: 110px;margin: auto auto"  onclick="infoRefresh()"><i class="fa fa-refresh"></i>信息刷新</button>
+
+                                        <button type="button" class="btn btn-danger"  style="width: 110px;margin: auto auto"><i class="fa fa-file-text"></i>危急值报表</button>
+
+                                        <!--                                            <button type="button" class="btn btn-warning"  style="width: 110px;margin: 10px auto"><i class="fa fa-reply"></i> 撤销采集</button>-->
+                                        <button type="button" class="btn btn-warning"  style="width: 110px;margin: auto auto"><i class="fa fa-upload"></i>信息更新</button>
+                                        <button type="button" class="btn btn-default" style="width: 110px;margin: auto auto"><i class="fa fa-list"></i>报告单</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="ibox float-e-margins">
+            <div class="ibox-content">
+                <div class="row">
+                <div class="tabs" id = "tab">
+            <ul class="nav nav-tabs nav-justified">
+                <li class="active">
+                    <a href="#orderBarCodeTabContent" data-toggle="tab" class="text-center" aria-expanded="true" id = "orderBarCodeTab" >1、医嘱条码</a>
+                </li>
+                <li class="">
+                    <a href="#collectionConfirmationTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id  ="collectionConfirmationTab" >2、采集确认</a>
+                </li>
+                <li class="">
+                    <a href="#collectionCompleteTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id = "collectionCompleteTab" > 3、采集完成</a>
+                </li>
+                <li class="">
+                    <a href="#receiveCompleteTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id = "receiveCompleteTab" >4、接收完成</a>
+                </li>
+                <li class="">
+                    <a href="#cancellationReturnTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id ="cancellationReturnTab" >5、作废退回</a>
+                </li>
+                <li class="">
+                    <a href="#inspectInformationTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id="inspectInformationTab">检验信息</a>
+                </li>
+                <!--                            <li class="">-->
+                <!--                                <a href="#tabDoctorOrderContent" data-toggle="tab" class="text-center" aria-expanded="false"> <i class="fa fa-table" id = "tabDoctorOrder"></i>医生医嘱</a>-->
+                <!--                            </li>-->
+                <li class="">
+                    <a href="#overtimeBarcodeTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id = "overtimeBarcodeTab" >超时条码</a>
+                </li>
+                <li class="">
+                    <a href="#specimenLogisticsTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id ="specimenLogisticsTab">标本物流</a>
+                </li>
+
+            </ul>
+            <div class="tab-content">
+
+                <div id="orderBarCodeTabContent" class="tab-pane active">
+                    <div class="col-sm-12 select-table table-bordered">
+                        <table id="orderBarCode" data-search=”true”></table></div>
+
+                </div>
+                <div id="collectionConfirmationTabContent" class="tab-pane">
+                    <div class="col-sm-12 select-table table-bordered">
+                    <table id="collectionConfirmation" data-search=”true”></table>
+                    </div>
+                </div>
+                <div id="collectionCompleteTabContent" class="tab-pane">
+                    <div class="col-sm-12 select-table table-bordered">
+                    <table id="collectionComplete" data-search=”true”></table>
+                    </div>
+                </div>
+                <div id="receiveCompleteTabContent" class="tab-pane">
+                    <div class="col-sm-12 select-table table-bordered">
+                    <table id="receiveComplete" data-search=”true”></table>
+                    </div>
+                </div>
+                <div id="cancellationReturnTabContent" class="tab-pane">
+                    <div class="col-sm-12 select-table table-bordered">
+                    <table id="cancellationReturn" data-search=”true”></table>
+                    </div>
+                </div>
+                <div id="inspectInformationTabContent" class="tab-pane">
+                    检验信息tab页
+                </div>
+                <div id="doctorOrderTabContent" class="tab-pane">
+                    医生医嘱tab页
+                </div>
+                <div id="overtimeBarcodeTabContent" class="tab-pane">
+                    <div class="col-sm-12 select-table table-bordered">
+                    <table id="overtimeBarcode"></table>
+                    </div>
+                </div>
+                <div id="specimenLogisticsTabContent" class="tab-pane">
+                    <div class="col-sm-12 select-table table-bordered">
+                        <table id="specimenLogistics"></table>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="orderBarCodeToolbar" class="fixed-table-toolbar">
+    <div class="form-inline">
+
+        <button type="button" class="btn btn-success" onclick="barcodePrintSelect('orderBarCode')" ><i class="fa fa-print"></i>条码打印</button>
+        <button type="button" class="btn btn-danger" ><i class="fa fa-trash-o"></i>条码作废</button>
+
+        <label for="sampleState" class="label label-warning">样本状态:</label>
+        <select class=" input-sm mb-md " id="sampleState" onchange="orderBarcodeFilter()">
+            <option value="" selected>0、全部</option>
+            <option value="0">1、未打印</option>
+            <option value="1">2、已打印</option>
+            <option value="2">3、已采集</option>
+            <option value="3">4、已接收</option>
+            <option value="-1">5、已退回</option>
+            <option value="4">6、已完成</option>
+            <option value="-2">7、已作废</option>
+        </select>
+    </div>
+</div>
+<div id="collectionConfirmationToolbar" class="fixed-table-toolbar">
+    <div class="form-inline">
+        <button type="button" class="btn btn-primary"  style="width: 110px"><i class="fa fa-hand-o-left"></i> 采集确认</button>
+    </div>
+</div>
+<div id="collectionCompleteToolbar" class="fixed-table-toolbar">
+    <div class="form-inline">
+        <button type="button" class="btn btn-warning"  style="width: 110px"><i class="fa fa-reply"></i> 撤销采集</button>
+    </div>
+</div>
+
+<div id="cancellationReturnToolbar" class="fixed-table-toolbar">
+    <div class="form-inline">
+        <button type="button" class="btn btn-success" onclick="barcodePrintSelect('cancellationReturn')"><i class="fa fa-print" ></i>条码打印</button>
+    </div>
+</div>
+
+<div id="specimenLogisticsToolbar" class="fixed-table-toolbar">
+    <div class="form-inline">
+        <button type="button" class="btn btn-default" style="width: 110px;margin: auto auto"  onclick="createLogistics()"><i class="fa fa-ambulance"></i> 创建物流</button>
+        <button type="button" class="btn btn-success" style="width: 110px;margin: auto auto"  onclick="printlogistics()"><i class="fa fa-ambulance"></i> 补打条码</button>
+        <button type="button" class="btn btn-primary" style="width: 110px;margin: auto auto"  onclick="alert('开始运送')"><i class="fa fa-ambulance"></i> 开始运送</button>
+    </div>
+</div>
+
+<!--条码生成示例示例-->
+<section hidden>
+    <div > 条码预览</div>
+    <div id="barcodePrint" >
+        <table  border=1 style="border:solid 1px black;border-collapse:collapse;width: 500px;height: 300px">
+            <tr>
+                <td colspan="2"><div id="patientname">测试姓名</div></td>
+                <td><div id="bednum">测试床号</div></td>
+            </tr>
+            <tr>
+                <td><div>左箭头</div></td>
+                <td><div style="text-align: center"> <img id="imgCode" style="width: auto"></div></td>
+                <td > <div id = "sglx" style="writing-mode: vertical-lr;writing-mode: tb-lr">ceshi</div></td>
+            </tr>
+            <tr>
+                <td colspan="3"><div id ="examname">检验目的</div></td>
+            </tr>
+            <tr>
+                <td><div id="specimencode">样本类型</div></td>
+                <td><div id="requettime">申请时间</div></td>
+                <td><div id="jsdd">接收地点</div></td>
+            </tr>
+        </table>
+
+
+    </div>
+    <button onclick="prn1_preview()">打印</button>
+</section>
+
+<!--物流条码生成示例示例-->
+<section hidden>
+    <div > 条码预览</div>
+    <div id="logisticsPrint" >
+        <table   style="border:solid 1px black;border-collapse:collapse;width: 500px;height: 300px">
+            <tr >
+                <td colspan="3" align="center" style="font-size:xx-large" ><strong>台一医 标本送检单</strong></td>
+            </tr>
+            <tr>
+
+                <td colspan="3"><div style="text-align: center;"> <img id="imgCodelogistics" style="height: 200px"></div></td>
+
+            </tr>
+            <tr>
+                <td rowspan="2"><div style="text-align: center;font-size:x-large;float: left"  >样品数：</div><div id = "bbsl" style="text-align: center;font-size:x-large;float: left" >8</div></td><!--打包数量-->
+                <td colspan="2"><div id ="bqmc" style="float: right;font-size:x-large"></div></td><!--病区名字-->
+            </tr>
+            <tr>
+
+                <td colspan="2"><div id ="cjsj" style="float: right;font-size:x-large">2020-06-09 00:00:00</div></td><!--送检时间-->
+            </tr>
+        </table>
+
+    </div>
+    <button onclick="prn1_preview('logisticsPrint')">打印</button>
+</section>
+
+
+<th:block th:include="include :: footer" />
+<th:block th:include="include :: datetimepicker-js" />
+<th:block th:include="include :: bootstrap-table-editable-js" />
+<!--引用jsBarcode插件-->
+<th:block th:include="include :: JsBarcode-js" />
+<th:block th:include="include :: LodopFuncs-js" />
+<script th:inline="javascript">
+    /*查询时间初始化*/
+    layui.use('laydate', function(){
+        var laydate = layui.laydate;
+        laydate.render({
+            elem: '#startDate',
+            type: 'datetime',
+            trigger: 'click'
+        });
+        laydate.render({
+            elem: '#endDate',
+            type: 'datetime',
+            trigger: 'click'
+        });
+    });
+    /*日期时间格式化*/
+    Date.prototype.format = function(fmt) {
+        var o = {
+            "M+" : this.getMonth()+1,                 //月份
+            "d+" : this.getDate(),                    //日
+            "h+" : this.getHours(),                   //小时
+            "m+" : this.getMinutes(),                 //分
+            "s+" : this.getSeconds(),                 //秒
+            "q+" : Math.floor((this.getMonth()+3)/3), //季度
+            "S"  : this.getMilliseconds()             //毫秒
+        };
+        if(/(y+)/.test(fmt)) {
+            fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+        }
+        for(var k in o) {
+            if(new RegExp("("+ k +")").test(fmt)){
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+            }
+        }
+        return fmt;
+    }
+    var dateNow = new Date();
+    $('#endDate').val(dateNow.format("yyyy-MM-dd hh:mm:ss"));
+    dateNow = dateNow.setDate(dateNow.getDate()-1);
+    dateNow  = new Date(dateNow);
+    $('#startDate').val(dateNow.format("yyyy-MM-dd 00:00:00"));
+</script>
+
+<script th:inline="javascript">
+    var prefix = ctx + "specimenInhos";
+    var SampleTypeFormatterData=[[${SampleTypeFormatter}]];
+    var currentTableId='orderBarCode';
+    $(function() {
+        queryBarcodeData('orderBarCode');
+        queryBarcodeData('collectionConfirmation');
+        queryBarcodeData('collectionComplete');
+        queryBarcodeData('receiveComplete')
+        queryBarcodeData('cancellationReturn');
+        queryBarcodeData('overtimeBarcode');
+        queryBarcodeData('specimenLogistics')
+    });
+    /*根据tableId 初始化bootstrapTable*/
+    function queryBarcodeData(tableId) {
+        var columns ;
+        if(tableId=='orderBarCode'){
+            columns=[
+                {checkbox: true },
+                {field: 'bednum', title: '床号', align: 'center'},
+                {field:'patientname',title:'病人姓名' ,align: 'center'},
+                { field: 'barcode',  title: '条码号'  ,align: 'center' },
+                {field: 'examname', title: '检验目的' },
+                // { field: 'status',  title: '状态',  align: 'center', formatter: 'statusFormatter'  },
+                { field: 'requettime', title: '申请时间' ,align: 'center' },
+                { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter ,align: 'center'},
+                { field: 'specimencode', title: '样本类型'  ,align: 'center' ,formatter:specimencodeFormatter},
+                { field: 'requestdoctor', title: '申请医生'  ,align: 'center'},
+                { field: 'requestmode', title: '申请模式'  ,align: 'center',formatter:function (value,row,index) {
+                        if(value=='0'){
+                            return '<span class="label label-primary">平诊</span>';
+                        }else if(value=='1'){
+                            return '<span class="label label-danger">急诊</span>';
+                        }
+                    }},
+                { field: 'cost', title: '费用'  ,formatter:feeFormatter},
+                { field: 'coststatus', title: '费用状态' ,formatter:coststatusFormatter ,align: 'center'},
+                { field: 'sglx', title: '试管类型'  },
+                { field: 'xqcs', title: '血气参数'  },
+                { field: 'jsdd', title: '接收地点'  }
+        ]
+        }else if (tableId=='collectionConfirmation'){
+            columns=[
+                {checkbox: true },
+                {field: 'bednum', title: '床号', align: 'center'},
+                {field:'patientname',title:'病人姓名'},
+                { field: 'barcode',  title: '条码号'  ,align: 'center' },
+                { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
+                {field: 'patientid', title: '住院号', align: 'center'},
+                {field: 'examname', title: '项目内容'},
+                { field: 'specimencode', title: '样本类型' ,formatter:specimencodeFormatter },
+                // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
+                { field: 'samplingtime', title: '采集时间' ,sortable: true },
+                { field: 'samplingdoctor', title: '采集人'  },
+                { field: 'requettime', title: '申请时间' ,sortable: true },
+                { field: 'requestdoctor', title: '申请医生' ,sortable: true },
+                { field: 'zyzt', title: '在院状态'  },]
+        }else if(tableId=='collectionComplete'){
+            columns=[
+                {checkbox: true },
+                {field: 'patientid', title: '住院号', align: 'center'},
+                {field: 'bednum', title: '床号', align: 'center'},
+                {field:'patientname',title:'病人姓名'},
+                { field: 'barcode',  title: '条码号'  ,align: 'center' },
+                {field: 'examname', title: '项目内容'},
+                { field: 'specimencode', title: '样本类型' ,formatter:specimencodeFormatter },
+                { field: 'samplingtime', title: '采集时间' ,sortable: true },
+                { field: 'samplingdoctor', title: '采集人'  },
+                // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
+                { field: 'requettime', title: '申请时间' ,sortable: true },
+                { field: 'zyzt', title: '在院状态'  },
+            ]
+        }else if(tableId=='receiveComplete'){
+            columns= [
+                {checkbox: true },
+                {field: 'bednum', title: '床号', align: 'center'},
+                {field:'patientname',title:'病人姓名'},
+                { field: 'barcode',  title: '条码号'  ,align: 'center' },
+                {field: 'patientid', title: '住院号', align: 'center'},
+                {field: 'examname', title: '项目内容'},
+                { field: 'specimencode', title: '样本类型' ,formatter:specimencodeFormatter },
+                { field: 'samplingtime', title: '采集时间' ,sortable: true },
+                { field: 'samplingdoctor', title: '采集人'  },
+                // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
+                { field: 'requettime', title: '申请时间' ,sortable: true },
+                { field: 'zyzt', title: '在院状态'  },
+            ]
+        }else if(tableId=='cancellationReturn'){
+            columns= [
+                {checkbox: true },
+                {field: 'bednum', title: '床号', align: 'center'},
+                {field:'patientname',title:'病人姓名'},
+                { field: 'barcode',  title: '条码号'  ,align: 'center' },
+                {field: 'examname', title: '检验目的'},
+                { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
+                { field: 'bzxx', title: '备注信息'   },
+                // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
+                { field: 'canceltime', title: '操作时间' ,sortable: true },
+                { field: 'canceler', title: '操作人'  },
+                { field: 'requettime', title: '申请时间' ,sortable: true },
+                { field: 'specimencode', title: '样本类型'  ,align: 'center',editable:{type:'select',title:'类型',source:specimencodeFormatterEdit}},
+                { field: 'requestdoctor', title: '申请医生'  ,align: 'center'},
+                { field: 'requestmode', title: '申请模式'  ,align: 'center',formatter:function (value,row,index) {
+                        if(value=='0'){
+                            return '<span class="label label-primary">平诊</span>';
+                        }else if(value=='1'){
+                            return '<span class="label label-danger">急诊</span>';
+                        }
+                    }},
+                { field: 'cost', title: '费用'  ,formatter:feeFormatter},
+                { field: 'coststatus', title: '费用状态' ,formatter:coststatusFormatter ,align: 'center'},
+                { field: 'sglx', title: '试管类型'  },
+                { field: 'xqcs', title: '血气参数'  },
+                { field: 'jsdd', title: '接收地点'  },
+
+            ]
+        }else if(tableId=='overtimeBarcode'){
+            columns=[
+                {checkbox: true },
+                {field: 'bednum', title: '床号', align: 'center'},
+                {field:'patientname',title:'病人姓名'},
+                { field: 'barcode',  title: '条码号'  ,align: 'center' },
+                { field: 'overTime', title: '超时时间' ,align:'center',formatter:function (value,row,index) {
+                        return '<span class="label label-danger">'+value+'</span>';
+                    } },
+                {field: 'examname', title: '检验目的'},
+                { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
+                { field: 'bzxx', title: '备注信息'   },
+                // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
+                { field: 'canceltime', title: '操作时间' ,sortable: true },
+                { field: 'canceler', title: '操作人'  },
+                { field: 'requettime', title: '申请时间' ,sortable: true },
+                { field: 'specimencode', title: '样本类型'  ,align: 'center',formatter:specimencodeFormatter},
+                { field: 'requestdoctor', title: '申请医生'  ,align: 'center'},
+                { field: 'requestmode', title: '申请模式'  ,align: 'center',formatter:function (value,row,index) {
+                        if(value=='0'){
+                            return '<span class="label label-primary">平诊</span>';
+                        }else if(value=='1'){
+                            return '<span class="label label-danger">急诊</span>';
+                        }
+                    }},
+                { field: 'cost', title: '费用'  ,formatter:feeFormatter},
+                { field: 'coststatus', title: '费用状态' ,formatter:coststatusFormatter ,align: 'center'},
+                { field: 'sglx', title: '试管类型'  },
+                { field: 'xqcs', title: '血气参数'  },
+                { field: 'jsdd', title: '接收地点'  },
+
+            ]
+        }
+        else if(tableId=='specimenLogistics') {
+            columns=[
+                {checkbox: true },
+                { field: 'wlbh', title: '物流编号', align: 'center'},
+                { field: 'wlzt', title: '物流状态', align: 'left',formatter:function (value) {
+                        if(value==9){
+                            return '<span class="label label-danger">任务取消</span>';
+                        }else if(value==3){
+                            return '<span class="label label-primary">任务送达</span>';
+                        }else if(value==2){
+                            return '<span class="label label-success">开始运送</span>';
+                        }else if(value==1){
+                            return '<span class="label label-black">已打包</span>';
+                        }
+                        else if(value==0){
+                            return '<span class="label label-warning">未打包</span>';
+                        }
+
+                    }},
+                { field: 'bbsl', title: '样品数量', align: 'left'},
+                { field: 'cjsj', title: '创建时间', align: 'left'},
+                { field: 'cjr', title: '创建人', align: 'left'},
+                { field: 'dbsj', title: '打包时间', align: 'left'},
+                { field: 'yssj', title: '运送时间', align: 'left'},
+                { field: 'ddsj', title: '到达时间', align: 'left'},
+                { field: 'bqmc', title: '病区名称', align: 'center',visible:false},
+            ]
+        }
+        var options={
+            id: tableId,
+            url:prefix+"/list/"+tableId,
+            modalName: "医嘱条码",
+            toolbar:tableId+'Toolbar',
+            columns: columns,
+            showPageGo:true,
+            fixedNumber: 4,
+            search:true,
+            onEditableSave: onEditableSave,
+            onLoadSuccess:function () {
+                onLoadFix(tableId,$('#'+tableId).bootstrapTable('getData'));
+            },
+            onDblClickRow:function (row) {
+                onDbClickTableRow(tableId,row);
+            }
+
+        };
+        $.table.init(options);
+        console.log(tableId+'加载成功');
+    }
+    function orderBarcodeFilter(){
+        $.table.search('dateSpan','orderBarCode',{sampleState:$('#sampleState').val()});
+    }
+    /*根据tableId bootstrapTable条件搜索*/
+    function queryBarcodeSearch(tableId) {
+        // $.table.search('dateSpan',tableId,{department:'381'})  //搜索格式 搜索form，tableId，附加条件
+        $.table.search('dateSpan',tableId,'')
+    }
+    function infoRefresh() {
+        queryBarcodeSearch(currentTableId);
+    }
+    /*样本状态格式化方法*/
+    function barstatusFormatter(value,row,index) {
+        if(value==-1){
+            return '<span class="label label-danger">已退回</span>';
+        }else if(value==1){
+            return '<span class="label label-default">已打印</span>';
+        }else if(value==2){
+            return '<span class="label label-warning">已采集</span>';
+        }else if(value==3){
+            return '<span class="label label-primary">已接收</span>';
+        }else if(value==4){
+            return '<span class="label label-success">已完成</span>';
+        }else if(value==-2){
+            return '<span class="label label-info">已作废</span>';
+        }else if (value==0){
+            return '<span class="label label-dark">未打印</span>';
+        }
+    }
+    /*费用状态格式化方法*/
+    function coststatusFormatter(value,row,index) {
+        if(value==1){
+            return '<span class="label label-warning">未收费</span>';
+        }else if(value==2){
+            return '<span class="label label-success">已收费</span>';
+        }else if(value==4){
+            return '<span class="label label-danger">已退费</span>';
+        }
+    }
+    /*BootstrapTable-edit 测试格式化方法*/
+    function specimencodeFormatterEdit() {
+        var returnValue ;
+        returnValue =  SampleTypeFormatterData;
+        return returnValue;
+
+    }
+    function specimencodeFormatter(value) {
+        var returnValue ;
+        let i = 0 ;
+        var data = JSON.parse(SampleTypeFormatterData)
+        for(i=0;i<data.length;i++){
+            if(data[i].value == value){
+                returnValue = data[i].text;
+            }
+        }
+        return returnValue;
+    }
+    function feeFormatter(value) {
+        return parseInt(value).toFixed(2);
+    }
+    /*合并床位号*/
+    function  onLoadFix(tableName,data) {
+        var fieldList=["bednum"];
+        mergeCells(data, "bednum", 0, $('#'+tableName),fieldList);
+    }
+    /**
+     * 合并单元格
+     *
+     * @param data
+     *            原始数据（在服务端完成排序）  递归算法需要在服务器端先完成排序
+     * @param fieldName
+     *            合并参照的属性名称
+     * @param colspan
+     *            合并开始列
+     * @param target
+     *            目标表格对象
+     * @param fieldList
+     *            要合并的字段集合
+     */
+    function mergeCells(data,fieldName,colspan,target,fieldList){
+// 声明一个map计算相同属性值在data对象出现的次数和
+        var sortMap = {};
+        for(var i = 0 ; i < data.length ; i++){
+            for(var prop in data[i]){
+                //例如people.unit.name
+                var fieldArr=fieldName.split(".");
+                getCount(data[i],prop,fieldArr,0,sortMap);
+            }
+        }
+        var index = 0;
+        for(var prop in sortMap){
+            var count = sortMap[prop];
+            for(var i = 0 ; i < fieldList.length ; i++){
+                $(target).bootstrapTable('mergeCells',{index:index, field:fieldList[i], colspan: colspan, rowspan: count});
+            }
+            index += count;
+        }
+    }
+    /* 递归到最后一层 统计数据重复次数*/
+    function getCount(data,prop,fieldArr,index,sortMap){
+        if(index == fieldArr.length-1){
+            if(prop == fieldArr[index]){
+                var key = data[prop] + 'a';  // 给key 加个字符。防止傻逼chrome对key为数字的 object 自动排序
+                if(sortMap.hasOwnProperty(key)){
+                    sortMap[key] = sortMap[key]+ 1;
+                } else {
+                    sortMap[key] = 1;
+                }
+            }
+            return;
+        }
+        if(prop == fieldArr[index]){
+            var sdata = data[prop];
+            index=index+1;
+            getCount(sdata,fieldArr[index],fieldArr,index,sortMap);
+        }
+
+    }
+
+    var $tab = $('#tab');
+    $tab.on('show.bs.tab', function (e) {
+        currentTableId= e.target.id.replace('Tab','');
+        console.log('切换到'+currentTableId);
+        queryBarcodeSearch(currentTableId);
+    })
+
+    function onEditableSave (field, row, oldValue, $el) {
+        alert("字段名：" + field + "，当前值：" + row[field]  + "，旧值：" + oldValue);
+    }
+
+    function  createLogistics() {
+        var deptId=  [[${department}]];
+        var userId=  [[${userCode}]];
+        if(deptId!=null) {
+            var url = prefix +"/createLogistics/"+deptId+"/"+userId;
+            $.modal.open("创建物流", url);
+
+        }else
+            $.modal.msgError("请选择科室");
+    }
+
+    function barcodePrintSelect(tableId){
+       var data = getSelections(tableId);
+       console.log(JSON.stringify(data));
+        let i = 0;
+        for(i=0;i<data.length;i++){
+            JsBarcode("#imgCode",data[i].barcode,{
+               format:"CODE128",
+               width:2,
+            });
+
+           $("#patientname").html(data[i].patientname);
+           $("#examname").html(data[i].examname);
+           $("#requettime").html(data[i].requettime);
+           $("#bednum").html(data[i].bednum);
+           $("#sglx").html(data[i].sglx);
+           $("#jsdd").html(data[i].jsdd);
+            prn1_preview("barcodePrint");
+       }
+    }
+    /* 查询表格选择行数据值 */
+    function getSelections(tableId){
+        var data = $("#" + tableId).bootstrapTable('getSelections');
+        console.log(JSON.stringify(data));
+        return data;
+    }
+    function printlogistics() {
+        var data = getSelections("specimenLogistics");
+        console.log(JSON.stringify(data));
+        let i = 0;
+        for(i=0;i<data.length;i++){
+            JsBarcode("#imgCodelogistics",data[i].wlbh,{
+                format:"CODE128",
+                width:3,
+            });
+            $("#bqmc").html(data[i].bqmc);
+            $("#bbsl").html(data[i].bbsl);
+            $("#cjsj").html(data[i].cjsj);
+            prn1_preview("logisticsPrint");
+        }
+    }
+    function onDbClickTableRow(tableId,row) {
+        if(tableId=='specimenLogistics'){
+            var url = prefix +"/LogisticsDetail/"+row.wlbh+"/"+row.wlzt;
+            $.modal.open("物流详情", url);
+        }
+    }
+</script>
+<script>
+    var LODOP; //声明为全局变量
+    function prn1_preview(printName) {
+        CreateOneFormPage(printName);
+        LODOP.SET_PRINT_PAGESIZE(1,500,300,"CreateCustomPage");
+        //LODOP.PREVIEW();//打印预览
+        LODOP.PRINT();//直接打印
+    };
+    function CreateOneFormPage(printName){
+        LODOP=getLodop();
+        //LODOP.PRINT_INIT("打印控件功能演示_Lodop功能_表单一");
+        LODOP.SET_PRINT_STYLE("FontSize",18);
+        LODOP.SET_PRINT_STYLE("Bold",1);
+        //LODOP.ADD_PRINT_TEXT(0,0,0,0,"打印页面部分内容");
+        // LODOP.SET_PRINT_MODE("FULL_HEIGHT_FOR_OVERFLOW",true);//高度溢出缩放
+        LODOP.SET_PRINT_MODE("WINDOW_DEFPRINTER","Zebra  888-TT");
+        //LODOP.SET_PRINT_MODE("WINDOW_DEFPRINTER","Microsoft XPS Document Writer");
+        LODOP.SET_PRINT_MODE("PRINT_PAGE_PERCENT","Full-Page");//整页缩放
+        LODOP.ADD_PRINT_HTM("0%","0%","100%","100%",document.getElementById(printName).innerHTML);
+    };
+
+
+
+</script>
+</body>
+</html>
