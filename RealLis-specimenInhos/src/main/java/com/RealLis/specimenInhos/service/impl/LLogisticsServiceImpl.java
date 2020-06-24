@@ -27,4 +27,9 @@ public class LLogisticsServiceImpl implements LLogisticsService {
     public LLogistics getLlogisticsByWlbh(LLogistics lLogistics) {
         return lLoginsticsMapper.getLlogisticsByWlbh(lLogistics);
     }
+
+    @Override
+    public int updateLogistics(LLogistics lLogistics) {
+        return lLoginsticsMapper.updateLogistics(lLogistics);
+    }
 }

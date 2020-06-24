@@ -158,4 +158,8 @@
         order by L_JYTMXX.BED_NO
 
     </select>
+
+    <update id ="updateLogistics" parameterType="com.RealLis.specimenInhos.domain.LLogistics">
+        UPDATE l_logistics Set yssj=sysdate,wlzt=2,ysr=#{ysr} Where wlbh = #{wlbh}
+    </update>
 </mapper>

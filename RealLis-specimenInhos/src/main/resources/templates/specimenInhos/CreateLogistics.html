@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh" xmlns:th="http://www.thymeleaf.org" >
 <head>
-    <th:block th:include="include :: header('住院标本管理')" />
+    <th:block th:include="include :: header('创建物流')" />
 </head>
 <body  class="gray-bg" style="overflow-x: auto">
 <div class="wrapper wrapper-content animated fadeIn">
@@ -134,6 +134,7 @@
                 $.ajax({
                     type: "get",
                     url: prefix + "/getBarcode/" + barcode,
+                    async:false,
                     success: function (r) {
                         if (r.code == 0) {
                             $('#packageInfo').bootstrapTable('append', JSON.parse(r.msg));
@@ -150,6 +151,7 @@
         } else{
         $.modal.msgError('该条码已进入打包列表');
     }
+        $('#barcode').val("");
     }
     function remove(barcode) {
         $.modal.confirm("确定要删除吗?", function() {

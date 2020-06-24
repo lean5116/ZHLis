@@ -170,5 +170,33 @@ public class SpecimenInhosController extends BaseController {
         return getDataTable(lLogisticsDetailVO);
     }
 
+    @GetMapping("/startShipping")
+    public String startShipping(){
+        return "specimenInhos/startShipping";
+    }
+
+    @GetMapping("/startShipping/{barcode}")
+    @ResponseBody
+    public AjaxResult startShipping(@PathVariable String  barcode){
+        LLogistics lLogistics = new LLogistics();
+        lLogistics.setWlbh(barcode);
+        LLogistics logisticses = lLogisticsService.getLlogisticsByWlbh(lLogistics);
+        if(logisticses!=null){
+            return success(JSON.toJSONString(logisticses));
+        }else{
+            return error("未找到相关物流信息");
+        }
+    }
+
+    @PostMapping("/startShipping")
+    @ResponseBody
+    public AjaxResult updateLogistics(LLogistics lLogistics){
+       int i = lLogisticsService.updateLogistics(lLogistics);
+       if(i>0){
+           return success();
+       }else{
+           return error();
+       }
+    }
 
 }

@@ -9,5 +9,5 @@ public interface LLogisticsService {
     public List<LLogistics> getLlogistics(LLogistics lLogistics);
     public List<LLogisticsDetailVO> getLlogisticsDetail(String wlbh);
     public LLogistics getLlogisticsByWlbh(LLogistics lLogistics);
-
+    public int updateLogistics(LLogistics lLogistics);
 }

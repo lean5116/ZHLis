@@ -197,7 +197,7 @@
     <div class="form-inline">
         <button type="button" class="btn btn-default" style="width: 110px;margin: auto auto"  onclick="createLogistics()"><i class="fa fa-ambulance"></i> 创建物流</button>
         <button type="button" class="btn btn-success" style="width: 110px;margin: auto auto"  onclick="printlogistics()"><i class="fa fa fa-print"></i> 补打条码</button>
-        <button type="button" class="btn btn-primary" style="width: 110px;margin: auto auto"  onclick="alert('开始运送')"><i class="fa fa-ambulance"></i> 开始运送</button>
+        <button type="button" class="btn btn-primary" style="width: 110px;margin: auto auto"  onclick="startShipping()"><i class="fa fa-ambulance"></i> 开始运送</button>
     </div>
 </div>
 
@@ -658,6 +658,10 @@
             $.modal.msgError("请选择科室");
     }
 
+    function startShipping(){
+        var url = prefix +"/startShipping";
+        $.modal.open("开始运送", url, '800', '350');
+    }
     function barcodePrintSelect(tableId){
        var data = getSelections(tableId);
        console.log(JSON.stringify(data));
