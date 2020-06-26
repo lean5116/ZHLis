@@ -34,7 +34,7 @@ public class SwaggerConfig
                 // 扫描所有有注解的api，用这种方式更灵活
                 .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 // 扫描指定包中的swagger注解
-                //.apis(RequestHandlerSelectors.basePackage("com.ruoyi.project.tool.swagger"))
+                //.apis(RequestHandlerSelectors.basePackage("com.lean.project.tool.swagger"))
                 // 扫描所有 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
                 .build();
@@ -48,7 +48,7 @@ public class SwaggerConfig
         // 用ApiInfoBuilder进行定制
         return new ApiInfoBuilder()
                 // 设置标题
-                .title("标题：Lean管理系统_接口文档")
+                .title("标题：zhLis住院标本管理_接口文档")
                 // 描述
                 .description("描述：品质上成")
                 // 作者信息

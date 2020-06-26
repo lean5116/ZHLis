@@ -1,4 +1,4 @@
-package com.RealLis.specimenInhos.ws.impl.herenLisBarcode;
+package com.RealLis.specimenInhos.ws.service.herenLisBarcode;
 
 import com.RealLis.specimenInhos.ws.wsdl.herenLisBarcode.InterfaceHr;
 import com.RealLis.specimenInhos.ws.wsdl.herenLisBarcode.InterfaceHrSoap;

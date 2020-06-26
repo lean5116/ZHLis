@@ -1,4 +1,4 @@
-package com.RealLis.specimenInhos.ws.impl.zhlisWsHerenLet;
+package com.RealLis.specimenInhos.ws.service.zhlisWsHerenLet;
 
 import com.RealLis.specimenInhos.ws.wsdl.zhlisWsHerenLet.WebServiceLis;
 import com.RealLis.specimenInhos.ws.wsdl.zhlisWsHerenLet.WebServiceLisSoap;

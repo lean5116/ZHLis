@@ -8,11 +8,15 @@ import com.RealLis.specimenInhos.service.HisAdviceService;
 import com.RealLis.specimenInhos.service.IViLisBarcodeInfoService;
 import com.RealLis.specimenInhos.service.LLogisticsService;
 import com.RealLis.specimenInhos.service.LSampletypeService;
-import com.RealLis.specimenInhos.ws.impl.zhlisWsHerenLet.zhlisWsHerenLetService;
+import com.RealLis.specimenInhos.ws.service.zhlisWsHerenLet.zhlisWsHerenLetService;
 import com.RealLis.specimenInhos.ws.wsdl.herenLisBarcode.InterfaceHr;
 import com.RealLis.specimenInhos.ws.wsdl.herenLisBarcode.InterfaceHrSoap;
 import com.RealLis.specimenInhos.ws.wsdl.herenLisBarcode.UfPack;
 import com.alibaba.fastjson.JSON;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +29,7 @@ import java.util.List;
 
 import static com.RealLis.specimenInhos.utils.XmlConvert.XmlToJson;
 
-
+@Api("住院标本控制器")
 @Controller
 @RequestMapping("/specimenInhos")
 public class SpecimenInhosController extends BaseController {
@@ -52,6 +56,34 @@ public class SpecimenInhosController extends BaseController {
         return "specimenInhos/index";
     }
 
+    @GetMapping("/createLogistics/{deptId}/{userId}")
+    public String createLogistics(@PathVariable String deptId,@PathVariable  String userId,Model model){
+        model.addAttribute("department",deptId);
+        model.addAttribute("userCode",userId);
+        return "specimenInhos/CreateLogistics";
+    }
+
+    @GetMapping("/LogisticsDetail/{wlbh}/{wlzt}")
+    public String LogisticDetail(@PathVariable  String wlbh,@PathVariable String wlzt, Model model){
+        model.addAttribute("wlbh",wlbh);
+        model.addAttribute("wlzt",wlzt);
+        LLogistics lLogistics = new LLogistics();
+        lLogistics.setWlbh(wlbh);
+        LLogistics logisticses = lLogisticsService.getLlogistics(lLogistics);
+        if(logisticses!=null ){
+            model.addAttribute("cjsj",logisticses.getCjsj());
+            model.addAttribute("dbsj",logisticses.getDbsj());
+            model.addAttribute("yssj",logisticses.getYssj());
+            model.addAttribute("ddsj",logisticses.getDdsj());
+        }
+        return "specimenInhos/LogisticsDetail";
+    }
+
+    /*================================================================================================================*/
+
+
+    @ApiOperation("根据表id获取检验信息")
+    @ApiImplicitParam(name = "tableId", value = "表Id", required = true, dataType = "String", paramType = "path")
     @PostMapping(value = "/list/{tableId}")
     @ResponseBody
     public TableDataInfo list(@PathVariable String tableId,ViLisBarcodeInfo viLisBarcodeInfo) throws ParseException {
@@ -99,6 +131,9 @@ public class SpecimenInhosController extends BaseController {
             return getDataTable(viLisBarcodeInfoList);
         }
     }
+
+    @ApiOperation("异步生成检验条码")
+    @ApiImplicitParam(name = "deptId", value = "科室id",  dataType = "String")
     @PostMapping("/GenerateBarcode")
     @ResponseBody
     private void GenerateBarcode(String deptId){
@@ -111,24 +146,20 @@ public class SpecimenInhosController extends BaseController {
             for (HisAdvice hisAdvice : hisAdviceList
             ) {
                 System.out.println(hisAdvice.getPatientId());
-               zhlisWsHerenLetService.LabBarMake(hisAdvice.getPatientId());
+                zhlisWsHerenLetService.LabBarMake(hisAdvice.getPatientId());
 
             }
         }
     }
-    @GetMapping("/createLogistics/{deptId}/{userId}")
-    public String createLogistics(@PathVariable String deptId,@PathVariable  String userId,Model model){
-        model.addAttribute("department",deptId);
-        model.addAttribute("userCode",userId);
-        return "specimenInhos/CreateLogistics";
-    }
 
+    @ApiOperation("获取单个条码信息")
+    @ApiImplicitParam(name = "barcode", value = "条码号",  dataType = "String",paramType = "path")
     @GetMapping("/getBarcode/{barcode}")
     @ResponseBody
     public AjaxResult getBarcode(@PathVariable String barcode){
-        ViLisBarcodeInfo viLisBarcodeInfo = new ViLisBarcodeInfo();
-        viLisBarcodeInfo.setBarcode(barcode);
-        ViLisBarcodeInfo response = viLisBarcodeInfoService.getInfo(viLisBarcodeInfo);
+        ViLisBarcodeInfo params = new ViLisBarcodeInfo();
+        params.setBarcode(barcode);
+        ViLisBarcodeInfo response = viLisBarcodeInfoService.getInfo(params);
         if(response!=null){
             return success(JSON.toJSONString(response));
         }else {
@@ -136,42 +167,36 @@ public class SpecimenInhosController extends BaseController {
         }
     }
 
+    @ApiOperation("标本打包")
+    @ApiImplicitParams( {
+            @ApiImplicitParam (name = "barcode", value = "条码号", required = true, dataType = "String"),
+            @ApiImplicitParam (name = "userCode", value = "用户id", required = true, dataType = "String")
+    })
     @PostMapping("/Packing")
     @ResponseBody
     public AjaxResult Packing( String barcodes,String userCode){
-        InterfaceHr interfaceHr = new InterfaceHr();
-        InterfaceHrSoap interfaceHrSoap =interfaceHr.getInterfaceHrSoap();
-        UfPack ufPack = new UfPack();
-        ufPack.setAsCzz(userCode);
-        ufPack.setAsBarcode(barcodes);
-        System.out.println(userCode);
-        String response = interfaceHrSoap.ufPack(ufPack.getAsCzz(),ufPack.getAsBarcode());
-        String result = XmlToJson(response);
-        System.out.println(result);
-        PackingResponse packing = new PackingResponse();
-        packing = JSON.parseObject(result,PackingResponse.class);
-        if("-1".equals(packing.getBody().getRtncode())){
-            return error(result);
+        if(barcodes !=null && userCode!=null){
+            InterfaceHr interfaceHr = new InterfaceHr();
+            InterfaceHrSoap interfaceHrSoap = interfaceHr.getInterfaceHrSoap();
+            UfPack ufPack = new UfPack();
+            ufPack.setAsCzz(userCode);
+            ufPack.setAsBarcode(barcodes);
+            String response = interfaceHrSoap.ufPack(ufPack.getAsCzz(), ufPack.getAsBarcode());
+            String result = XmlToJson(response);
+            PackingResponse packing = new PackingResponse();
+            packing = JSON.parseObject(result, PackingResponse.class);
+            if ("-1".equals(packing.getBody().getRtncode())) {
+                return error(result);
+            } else {
+                return success(result);
+            }
         }else{
-            return success(result);
+            return error("条码号与打包人不能为空");
         }
-    }
-    @GetMapping("/LogisticsDetail/{wlbh}/{wlzt}")
-    public String LogisticDetail(@PathVariable  String wlbh,@PathVariable String wlzt, Model model){
-        model.addAttribute("wlbh",wlbh);
-        model.addAttribute("wlzt",wlzt);
-        LLogistics lLogistics = new LLogistics();
-        lLogistics.setWlbh(wlbh);
-        LLogistics logisticses = lLogisticsService.getLlogistics(lLogistics);
-        if(logisticses!=null ){
-            model.addAttribute("cjsj",logisticses.getCjsj());
-            model.addAttribute("dbsj",logisticses.getDbsj());
-            model.addAttribute("yssj",logisticses.getYssj());
-            model.addAttribute("ddsj",logisticses.getDdsj());
-        }
-        return "specimenInhos/LogisticsDetail";
     }
 
+    @ApiOperation("获取物流明细信息")
+    @ApiImplicitParam(name = "wlbh", value = "物流编号",  dataType = "String",paramType = "path")
     @PostMapping("/lLoginsticsDetail/list/{wlbh}")
     @ResponseBody
     public TableDataInfo lLogisticDetail(@PathVariable  String wlbh){
@@ -180,11 +205,8 @@ public class SpecimenInhosController extends BaseController {
         return getDataTable(lLogisticsDetailVO);
     }
 
-    @GetMapping("/startShipping")
-    public String startShipping(){
-        return "specimenInhos/startShipping";
-    }
-
+    @ApiOperation("获取物流信息根据物流条码号")
+    @ApiImplicitParam(name = "barcode", value = "物流条码号",  dataType = "String",paramType = "path")
     @GetMapping("/startShipping/{barcode}")
     @ResponseBody
     public AjaxResult startShipping(@PathVariable String  barcode){
@@ -198,6 +220,8 @@ public class SpecimenInhosController extends BaseController {
         }
     }
 
+    @ApiOperation("修改物流状态")
+    @ApiImplicitParam(name = "lLogistics", value = "物流实体类",  dataType = "LLogistics")
     @PostMapping("/startShipping")
     @ResponseBody
     public AjaxResult updateLogistics(LLogistics lLogistics){
