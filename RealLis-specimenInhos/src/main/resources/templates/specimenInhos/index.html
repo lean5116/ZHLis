@@ -527,6 +527,15 @@
     }
     function infoRefresh() {
         queryBarcodeSearch(currentTableId);
+        var deptId = [[${department}]]
+        $.ajax({
+            type: "post",
+            url: prefix + "/GenerateBarcode",
+            data:{
+                "deptId":deptId
+            },
+        });
+
     }
     /*样本状态格式化方法*/
     function barstatusFormatter(value,row,index) {

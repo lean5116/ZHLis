@@ -4,35 +4,23 @@ import com.RealLis.common.core.controller.BaseController;
 import com.RealLis.common.core.domain.AjaxResult;
 import com.RealLis.common.core.page.TableDataInfo;
 import com.RealLis.specimenInhos.domain.*;
+import com.RealLis.specimenInhos.service.HisAdviceService;
 import com.RealLis.specimenInhos.service.IViLisBarcodeInfoService;
 import com.RealLis.specimenInhos.service.LLogisticsService;
 import com.RealLis.specimenInhos.service.LSampletypeService;
+import com.RealLis.specimenInhos.ws.impl.zhlisWsHerenLet.zhlisWsHerenLetService;
 import com.RealLis.specimenInhos.ws.wsdl.herenLisBarcode.InterfaceHr;
 import com.RealLis.specimenInhos.ws.wsdl.herenLisBarcode.InterfaceHrSoap;
 import com.RealLis.specimenInhos.ws.wsdl.herenLisBarcode.UfPack;
 import com.alibaba.fastjson.JSON;
-import de.odysseus.staxon.json.JsonXMLConfig;
-import de.odysseus.staxon.json.JsonXMLConfigBuilder;
-import de.odysseus.staxon.json.JsonXMLInputFactory;
-import de.odysseus.staxon.json.JsonXMLOutputFactory;
-import de.odysseus.staxon.xml.util.PrettyXMLEventWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-import javax.xml.stream.XMLEventReader;
-import javax.xml.stream.XMLEventWriter;
-import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLOutputFactory;
-import java.io.IOException;
-import java.io.StringReader;
-import java.io.StringWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import static com.RealLis.specimenInhos.utils.XmlConvert.XmlToJson;
@@ -48,6 +36,12 @@ public class SpecimenInhosController extends BaseController {
     private LSampletypeService lSampletypeService;
     @Autowired
     private LLogisticsService lLogisticsService;
+
+    @Autowired
+    private zhlisWsHerenLetService zhlisWsHerenLetService;
+
+    @Autowired
+    private HisAdviceService hisAdviceService;
     @GetMapping("/{deptId}/{userId}")
     public String specimenInhos(@PathVariable String deptId , @PathVariable String userId, Model model){
         model.addAttribute("department",deptId);
@@ -104,6 +98,23 @@ public class SpecimenInhosController extends BaseController {
         }else {
             viLisBarcodeInfoList = viLisBarcodeInfoService.selectBarcodeList(viLisBarcodeInfo);
             return getDataTable(viLisBarcodeInfoList);
+        }
+    }
+    @PostMapping("/GenerateBarcode")
+    @ResponseBody
+    private void GenerateBarcode(String deptId){
+        HisAdvice hisAdvice = new HisAdvice();
+        hisAdvice.setOrderStatus("1");
+        hisAdvice.setSampleFlag("0");
+        hisAdvice.setOrderingDeptCode(deptId);
+        List<HisAdvice> hisAdviceList = hisAdviceService.queryDisPatientId(hisAdvice);
+        if(hisAdviceList!=null) {
+            for (HisAdvice hisAdviceIn : hisAdviceList
+            ) {
+                System.out.println(hisAdviceIn.getPatientId());
+               zhlisWsHerenLetService.LabBarMake(hisAdviceIn.getPatientId());
+
+            }
         }
     }
     @GetMapping("/createLogistics/{deptId}/{userId}")
