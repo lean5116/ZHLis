@@ -309,21 +309,34 @@
 
 <script th:inline="javascript">
     var prefix = ctx + "specimenInhos";
-    var SampleTypeFormatterData=[[${SampleTypeFormatter}]];
-    var currentTableId='orderBarCode';
+    var SampleTypeFormatterData=[[${SampleTypeFormatter}]];  //得到所有标本类型字典值
+    var SampleTypeMap = new Map(); //创建标本类型map
+    var currentTableId='orderBarCode'; //设置当前活动table 为医嘱条码
     $(function() {
+        //全部table 在页面刷新时初始化
         queryBarcodeData('orderBarCode');
         queryBarcodeData('collectionConfirmation');
         queryBarcodeData('collectionComplete');
         queryBarcodeData('receiveComplete')
         queryBarcodeData('cancellationReturn');
         queryBarcodeData('overtimeBarcode');
-        queryBarcodeData('specimenLogistics')
+        queryBarcodeData('specimenLogistics');
+        SampleTypeMapInit();
     });
+    /*标本类型map初始化*/
+    function SampleTypeMapInit() {
+        var data = JSON.parse(SampleTypeFormatterData);
+        for(i=0;i<data.length;i++){
+            SampleTypeMap.set(data[i].value,data[i].text);
+        }
+    }
+
+    /*=====================================================表格初始化事件============================================*/
+
     /*根据tableId 初始化bootstrapTable*/
     function queryBarcodeData(tableId) {
         var columns ;
-        if(tableId=='orderBarCode'){
+        if(tableId=='orderBarCode'){//医嘱条码
             columns=[
                 {checkbox: true },
                 {field: 'bednum', title: '床号', align: 'center'},
@@ -350,7 +363,7 @@
                 { field: 'xqcs', title: '血气参数'  },
                 { field: 'jsdd', title: '接收地点'  }
         ]
-        }else if (tableId=='collectionConfirmation'){
+        }else if (tableId=='collectionConfirmation'){//采集确认
             columns=[
                 {checkbox: true },
                 {field: 'bednum', title: '床号', align: 'center'},
@@ -368,7 +381,7 @@
                 { field: 'requettime', title: '申请时间' ,sortable: true },
                 { field: 'requestdoctor', title: '申请医生' ,sortable: true },
                 { field: 'zyzt', title: '在院状态'  },]
-        }else if(tableId=='collectionComplete'){
+        }else if(tableId=='collectionComplete'){//采集完成
             columns=[
                 {checkbox: true },
                 {field: 'patientid', title: '住院号', align: 'center'},
@@ -385,7 +398,7 @@
                 { field: 'requettime', title: '申请时间' ,sortable: true },
                 { field: 'zyzt', title: '在院状态'  },
             ]
-        }else if(tableId=='receiveComplete'){
+        }else if(tableId=='receiveComplete'){//接收完成
             columns= [
                 {checkbox: true },
                 {field: 'bednum', title: '床号', align: 'center'},
@@ -402,7 +415,7 @@
                 { field: 'requettime', title: '申请时间' ,sortable: true },
                 { field: 'zyzt', title: '在院状态'  },
             ]
-        }else if(tableId=='cancellationReturn'){
+        }else if(tableId=='cancellationReturn'){//作废退回
             columns= [
                 {checkbox: true },
                 {field: 'bednum', title: '床号', align: 'center'},
@@ -433,7 +446,7 @@
                 { field: 'jsdd', title: '接收地点'  },
 
             ]
-        }else if(tableId=='overtimeBarcode'){
+        }else if(tableId=='overtimeBarcode'){//超时条码
             columns=[
                 {checkbox: true },
                 {field: 'bednum', title: '床号', align: 'center'},
@@ -468,7 +481,7 @@
 
             ]
         }
-        else if(tableId=='specimenLogistics') {
+        else if(tableId=='specimenLogistics') {//标本物流
             columns=[
                 {checkbox: true },
                 { field: 'wlbh', title: '物流编号', align: 'center'},
@@ -503,39 +516,18 @@
             toolbar:tableId+'Toolbar',
             columns: columns,
             showPageGo:true,
-            fixedNumber: 4,
             search:true,
             onEditableSave: onEditableSave,
             onLoadSuccess:function () {
-                onLoadFix(tableId,$('#'+tableId).bootstrapTable('getData'));
+                onLoadFix(tableId,$('#'+tableId).bootstrapTable('getData'));//加载成功事件触发合并床号方法
             },
             onDblClickRow:function (row) {
-                onDbClickTableRow(tableId,row);
+                onDbClickTableRow(tableId,row);//双击行事件，只有标本物流页使用
             }
 
         };
         $.table.init(options);
         console.log(tableId+'加载成功');
-    }
-    function orderBarcodeFilter(){
-        $.table.search('dateSpan','orderBarCode',{sampleState:$('#sampleState').val()});
-    }
-    /*根据tableId bootstrapTable条件搜索*/
-    function queryBarcodeSearch(tableId) {
-        // $.table.search('dateSpan',tableId,{department:'381'})  //搜索格式 搜索form，tableId，附加条件
-        $.table.search('dateSpan',tableId,'')
-    }
-    function infoRefresh() {
-        queryBarcodeSearch(currentTableId);
-        var deptId = [[${department}]]
-        $.ajax({
-            type: "post",
-            url: prefix + "/GenerateBarcode",
-            data:{
-                "deptId":deptId
-            },
-        });
-
     }
     /*样本状态格式化方法*/
     function barstatusFormatter(value,row,index) {
@@ -572,20 +564,16 @@
         return returnValue;
 
     }
+    /*标本类型格式化操作*/
     function specimencodeFormatter(value) {
-        var returnValue ;
-        let i = 0 ;
-        var data = JSON.parse(SampleTypeFormatterData)
-        for(i=0;i<data.length;i++){
-            if(data[i].value == value){
-                returnValue = data[i].text;
-            }
-        }
-        return returnValue;
+        return SampleTypeMap.get(value);//在map中查找
     }
+
+    /*费用金额格式化，保留两位小数处理*/
     function feeFormatter(value) {
-        return parseInt(value).toFixed(2);
+        return parseInt(value).toFixed(2);//保留小数点后两位
     }
+    /*-------------------------------------------------合并床位号操作-------------------------------------------------*/
     /*合并床位号*/
     function  onLoadFix(tableName,data) {
         var fieldList=["bednum"];
@@ -644,18 +632,60 @@
         }
 
     }
+    /*-------------------------------------------------------------------------------------------------------------------*/
 
+    /*表格行双击事件*/
+    function onDbClickTableRow(tableId,row) {
+        if(tableId=='specimenLogistics'){
+            var url = prefix +"/LogisticsDetail/"+row.wlbh+"/"+row.wlzt;
+            $.modal.open("物流详情", url);
+        }
+    }
+    /* 查询表格选择行数据值 */
+    function getSelections(tableId){
+        var data = $("#" + tableId).bootstrapTable('getSelections');
+        console.log(JSON.stringify(data));
+        return data;
+    }
+    /*行内编辑事件*/
+    function onEditableSave (field, row, oldValue, $el) {
+        alert("字段名：" + field + "，当前值：" + row[field]  + "，旧值：" + oldValue);
+    }
+    /*=====================================================表格初始化事件============================================*/
+
+    /*=======================================================按钮事件================================================*/
+
+    /*根据要本状态筛选医嘱条码 由下拉列表 sampleState change事件触发*/
+    function orderBarcodeFilter(){
+        $.table.search('dateSpan','orderBarCode',{sampleState:$('#sampleState').val()});
+    }
+    /*根据tableId bootstrapTable条件搜索*/
+    function queryBarcodeSearch(tableId) {
+        // $.table.search('dateSpan',tableId,{department:'381'})  //搜索格式 搜索form，tableId，附加条件
+        $.table.search('dateSpan',tableId,'')
+    }
+    /*信息刷新按钮*/
+    function infoRefresh() {
+        queryBarcodeSearch(currentTableId);
+        /*请求后台异步生成条码*/
+        var deptId = [[${department}]]
+        $.ajax({
+            type: "post",
+            url: prefix + "/GenerateBarcode",
+            data:{
+                "deptId":deptId
+            },
+        });
+
+    }
     var $tab = $('#tab');
+    /*监视tab页切换事件*/
     $tab.on('show.bs.tab', function (e) {
         currentTableId= e.target.id.replace('Tab','');
         console.log('切换到'+currentTableId);
         queryBarcodeSearch(currentTableId);
     })
-
-    function onEditableSave (field, row, oldValue, $el) {
-        alert("字段名：" + field + "，当前值：" + row[field]  + "，旧值：" + oldValue);
-    }
-
+    /*创建物流按钮*/
     function  createLogistics() {
         var deptId=  [[${department}]];
         var userId=  [[${userCode}]];
@@ -666,11 +696,12 @@
         }else
             $.modal.msgError("请选择科室");
     }
-
+    /*开始运送按钮*/
     function startShipping(){
         var url = prefix +"/startShipping";
         $.modal.open("开始运送", url, '800', '350');
     }
+    /*标本条码打印*/
     function barcodePrintSelect(tableId){
        var data = getSelections(tableId);
        console.log(JSON.stringify(data));
@@ -690,12 +721,7 @@
             prn1_preview("barcodePrint");
        }
     }
-    /* 查询表格选择行数据值 */
-    function getSelections(tableId){
-        var data = $("#" + tableId).bootstrapTable('getSelections');
-        console.log(JSON.stringify(data));
-        return data;
-    }
+    /*物流标贴重打*/
     function printlogistics() {
         var data = getSelections("specimenLogistics");
         console.log(JSON.stringify(data));
@@ -711,12 +737,8 @@
             prn1_preview("logisticsPrint");
         }
     }
-    function onDbClickTableRow(tableId,row) {
-        if(tableId=='specimenLogistics'){
-            var url = prefix +"/LogisticsDetail/"+row.wlbh+"/"+row.wlzt;
-            $.modal.open("物流详情", url);
-        }
-    }
+
+    /*=======================================================按钮事件================================================*/
 </script>
 <script>
     var LODOP; //声明为全局变量
@@ -738,9 +760,6 @@
         LODOP.SET_PRINT_MODE("PRINT_PAGE_PERCENT","Full-Page");//整页缩放
         LODOP.ADD_PRINT_HTM("0%","0%","100%","100%",document.getElementById(printName).innerHTML);
     };
-
-
-
 </script>
 </body>
 </html>
