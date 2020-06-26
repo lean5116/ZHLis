@@ -16,7 +16,7 @@
     </resultMap>
 
     <!--通过实体作为筛选条件查询-->
-    <select id="getLSampleType" resultMap="LSampletypeMap">
+    <select id="queryLSampleType" resultMap="LSampletypeMap">
         select
           SAMPLETYPE, SAMPLEDESCRIBE, EXTENDTYPE, ZDM, PY, WB, TYPEORDER, ABBR_EN, ISBLOOD, TJSY
         from ZHLIS.L_SAMPLETYPE

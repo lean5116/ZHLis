@@ -86,18 +86,20 @@
     var prefix = ctx + "specimenInhos";
     var currentData;
     var totalCount= 0 ;
+    /*监视barcode回车事件*/
     $("#barcode").keydown(function(e) {
         if (e.keyCode == 13) {
             var barcode = document.getElementById('barcode').value;
             if(barcode.length>0) {
                 console.log(barcode);
-                getBarcodeInfo(barcode);
+                getBarcodeInfo(barcode); //根据barcode查询条码信息
             }
         }
     });
     $(function() {
         tableInit();
     });
+    /*表格初始化事件*/
     function tableInit() {
         var columns=[
 
@@ -117,29 +119,30 @@
         ]
         var options={
             id: "packageInfo",
-            data:currentData,
+            data:currentData, //设置表格数据为自定义活动数据
             modalName: "打包信息",
             columns: columns,
             showSearch:false,
             height:400,
-            uniqueId:'barcode',
+            uniqueId:'barcode', //barcode 为表格主键
             paginationDetailHAlign:"right",
         };
         $.table.init(options);
     }
-    function getBarcodeInfo(barcode) {
-        if( $('#packageInfo').bootstrapTable('getRowByUniqueId',barcode)==null) {
 
+    /*获取条码信息*/
+    function getBarcodeInfo(barcode) {
+        if( $('#packageInfo').bootstrapTable('getRowByUniqueId',barcode)==null) { //保证表格主键不冲突，即同一条码不刷入两次
             if (barcode != null) {
                 $.ajax({
                     type: "get",
                     url: prefix + "/getBarcode/" + barcode,
-                    async:false,
+                    async:false,//取消异步，防止因异步产生的刷入两条相同条码
                     success: function (r) {
                         if (r.code == 0) {
-                            $('#packageInfo').bootstrapTable('append', JSON.parse(r.msg));
+                            $('#packageInfo').bootstrapTable('append', JSON.parse(r.msg));//将查询到的数据插入表格
                             totalCount++;
-                            $('#totalCount').html('<h1 style="color: red">'+totalCount+'</h1>');
+                            $('#totalCount').html('<h1 style="color: red">'+totalCount+'</h1>');//计数+1
                         } else {
                             $.modal.msgError(r.msg);
                         }
@@ -151,24 +154,27 @@
         } else{
         $.modal.msgError('该条码已进入打包列表');
     }
-        $('#barcode').val("");
+        $('#barcode').val("");//业务完成清空barcode
     }
+    /*移除标本按钮*/
     function remove(barcode) {
         $.modal.confirm("确定要删除吗?", function() {
             var barcodes=[];
             barcodes.push(barcode);
             var removeInfo = {field:'barcode',values:barcodes};
             console.log(removeInfo)
-            $('#packageInfo').bootstrapTable('remove',removeInfo);
+            $('#packageInfo').bootstrapTable('remove',removeInfo); //表格移除该标本信息
             totalCount--
-            $('#totalCount').html('<h1 style="color: red">'+totalCount+'</h1>');
+            $('#totalCount').html('<h1 style="color: red">'+totalCount+'</h1>');//计数-1
         });
 
     }
+
+    /*打包*/
     function Packing() {
         $.modal.loading("数据加载中");
         var allPackingData = $('#packageInfo').bootstrapTable('getData');
-        var userId = [[${userCode}]];
+        var userId = [[${userCode}]];//得到当前页使用者
         let i = 0 ;
         var barcodes='';
         for(i = 0 ; i<allPackingData.length;i++){
@@ -212,6 +218,7 @@
         });
         console.log(allPackingData);
     }
+    /*回调函数改为打包*/
     function submitHandler() {
         Packing();
     }

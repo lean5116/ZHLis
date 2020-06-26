@@ -55,15 +55,18 @@
 </body>
 <script th:inline="javascript">
     var prefix = ctx + "specimenInhos";
-    var totalCount= 0 ;
+    var totalCount= 0 ; //默认数量 0
+    /*监视barcode回车事件*/
     $("#barcode").keydown(function(e) {
         if (e.keyCode == 13) {
             getWlbh();
         }
     });
+    /*监视barcode失去焦点*/
     $("#barcode").blur(function(){
         getWlbh();
     });
+    /*获取物流编号*/
     function getWlbh() {
         var barcode = document.getElementById('barcode').value;
         if(barcode.length>0) {
@@ -75,21 +78,22 @@
                         var response = JSON.parse(r.msg);
                         if(response.wlzt !=1){
                             $.modal.msgError("只有标本状态为【已打包】的标本才能【开始运送】");
-                            $('#barcode').val('');
+                            $('#barcode').val('');//查询完成清空barcode文本框，防止重复输入
                         }else{
                             $('#wlbh').val(response.wlbh);
                             $('#totalCount').html("<h1>"+response.bbsl+"</h1>");
-                            $('#barcode').val('');
+                            $('#barcode').val('');//查询完成清空barcode文本框，防止重复输入
                         }
                     } else {
                         $.modal.msgError(r.msg);
-                        $('#barcode').val('');
+                        $('#barcode').val('');//业务结束清空barcode文本框
                     }
                 }
             });
         }
 
     }
+    /*确定回调函数*/
     function submitHandler() {
         var ysr = $('#ysr').val();
         if(ysr.length>0){
@@ -107,7 +111,7 @@
                         $.modal.msgSuccess("修改成功");
                         $('#wlbh').val('');
                         $('#ysr').val('');
-                        parent.$.table.refresh();
+                        parent.$.table.refresh(); //提交成功刷新父窗体
                     } else {
                         $.modal.msgError("修改失败");
                     }

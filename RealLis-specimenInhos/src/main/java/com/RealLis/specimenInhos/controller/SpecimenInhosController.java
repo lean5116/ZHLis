@@ -36,12 +36,11 @@ public class SpecimenInhosController extends BaseController {
     private LSampletypeService lSampletypeService;
     @Autowired
     private LLogisticsService lLogisticsService;
-
     @Autowired
     private zhlisWsHerenLetService zhlisWsHerenLetService;
-
     @Autowired
     private HisAdviceService hisAdviceService;
+
     @GetMapping("/{deptId}/{userId}")
     public String specimenInhos(@PathVariable String deptId , @PathVariable String userId, Model model){
         model.addAttribute("department",deptId);
@@ -93,26 +92,26 @@ public class SpecimenInhosController extends BaseController {
             LLogistics lLogistics = new LLogistics();
             lLogistics.setParams(viLisBarcodeInfo.getParams());
             lLogistics.setBqdm(viLisBarcodeInfo.getDepartment());
-            List<LLogistics> logisticses = lLogisticsService.getLlogistics(lLogistics);
+            List<LLogistics> logisticses = lLogisticsService.getLlogisticsList(lLogistics);
             return getDataTable(logisticses);
         }else {
-            viLisBarcodeInfoList = viLisBarcodeInfoService.selectBarcodeList(viLisBarcodeInfo);
+            viLisBarcodeInfoList = viLisBarcodeInfoService.getInfoList(viLisBarcodeInfo);
             return getDataTable(viLisBarcodeInfoList);
         }
     }
     @PostMapping("/GenerateBarcode")
     @ResponseBody
     private void GenerateBarcode(String deptId){
-        HisAdvice hisAdvice = new HisAdvice();
-        hisAdvice.setOrderStatus("1");
-        hisAdvice.setSampleFlag("0");
-        hisAdvice.setOrderingDeptCode(deptId);
-        List<HisAdvice> hisAdviceList = hisAdviceService.queryDisPatientId(hisAdvice);
+        HisAdvice params = new HisAdvice();
+        params.setOrderStatus("1");
+        params.setSampleFlag("0");
+        params.setOrderingDeptCode(deptId);
+        List<HisAdvice> hisAdviceList = hisAdviceService.getDisPatientIdList(params);
         if(hisAdviceList!=null) {
-            for (HisAdvice hisAdviceIn : hisAdviceList
+            for (HisAdvice hisAdvice : hisAdviceList
             ) {
-                System.out.println(hisAdviceIn.getPatientId());
-               zhlisWsHerenLetService.LabBarMake(hisAdviceIn.getPatientId());
+                System.out.println(hisAdvice.getPatientId());
+               zhlisWsHerenLetService.LabBarMake(hisAdvice.getPatientId());
 
             }
         }
@@ -129,7 +128,7 @@ public class SpecimenInhosController extends BaseController {
     public AjaxResult getBarcode(@PathVariable String barcode){
         ViLisBarcodeInfo viLisBarcodeInfo = new ViLisBarcodeInfo();
         viLisBarcodeInfo.setBarcode(barcode);
-        ViLisBarcodeInfo response = viLisBarcodeInfoService.getInfoByBarcode(viLisBarcodeInfo);
+        ViLisBarcodeInfo response = viLisBarcodeInfoService.getInfo(viLisBarcodeInfo);
         if(response!=null){
             return success(JSON.toJSONString(response));
         }else {
@@ -163,7 +162,7 @@ public class SpecimenInhosController extends BaseController {
         model.addAttribute("wlzt",wlzt);
         LLogistics lLogistics = new LLogistics();
         lLogistics.setWlbh(wlbh);
-        LLogistics logisticses = lLogisticsService.getLlogisticsByWlbh(lLogistics);
+        LLogistics logisticses = lLogisticsService.getLlogistics(lLogistics);
         if(logisticses!=null ){
             model.addAttribute("cjsj",logisticses.getCjsj());
             model.addAttribute("dbsj",logisticses.getDbsj());
@@ -177,7 +176,7 @@ public class SpecimenInhosController extends BaseController {
     @ResponseBody
     public TableDataInfo lLogisticDetail(@PathVariable  String wlbh){
         startPage();
-        List<LLogisticsDetailVO> lLogisticsDetailVO =  lLogisticsService.getLlogisticsDetail(wlbh);
+        List<LLogisticsDetailVO> lLogisticsDetailVO =  lLogisticsService.getLlogisticsDetailByWlbh(wlbh);
         return getDataTable(lLogisticsDetailVO);
     }
 
@@ -191,7 +190,7 @@ public class SpecimenInhosController extends BaseController {
     public AjaxResult startShipping(@PathVariable String  barcode){
         LLogistics lLogistics = new LLogistics();
         lLogistics.setWlbh(barcode);
-        LLogistics logisticses = lLogisticsService.getLlogisticsByWlbh(lLogistics);
+        LLogistics logisticses = lLogisticsService.getLlogistics(lLogistics);
         if(logisticses!=null){
             return success(JSON.toJSONString(logisticses));
         }else{

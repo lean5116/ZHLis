@@ -200,8 +200,8 @@
 </body>
 <script th:inline="javascript">
         var prefix = ctx + "specimenInhos";
-        var wlbh = [[${wlbh}]]
-
+        var wlbh = [[${wlbh}]] //得到当前页物流编号
+        /*表格初始化事件*/
         function tableInit() {
             var columns=[
                 {field: 'wlbh', title: '物流编号', align: 'center'},
@@ -222,8 +222,9 @@
             tableInit();
             timeInline();
         });
+        /*根据物流状态显示物流时间轴*/
         function timeInline() {
-            var wlzt =[[${wlzt}]]
+            var wlzt =[[${wlzt}]] //得到当期那物流 物流状态
             if(wlzt=="9"){
                 $('#timeInline9').show();
                 $('#timeInline0').hide();
@@ -240,6 +241,7 @@
                 timeInlineFormatter(0);
             }
         }
+        /*物流时间轴显示隐藏方法*/
         function timeInlineFormatter(wlzt) {
             for(let i =0 ;i<=wlzt ;i++){
                 console.log(i);

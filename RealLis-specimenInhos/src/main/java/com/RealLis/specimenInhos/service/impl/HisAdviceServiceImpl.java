@@ -13,7 +13,7 @@ public class HisAdviceServiceImpl implements HisAdviceService {
     @Autowired
     private HisAdviceMapper hisAdviceMapper;
     @Override
-    public List<HisAdvice> queryDisPatientId(HisAdvice hisAdvice) {
-        return hisAdviceMapper.queryDistinct(hisAdvice);
+    public List<HisAdvice> getDisPatientIdList(HisAdvice hisAdvice) {
+        return hisAdviceMapper.queryDistinctList(hisAdvice);
     }
 }

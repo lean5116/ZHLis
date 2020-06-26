@@ -12,12 +12,12 @@ public class ViLisBarcodeInfoServiceImpl implements IViLisBarcodeInfoService {
     @Autowired
     private ViLisBarcodeInfoMapper viLisBarcodeInfoMapper;
     @Override
-    public List<ViLisBarcodeInfo> selectBarcodeList(ViLisBarcodeInfo viLisBarcodeInfo) {
-        return viLisBarcodeInfoMapper.queryAll(viLisBarcodeInfo);
+    public List<ViLisBarcodeInfo> getInfoList(ViLisBarcodeInfo viLisBarcodeInfo) {
+        return viLisBarcodeInfoMapper.queryInfoList(viLisBarcodeInfo);
     }
 
     @Override
-    public ViLisBarcodeInfo getInfoByBarcode(ViLisBarcodeInfo viLisBarcodeInfo) {
-        return viLisBarcodeInfoMapper.getInfoByBarcode(viLisBarcodeInfo);
+    public ViLisBarcodeInfo getInfo(ViLisBarcodeInfo viLisBarcodeInfo) {
+        return viLisBarcodeInfoMapper.queryInfo(viLisBarcodeInfo);
     }
 }

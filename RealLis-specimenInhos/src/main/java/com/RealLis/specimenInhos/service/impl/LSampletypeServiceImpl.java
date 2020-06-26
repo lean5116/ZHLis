@@ -15,7 +15,7 @@ public class LSampletypeServiceImpl implements LSampletypeService {
     private LSampletypeMapper lSampletypeMapper;
     @Override
     public List<Formatter> getLSampleTypeFormatter(LSampletype lSampletype) {
-        List<LSampletype> lSampletypes= lSampletypeMapper.getLSampleType(lSampletype);
+        List<LSampletype> lSampletypes= lSampletypeMapper.queryLSampleType(lSampletype);
         List<Formatter> formatters = new ArrayList<>();
         for (LSampletype lSampletyp:lSampletypes
              ) {

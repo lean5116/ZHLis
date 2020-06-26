@@ -31,7 +31,7 @@
         <result property="canceltime" column="CANCELTIME" />
         <result property="diagnostic" column="DIAGNOSTIC"/>
     </resultMap>
-    <select id="queryAll" resultMap="ViLisBarcodeInfoMap" parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
+    <select id="queryInfoList" resultMap="ViLisBarcodeInfoMap" parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
         select
         BARCODE, REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID, PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST, COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME, DIAGNOSTIC
         from ZHLIS.VI_LIS_BARCODE_INFO
@@ -68,7 +68,7 @@
     </select>
 
 
-    <select id="getInfoByBarcode" resultMap="ViLisBarcodeInfoMap" parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
+    <select id="queryInfo" resultMap="ViLisBarcodeInfoMap" parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
         select
         BARCODE, REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID, PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST, COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME, DIAGNOSTIC
         from ZHLIS.VI_LIS_BARCODE_INFO

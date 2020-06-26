@@ -14,18 +14,18 @@ public class LLogisticsServiceImpl implements LLogisticsService {
     @Autowired
     private LLoginsticsMapper lLoginsticsMapper;
     @Override
-    public List<LLogistics> getLlogistics(LLogistics lLogistics) {
-        return lLoginsticsMapper.getLlogistics(lLogistics);
+    public List<LLogistics> getLlogisticsList(LLogistics lLogistics) {
+        return lLoginsticsMapper.queryLlogisticsList(lLogistics);
     }
 
     @Override
-    public List<LLogisticsDetailVO> getLlogisticsDetail(String wlbh) {
-        return lLoginsticsMapper.getLlogisticsDetail(wlbh);
+    public List<LLogisticsDetailVO> getLlogisticsDetailByWlbh(String wlbh) {
+        return lLoginsticsMapper.queryLlogisticsDetailByWlbh(wlbh);
     }
 
     @Override
-    public LLogistics getLlogisticsByWlbh(LLogistics lLogistics) {
-        return lLoginsticsMapper.getLlogisticsByWlbh(lLogistics);
+    public LLogistics getLlogistics(LLogistics lLogistics) {
+        return lLoginsticsMapper.queryLlogistics(lLogistics);
     }
 
     @Override

@@ -21,7 +21,7 @@
 
 
     <!--通过实体作为筛选条件查询-->
-    <select id="getLlogistics" resultMap="LLogisticsMap">
+    <select id="queryLlogisticsList" resultMap="LLogisticsMap">
         select
           WLBH, CJSJ, DBSJ, CJR, DBR, YSSJ, YSR, BQDM, DDSJ, BBSL, WLZT, BQMC, QSR
         from ZHLIS.L_LOGISTICS
@@ -80,7 +80,7 @@
 
 
     <!--通过实体作为筛选条件查询-->
-    <select id="getLlogisticsByWlbh" resultMap="LLogisticsMap">
+    <select id="queryLlogistics" resultMap="LLogisticsMap">
         select
         WLBH, CJSJ, DBSJ, CJR, DBR, YSSJ, YSR, BQDM, DDSJ, BBSL, WLZT, BQMC, QSR
         from ZHLIS.L_LOGISTICS
@@ -145,7 +145,7 @@
         <result property="examinaim" column="EXAMINAIM" />
     </resultMap>
 
-    <select id="getLlogisticsDetail" parameterType="String" resultMap="LLogisticsDetailMap">
+    <select id="queryLlogisticsDetailByWlbh" parameterType="String" resultMap="LLogisticsDetailMap">
         SELECT L_LOGISTICS_MX.WLBH,
                L_LOGISTICS_MX.TMH,
                L_JYTMXX.BED_NO,

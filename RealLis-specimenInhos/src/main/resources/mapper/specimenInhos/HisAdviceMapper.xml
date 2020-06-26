@@ -48,7 +48,7 @@
     </resultMap>
 
     <!--通过实体作为筛选条件查询-->
-    <select id="queryDistinct" resultMap="HisAdvice" parameterType="com.RealLis.specimenInhos.domain.HisAdvice">
+    <select id="queryDistinctList" resultMap="HisAdvice" parameterType="com.RealLis.specimenInhos.domain.HisAdvice">
         select
             DISTINCT PATIENT_ID
         from ZHLIS.HIS_ADVICE
