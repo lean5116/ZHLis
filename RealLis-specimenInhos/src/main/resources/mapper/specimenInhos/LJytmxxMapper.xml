@@ -255,6 +255,7 @@
         <set>
                 EXECUTETIME = null ,
                 EXECUTOR = null,
+                BarStatus = 1,
         </set>
         <where>
             DOCTADVISENO = #{doctadviseno}

@@ -79,6 +79,10 @@ public class SpecimenInhosController extends BaseController {
         return "specimenInhos/LogisticsDetail";
     }
 
+    @GetMapping("/startShipping")
+    public String Shippinng(){
+        return "specimenInhos/startShipping";
+    }
     /*================================================================================================================*/
 
 
@@ -207,7 +211,7 @@ public class SpecimenInhosController extends BaseController {
 
     @ApiOperation("获取物流信息根据物流条码号")
     @ApiImplicitParam(name = "barcode", value = "物流条码号",  dataType = "String",paramType = "path")
-    @GetMapping("/startShipping/{barcode}")
+    @PutMapping("/startShipping/{barcode}")
     @ResponseBody
     public AjaxResult startShipping(@PathVariable String  barcode){
         LLogistics lLogistics = new LLogistics();
@@ -255,6 +259,7 @@ public class SpecimenInhosController extends BaseController {
                            lJytmxx.setParams(params);
                            if (lJytmxxService.updateByBarcode(lJytmxx) > 0) {
                                result += barcode[i] + "|";
+                               zhlisWsHerenLetService.SetBarOrderStatus(barcode[i],"2");//条码已打印
                            }
 
                        } else if ("barcodeCancel".equals(czfs)) {
@@ -268,6 +273,7 @@ public class SpecimenInhosController extends BaseController {
                            if (lJytmxxService.updateByBarcode(lJytmxx) > 0) {
                               n++;
                               result= Integer.toString(n);
+                              zhlisWsHerenLetService.SetBarOrderStatus(barcode[i],"-2");
                            }
                        } else if ("collectionConfirm".equals(czfs)) {
                            lJytmxx.setExecutor(czz);
@@ -279,6 +285,7 @@ public class SpecimenInhosController extends BaseController {
                            if (lJytmxxService.updateByBarcode(lJytmxx) > 0) {
                                n++;
                                result= Integer.toString(n);
+                               zhlisWsHerenLetService.SetBarOrderStatus(barcode[i],"3"); //标本已采集
                            }
                        }else if("confirmCancel".equals(czfs)){
                            Map<String, Object> params = new HashMap<>();
@@ -287,6 +294,7 @@ public class SpecimenInhosController extends BaseController {
                            if(lJytmxxService.updateByBarcode(lJytmxx)>0){
                                n++;
                                result= Integer.toString(n);
+                               zhlisWsHerenLetService.SetBarOrderStatus(barcode[i],"11"); //lis退回标本
                            }
                        }
                    }

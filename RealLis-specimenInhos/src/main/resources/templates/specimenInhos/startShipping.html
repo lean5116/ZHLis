@@ -71,7 +71,7 @@
         var barcode = document.getElementById('barcode').value;
         if(barcode.length>0) {
             $.ajax({
-                type: "get",
+                type: "put",
                 url: prefix + "/startShipping/" + barcode,
                 success: function (r) {
                     if (r.code == 0) {

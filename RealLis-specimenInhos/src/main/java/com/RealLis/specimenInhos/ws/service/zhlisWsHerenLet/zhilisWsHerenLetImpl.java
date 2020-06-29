@@ -16,4 +16,11 @@ public class zhilisWsHerenLetImpl  implements zhlisWsHerenLetService {
         System.out.println(response);
         return response;
     }
+
+    @Override
+    public String SetBarOrderStatus(String strBarcode, String strOrderStatus) {
+        String response = webServiceLisSoap.setBarOrderStatus(strBarcode,strOrderStatus);
+        System.out.println(response);
+        return response;
+    }
 }
