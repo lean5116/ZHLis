@@ -34,6 +34,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link LabChargeFee }
+     * 
+     */
+    public LabChargeFee createLabChargeFee() {
+        return new LabChargeFee();
+    }
+
+    /**
      * Create an instance of {@link WebTest }
      * 
      */
@@ -74,35 +82,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link ZhLisHeren }
-     * 
-     */
-    public ZhLisHeren createZhLisHeren() {
-        return new ZhLisHeren();
-    }
-
-    /**
-     * Create an instance of {@link HelloWorld }
-     * 
-     */
-    public HelloWorld createHelloWorld() {
-        return new HelloWorld();
-    }
-
-    /**
      * Create an instance of {@link LabBarMake }
      * 
      */
     public LabBarMake createLabBarMake() {
         return new LabBarMake();
-    }
-
-    /**
-     * Create an instance of {@link LabDownInfoItemResponse }
-     * 
-     */
-    public LabDownInfoItemResponse createLabDownInfoItemResponse() {
-        return new LabDownInfoItemResponse();
     }
 
     /**
@@ -114,11 +98,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link LabDownInfoAll }
+     * Create an instance of {@link LabChargeFeeResponse }
      * 
      */
-    public LabDownInfoAll createLabDownInfoAll() {
-        return new LabDownInfoAll();
+    public LabChargeFeeResponse createLabChargeFeeResponse() {
+        return new LabChargeFeeResponse();
     }
 
     /**
@@ -175,6 +159,86 @@ public class ObjectFactory {
      */
     public LabDownInfoStaff createLabDownInfoStaff() {
         return new LabDownInfoStaff();
+    }
+
+    /**
+     * Create an instance of {@link SendRiskValue }
+     * 
+     */
+    public SendRiskValue createSendRiskValue() {
+        return new SendRiskValue();
+    }
+
+    /**
+     * Create an instance of {@link SetBarOrderStatus }
+     * 
+     */
+    public SetBarOrderStatus createSetBarOrderStatus() {
+        return new SetBarOrderStatus();
+    }
+
+    /**
+     * Create an instance of {@link GetQueueNoResponse }
+     * 
+     */
+    public GetQueueNoResponse createGetQueueNoResponse() {
+        return new GetQueueNoResponse();
+    }
+
+    /**
+     * Create an instance of {@link ZhLisHeren }
+     * 
+     */
+    public ZhLisHeren createZhLisHeren() {
+        return new ZhLisHeren();
+    }
+
+    /**
+     * Create an instance of {@link SendRiskValueResponse }
+     * 
+     */
+    public SendRiskValueResponse createSendRiskValueResponse() {
+        return new SendRiskValueResponse();
+    }
+
+    /**
+     * Create an instance of {@link HelloWorld }
+     * 
+     */
+    public HelloWorld createHelloWorld() {
+        return new HelloWorld();
+    }
+
+    /**
+     * Create an instance of {@link SetBarOrderStatusResponse }
+     * 
+     */
+    public SetBarOrderStatusResponse createSetBarOrderStatusResponse() {
+        return new SetBarOrderStatusResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetQueueNo }
+     * 
+     */
+    public GetQueueNo createGetQueueNo() {
+        return new GetQueueNo();
+    }
+
+    /**
+     * Create an instance of {@link LabDownInfoItemResponse }
+     * 
+     */
+    public LabDownInfoItemResponse createLabDownInfoItemResponse() {
+        return new LabDownInfoItemResponse();
+    }
+
+    /**
+     * Create an instance of {@link LabDownInfoAll }
+     * 
+     */
+    public LabDownInfoAll createLabDownInfoAll() {
+        return new LabDownInfoAll();
     }
 
     /**

@@ -160,12 +160,12 @@
 <div id="orderBarCodeToolbar" class="fixed-table-toolbar">
     <div class="form-inline">
 
-        <button type="button" class="btn btn-success" onclick="barcodePrintSelect('orderBarCode')" ><i class="fa fa-print"></i>条码打印</button>
-        <button type="button" class="btn btn-danger" ><i class="fa fa-trash-o"></i>条码作废</button>
+        <button type="button" class="btn btn-success" onclick="barcodePrintSelect('orderBarCode')"  disabled="disabled" id="btn_barcodePrint"><i class="fa fa-print"></i>条码打印</button>
+        <button type="button" class="btn btn-danger" onclick="barcodeCancelSelect('orderBarCode')" disabled="disabled" id="btn_barcodeCancel"><i class="fa fa-trash-o"></i>条码作废</button>
 
         <label for="sampleState" class="label label-warning">样本状态:</label>
         <select class=" input-sm mb-md " id="sampleState" onchange="orderBarcodeFilter()">
-            <option value="" selected>0、全部</option>
+            <option value="-99" selected>0、全部</option>
             <option value="0">1、未打印</option>
             <option value="1">2、已打印</option>
             <option value="2">3、已采集</option>
@@ -178,18 +178,19 @@
 </div>
 <div id="collectionConfirmationToolbar" class="fixed-table-toolbar">
     <div class="form-inline">
-        <button type="button" class="btn btn-primary"  style="width: 110px"><i class="fa fa-hand-o-left"></i> 采集确认</button>
+        <button type="button" class="btn btn-primary"  style="width: 110px" onclick="collectionConfirm()"><i class="fa fa-hand-o-left"></i> 采集确认</button>
+        <input id="confirmBarcode" class="input-sm" placeholder="搜索" />
     </div>
 </div>
 <div id="collectionCompleteToolbar" class="fixed-table-toolbar">
     <div class="form-inline">
-        <button type="button" class="btn btn-warning"  style="width: 110px"><i class="fa fa-reply"></i> 撤销采集</button>
+        <button type="button" class="btn btn-warning"  style="width: 110px" onclick="confirmCancel()"><i class="fa fa-reply"></i> 撤销采集</button>
     </div>
 </div>
 
 <div id="cancellationReturnToolbar" class="fixed-table-toolbar">
     <div class="form-inline">
-        <button type="button" class="btn btn-success" onclick="barcodePrintSelect('cancellationReturn')"><i class="fa fa-print" ></i>条码打印</button>
+<!--        <button type="button"   class="btn btn-success" onclick="barcodePrintSelect('cancellationReturn')"  ><i class="fa fa-print" ></i>条码打印</button>-->
     </div>
 </div>
 
@@ -224,8 +225,6 @@
                 <td><div id="jsdd">接收地点</div></td>
             </tr>
         </table>
-
-
     </div>
     <button onclick="prn1_preview()">打印</button>
 </section>
@@ -312,6 +311,7 @@
     var SampleTypeFormatterData=[[${SampleTypeFormatter}]];  //得到所有标本类型字典值
     var SampleTypeMap = new Map(); //创建标本类型map
     var currentTableId='orderBarCode'; //设置当前活动table 为医嘱条码
+    var userId= [[${userCode}]]
     $(function() {
         //全部table 在页面刷新时初始化
         queryBarcodeData('orderBarCode');
@@ -338,7 +338,7 @@
         var columns ;
         if(tableId=='orderBarCode'){//医嘱条码
             columns=[
-                {checkbox: true },
+                {fielId:'rownum',checkbox: true },
                 {field: 'bednum', title: '床号', align: 'center'},
                 {field:'patientname',title:'病人姓名' ,align: 'center'},
                 { field: 'barcode',  title: '条码号'  ,align: 'center' },
@@ -369,6 +369,7 @@
                 {field: 'bednum', title: '床号', align: 'center'},
                 {field:'patientname',title:'病人姓名'},
                 { field: 'barcode',  title: '条码号'  ,align: 'center' },
+                { field: 'barcode2',  title: '条码长号'  ,align: 'center', visible:false},
                 { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
                 {field: 'patientid', title: '住院号', align: 'center'},
                 {field: 'examname', title: '项目内容', formatter: function(value, row, index) {
@@ -509,23 +510,41 @@
                 { field: 'bqmc', title: '病区名称', align: 'center',visible:false},
             ]
         }
-        var options={
-            id: tableId,
-            url:prefix+"/list/"+tableId,
-            modalName: "医嘱条码",
-            toolbar:tableId+'Toolbar',
-            columns: columns,
-            showPageGo:true,
-            search:true,
-            onEditableSave: onEditableSave,
-            onLoadSuccess:function () {
-                onLoadFix(tableId,$('#'+tableId).bootstrapTable('getData'));//加载成功事件触发合并床号方法
-            },
-            onDblClickRow:function (row) {
-                onDbClickTableRow(tableId,row);//双击行事件，只有标本物流页使用
+        var options ;
+        if(tableId=='collectionConfirmation'){
+            options = {
+                id: tableId,
+                url: prefix + "/list/" + tableId,
+                modalName: "医嘱条码",
+                toolbar: tableId + 'Toolbar',
+                columns: columns,
+                pagination: false,
+                uniqueId: 'barcode',
+                height:600,
+                onLoadSuccess: function () {
+                    onLoadFix(tableId, $('#' + tableId).bootstrapTable('getData'));//加载成功事件触发合并床号方法
+                }
             }
+        }else {
+            options = {
+                id: tableId,
+                url: prefix + "/list/" + tableId,
+                modalName: "医嘱条码",
+                toolbar: tableId + 'Toolbar',
+                columns: columns,
+                showPageGo: true,
+                search: true,
+                uniqueId: 'barcode2',
+                onEditableSave: onEditableSave,
+                onLoadSuccess: function () {
+                    onLoadFix(tableId, $('#' + tableId).bootstrapTable('getData'));//加载成功事件触发合并床号方法
+                },
+                onDblClickRow: function (row) {
+                    onDbClickTableRow(tableId, row);//双击行事件，只有标本物流页使用
+                }
 
-        };
+            };
+        }
         $.table.init(options);
         console.log(tableId+'加载成功');
     }
@@ -598,7 +617,6 @@
         var sortMap = {};
         for(var i = 0 ; i < data.length ; i++){
             for(var prop in data[i]){
-                //例如people.unit.name
                 var fieldArr=fieldName.split(".");
                 getCount(data[i],prop,fieldArr,0,sortMap);
             }
@@ -657,12 +675,38 @@
 
     /*根据要本状态筛选医嘱条码 由下拉列表 sampleState change事件触发*/
     function orderBarcodeFilter(){
-        $.table.search('dateSpan','orderBarCode',{sampleState:$('#sampleState').val()});
+        if($('#sampleState').val()!=-99) {
+            $.table.search('dateSpan', 'orderBarCode', {sampleState: $('#sampleState').val()});
+        }else{
+            $.table.search('dateSpan', 'orderBarCode', '');
+        }
+        console.log($('#sampleState').val())
+        if($('#sampleState').val() !=0 && $('#sampleState').val() !=-1 && $('#sampleState').val() !=1){
+            $('#btn_barcodePrint').attr("disabled","disabled")
+        }else{
+            $('#btn_barcodePrint').removeAttr("disabled")
+
+        }
+        if($('#sampleState').val() !=3 && $('#sampleState').val() !=4 ){
+            $('#btn_barcodeCancel').attr("disabled","disabled")
+        }else{
+            $('#btn_barcodeCancel').removeAttr("disabled")
+
+        }
+
     }
     /*根据tableId bootstrapTable条件搜索*/
     function queryBarcodeSearch(tableId) {
         // $.table.search('dateSpan',tableId,{department:'381'})  //搜索格式 搜索form，tableId，附加条件
-        $.table.search('dateSpan',tableId,'')
+        if(tableId=="orderBarCode"){
+            if($('#sampleState').val()!=-99) {
+                $.table.search('dateSpan', 'orderBarCode', {sampleState: $('#sampleState').val()});
+            }else {
+                $.table.search('dateSpan', tableId, '')
+            }
+        }else {
+            $.table.search('dateSpan', tableId, '')
+        }
     }
     /*信息刷新按钮*/
     function infoRefresh() {
@@ -704,27 +748,55 @@
     /*标本条码打印*/
     function barcodePrintSelect(tableId){
        var data = getSelections(tableId);
-       console.log(JSON.stringify(data));
+       var barcodes = '';
+        for(let i=0;i<data.length;i++){
+            barcodes +=data[i].barcode2 +'|'
+        }
         let i = 0;
-        for(i=0;i<data.length;i++){
-            JsBarcode("#imgCode",data[i].barcode,{
-               format:"CODE128",
-               width:2,
-            });
+        $.ajax({
+            type: "post",
+            url: prefix + "/changeBarcodeStatus",
+            data: {
+                "barcodes":barcodes,
+                "czz":userId,
+                "czfs":"barcodePrint"
+            },
+            success: function(r) {
+                if(r.code==0){
+                    var barcode= r.msg.split("|");
+                    if(barcode.length>0){
+                        for(let i = 0 ; i<barcode.length;i++){
+                            var data = $('#'+tableId).bootstrapTable('getRowByUniqueId',barcode[i])
+                            if(data!=null){
+                                JsBarcode("#imgCode",data.barcode,{
+                                    format:"CODE128",
+                                    width:2,
+                                });
 
-           $("#patientname").html(data[i].patientname);
-           $("#examname").html(data[i].examname);
-           $("#requettime").html(data[i].requettime);
-           $("#bednum").html(data[i].bednum);
-           $("#sglx").html(data[i].sglx);
-           $("#jsdd").html(data[i].jsdd);
-            prn1_preview("barcodePrint");
-       }
+                                $("#patientname").html(data.patientname);
+                                $("#examname").html(data.examname);
+                                $("#requettime").html(data.requettime);
+                                $("#bednum").html(data.bednum);
+                                $("#sglx").html(data.sglx);
+                                $("#jsdd").html(data.jsdd);
+                                prn1_preview("barcodePrint");
+                                queryBarcodeSearch(tableId);
+                            }
+                        }
+                    }
+                }else{
+                    $.modal.msgError('无可打印条码')
+                }
+            }
+        });
+
     }
+
+
+
     /*物流标贴重打*/
     function printlogistics() {
         var data = getSelections("specimenLogistics");
-        console.log(JSON.stringify(data));
         let i = 0;
         for(i=0;i<data.length;i++){
             JsBarcode("#imgCodelogistics",data[i].wlbh,{
@@ -737,6 +809,98 @@
             prn1_preview("logisticsPrint");
         }
     }
+    /*标本条码打印*/
+    function barcodeCancelSelect(tableId){
+        var data = getSelections(tableId);
+        var barcodes = '';
+        for(let i=0;i<data.length;i++){
+            barcodes +=data[i].barcode2 +'|'
+        }
+        $.ajax({
+            type: "post",
+            url: prefix + "/changeBarcodeStatus",
+            data: {
+                "barcodes":barcodes,
+                "czz":userId,
+                "czfs":"barcodeCancel"
+            },
+            success: function(r) {
+                if(r.code==0){
+                    queryBarcodeSearch(tableId);
+                }
+            }
+        });
+
+    }
+    function collectionConfirm() {
+        var data = getSelections("collectionConfirmation");
+        var barcodes='';
+        let i = 0;
+        for(i=0;i<data.length;i++){
+          barcodes +=data[i].barcode2 +'|';
+        }
+        $.ajax({
+            type: "post",
+            url: prefix + "/changeBarcodeStatus",
+            data: {
+                "barcodes":barcodes,
+                "czz":userId,
+                "czfs":"collectionConfirm"
+            },
+            success: function(r) {
+                if(r.code==0){
+                    queryBarcodeSearch("collectionConfirmation");
+                    //$('#collectionConfirmation').bootstrapTable('refresh')
+                }
+            }
+        });
+
+    }
+    function confirmCancel(){
+        var data = getSelections("collectionComplete");
+        var barcodes='';
+        let i = 0;
+        for(i=0;i<data.length;i++){
+            barcodes +=data[i].barcode2 +'|';
+        }
+        $.ajax({
+            type: "post",
+            url: prefix + "/changeBarcodeStatus",
+            data: {
+                "barcodes":barcodes,
+                "czz":userId,
+                "czfs":"confirmCancel"
+            },
+            success: function(r) {
+                if(r.code==0){
+                    queryBarcodeSearch("collectionComplete");
+                    //$('#collectionConfirmation').bootstrapTable('refresh')
+                }
+            }
+        });
+    }
+    $("#confirmBarcode").keydown(function(e) {
+        if (e.keyCode == 13) {
+            var barcode = document.getElementById('confirmBarcode').value;
+            if(barcode.length>0) {
+                console.log(barcode);
+                var data = $('#collectionConfirmation').bootstrapTable('getData');
+                let n = 0 ;
+                console.log(data);
+                for(let i=0;i<data.length;i++){
+                    if(barcode ==data[i].barcode){
+                        n++;
+                    }
+                }
+                if(n==0){
+                    $.modal.msgError('未找到条码')
+                }
+                $('#collectionConfirmation').bootstrapTable('checkBy',{field:"barcode",values:[barcode]});
+                $('#confirmBarcode').val('');
+
+            }
+        }
+    });
 
     /*=======================================================按钮事件================================================*/
 </script>

@@ -132,6 +132,73 @@ public interface WebServiceLisSoap {
     public String labDownInfoFee();
 
     /**
+     * SetBarOrderStatus，向平台发送条形码状态！strBarCode要求全码
+     *          0=申请中(可退费)；1=已申请；2=条码已打印；3=标本已采集；5=标本已核收；6=已执行；P初步报告；F=确认报告，11=LIS退回标本；H=标本已送出；Y=送达
+     * 
+     * @param strBarCode
+     * @param strOrderStatus
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "SetBarOrderStatus", action = "http://172.16.1.36/SetBarOrderStatus")
+    @WebResult(name = "SetBarOrderStatusResult", targetNamespace = "http://172.16.1.36")
+    @RequestWrapper(localName = "SetBarOrderStatus", targetNamespace = "http://172.16.1.36", className = "com.RealLis.specimenInhos.ws.wsdl.zhlisWsHerenLet.SetBarOrderStatus")
+    @ResponseWrapper(localName = "SetBarOrderStatusResponse", targetNamespace = "http://172.16.1.36", className = "com.RealLis.specimenInhos.ws.wsdl.zhlisWsHerenLet.SetBarOrderStatusResponse")
+    public String setBarOrderStatus(
+        @WebParam(name = "strBarCode", targetNamespace = "http://172.16.1.36")
+        String strBarCode,
+        @WebParam(name = "strOrderStatus", targetNamespace = "http://172.16.1.36")
+        String strOrderStatus);
+
+    /**
+     * LabChargeFee，向平台发送收费交易！ strBarCode要求全码， intChargeStatus：1收费，-1退费
+     * 
+     * @param strBarCode
+     * @param intChargeStatus
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "LabChargeFee", action = "http://172.16.1.36/LabChargeFee")
+    @WebResult(name = "LabChargeFeeResult", targetNamespace = "http://172.16.1.36")
+    @RequestWrapper(localName = "LabChargeFee", targetNamespace = "http://172.16.1.36", className = "com.RealLis.specimenInhos.ws.wsdl.zhlisWsHerenLet.LabChargeFee")
+    @ResponseWrapper(localName = "LabChargeFeeResponse", targetNamespace = "http://172.16.1.36", className = "com.RealLis.specimenInhos.ws.wsdl.zhlisWsHerenLet.LabChargeFeeResponse")
+    public String labChargeFee(
+        @WebParam(name = "strBarCode", targetNamespace = "http://172.16.1.36")
+        String strBarCode,
+        @WebParam(name = "intChargeStatus", targetNamespace = "http://172.16.1.36")
+        int intChargeStatus);
+
+    /**
+     * SendRiskValue，向平台发送收费交易！ 
+     * 
+     * @param strSampleNo
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "SendRiskValue", action = "http://172.16.1.36/SendRiskValue")
+    @WebResult(name = "SendRiskValueResult", targetNamespace = "http://172.16.1.36")
+    @RequestWrapper(localName = "SendRiskValue", targetNamespace = "http://172.16.1.36", className = "com.RealLis.specimenInhos.ws.wsdl.zhlisWsHerenLet.SendRiskValue")
+    @ResponseWrapper(localName = "SendRiskValueResponse", targetNamespace = "http://172.16.1.36", className = "com.RealLis.specimenInhos.ws.wsdl.zhlisWsHerenLet.SendRiskValueResponse")
+    public String sendRiskValue(
+        @WebParam(name = "strSampleNo", targetNamespace = "http://172.16.1.36")
+        String strSampleNo);
+
+    /**
+     * GetQueueNo，取LIS排队叫号！ 
+     * 
+     * @param strPatientId
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "GetQueueNo", action = "http://172.16.1.36/GetQueueNo")
+    @WebResult(name = "GetQueueNoResult", targetNamespace = "http://172.16.1.36")
+    @RequestWrapper(localName = "GetQueueNo", targetNamespace = "http://172.16.1.36", className = "com.RealLis.specimenInhos.ws.wsdl.zhlisWsHerenLet.GetQueueNo")
+    @ResponseWrapper(localName = "GetQueueNoResponse", targetNamespace = "http://172.16.1.36", className = "com.RealLis.specimenInhos.ws.wsdl.zhlisWsHerenLet.GetQueueNoResponse")
+    public String getQueueNo(
+        @WebParam(name = "strPatientId", targetNamespace = "http://172.16.1.36")
+        String strPatientId);
+
+    /**
      *  WebTest用于开发人员测试，参数传入时
      * 
      * @param strmess

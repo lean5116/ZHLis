@@ -3,11 +3,10 @@ package com.RealLis.specimenInhos.controller;
 import com.RealLis.common.core.controller.BaseController;
 import com.RealLis.common.core.domain.AjaxResult;
 import com.RealLis.common.core.page.TableDataInfo;
+import com.RealLis.common.utils.StringUtils;
 import com.RealLis.specimenInhos.domain.*;
-import com.RealLis.specimenInhos.service.HisAdviceService;
-import com.RealLis.specimenInhos.service.IViLisBarcodeInfoService;
-import com.RealLis.specimenInhos.service.LLogisticsService;
-import com.RealLis.specimenInhos.service.LSampletypeService;
+import com.RealLis.specimenInhos.domain.Formatter;
+import com.RealLis.specimenInhos.service.*;
 import com.RealLis.specimenInhos.ws.service.zhlisWsHerenLet.zhlisWsHerenLetService;
 import com.RealLis.specimenInhos.ws.wsdl.herenLisBarcode.InterfaceHr;
 import com.RealLis.specimenInhos.ws.wsdl.herenLisBarcode.InterfaceHrSoap;
@@ -24,8 +23,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import static com.RealLis.specimenInhos.utils.XmlConvert.XmlToJson;
 
@@ -44,6 +42,8 @@ public class SpecimenInhosController extends BaseController {
     private zhlisWsHerenLetService zhlisWsHerenLetService;
     @Autowired
     private HisAdviceService hisAdviceService;
+    @Autowired
+    private LJytmxxService lJytmxxService;
 
     @GetMapping("/{deptId}/{userId}")
     public String specimenInhos(@PathVariable String deptId , @PathVariable String userId, Model model){
@@ -232,5 +232,68 @@ public class SpecimenInhosController extends BaseController {
            return error();
        }
     }
+
+   // @ApiOperation("条码状态修改")
+   @PostMapping("/changeBarcodeStatus")
+   @ResponseBody
+   public AjaxResult changeBarcodeStatus(String barcodes,String czz,String czfs){
+        LJytmxx lJytmxx = new LJytmxx();
+        String[] barcode = barcodes.split("\\|");
+        String result = "";
+        int n = 0;
+        if(barcode!=null){
+           if(barcode.length>0) {
+               for (int i = 0; i < barcode.length; i++) {
+                   if (barcode[i].length() > 0) {
+                       lJytmxx.setDoctadviseno(barcode[i]);
+                       if ("barcodePrint".equals(czfs)) {
+                           lJytmxx.setBarstatus("1");
+                           lJytmxx.setPrinter(czz);
+                           lJytmxx.setDysj(new Date());
+                           Map<String, Object> params = new HashMap<>();
+                           params.put("barcodePrint", 0);
+                           lJytmxx.setParams(params);
+                           if (lJytmxxService.updateByBarcode(lJytmxx) > 0) {
+                               result += barcode[i] + "|";
+                           }
+
+                       } else if ("barcodeCancel".equals(czfs)) {
+
+                           lJytmxx.setBarstatus("-2");
+                           lJytmxx.setCanceler(czz);
+                           lJytmxx.setCanceltime(new Date());
+                           Map<String, Object> params = new HashMap<>();
+                           params.put("barcodeCancel", 0);
+                           lJytmxx.setParams(params);
+                           if (lJytmxxService.updateByBarcode(lJytmxx) > 0) {
+                              n++;
+                              result= Integer.toString(n);
+                           }
+                       } else if ("collectionConfirm".equals(czfs)) {
+                           lJytmxx.setExecutor(czz);
+                           lJytmxx.setBarstatus("2");
+                           lJytmxx.setExecutetime(new Date());
+                           Map<String, Object> params = new HashMap<>();
+                           params.put("collectionConfirm", 0);
+                           lJytmxx.setParams(params);
+                           if (lJytmxxService.updateByBarcode(lJytmxx) > 0) {
+                               n++;
+                               result= Integer.toString(n);
+                           }
+                       }else if("confirmCancel".equals(czfs)){
+                           Map<String, Object> params = new HashMap<>();
+                           params.put("confirmCancel", 0);
+                           lJytmxx.setParams(params);
+                           if(lJytmxxService.updateByBarcode(lJytmxx)>0){
+                               n++;
+                               result= Integer.toString(n);
+                           }
+                       }
+                   }
+               }
+           }
+       }
+       return success(result);
+   }
 
 }

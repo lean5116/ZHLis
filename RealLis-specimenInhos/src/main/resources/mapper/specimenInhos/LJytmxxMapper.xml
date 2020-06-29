@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.RealLis.specimenInhos.mapper.LjytmxxMapper">
+
+    <resultMap type="com.RealLis.specimenInhos.domain.LJytmxx" id="LJytmxxMap">
+        <result property="doctadviseno" column="DOCTADVISENO" />
+        <result property="requester" column="REQUESTER" />
+        <result property="requesttime" column="REQUESTTIME" />
+        <result property="section" column="SECTION" />
+        <result property="bedNo" column="BED_NO" />
+        <result property="stayhospitalmode" column="STAYHOSPITALMODE" />
+        <result property="brxz" column="BRXZ" />
+        <result property="patientid" column="PATIENTID" />
+        <result property="patientname" column="PATIENTNAME" />
+        <result property="sex" column="SEX" />
+        <result property="birthday" column="BIRTHDAY" />
+        <result property="age" column="AGE" />
+        <result property="ageUnit" column="AGE_UNIT" />
+        <result property="sampletype" column="SAMPLETYPE" />
+        <result property="toponymy" column="TOPONYMY" />
+        <result property="examinaim" column="EXAMINAIM" />
+        <result property="examinaimcode" column="EXAMINAIMCODE" />
+        <result property="requestmode" column="REQUESTMODE" />
+        <result property="fee" column="FEE" />
+        <result property="feestatus" column="FEESTATUS" />
+        <result property="executetime" column="EXECUTETIME" />
+        <result property="executor" column="EXECUTOR" />
+        <result property="receivetime" column="RECEIVETIME" />
+        <result property="receiver" column="RECEIVER" />
+        <result property="samplestatus" column="SAMPLESTATUS" />
+        <result property="sampleNotes" column="SAMPLE_NOTES" />
+        <result property="canceler" column="CANCELER" />
+        <result property="canceltime" column="CANCELTIME" />
+        <result property="notes" column="NOTES" />
+        <result property="diagnostic" column="DIAGNOSTIC" />
+        <result property="labdepartment" column="LABDEPARTMENT" />
+        <result property="cycle" column="CYCLE" />
+        <result property="sampleJszt" column="SAMPLE_JSZT" />
+        <result property="fphm" column="FPHM" />
+        <result property="transed" column="TRANSED" />
+        <result property="sampleno" column="SAMPLENO" />
+        <result property="perDoctadviseno" column="PER_DOCTADVISENO" />
+        <result property="jydh" column="JYDH" />
+        <result property="sjdw" column="SJDW" />
+        <result property="sglx" column="SGLX" />
+        <result property="jsdd" column="JSDD" />
+        <result property="zyh" column="ZYH" />
+        <result property="unitcode" column="UNITCODE" />
+        <result property="dycs" column="DYCS" />
+        <result property="dysj" column="DYSJ" />
+        <result property="barstatus" column="BARSTATUS" />
+        <result property="hyxm" column="HYXM" />
+        <result property="recordtime" column="RECORDTIME" />
+        <result property="computername" column="COMPUTERNAME" />
+        <result property="st2" column="ST2" />
+        <result property="st3" column="ST3" />
+        <result property="st4" column="ST4" />
+        <result property="st5" column="ST5" />
+        <result property="ver" column="VER" />
+        <result property="mpi" column="MPI" />
+        <result property="printer" column="PRINTER" />
+    </resultMap>
+
+
+
+    <!--通过主键修改数据-->
+    <update id="update" parameterType="com.RealLis.specimenInhos.domain.LJytmxx">
+        update ZHLIS.L_JYTMXX
+        <set>
+            <if test="requester != null">
+                REQUESTER = #{requester},
+            </if>
+            <if test="requesttime != null">
+                REQUESTTIME = #{requesttime},
+            </if>
+            <if test="section != null">
+                SECTION = #{section},
+            </if>
+            <if test="bedNo != null">
+                BED_NO = #{bedNo},
+            </if>
+            <if test="stayhospitalmode != null">
+                STAYHOSPITALMODE = #{stayhospitalmode},
+            </if>
+            <if test="brxz != null">
+                BRXZ = #{brxz},
+            </if>
+            <if test="patientid != null">
+                PATIENTID = #{patientid},
+            </if>
+            <if test="patientname != null">
+                PATIENTNAME = #{patientname},
+            </if>
+            <if test="sex != null and sex != ''">
+                SEX = #{sex},
+            </if>
+            <if test="birthday != null">
+                BIRTHDAY = #{birthday},
+            </if>
+            <if test="age != null">
+                AGE = #{age},
+            </if>
+            <if test="ageUnit != null and ageUnit != ''">
+                AGE_UNIT = #{ageUnit},
+            </if>
+            <if test="sampletype != null">
+                SAMPLETYPE = #{sampletype},
+            </if>
+            <if test="toponymy != null">
+                TOPONYMY = #{toponymy},
+            </if>
+            <if test="examinaim != null">
+                EXAMINAIM = #{examinaim},
+            </if>
+            <if test="examinaimcode != null">
+                EXAMINAIMCODE = #{examinaimcode},
+            </if>
+            <if test="requestmode != null">
+                REQUESTMODE = #{requestmode},
+            </if>
+            <if test="fee != null">
+                FEE = #{fee},
+            </if>
+            <if test="feestatus != null">
+                FEESTATUS = #{feestatus},
+            </if>
+            <if test="executetime != null">
+                EXECUTETIME = sysdate,
+            </if>
+            <if test="executor != null">
+                EXECUTOR = #{executor},
+            </if>
+            <if test="receivetime != null">
+                RECEIVETIME = #{receivetime},
+            </if>
+            <if test="receiver != null">
+                RECEIVER = #{receiver},
+            </if>
+            <if test="samplestatus != null">
+                SAMPLESTATUS = #{samplestatus},
+            </if>
+            <if test="sampleNotes != null">
+                SAMPLE_NOTES = #{sampleNotes},
+            </if>
+            <if test="canceler != null">
+                CANCELER = #{canceler},
+            </if>
+            <if test="canceltime != null">
+                CANCELTIME = sysdate,
+            </if>
+            <if test="notes != null">
+                NOTES = #{notes},
+            </if>
+            <if test="diagnostic != null">
+                DIAGNOSTIC = #{diagnostic},
+            </if>
+            <if test="labdepartment != null">
+                LABDEPARTMENT = #{labdepartment},
+            </if>
+            <if test="cycle != null">
+                CYCLE = #{cycle},
+            </if>
+            <if test="sampleJszt != null">
+                SAMPLE_JSZT = #{sampleJszt},
+            </if>
+            <if test="fphm != null">
+                FPHM = #{fphm},
+            </if>
+            <if test="transed != null">
+                TRANSED = #{transed},
+            </if>
+            <if test="sampleno != null">
+                SAMPLENO = #{sampleno},
+            </if>
+            <if test="perDoctadviseno != null">
+                PER_DOCTADVISENO = #{perDoctadviseno},
+            </if>
+            <if test="jydh != null">
+                JYDH = #{jydh},
+            </if>
+            <if test="sjdw != null">
+                SJDW = #{sjdw},
+            </if>
+            <if test="sglx != null">
+                SGLX = #{sglx},
+            </if>
+            <if test="jsdd != null">
+                JSDD = #{jsdd},
+            </if>
+            <if test="zyh != null">
+                ZYH = #{zyh},
+            </if>
+            <if test="unitcode != null">
+                UNITCODE = #{unitcode},
+            </if>
+            <if test="dycs != null">
+                DYCS = NVL(DYCS,0) + 1,
+            </if>
+            <if test="dysj != null">
+                DYSJ = sysdate,
+            </if>
+            <if test="barstatus != null">
+                BARSTATUS = #{barstatus},
+            </if>
+            <if test="hyxm != null">
+                HYXM = #{hyxm},
+            </if>
+            <if test="recordtime != null">
+                RECORDTIME = #{recordtime},
+            </if>
+            <if test="computername != null">
+                COMPUTERNAME = #{computername},
+            </if>
+            <if test="st2 != null">
+                ST2 = #{st2},
+            </if>
+            <if test="st3 != null">
+                ST3 = #{st3},
+            </if>
+            <if test="st4 != null">
+                ST4 = #{st4},
+            </if>
+            <if test="st5 != null">
+                ST5 = #{st5},
+            </if>
+            <if test="ver != null">
+                VER = #{ver},
+            </if>
+            <if test="mpi != null">
+                MPI = #{mpi},
+            </if>
+            <if test="printer != null">
+                PRINTER = #{printer},
+            </if>
+        </set>
+        <where>
+            DOCTADVISENO = #{doctadviseno}
+            <if test="params.barcodePrint == 0">
+                And (BarStatus = 0 Or BarStatus = -1 or BarStatus =1 )
+                And NVL(DYCS,0) &lt; 9
+            </if>
+            <if test="params.barcodeCancel == 0">
+                and (BarStatus !=3  and BarStatus !=4)
+            </if>
+            <if test="params.collectionConfirm == 0">
+                and (BarStatus = 1 )
+            </if>
+        </where>
+    </update>
+
+
+    <!--通过主键修改数据-->
+    <update id="removeExecutTime" parameterType="com.RealLis.specimenInhos.domain.LJytmxx">
+        update ZHLIS.L_JYTMXX
+        <set>
+                EXECUTETIME = null ,
+                EXECUTOR = null,
+        </set>
+        <where>
+            DOCTADVISENO = #{doctadviseno}
+            and BarStatus = 2
+        </where>
+    </update>
+</mapper>

@@ -116,6 +116,65 @@ public interface WebServiceLisHttpPost {
     public String labDownInfoFee();
 
     /**
+     * SetBarOrderStatus，向平台发送条形码状态！strBarCode要求全码
+     *          0=申请中(可退费)；1=已申请；2=条码已打印；3=标本已采集；5=标本已核收；6=已执行；P初步报告；F=确认报告，11=LIS退回标本；H=标本已送出；Y=送达
+     * 
+     * @param strBarCode
+     * @param strOrderStatus
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "SetBarOrderStatus")
+    @WebResult(name = "string", targetNamespace = "http://172.16.1.36", partName = "Body")
+    public String setBarOrderStatus(
+        @WebParam(name = "string", targetNamespace = "http://www.w3.org/2001/XMLSchema", partName = "strBarCode")
+        String strBarCode,
+        @WebParam(name = "string", targetNamespace = "http://www.w3.org/2001/XMLSchema", partName = "strOrderStatus")
+        String strOrderStatus);
+
+    /**
+     * LabChargeFee，向平台发送收费交易！ strBarCode要求全码， intChargeStatus：1收费，-1退费
+     * 
+     * @param strBarCode
+     * @param intChargeStatus
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "LabChargeFee")
+    @WebResult(name = "string", targetNamespace = "http://172.16.1.36", partName = "Body")
+    public String labChargeFee(
+        @WebParam(name = "string", targetNamespace = "http://www.w3.org/2001/XMLSchema", partName = "strBarCode")
+        String strBarCode,
+        @WebParam(name = "string", targetNamespace = "http://www.w3.org/2001/XMLSchema", partName = "intChargeStatus")
+        String intChargeStatus);
+
+    /**
+     * SendRiskValue，向平台发送收费交易！ 
+     * 
+     * @param strSampleNo
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "SendRiskValue")
+    @WebResult(name = "string", targetNamespace = "http://172.16.1.36", partName = "Body")
+    public String sendRiskValue(
+        @WebParam(name = "string", targetNamespace = "http://www.w3.org/2001/XMLSchema", partName = "strSampleNo")
+        String strSampleNo);
+
+    /**
+     * GetQueueNo，取LIS排队叫号！ 
+     * 
+     * @param strPatientId
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "GetQueueNo")
+    @WebResult(name = "string", targetNamespace = "http://172.16.1.36", partName = "Body")
+    public String getQueueNo(
+        @WebParam(name = "string", targetNamespace = "http://www.w3.org/2001/XMLSchema", partName = "strPatientId")
+        String strPatientId);
+
+    /**
      *  WebTest用于开发人员测试，参数传入时
      * 
      * @param strmess

@@ -8,6 +8,7 @@ import java.util.Date;
 public class ViLisBarcodeInfo extends BaseEntity {
 
   private String barcode;
+  private String barcode2;
   private String requestmode;
   private String requestdoctor;
   private Date requettime;
@@ -50,6 +51,14 @@ public class ViLisBarcodeInfo extends BaseEntity {
 
   public void setBarcode(String barcode) {
     this.barcode = barcode;
+  }
+
+  public String getBarcode2() {
+    return barcode2;
+  }
+
+  public void setBarcode2(String barcode2) {
+    this.barcode2 = barcode2;
   }
 
   public String getRequestmode() {
@@ -324,15 +333,6 @@ public class ViLisBarcodeInfo extends BaseEntity {
     this.sampleState = sampleState;
   }
 
-  @Override
-  public String getSearchValue() {
-    return searchValue;
-  }
-
-  @Override
-  public void setSearchValue(String searchValue) {
-    this.searchValue = searchValue;
-  }
 
   public ViLisBarcodeInfo(String barcode, String requestmode, String requestdoctor, Date requettime, String department, String bednum, String patienttype, String patientid, String patientname, String patientsex, Date birthday, String patientage, String ageunit, String specimencode, String barclass, String examcode, String examname, String cost, String coststatus, Date samplingtime, String samplingdoctor, Date receivertime, String labdoctor, String barstatus, String canceler, Date canceltime, String diagnostic, Date startRequettime, Date endRequettime, Date startReceivertime, Date endReceivertime, Date startSamplingtime, Date endSamplingtime, String overTime, String sampleState, String searchValue) {
     this.barcode = barcode;

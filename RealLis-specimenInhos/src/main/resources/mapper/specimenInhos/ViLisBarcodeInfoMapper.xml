@@ -4,6 +4,7 @@
 
     <resultMap type="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo" id="ViLisBarcodeInfoMap">
         <result property="barcode" column="BARCODE" />
+        <result property="barcode2" column="BARCODE2" />
         <result property="requestmode" column="REQUESTMODE" />
         <result property="requestdoctor" column="REQUESTDOCTOR"/>
         <result property="requettime" column="REQUETTIME"  />
@@ -33,7 +34,7 @@
     </resultMap>
     <select id="queryInfoList" resultMap="ViLisBarcodeInfoMap" parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
         select
-        BARCODE, REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID, PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST, COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME, DIAGNOSTIC
+        BARCODE, BARCODE2,REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID, PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST, COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME, DIAGNOSTIC
         from ZHLIS.VI_LIS_BARCODE_INFO
         <where>
 <!--            <if test="params.beginTime != null and params.beginTime != ''">-->
@@ -64,13 +65,13 @@
                 and BARCODE like concat(concat('%',#{searchValue,jdbcType=VARCHAR}),'%')
             </if>
         </where>
-        order by  BEDNUM
+        order by  BEDNUM,REQUETTIME
     </select>
 
 
     <select id="queryInfo" resultMap="ViLisBarcodeInfoMap" parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
         select
-        BARCODE, REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID, PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST, COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME, DIAGNOSTIC
+        BARCODE, BARCODE,REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID, PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST, COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME, DIAGNOSTIC
         from ZHLIS.VI_LIS_BARCODE_INFO
         <where>
             <if test="department!=null and department !=''">
