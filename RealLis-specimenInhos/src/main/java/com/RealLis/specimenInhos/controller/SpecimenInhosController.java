@@ -237,7 +237,12 @@ public class SpecimenInhosController extends BaseController {
        }
     }
 
-   // @ApiOperation("条码状态修改")
+    @ApiOperation("条码状态修改")
+    @ApiImplicitParams( {
+            @ApiImplicitParam (name = "barcodes", value = "选中条码号", dataType = "String"),
+            @ApiImplicitParam (name = "czz", value = "操作员", dataType = "String"),
+            @ApiImplicitParam (name = "czfs", value = "操作方式", dataType = "String")
+    })
    @PostMapping("/changeBarcodeStatus")
    @ResponseBody
    public AjaxResult changeBarcodeStatus(String barcodes,String czz,String czfs){
