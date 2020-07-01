@@ -293,6 +293,36 @@
             <result property="ZMIC3_2" column="ZMIC3_2"/>
         </association>
     </resultMap>
+    <select id="queryGermZMIC" resultMap="ZMIC">
 
+    </select>
+    <resultMap id="germOBX" type="com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.germOBX">
+        <result property="OBX1" column="OBX1" />
+        <result property="OBX2" column="OBX2" />
+
+        <result property="OBX4" column="OBX4" />
+        <result property="OBX5" column="OBX5" />
+        <result property="OBX6" column="OBX6" />
+        <result property="OBX7" column="OBX7" />
+        <result property="OBX8" column="OBX8" />
+        <result property="OBX9" column="OBX9" />
+        <result property="OBX10" column="OBX10" />
+        <result property="OBX11" column="OBX11" />
+        <result property="OBX12" column="OBX12" />
+        <result property="OBX13" column="OBX13" />
+        <result property="OBX14" column="OBX14" />
+        <result property="OBX15" column="OBX15" />
+        <result property="OBX16" column="OBX16" />
+        <result property="OBX17" column="OBX17" />
+        <result property="OBX18" column="OBX18" />
+        <association property="OBX3" javaType="com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.packageOBX.germOBX3">
+            <id property="OBX3_1" column="OBX3_1"/>
+            <result property="OBX3_2" column="OBX3_2"/>
+            <result property="OBX3_3" column="OBX3_3"/>
+        </association>
+    </resultMap>
+    <select id="queryGermOBX" resultMap="germOBX">
+
+    </select>
 
 </mapper>

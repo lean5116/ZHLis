@@ -7,6 +7,8 @@ import com.RealLis.common.core.text.Convert;
 import com.RealLis.specimenInhos.domain.*;
 import com.RealLis.specimenInhos.domain.Formatter;
 import com.RealLis.specimenInhos.domain.PostBack.*;
+import com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.ZMIC;
+import com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.germOBX;
 import com.RealLis.specimenInhos.domain.PostBack.reportPostBack.OBX;
 import com.RealLis.specimenInhos.service.*;
 import com.RealLis.specimenInhos.ws.service.LisCommonWS.LisCommonWSService;
@@ -361,6 +363,7 @@ public class SpecimenInhosController extends BaseController {
         if(obrList!=null){
             if(obrList.size()>0){
                 for(int i = 0 ; i<obrList.size();i++){
+
                     result+=obrList.get(i).toString() ;
                 }
             }
@@ -377,4 +380,75 @@ public class SpecimenInhosController extends BaseController {
        System.out.println(result);
         return lisCommonWSService.reportPostBack(result);
    }
+
+    @RequestMapping("/germReportPostBack/{sampleno}")
+    @ResponseBody
+    public String germgetReportPostBack(@PathVariable  String sampleno){
+        String result = "";
+        MSH msh =new MSH();
+        //region MSH初始化
+        msh.setMSH1("|");
+        msh.setMSH2("^~\\&");
+        msh.setMSH3("LIS");
+        msh.setMSH4("");//发送院区
+        msh.setMSH5("HIS");
+        msh.setMSH6("");//接收院区
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
+        msh.setMSH7(formatter.format(new Date()) +"+0800");
+        msh.setMSH9("OUL^R21");
+        msh.setMSH10(UUID.randomUUID().toString());
+        msh.setMSH11("P");
+        msh.setMSH12("2.4");
+        msh.setMSH15("NE");
+        msh.setMSH16("AL");
+        msh.setMSH18("utf-8");
+        //endregion
+        result+=msh.toString();
+        PID pid =  reportPostBackService.getPIDbySampleno(sampleno);
+        if(pid!=null) {
+            pid.setPID1("1");
+            pid.setPID2("10000250");
+            pid.setPID3("10000250");
+            result += pid.toString() ;
+        }
+        PV1 pv1 = reportPostBackService.getPV1bySampleno(sampleno);
+        if(pv1!=null) {
+            pv1.setPV1_1("1");
+            pv1.setPV1_19("20200701000003");
+            result += pv1.toString() ;
+        }
+        ORC orc = reportPostBackService.getORCbySampleno(sampleno);
+        if(orc!=null) {
+            orc.getORC4().setORC4_1("2020070100000206");
+            result += orc.toString() ;
+        }
+        List<OBR> obrList = reportPostBackService.getOBRbySampleno(sampleno);
+        if(obrList!=null){
+            if(obrList.size()>0){
+                for(int i = 0 ; i<obrList.size();i++){
+
+                    result+=obrList.get(i).toString() ;
+                }
+            }
+        }
+        List<germOBX> obxList = reportPostBackService.getGermOBXBySampleno(sampleno);
+        if(obxList!=null){
+            if(obxList.size()>0){
+                for(int i=0;i<obxList.size();i++){
+                    obxList.get(i).setOBX1(Convert.toStr(i+1));
+                    result+=obxList.get(i).toString();
+                }
+            }
+        }
+        List<ZMIC> zmicList=reportPostBackService.getGermZMICBySampleno(sampleno);
+        if(zmicList!=null){
+            if(zmicList.size()>0){
+                for(int i =0;i<zmicList.size();i++){
+                    result+=zmicList.get(i).toString();
+                }
+            }
+        }
+        System.out.println(result);
+        return lisCommonWSService.reportPostBack(result);
+    }
 }
