@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.RealLis.specimenInhos.mapper.ReportPostBackMapper">
+    <resultMap id="PID" type="com.RealLis.specimenInhos.domain.PostBack.PID">
+        <result property="PID1" column="PID1" />
+        <result property="PID2" column="PID2" />
+        <result property="PID3" column="PID3" />
+        <result property="PID4" column="PID4" />
+
+        <result property="PID6" column="PID6" />
+        <result property="PID7" column="PID7" />
+        <result property="PID8" column="PID8" />
+        <result property="PID9" column="PID9" />
+        <result property="PID10" column="PID10" />
+
+        <result property="PID12" column="PID12" />
+
+        <result property="PID14" column="PID14" />
+        <result property="PID15" column="PID15" />
+        <result property="PID16" column="PID16" />
+        <result property="PID17" column="PID17" />
+        <result property="PID18" column="PID18" />
+        <result property="PID19" column="PID19" />
+        <result property="PID20" column="PID20" />
+        <result property="PID21" column="PID21" />
+        <result property="PID22" column="PID22" />
+        <association property="PID5" javaType="com.RealLis.specimenInhos.domain.PostBack.packagePID.PID5">
+            <id property="PID5_1" column="PID5_1"/>
+            <result property="PID5_2" column="PID5_2"/>
+            <result property="PID5_3" column="PID5_3"/>
+            <result property="PID5_4" column="PID5_4"/>
+            <result property="PID5_5" column="PID5_5"/>
+        </association>
+        <association property="PID11" javaType="com.RealLis.specimenInhos.domain.PostBack.packagePID.PID11">
+            <id property="PID11_1" column="PID11_1"/>
+            <result property="PID11_2" column="PID11_2"/>
+        </association>
+        <association property="PID13" javaType="com.RealLis.specimenInhos.domain.PostBack.packagePID.PID11">
+            <id property="PID13_1" column="PID13_1"/>
+            <result property="PID13_2" column="PID13_2"/>
+        </association>
+    </resultMap>
+    <select id="queryPID" resultMap="PID">
+        select * from ZHLIS.OML_O21_pid where sampleno = #{sampleno}
+    </select>
+    <resultMap id="PV1" type="com.RealLis.specimenInhos.domain.PostBack.PV1">
+        <result property="PV1_1" column="PV1_1" />
+        <result property="PV1_2" column="PV1_2" />
+
+        <result property="PV1_4" column="PV1_4" />
+        <result property="PV1_5" column="PV1_5" />
+        <result property="PV1_6" column="PV1_6" />
+
+
+        <result property="PV1_9" column="PV1_9" />
+        <result property="PV1_10" column="PV1_10" />
+        <result property="PV1_11" column="PV1_11" />
+        <result property="PV1_12" column="PV1_12" />
+        <result property="PV1_13" column="PV1_13" />
+        <result property="PV1_14" column="PV1_14" />
+        <result property="PV1_15" column="PV1_15" />
+        <result property="PV1_16" column="PV1_16" />
+
+        <result property="PV1_18" column="PV1_18" />
+        <result property="PV1_19" column="PV1_19" />
+        <result property="PV1_20" column="PV1_20" />
+        <result property="PV1_21" column="PV1_21" />
+        <result property="PV1_22" column="PV1_22" />
+        <result property="PV1_23" column="PV1_23" />
+        <result property="PV1_24" column="PV1_24" />
+        <result property="PV1_25" column="PV1_25" />
+        <result property="PV1_26" column="PV1_26" />
+        <result property="PV1_27" column="PV1_27" />
+        <result property="PV1_28" column="PV1_28" />
+        <result property="PV1_29" column="PV1_29" />
+        <result property="PV1_30" column="PV1_30" />
+        <result property="PV1_31" column="PV1_31" />
+        <result property="PV1_32" column="PV1_32" />
+        <result property="PV1_33" column="PV1_33" />
+        <result property="PV1_34" column="PV1_34" />
+        <result property="PV1_35" column="PV1_35" />
+        <result property="PV1_36" column="PV1_36" />
+        <result property="PV1_37" column="PV1_37" />
+        <result property="PV1_38" column="PV1_38" />
+        <result property="PV1_39" column="PV1_39" />
+        <result property="PV1_40" column="PV1_40" />
+        <result property="PV1_41" column="PV1_41" />
+        <result property="PV1_42" column="PV1_42" />
+        <result property="PV1_43" column="PV1_43" />
+        <result property="PV1_44" column="PV1_44" />
+        <result property="PV1_45" column="PV1_45" />
+
+        <association property="PV1_3" javaType="com.RealLis.specimenInhos.domain.PostBack.packagePV1.PV1_3">
+            <id property="PV1_3_1" column="PV1_3_1"/>
+            <result property="PV1_3_2" column="PV1_3_2"/>
+            <result property="PV1_3_3" column="PV1_3_3"/>
+            <result property="PV1_3_4" column="PV1_3_4"/>
+            <result property="PV1_3_5" column="PV1_3_5"/>
+            <result property="PV1_3_6" column="PV1_3_6"/>
+            <result property="PV1_3_7" column="PV1_3_7"/>
+            <result property="PV1_3_8" column="PV1_3_8"/>
+        </association>
+        <association property="PV1_7" javaType="com.RealLis.specimenInhos.domain.PostBack.packagePV1.PV1_7">
+            <id property="PV1_7_1" column="PV1_7_1"/>
+            <result property="PV1_7_2" column="PV1_7_2"/>
+        </association>
+        <association property="PV1_8" javaType="com.RealLis.specimenInhos.domain.PostBack.packagePV1.PV1_8">
+            <id property="PV1_8_1" column="PV1_8_1"/>
+            <result property="PV1_8_2" column="PV1_8_2"/>
+        </association>
+        <association property="PV1_17" javaType="com.RealLis.specimenInhos.domain.PostBack.packagePV1.PV1_17">
+            <id property="PV1_17_1" column="PV1_17_1"/>
+            <result property="PV1_17_2" column="PV1_17_2"/>
+        </association>
+    </resultMap>
+    <select id="queryPV1" resultMap="PV1">
+        select * from OML_O21_pv1 where sampleno = #{sampleno}
+    </select>
+
+    <resultMap id="ORC" type="com.RealLis.specimenInhos.domain.PostBack.ORC">
+        <result property="ORC1" column="ORC1" />
+
+        <result property="ORC3" column="ORC1" />
+
+        <result property="ORC5" column="ORC1" />
+        <result property="ORC6" column="ORC1" />
+        <result property="ORC7" column="ORC1" />
+        <result property="ORC8" column="ORC1" />
+        <result property="ORC9" column="ORC1" />
+        <result property="ORC10" column="ORC1" />
+        <result property="ORC11" column="ORC1" />
+
+
+        <result property="ORC14" column="ORC1" />
+        <result property="ORC15" column="ORC1" />
+        <result property="ORC16" column="ORC1" />
+
+        <result property="ORC18" column="ORC1" />
+
+        <association property="ORC2" javaType="com.RealLis.specimenInhos.domain.PostBack.packageORC.ORC2">
+            <id property="ORC2_1" column="ORC2_1"/>
+            <result property="ORC2_2" column="ORC2_2"/>
+        </association>
+        <association property="ORC4" javaType="com.RealLis.specimenInhos.domain.PostBack.packageORC.ORC4">
+            <id property="ORC4_1" column="ORC4_1"/>
+            <result property="ORC4_2" column="ORC4_2"/>
+        </association>
+        <association property="ORC12" javaType="com.RealLis.specimenInhos.domain.PostBack.packageORC.ORC12">
+            <id property="ORC12_1" column="ORC12_1"/>
+            <result property="ORC12_2" column="ORC12_2"/>
+        </association>
+        <association property="ORC13" javaType="com.RealLis.specimenInhos.domain.PostBack.packageORC.ORC13">
+            <id property="ORC13_1" column="ORC13_1"/>
+            <result property="ORC13_2" column="ORC13_2"/>
+        </association>
+        <association property="ORC17" javaType="com.RealLis.specimenInhos.domain.PostBack.packageORC.ORC17">
+            <id property="ORC17_1" column="ORC17_1"/>
+            <result property="ORC17_2" column="ORC17_2"/>
+        </association>
+        <association property="ORC19" javaType="com.RealLis.specimenInhos.domain.PostBack.packageORC.ORC19">
+            <id property="ORC19_1" column="ORC19_1"/>
+            <result property="ORC19_2" column="ORC19_2"/>
+        </association>
+    </resultMap>
+    <select id="queryORC" resultMap="ORC">
+        select * from OML_O21_orc where sampleno = #{sampleno}
+    </select>
+
+    <resultMap id="OBR" type="com.RealLis.specimenInhos.domain.PostBack.OBR">
+        <result property="OBR1" column="OBR1" />
+        <result property="OBR2" column="OBR2" />
+        <result property="OBR3" column="OBR3" />
+
+        <result property="OBR5" column="OBR5" />
+        <result property="OBR6" column="OBR6" />
+        <result property="OBR7" column="OBR7" />
+        <result property="OBR8" column="OBR8" />
+        <result property="OBR9" column="OBR9" />
+        <result property="OBR10" column="OBR10" />
+        <result property="OBR11" column="OBR11" />
+        <result property="OBR12" column="OBR12" />
+        <result property="OBR13" column="OBR13" />
+        <result property="OBR14" column="OBR14" />
+
+        <result property="OBR16" column="OBR16" />
+        <result property="OBR17" column="OBR17" />
+        <result property="OBR18" column="OBR18" />
+        <result property="OBR19" column="OBR19" />
+        <result property="OBR20" column="OBR20" />
+        <result property="OBR21" column="OBR21" />
+        <result property="OBR22" column="OBR22" />
+        <result property="OBR23" column="OBR23" />
+        <result property="OBR24" column="OBR24" />
+        <result property="OBR25" column="OBR25" />
+        <result property="OBR26" column="OBR26" />
+        <result property="OBR27" column="OBR27" />
+        <result property="OBR28" column="OBR28" />
+        <result property="OBR29" column="OBR29" />
+        <result property="OBR30" column="OBR30" />
+        <result property="OBR31" column="OBR31" />
+
+
+        <result property="OBR36" column="OBR36" />
+        <result property="OBR37" column="OBR37" />
+        <result property="OBR38" column="OBR38" />
+
+        <result property="OBR40" column="OBR40" />
+        <result property="OBR41" column="OBR41" />
+        <result property="OBR42" column="OBR42" />
+        <result property="OBR43" column="OBR43" />
+        <result property="OBR44" column="OBR44" />
+        <result property="OBR45" column="OBR45" />
+        <result property="OBR46" column="OBR46" />
+        <association property="OBR4" javaType="com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR4">
+            <id property="OBR4_1" column="OBR4_1"/>
+            <result property="OBR4_2" column="OBR4_2"/>
+            <result property="OBR4_3" column="OBR4_3"/>
+            <result property="OBR4_4" column="OBR4_4"/>
+        </association>
+        <association property="OBR15" javaType="com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR15">
+            <id property="OBR15_1" column="OBR15_1"/>
+            <result property="OBR15_2" column="OBR15_2"/>
+        </association>
+        <association property="OBR32" javaType="com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR32">
+            <id property="OBR32_1" column="OBR32_1"/>
+            <result property="OBR32_2" column="OBR32_2"/>
+        </association>
+        <association property="OBR33" javaType="com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR33">
+            <id property="OBR33_1" column="OBR33_1"/>
+            <result property="OBR33_2" column="OBR33_2"/>
+        </association>
+        <association property="OBR34" javaType="com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR34">
+            <id property="OBR34_1" column="OBR34_1"/>
+            <result property="OBR34_2" column="OBR34_2"/>
+        </association>
+        <association property="OBR35" javaType="com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR35">
+            <id property="OBR35_1" column="OBR35_1"/>
+            <result property="OBR35_2" column="OBR35_2"/>
+            <result property="OBR35_3" column="OBR35_3"/>
+        </association>
+        <association property="OBR39" javaType="com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR39">
+            <id property="OBR39_1" column="OBR39_1"/>
+            <result property="OBR39_2" column="OBR39_2"/>
+        </association>
+    </resultMap>
+    <select id="queryOBR" resultMap="OBR">
+        select * from OML_O21_obr where sampleno = #{sampleno}
+    </select>
+
+    <resultMap id="OBX" type="com.RealLis.specimenInhos.domain.PostBack.reportPostBack.OBX">
+        <result property="OBX1" column="OBX1" />
+        <result property="OBX2" column="OBX2" />
+
+        <result property="OBX4" column="OBX4" />
+        <result property="OBX5" column="OBX5" />
+        <result property="OBX6" column="OBX6" />
+        <result property="OBX7" column="OBX7" />
+        <result property="OBX8" column="OBX8" />
+        <result property="OBX9" column="OBX9" />
+        <result property="OBX10" column="OBX10" />
+        <result property="OBX11" column="OBX11" />
+        <result property="OBX12" column="OBX12" />
+        <result property="OBX13" column="OBX13" />
+        <result property="OBX14" column="OBX14" />
+        <result property="OBX15" column="OBX15" />
+        <result property="OBX16" column="OBX16" />
+        <result property="OBX17" column="OBX17" />
+        <result property="OBX18" column="OBX18" />
+        <result property="OBX19" column="OBX19" />
+
+        <association property="OBX3" javaType="com.RealLis.specimenInhos.domain.PostBack.reportPostBack.packageOBX.OBX3">
+            <id property="OBX3_1" column="OBX3_1"/>
+            <result property="OBX3_2" column="OBX3_2"/>
+        </association>
+    </resultMap>
+    <select id="queryOBX" resultMap="OBX">
+        select * from OML_O21_obx where sampleno = #{sampleno}
+    </select>
+
+
+    <resultMap id="ZMIC" type="com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.ZMIC">
+        <result property="ZMIC1" column="ZMIC1" />
+        <result property="ZMIC2" column="ZMIC2" />
+
+        <result property="ZMIC4" column="ZMIC4" />
+        <result property="ZMIC5" column="ZMIC5" />
+        <result property="ZMIC6" column="ZMIC6" />
+        <result property="ZMIC7" column="ZMIC7" />
+        <result property="ZMIC8" column="ZMIC8" />
+        <result property="ZMIC9" column="ZMIC9" />
+        <association property="ZMIC3" javaType="com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.packageZMIC.ZMIC3">
+            <id property="ZMIC3_1" column="ZMIC3_1"/>
+            <result property="ZMIC3_2" column="ZMIC3_2"/>
+        </association>
+    </resultMap>
+    <resultMap id="germOBX" type="com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.germOBX">
+        <result property="OBX1" column="OBX1" />
+        <result property="OBX2" column="OBX2" />
+
+        <result property="OBX4" column="OBX4" />
+        <result property="OBX5" column="OBX5" />
+        <result property="OBX6" column="OBX6" />
+        <result property="OBX7" column="OBX7" />
+        <result property="OBX8" column="OBX8" />
+        <result property="OBX9" column="OBX9" />
+        <result property="OBX10" column="OBX10" />
+        <result property="OBX11" column="OBX11" />
+        <result property="OBX12" column="OBX12" />
+        <result property="OBX13" column="OBX13" />
+        <result property="OBX14" column="OBX14" />
+        <result property="OBX15" column="OBX15" />
+        <result property="OBX16" column="OBX16" />
+        <result property="OBX17" column="OBX17" />
+        <result property="OBX18" column="OBX18" />
+        <association property="OBX3" javaType="com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.packageOBX.germOBX3">
+            <id property="OBX3_1" column="OBX3_1"/>
+            <result property="OBX3_2" column="OBX3_2"/>
+            <result property="OBX3_3" column="OBX3_3"/>
+        </association>
+    </resultMap>
+
+
+</mapper>

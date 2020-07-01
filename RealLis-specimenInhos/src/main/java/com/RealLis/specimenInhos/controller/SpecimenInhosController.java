@@ -3,10 +3,13 @@ package com.RealLis.specimenInhos.controller;
 import com.RealLis.common.core.controller.BaseController;
 import com.RealLis.common.core.domain.AjaxResult;
 import com.RealLis.common.core.page.TableDataInfo;
-import com.RealLis.common.utils.StringUtils;
+import com.RealLis.common.core.text.Convert;
 import com.RealLis.specimenInhos.domain.*;
 import com.RealLis.specimenInhos.domain.Formatter;
+import com.RealLis.specimenInhos.domain.PostBack.*;
+import com.RealLis.specimenInhos.domain.PostBack.reportPostBack.OBX;
 import com.RealLis.specimenInhos.service.*;
+import com.RealLis.specimenInhos.ws.service.LisCommonWS.LisCommonWSService;
 import com.RealLis.specimenInhos.ws.service.zhlisWsHerenLet.zhlisWsHerenLetService;
 import com.RealLis.specimenInhos.ws.wsdl.herenLisBarcode.InterfaceHr;
 import com.RealLis.specimenInhos.ws.wsdl.herenLisBarcode.InterfaceHrSoap;
@@ -44,7 +47,10 @@ public class SpecimenInhosController extends BaseController {
     private HisAdviceService hisAdviceService;
     @Autowired
     private LJytmxxService lJytmxxService;
-
+    @Autowired
+    private ReportPostBackService reportPostBackService;
+    @Autowired
+    private LisCommonWSService lisCommonWSService;
     @GetMapping("/{deptId}/{userId}")
     public String specimenInhos(@PathVariable String deptId , @PathVariable String userId, Model model){
         model.addAttribute("department",deptId);
@@ -243,6 +249,7 @@ public class SpecimenInhosController extends BaseController {
             @ApiImplicitParam (name = "czz", value = "操作员", dataType = "String"),
             @ApiImplicitParam (name = "czfs", value = "操作方式", dataType = "String")
     })
+
    @PostMapping("/changeBarcodeStatus")
    @ResponseBody
    public AjaxResult changeBarcodeStatus(String barcodes,String czz,String czfs){
@@ -309,4 +316,60 @@ public class SpecimenInhosController extends BaseController {
        return success(result);
    }
 
+   @RequestMapping("/ReportPostBack/{sampleno}")
+   @ResponseBody
+   public String getReportPostBack(@PathVariable  String sampleno){
+        String result = "";
+        MSH msh =new MSH();
+        //region MSH初始化
+        msh.setMSH1("|");
+        msh.setMSH2("^~\\&");
+        msh.setMSH3("LIS");
+        msh.setMSH4("");//发送院区
+        msh.setMSH5("HIS");
+        msh.setMSH6("");//接收院区
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
+        msh.setMSH7(formatter.format(new Date()) +"+0800");
+        msh.setMSH9("OUL^R21");
+        msh.setMSH10(UUID.randomUUID().toString());
+        msh.setMSH11("P");
+        msh.setMSH12("2.4");
+        msh.setMSH15("NE");
+        msh.setMSH16("AL");
+        msh.setMSH18("utf-8");
+        //endregion
+        result+=msh.toString();
+        PID pid =  reportPostBackService.getPIDbySampleno(sampleno);
+        if(pid!=null) {
+            pid.setPID1("1");
+            result += pid.toString() ;
+        }
+        PV1 pv1 = reportPostBackService.getPV1bySampleno(sampleno);
+        if(pv1!=null) {
+            result += pv1.toString() ;
+        }
+        ORC orc = reportPostBackService.getORCbySampleno(sampleno);
+        if(orc!=null) {
+            result += orc.toString() ;
+        }
+        List<OBR> obrList = reportPostBackService.getOBRbySampleno(sampleno);
+        if(obrList!=null){
+            if(obrList.size()>0){
+                for(int i = 0 ; i<obrList.size();i++){
+                    result+=obrList.get(i).toString() ;
+                }
+            }
+        }
+        List<OBX> obxList = reportPostBackService.getOBXbySampleno(sampleno);
+        if(obxList!=null){
+            if(obxList.size()>0){
+                for(int i=0;i<obxList.size();i++){
+                    obxList.get(i).setOBX1(Convert.toStr(i+1));
+                    result+=obxList.get(i).toString();
+                }
+            }
+        }
+
+        return lisCommonWSService.reportPostBack(result);
+   }
 }

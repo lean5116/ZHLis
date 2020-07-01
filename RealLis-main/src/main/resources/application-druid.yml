@@ -6,7 +6,7 @@ spring:
         druid:
             # 主库数据源
             master:
-                url: jdbc:oracle:thin:@172.16.1.39:1521:zhlis
+                url: jdbc:oracle:thin:@172.16.1.36:1521:zhlis
                 username: zhlis
                 password: zhsoft
             # 从库数据源
