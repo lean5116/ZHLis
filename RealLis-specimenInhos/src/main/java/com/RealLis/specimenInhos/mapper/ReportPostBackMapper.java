@@ -4,6 +4,8 @@ import com.RealLis.specimenInhos.domain.PostBack.OBR;
 import com.RealLis.specimenInhos.domain.PostBack.ORC;
 import com.RealLis.specimenInhos.domain.PostBack.PID;
 import com.RealLis.specimenInhos.domain.PostBack.PV1;
+import com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.ZMIC;
+import com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.germOBX;
 import com.RealLis.specimenInhos.domain.PostBack.reportPostBack.*;
 import org.springframework.stereotype.Repository;
 
@@ -16,4 +18,7 @@ public interface ReportPostBackMapper {
     public ORC queryORC(String sampleno);
     public List<OBR> queryOBR(String sampleno);
     public List<OBX> queryOBX(String sampleno);
+
+    public List<ZMIC> queryGermZMIC(String sampleno);
+    public List<germOBX> queryGermOBX(String sampleno);
 }

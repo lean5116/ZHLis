@@ -32,7 +32,7 @@ public class ORC13 {
 
     @Override
     public String toString() {
-        return  ORC13_1 + '\'' +
+        return  ORC13_1 + '^' +
                 ORC13_2 ;
     }
 }

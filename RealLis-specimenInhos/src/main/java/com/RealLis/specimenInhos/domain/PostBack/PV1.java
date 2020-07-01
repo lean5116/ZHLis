@@ -3,6 +3,7 @@ package com.RealLis.specimenInhos.domain.PostBack;
 import com.RealLis.specimenInhos.domain.PostBack.packagePV1.PV1_3;
 import com.RealLis.specimenInhos.domain.PostBack.packagePV1.PV1_7;
 import com.RealLis.specimenInhos.domain.PostBack.packagePV1.PV1_8;
+import com.RealLis.specimenInhos.domain.PostBack.packagePV1.PV1_17;
 
 public class PV1 {
     /*设定编号-PV1*/
@@ -38,7 +39,7 @@ public class PV1 {
     /*VIP标志*/
     private String PV1_16="";
     /*接诊医生*/
-    private String PV1_17="";
+    private PV1_17 PV1_17=new PV1_17();
     /*患者类别*/
     private String PV1_18="";
     /*就诊号*/
@@ -99,7 +100,7 @@ public class PV1 {
     public PV1() {
     }
 
-    public PV1(String PV1_1, String PV1_2, com.RealLis.specimenInhos.domain.PostBack.packagePV1.PV1_3 PV1_3, String PV1_4, String PV1_5, String PV1_6, com.RealLis.specimenInhos.domain.PostBack.packagePV1.PV1_7 PV1_7, com.RealLis.specimenInhos.domain.PostBack.packagePV1.PV1_8 PV1_8, String PV1_9, String PV1_10, String PV1_11, String PV1_12, String PV1_13, String PV1_14, String PV1_15, String PV1_16, String PV1_17, String PV1_18, String PV1_19, String PV1_20, String PV1_21, String PV1_22, String PV1_23, String PV1_24, String PV1_25, String PV1_26, String PV1_27, String PV1_28, String PV1_29, String PV1_30, String PV1_31, String PV1_32, String PV1_33, String PV1_34, String PV1_35, String PV1_36, String PV1_37, String PV1_38, String PV1_39, String PV1_40, String PV1_41, String PV1_42, String PV1_43, String PV1_44, String PV1_45) {
+    public PV1(String PV1_1, String PV1_2, com.RealLis.specimenInhos.domain.PostBack.packagePV1.PV1_3 PV1_3, String PV1_4, String PV1_5, String PV1_6, com.RealLis.specimenInhos.domain.PostBack.packagePV1.PV1_7 PV1_7, com.RealLis.specimenInhos.domain.PostBack.packagePV1.PV1_8 PV1_8, String PV1_9, String PV1_10, String PV1_11, String PV1_12, String PV1_13, String PV1_14, String PV1_15, String PV1_16, PV1_17 PV1_17, String PV1_18, String PV1_19, String PV1_20, String PV1_21, String PV1_22, String PV1_23, String PV1_24, String PV1_25, String PV1_26, String PV1_27, String PV1_28, String PV1_29, String PV1_30, String PV1_31, String PV1_32, String PV1_33, String PV1_34, String PV1_35, String PV1_36, String PV1_37, String PV1_38, String PV1_39, String PV1_40, String PV1_41, String PV1_42, String PV1_43, String PV1_44, String PV1_45) {
         this.PV1_1 = PV1_1;
         this.PV1_2 = PV1_2;
         this.PV1_3 = PV1_3;
@@ -275,11 +276,11 @@ public class PV1 {
         this.PV1_16 = PV1_16;
     }
 
-    public String getPV1_17() {
+    public PV1_17 getPV1_17() {
         return PV1_17;
     }
 
-    public void setPV1_17(String PV1_17) {
+    public void setPV1_17(PV1_17 PV1_17) {
         this.PV1_17 = PV1_17;
     }
 
@@ -526,7 +527,7 @@ public class PV1 {
                 PV1_14 + '|' +
                 PV1_15 + '|' +
                 PV1_16 + '|' +
-                PV1_17 + '|' +
+                PV1_17.toString() + '|' +
                 PV1_18 + '|' +
                 PV1_19 + '|' +
                 PV1_20 + '|' +

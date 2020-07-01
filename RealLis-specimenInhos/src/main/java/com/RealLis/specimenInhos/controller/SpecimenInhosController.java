@@ -342,14 +342,19 @@ public class SpecimenInhosController extends BaseController {
         PID pid =  reportPostBackService.getPIDbySampleno(sampleno);
         if(pid!=null) {
             pid.setPID1("1");
+            pid.setPID2("10000250");
+            pid.setPID3("10000250");
             result += pid.toString() ;
         }
         PV1 pv1 = reportPostBackService.getPV1bySampleno(sampleno);
         if(pv1!=null) {
+            pv1.setPV1_1("1");
+            pv1.setPV1_19("20200701000003");
             result += pv1.toString() ;
         }
         ORC orc = reportPostBackService.getORCbySampleno(sampleno);
         if(orc!=null) {
+            orc.getORC4().setORC4_1("2020070100000206");
             result += orc.toString() ;
         }
         List<OBR> obrList = reportPostBackService.getOBRbySampleno(sampleno);
@@ -369,7 +374,7 @@ public class SpecimenInhosController extends BaseController {
                 }
             }
         }
-
+       System.out.println(result);
         return lisCommonWSService.reportPostBack(result);
    }
 }
