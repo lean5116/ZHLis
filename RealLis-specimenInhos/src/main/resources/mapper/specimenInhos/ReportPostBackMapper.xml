@@ -294,7 +294,7 @@
         </association>
     </resultMap>
     <select id="queryGermZMIC" resultMap="ZMIC">
-
+        select * from OML_O21_ZMIC where sampleno = #{sampleno}
     </select>
     <resultMap id="germOBX" type="com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.germOBX">
         <result property="OBX1" column="OBX1" />
@@ -322,7 +322,7 @@
         </association>
     </resultMap>
     <select id="queryGermOBX" resultMap="germOBX">
-
+        select * from OML_O21_OBX_XJ where sampleno = #{sampleno}
     </select>
 
 </mapper>

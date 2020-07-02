@@ -347,17 +347,23 @@ public class SpecimenInhosController extends BaseController {
             pid.setPID2("10000250");
             pid.setPID3("10000250");
             result += pid.toString() ;
+        }else{
+            result+=new PID().toString();
         }
         PV1 pv1 = reportPostBackService.getPV1bySampleno(sampleno);
         if(pv1!=null) {
             pv1.setPV1_1("1");
             pv1.setPV1_19("20200701000003");
             result += pv1.toString() ;
+        }else{
+            result+=new PV1().toString();
         }
         ORC orc = reportPostBackService.getORCbySampleno(sampleno);
         if(orc!=null) {
             orc.getORC4().setORC4_1("2020070100000206");
             result += orc.toString() ;
+        }else{
+            result+=new ORC().toString();
         }
         List<OBR> obrList = reportPostBackService.getOBRbySampleno(sampleno);
         if(obrList!=null){
@@ -367,6 +373,8 @@ public class SpecimenInhosController extends BaseController {
                     result+=obrList.get(i).toString() ;
                 }
             }
+        }else{
+            result+=new OBR().toString();
         }
         List<OBX> obxList = reportPostBackService.getOBXbySampleno(sampleno);
         if(obxList!=null){
@@ -376,6 +384,8 @@ public class SpecimenInhosController extends BaseController {
                     result+=obxList.get(i).toString();
                 }
             }
+        }else{
+            result+=new OBX().toString();
         }
        System.out.println(result);
         return lisCommonWSService.reportPostBack(result);
@@ -421,6 +431,8 @@ public class SpecimenInhosController extends BaseController {
         if(orc!=null) {
             orc.getORC4().setORC4_1("2020070100000206");
             result += orc.toString() ;
+        }else{
+            result+=new ORC().toString();
         }
         List<OBR> obrList = reportPostBackService.getOBRbySampleno(sampleno);
         if(obrList!=null){
@@ -430,6 +442,8 @@ public class SpecimenInhosController extends BaseController {
                     result+=obrList.get(i).toString() ;
                 }
             }
+        }else{
+            result+=new OBR().toString();
         }
         List<germOBX> obxList = reportPostBackService.getGermOBXBySampleno(sampleno);
         if(obxList!=null){
@@ -439,7 +453,10 @@ public class SpecimenInhosController extends BaseController {
                     result+=obxList.get(i).toString();
                 }
             }
+        }else{
+            result+=new OBX().toString();
         }
+
         List<ZMIC> zmicList=reportPostBackService.getGermZMICBySampleno(sampleno);
         if(zmicList!=null){
             if(zmicList.size()>0){
@@ -447,6 +464,8 @@ public class SpecimenInhosController extends BaseController {
                     result+=zmicList.get(i).toString();
                 }
             }
+        }else{
+            result+= new ZMIC().toString();
         }
         System.out.println(result);
         return lisCommonWSService.reportPostBack(result);
