@@ -38,7 +38,7 @@ import static com.RealLis.specimenInhos.utils.XmlConvert.XmlToJson;
 public class SpecimenInhosController extends BaseController {
 
     @Autowired
-    private  IViLisBarcodeInfoService viLisBarcodeInfoService;
+    private IViLisBarcodeInfoService viLisBarcodeInfoService;
     @Autowired
     private LSampletypeService lSampletypeService;
     @Autowired
@@ -53,42 +53,43 @@ public class SpecimenInhosController extends BaseController {
     private ReportPostBackService reportPostBackService;
     @Autowired
     private LisCommonWSService lisCommonWSService;
+
     @GetMapping("/{deptId}/{userId}")
-    public String specimenInhos(@PathVariable String deptId , @PathVariable String userId, Model model){
-        model.addAttribute("department",deptId);
-        model.addAttribute("userCode",userId);
-        model.addAttribute("departmentName",deptId);
-        model.addAttribute("userName",userId);
+    public String specimenInhos(@PathVariable String deptId, @PathVariable String userId, Model model) {
+        model.addAttribute("department", deptId);
+        model.addAttribute("userCode", userId);
+        model.addAttribute("departmentName", deptId);
+        model.addAttribute("userName", userId);
         List<Formatter> formatters = lSampletypeService.getLSampleTypeFormatter(null);
         model.addAttribute("SampleTypeFormatter", JSON.toJSONString(formatters));
         return "specimenInhos/index";
     }
 
     @GetMapping("/createLogistics/{deptId}/{userId}")
-    public String createLogistics(@PathVariable String deptId,@PathVariable  String userId,Model model){
-        model.addAttribute("department",deptId);
-        model.addAttribute("userCode",userId);
+    public String createLogistics(@PathVariable String deptId, @PathVariable String userId, Model model) {
+        model.addAttribute("department", deptId);
+        model.addAttribute("userCode", userId);
         return "specimenInhos/CreateLogistics";
     }
 
     @GetMapping("/LogisticsDetail/{wlbh}/{wlzt}")
-    public String LogisticDetail(@PathVariable  String wlbh,@PathVariable String wlzt, Model model){
-        model.addAttribute("wlbh",wlbh);
-        model.addAttribute("wlzt",wlzt);
+    public String LogisticDetail(@PathVariable String wlbh, @PathVariable String wlzt, Model model) {
+        model.addAttribute("wlbh", wlbh);
+        model.addAttribute("wlzt", wlzt);
         LLogistics lLogistics = new LLogistics();
         lLogistics.setWlbh(wlbh);
         LLogistics logisticses = lLogisticsService.getLlogistics(lLogistics);
-        if(logisticses!=null ){
-            model.addAttribute("cjsj",logisticses.getCjsj());
-            model.addAttribute("dbsj",logisticses.getDbsj());
-            model.addAttribute("yssj",logisticses.getYssj());
-            model.addAttribute("ddsj",logisticses.getDdsj());
+        if (logisticses != null) {
+            model.addAttribute("cjsj", logisticses.getCjsj());
+            model.addAttribute("dbsj", logisticses.getDbsj());
+            model.addAttribute("yssj", logisticses.getYssj());
+            model.addAttribute("ddsj", logisticses.getDdsj());
         }
         return "specimenInhos/LogisticsDetail";
     }
 
     @GetMapping("/startShipping")
-    public String Shippinng(){
+    public String Shippinng() {
         return "specimenInhos/startShipping";
     }
     /*================================================================================================================*/
@@ -98,63 +99,63 @@ public class SpecimenInhosController extends BaseController {
     @ApiImplicitParam(name = "tableId", value = "表Id", required = true, dataType = "String", paramType = "path")
     @PostMapping(value = "/list/{tableId}")
     @ResponseBody
-    public TableDataInfo list(@PathVariable String tableId,ViLisBarcodeInfo viLisBarcodeInfo) throws ParseException {
+    public TableDataInfo list(@PathVariable String tableId, ViLisBarcodeInfo viLisBarcodeInfo) throws ParseException {
         startPage();
-        SimpleDateFormat sdf =   new SimpleDateFormat( "yyyy-MM-dd HH:mm:ss" );
-        List<ViLisBarcodeInfo> viLisBarcodeInfoList =new ArrayList<ViLisBarcodeInfo>();
-        if(tableId.equals("collectionComplete")){
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        List<ViLisBarcodeInfo> viLisBarcodeInfoList = new ArrayList<ViLisBarcodeInfo>();
+        if (tableId.equals("collectionComplete")) {
             logger.info("进入tabCollectionComplete，修改kssj与jssj为采集时间");
             viLisBarcodeInfo.setStartSamplingtime(sdf.parse(viLisBarcodeInfo.getParams().get("beginTime").toString()));
             viLisBarcodeInfo.setEndSamplingtime(sdf.parse(viLisBarcodeInfo.getParams().get("endTime").toString()));
-        }else{
+        } else {
             viLisBarcodeInfo.setStartRequettime(sdf.parse(viLisBarcodeInfo.getParams().get("beginTime").toString()));
             viLisBarcodeInfo.setEndRequettime(sdf.parse(viLisBarcodeInfo.getParams().get("endTime").toString()));
         }
         viLisBarcodeInfo.setPatienttype("2"); //固定为住院病人
-        if("collectionConfirmation".equals(tableId)){
+        if ("collectionConfirmation".equals(tableId)) {
             viLisBarcodeInfo.setSampleState("1");
         }
-        if("collectionComplete".equals(tableId)){
+        if ("collectionComplete".equals(tableId)) {
             viLisBarcodeInfo.setSampleState("2");
         }
-        if("receiveComplete".equals(tableId)){
-            logger.info("进入"+tableId);
+        if ("receiveComplete".equals(tableId)) {
+            logger.info("进入" + tableId);
             viLisBarcodeInfo.setSampleState("3");
         }
-        if("cancellationReturn".equals(tableId)){
-            logger.info(tableId+"，增加条码状态为作废的数据");
+        if ("cancellationReturn".equals(tableId)) {
+            logger.info(tableId + "，增加条码状态为作废的数据");
             viLisBarcodeInfo.setSampleState("1,-2");
             logger.info(viLisBarcodeInfo.getBarstatus());
         }
-        if("overtimeBarcode".equals(tableId)){
+        if ("overtimeBarcode".equals(tableId)) {
             logger.info("进入tabOvertimeBarcode，增加条码状态为0的数据");
             viLisBarcodeInfo.setSampleState("-1,0");
 
         }
 
-        if("specimenLogistics".equals(tableId)){
+        if ("specimenLogistics".equals(tableId)) {
             LLogistics lLogistics = new LLogistics();
             lLogistics.setParams(viLisBarcodeInfo.getParams());
             lLogistics.setBqdm(viLisBarcodeInfo.getDepartment());
             List<LLogistics> logisticses = lLogisticsService.getLlogisticsList(lLogistics);
             return getDataTable(logisticses);
-        }else {
+        } else {
             viLisBarcodeInfoList = viLisBarcodeInfoService.getInfoList(viLisBarcodeInfo);
             return getDataTable(viLisBarcodeInfoList);
         }
     }
 
     @ApiOperation("异步生成检验条码")
-    @ApiImplicitParam(name = "deptId", value = "科室id",  dataType = "String")
+    @ApiImplicitParam(name = "deptId", value = "科室id", dataType = "String")
     @PostMapping("/GenerateBarcode")
     @ResponseBody
-    private void GenerateBarcode(String deptId){
+    private void GenerateBarcode(String deptId) {
         HisAdvice params = new HisAdvice();
         params.setOrderStatus("1");
         params.setSampleFlag("0");
         params.setOrderingDeptCode(deptId);
         List<HisAdvice> hisAdviceList = hisAdviceService.getDisPatientIdList(params);
-        if(hisAdviceList!=null) {
+        if (hisAdviceList != null) {
             for (HisAdvice hisAdvice : hisAdviceList
             ) {
                 System.out.println(hisAdvice.getPatientId());
@@ -165,29 +166,29 @@ public class SpecimenInhosController extends BaseController {
     }
 
     @ApiOperation("获取单个条码信息")
-    @ApiImplicitParam(name = "barcode", value = "条码号",  dataType = "String",paramType = "path")
+    @ApiImplicitParam(name = "barcode", value = "条码号", dataType = "String", paramType = "path")
     @GetMapping("/getBarcode/{barcode}")
     @ResponseBody
-    public AjaxResult getBarcode(@PathVariable String barcode){
+    public AjaxResult getBarcode(@PathVariable String barcode) {
         ViLisBarcodeInfo params = new ViLisBarcodeInfo();
         params.setBarcode(barcode);
         ViLisBarcodeInfo response = viLisBarcodeInfoService.getInfo(params);
-        if(response!=null){
+        if (response != null) {
             return success(JSON.toJSONString(response));
-        }else {
+        } else {
             return error("未找到条码");
         }
     }
 
     @ApiOperation("标本打包")
-    @ApiImplicitParams( {
-            @ApiImplicitParam (name = "barcode", value = "条码号", required = true, dataType = "String"),
-            @ApiImplicitParam (name = "userCode", value = "用户id", required = true, dataType = "String")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "barcode", value = "条码号", required = true, dataType = "String"),
+            @ApiImplicitParam(name = "userCode", value = "用户id", required = true, dataType = "String")
     })
     @PostMapping("/Packing")
     @ResponseBody
-    public AjaxResult Packing( String barcodes,String userCode){
-        if(barcodes !=null && userCode!=null){
+    public AjaxResult Packing(String barcodes, String userCode) {
+        if (barcodes != null && userCode != null) {
             InterfaceHr interfaceHr = new InterfaceHr();
             InterfaceHrSoap interfaceHrSoap = interfaceHr.getInterfaceHrSoap();
             UfPack ufPack = new UfPack();
@@ -202,127 +203,127 @@ public class SpecimenInhosController extends BaseController {
             } else {
                 return success(result);
             }
-        }else{
+        } else {
             return error("条码号与打包人不能为空");
         }
     }
 
     @ApiOperation("获取物流明细信息")
-    @ApiImplicitParam(name = "wlbh", value = "物流编号",  dataType = "String",paramType = "path")
+    @ApiImplicitParam(name = "wlbh", value = "物流编号", dataType = "String", paramType = "path")
     @PostMapping("/lLoginsticsDetail/list/{wlbh}")
     @ResponseBody
-    public TableDataInfo lLogisticDetail(@PathVariable  String wlbh){
+    public TableDataInfo lLogisticDetail(@PathVariable String wlbh) {
         startPage();
-        List<LLogisticsDetailVO> lLogisticsDetailVO =  lLogisticsService.getLlogisticsDetailByWlbh(wlbh);
+        List<LLogisticsDetailVO> lLogisticsDetailVO = lLogisticsService.getLlogisticsDetailByWlbh(wlbh);
         return getDataTable(lLogisticsDetailVO);
     }
 
     @ApiOperation("获取物流信息根据物流条码号")
-    @ApiImplicitParam(name = "barcode", value = "物流条码号",  dataType = "String",paramType = "path")
+    @ApiImplicitParam(name = "barcode", value = "物流条码号", dataType = "String", paramType = "path")
     @PutMapping("/startShipping/{barcode}")
     @ResponseBody
-    public AjaxResult startShipping(@PathVariable String  barcode){
+    public AjaxResult startShipping(@PathVariable String barcode) {
         LLogistics lLogistics = new LLogistics();
         lLogistics.setWlbh(barcode);
         LLogistics logisticses = lLogisticsService.getLlogistics(lLogistics);
-        if(logisticses!=null){
+        if (logisticses != null) {
             return success(JSON.toJSONString(logisticses));
-        }else{
+        } else {
             return error("未找到相关物流信息");
         }
     }
 
     @ApiOperation("修改物流状态")
-    @ApiImplicitParam(name = "lLogistics", value = "物流实体类",  dataType = "LLogistics")
+    @ApiImplicitParam(name = "lLogistics", value = "物流实体类", dataType = "LLogistics")
     @PostMapping("/startShipping")
     @ResponseBody
-    public AjaxResult updateLogistics(LLogistics lLogistics){
-       int i = lLogisticsService.updateLogistics(lLogistics);
-       if(i>0){
-           return success();
-       }else{
-           return error();
-       }
+    public AjaxResult updateLogistics(LLogistics lLogistics) {
+        int i = lLogisticsService.updateLogistics(lLogistics);
+        if (i > 0) {
+            return success();
+        } else {
+            return error();
+        }
     }
 
     @ApiOperation("条码状态修改")
-    @ApiImplicitParams( {
-            @ApiImplicitParam (name = "barcodes", value = "选中条码号", dataType = "String"),
-            @ApiImplicitParam (name = "czz", value = "操作员", dataType = "String"),
-            @ApiImplicitParam (name = "czfs", value = "操作方式", dataType = "String")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "barcodes", value = "选中条码号", dataType = "String"),
+            @ApiImplicitParam(name = "czz", value = "操作员", dataType = "String"),
+            @ApiImplicitParam(name = "czfs", value = "操作方式", dataType = "String")
     })
 
-   @PostMapping("/changeBarcodeStatus")
-   @ResponseBody
-   public AjaxResult changeBarcodeStatus(String barcodes,String czz,String czfs){
+    @PostMapping("/changeBarcodeStatus")
+    @ResponseBody
+    public AjaxResult changeBarcodeStatus(String barcodes, String czz, String czfs) {
         LJytmxx lJytmxx = new LJytmxx();
         String[] barcode = barcodes.split("\\|");
         String result = "";
         int n = 0;
-        if(barcode!=null){
-           if(barcode.length>0) {
-               for (int i = 0; i < barcode.length; i++) {
-                   if (barcode[i].length() > 0) {
-                       lJytmxx.setDoctadviseno(barcode[i]);
-                       if ("barcodePrint".equals(czfs)) {
-                           lJytmxx.setBarstatus("1");
-                           lJytmxx.setPrinter(czz);
-                           lJytmxx.setDysj(new Date());
-                           Map<String, Object> params = new HashMap<>();
-                           params.put("barcodePrint", 0);
-                           lJytmxx.setParams(params);
-                           if (lJytmxxService.updateByBarcode(lJytmxx) > 0) {
-                               result += barcode[i] + "|";
-                               zhlisWsHerenLetService.SetBarOrderStatus(barcode[i],"2");//条码已打印
-                           }
+        if (barcode != null) {
+            if (barcode.length > 0) {
+                for (int i = 0; i < barcode.length; i++) {
+                    if (barcode[i].length() > 0) {
+                        lJytmxx.setDoctadviseno(barcode[i]);
+                        if ("barcodePrint".equals(czfs)) {
+                            lJytmxx.setBarstatus("1");
+                            lJytmxx.setPrinter(czz);
+                            lJytmxx.setDysj(new Date());
+                            Map<String, Object> params = new HashMap<>();
+                            params.put("barcodePrint", 0);
+                            lJytmxx.setParams(params);
+                            if (lJytmxxService.updateByBarcode(lJytmxx) > 0) {
+                                result += barcode[i] + "|";
+                                zhlisWsHerenLetService.SetBarOrderStatus(barcode[i], "2");//条码已打印
+                            }
 
-                       } else if ("barcodeCancel".equals(czfs)) {
+                        } else if ("barcodeCancel".equals(czfs)) {
 
-                           lJytmxx.setBarstatus("-2");
-                           lJytmxx.setCanceler(czz);
-                           lJytmxx.setCanceltime(new Date());
-                           Map<String, Object> params = new HashMap<>();
-                           params.put("barcodeCancel", 0);
-                           lJytmxx.setParams(params);
-                           if (lJytmxxService.updateByBarcode(lJytmxx) > 0) {
-                              n++;
-                              result= Integer.toString(n);
-                              zhlisWsHerenLetService.SetBarOrderStatus(barcode[i],"-2");
-                           }
-                       } else if ("collectionConfirm".equals(czfs)) {
-                           lJytmxx.setExecutor(czz);
-                           lJytmxx.setBarstatus("2");
-                           lJytmxx.setExecutetime(new Date());
-                           Map<String, Object> params = new HashMap<>();
-                           params.put("collectionConfirm", 0);
-                           lJytmxx.setParams(params);
-                           if (lJytmxxService.updateByBarcode(lJytmxx) > 0) {
-                               n++;
-                               result= Integer.toString(n);
-                               zhlisWsHerenLetService.SetBarOrderStatus(barcode[i],"3"); //标本已采集
-                           }
-                       }else if("confirmCancel".equals(czfs)){
-                           Map<String, Object> params = new HashMap<>();
-                           params.put("confirmCancel", 0);
-                           lJytmxx.setParams(params);
-                           if(lJytmxxService.updateByBarcode(lJytmxx)>0){
-                               n++;
-                               result= Integer.toString(n);
-                               zhlisWsHerenLetService.SetBarOrderStatus(barcode[i],"11"); //lis退回标本
-                           }
-                       }
-                   }
-               }
-           }
-       }
-       return success(result);
-   }
+                            lJytmxx.setBarstatus("-2");
+                            lJytmxx.setCanceler(czz);
+                            lJytmxx.setCanceltime(new Date());
+                            Map<String, Object> params = new HashMap<>();
+                            params.put("barcodeCancel", 0);
+                            lJytmxx.setParams(params);
+                            if (lJytmxxService.updateByBarcode(lJytmxx) > 0) {
+                                n++;
+                                result = Integer.toString(n);
+                                zhlisWsHerenLetService.SetBarOrderStatus(barcode[i], "-2");
+                            }
+                        } else if ("collectionConfirm".equals(czfs)) {
+                            lJytmxx.setExecutor(czz);
+                            lJytmxx.setBarstatus("2");
+                            lJytmxx.setExecutetime(new Date());
+                            Map<String, Object> params = new HashMap<>();
+                            params.put("collectionConfirm", 0);
+                            lJytmxx.setParams(params);
+                            if (lJytmxxService.updateByBarcode(lJytmxx) > 0) {
+                                n++;
+                                result = Integer.toString(n);
+                                zhlisWsHerenLetService.SetBarOrderStatus(barcode[i], "3"); //标本已采集
+                            }
+                        } else if ("confirmCancel".equals(czfs)) {
+                            Map<String, Object> params = new HashMap<>();
+                            params.put("confirmCancel", 0);
+                            lJytmxx.setParams(params);
+                            if (lJytmxxService.updateByBarcode(lJytmxx) > 0) {
+                                n++;
+                                result = Integer.toString(n);
+                                zhlisWsHerenLetService.SetBarOrderStatus(barcode[i], "11"); //lis退回标本
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return success(result);
+    }
 
-   @RequestMapping("/ReportPostBack/{sampleno}")
-   @ResponseBody
-   public String getReportPostBack(@PathVariable  String sampleno){
+    @RequestMapping("/ReportPostBack/{sampleno}")
+    @ResponseBody
+    public String getReportPostBack(@PathVariable String sampleno) {
         String result = "";
-        MSH msh =new MSH();
+        MSH msh = new MSH();
         //region MSH初始化
         msh.setMSH1("|");
         msh.setMSH2("^~\\&");
@@ -331,7 +332,7 @@ public class SpecimenInhosController extends BaseController {
         msh.setMSH5("HIS");
         msh.setMSH6("");//接收院区
         SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
-        msh.setMSH7(formatter.format(new Date()) +"+0800");
+        msh.setMSH7(formatter.format(new Date()) + "+0800");
         msh.setMSH9("OUL^R21");
         msh.setMSH10(UUID.randomUUID().toString());
         msh.setMSH11("P");
@@ -340,62 +341,62 @@ public class SpecimenInhosController extends BaseController {
         msh.setMSH16("AL");
         msh.setMSH18("utf-8");
         //endregion
-        result+=msh.toString();
-        PID pid =  reportPostBackService.getPIDbySampleno(sampleno);
-        if(pid!=null) {
+        result += msh.toString();
+        PID pid = reportPostBackService.getPIDbySampleno(sampleno);
+        if (pid != null) {
             pid.setPID1("1");
             pid.setPID2("10000250");
             pid.setPID3("10000250");
-            result += pid.toString() ;
-        }else{
-            result+=new PID().toString();
+            result += pid.toString();
+        } else {
+            result += new PID().toString();
         }
         PV1 pv1 = reportPostBackService.getPV1bySampleno(sampleno);
-        if(pv1!=null) {
+        if (pv1 != null) {
             pv1.setPV1_1("1");
             pv1.setPV1_19("20200701000003");
-            result += pv1.toString() ;
-        }else{
-            result+=new PV1().toString();
+            result += pv1.toString();
+        } else {
+            result += new PV1().toString();
         }
         ORC orc = reportPostBackService.getORCbySampleno(sampleno);
-        if(orc!=null) {
+        if (orc != null) {
             orc.getORC4().setORC4_1("2020070100000206");
-            result += orc.toString() ;
-        }else{
-            result+=new ORC().toString();
+            result += orc.toString();
+        } else {
+            result += new ORC().toString();
         }
         List<OBR> obrList = reportPostBackService.getOBRbySampleno(sampleno);
-        if(obrList!=null){
-            if(obrList.size()>0){
-                for(int i = 0 ; i<obrList.size();i++){
+        if (obrList != null) {
+            if (obrList.size() > 0) {
+                for (int i = 0; i < obrList.size(); i++) {
 
-                    result+=obrList.get(i).toString() ;
+                    result += obrList.get(i).toString();
                 }
             }
-        }else{
-            result+=new OBR().toString();
+        } else {
+            result += new OBR().toString();
         }
         List<OBX> obxList = reportPostBackService.getOBXbySampleno(sampleno);
-        if(obxList!=null){
-            if(obxList.size()>0){
-                for(int i=0;i<obxList.size();i++){
-                    obxList.get(i).setOBX1(Convert.toStr(i+1));
-                    result+=obxList.get(i).toString();
+        if (obxList != null) {
+            if (obxList.size() > 0) {
+                for (int i = 0; i < obxList.size(); i++) {
+                    obxList.get(i).setOBX1(Convert.toStr(i + 1));
+                    result += obxList.get(i).toString();
                 }
             }
-        }else{
-            result+=new OBX().toString();
+        } else {
+            result += new OBX().toString();
         }
-       System.out.println(result);
+        System.out.println(result);
         return lisCommonWSService.reportPostBack(result);
-   }
+    }
 
     @RequestMapping("/germReportPostBack/{sampleno}")
     @ResponseBody
-    public String germgetReportPostBack(@PathVariable  String sampleno){
+    public String germgetReportPostBack(@PathVariable String sampleno) {
         String result = "";
-        MSH msh =new MSH();
+        MSH msh = new MSH();
         //region MSH初始化
         msh.setMSH1("|");
         msh.setMSH2("^~\\&");
@@ -404,7 +405,7 @@ public class SpecimenInhosController extends BaseController {
         msh.setMSH5("HIS");
         msh.setMSH6("");//接收院区
         SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
-        msh.setMSH7(formatter.format(new Date()) +"+0800");
+        msh.setMSH7(formatter.format(new Date()) + "+0800");
         msh.setMSH9("OUL^R21");
         msh.setMSH10(UUID.randomUUID().toString());
         msh.setMSH11("P");
@@ -413,59 +414,59 @@ public class SpecimenInhosController extends BaseController {
         msh.setMSH16("AL");
         msh.setMSH18("utf-8");
         //endregion
-        result+=msh.toString();
-        PID pid =  reportPostBackService.getPIDbySampleno(sampleno);
-        if(pid!=null) {
+        result += msh.toString();
+        PID pid = reportPostBackService.getPIDbySampleno(sampleno);
+        if (pid != null) {
             pid.setPID1("1");
             pid.setPID2("10000250");
             pid.setPID3("10000250");
-            result += pid.toString() ;
+            result += pid.toString();
         }
         PV1 pv1 = reportPostBackService.getPV1bySampleno(sampleno);
-        if(pv1!=null) {
+        if (pv1 != null) {
             pv1.setPV1_1("1");
             pv1.setPV1_19("20200701000003");
-            result += pv1.toString() ;
+            result += pv1.toString();
         }
         ORC orc = reportPostBackService.getORCbySampleno(sampleno);
-        if(orc!=null) {
+        if (orc != null) {
             orc.getORC4().setORC4_1("2020070100000206");
-            result += orc.toString() ;
-        }else{
-            result+=new ORC().toString();
+            result += orc.toString();
+        } else {
+            result += new ORC().toString();
         }
         List<OBR> obrList = reportPostBackService.getOBRbySampleno(sampleno);
-        if(obrList!=null){
-            if(obrList.size()>0){
-                for(int i = 0 ; i<obrList.size();i++){
+        if (obrList != null) {
+            if (obrList.size() > 0) {
+                for (int i = 0; i < obrList.size(); i++) {
 
-                    result+=obrList.get(i).toString() ;
+                    result += obrList.get(i).toString();
                 }
             }
-        }else{
-            result+=new OBR().toString();
+        } else {
+            result += new OBR().toString();
         }
         List<germOBX> obxList = reportPostBackService.getGermOBXBySampleno(sampleno);
-        if(obxList!=null){
-            if(obxList.size()>0){
-                for(int i=0;i<obxList.size();i++){
-                    obxList.get(i).setOBX1(Convert.toStr(i+1));
-                    result+=obxList.get(i).toString();
+        if (obxList != null) {
+            if (obxList.size() > 0) {
+                for (int i = 0; i < obxList.size(); i++) {
+                    obxList.get(i).setOBX1(Convert.toStr(i + 1));
+                    result += obxList.get(i).toString();
                 }
             }
-        }else{
-            result+=new OBX().toString();
+        } else {
+            result += new OBX().toString();
         }
 
-        List<ZMIC> zmicList=reportPostBackService.getGermZMICBySampleno(sampleno);
-        if(zmicList!=null){
-            if(zmicList.size()>0){
-                for(int i =0;i<zmicList.size();i++){
-                    result+=zmicList.get(i).toString();
+        List<ZMIC> zmicList = reportPostBackService.getGermZMICBySampleno(sampleno);
+        if (zmicList != null) {
+            if (zmicList.size() > 0) {
+                for (int i = 0; i < zmicList.size(); i++) {
+                    result += zmicList.get(i).toString();
                 }
             }
-        }else{
-            result+= new ZMIC().toString();
+        } else {
+            result += new ZMIC().toString();
         }
         System.out.println(result);
         return lisCommonWSService.reportPostBack(result);
