@@ -7,6 +7,6 @@ import java.util.List;
 
 @Repository
 public interface ViLisBarcodeInfoMapper {
-    public List<ViLisBarcodeInfo> queryInfoList(ViLisBarcodeInfo viLisBarcodeInfo);
-    public ViLisBarcodeInfo queryInfo(ViLisBarcodeInfo viLisBarcodeInfo);
+    List<ViLisBarcodeInfo> queryInfoList(ViLisBarcodeInfo viLisBarcodeInfo);
+    ViLisBarcodeInfo queryInfo(ViLisBarcodeInfo viLisBarcodeInfo);
 }

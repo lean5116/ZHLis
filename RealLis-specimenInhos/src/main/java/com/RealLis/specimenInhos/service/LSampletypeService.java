@@ -6,5 +6,5 @@ import com.RealLis.specimenInhos.domain.LSampletype;
 import java.util.List;
 
 public interface LSampletypeService {
-    public List<Formatter> getLSampleTypeFormatter(LSampletype lSampletype);
+    List<Formatter> getLSampleTypeFormatter(LSampletype lSampletype);
 }

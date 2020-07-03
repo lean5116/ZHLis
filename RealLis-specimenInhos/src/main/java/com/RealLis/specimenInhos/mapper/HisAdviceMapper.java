@@ -5,5 +5,5 @@ import java.util.List;
 
 
 public interface HisAdviceMapper {
-    public List<HisAdvice> queryDistinctList(HisAdvice hisAdvice);
+    List<HisAdvice> queryDistinctList(HisAdvice hisAdvice);
 }

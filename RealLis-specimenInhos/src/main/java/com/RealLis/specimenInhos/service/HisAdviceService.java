@@ -5,5 +5,5 @@ import com.RealLis.specimenInhos.domain.HisAdvice;
 import java.util.List;
 
 public interface HisAdviceService {
-    public List<HisAdvice> getDisPatientIdList(HisAdvice hisAdvice);
+    List<HisAdvice> getDisPatientIdList(HisAdvice hisAdvice);
 }

@@ -11,12 +11,12 @@ import com.RealLis.specimenInhos.domain.PostBack.reportPostBack.*;
 import java.util.List;
 
 public interface ReportPostBackService {
-    public PID getPIDbySampleno(String sampleno);
-    public PV1 getPV1bySampleno(String sampleno);
-    public ORC getORCbySampleno(String sampleno);
-    public List<OBR> getOBRbySampleno(String sampleno);
-    public List<OBX> getOBXbySampleno(String sampleno);
+    PID getPIDbySampleno(String sampleno);
+    PV1 getPV1bySampleno(String sampleno);
+    ORC getORCbySampleno(String sampleno);
+    List<OBR> getOBRbySampleno(String sampleno);
+    List<OBX> getOBXbySampleno(String sampleno);
 
-    public List<ZMIC> getGermZMICBySampleno(String sampleno);
-    public List<germOBX> getGermOBXBySampleno(String sampleno);
+    List<ZMIC> getGermZMICBySampleno(String sampleno);
+    List<germOBX> getGermOBXBySampleno(String sampleno);
 }

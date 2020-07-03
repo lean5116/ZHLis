@@ -13,12 +13,12 @@ import java.util.List;
 
 @Repository
 public interface ReportPostBackMapper {
-    public PID queryPID(String sampleno);
-    public PV1 queryPV1(String sampleno);
-    public ORC queryORC(String sampleno);
-    public List<OBR> queryOBR(String sampleno);
-    public List<OBX> queryOBX(String sampleno);
+    PID queryPID(String sampleno);
+    PV1 queryPV1(String sampleno);
+    ORC queryORC(String sampleno);
+    List<OBR> queryOBR(String sampleno);
+    List<OBX> queryOBX(String sampleno);
 
-    public List<ZMIC> queryGermZMIC(String sampleno);
-    public List<germOBX> queryGermOBX(String sampleno);
+    List<ZMIC> queryGermZMIC(String sampleno);
+    List<germOBX> queryGermOBX(String sampleno);
 }

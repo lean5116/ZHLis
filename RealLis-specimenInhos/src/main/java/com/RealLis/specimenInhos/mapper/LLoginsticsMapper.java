@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 @Repository
 public interface LLoginsticsMapper {
-    public List<LLogistics> queryLlogisticsList(LLogistics lLogistics);
-    public List<LLogisticsDetailVO> queryLlogisticsDetailByWlbh(String wlbh);
-    public LLogistics queryLlogistics(LLogistics lLogistics);
-    public int updateLogistics(LLogistics lLogistics);
+    List<LLogistics> queryLlogisticsList(LLogistics lLogistics);
+    List<LLogisticsDetailVO> queryLlogisticsDetailByWlbh(String wlbh);
+    LLogistics queryLlogistics(LLogistics lLogistics);
+    int updateLogistics(LLogistics lLogistics);
 }

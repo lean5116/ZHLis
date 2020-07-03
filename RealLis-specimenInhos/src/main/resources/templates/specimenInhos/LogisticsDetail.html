@@ -200,7 +200,7 @@
 </body>
 <script th:inline="javascript">
         var prefix = ctx + "specimenInhos";
-        var wlbh = [[${wlbh}]] //得到当前页物流编号
+        var wlbh = [[${wlbh}]]; //得到当前页物流编号
         /*表格初始化事件*/
         function tableInit() {
             var columns=[
@@ -209,7 +209,7 @@
                 {field: 'patientName', title: '病人姓名', align: 'left'},
                 {field: 'examinaim', title: '检验项目', align: 'left'},
 
-            ]
+            ];
             var options={
                 url:prefix+'/lLoginsticsDetail/list/'+wlbh,
                 id: "lLoginsticsDetail",
@@ -224,7 +224,7 @@
         });
         /*根据物流状态显示物流时间轴*/
         function timeInline() {
-            var wlzt =[[${wlzt}]] //得到当期那物流 物流状态
+            var wlzt =[[${wlzt}]]; //得到当期那物流 物流状态
             if(wlzt=="9"){
                 $('#timeInline9').show();
                 $('#timeInline0').hide();

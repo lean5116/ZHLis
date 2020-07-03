@@ -116,7 +116,7 @@
                     return actions.join('');
                 }
             }
-        ]
+        ];
         var options={
             id: "packageInfo",
             data:currentData, //设置表格数据为自定义活动数据
@@ -163,9 +163,9 @@
             var barcodes=[];
             barcodes.push(barcode);
             var removeInfo = {field:'barcode',values:barcodes};
-            console.log(removeInfo)
+            console.log(removeInfo);
             $('#packageInfo').bootstrapTable('remove',removeInfo); //表格移除该标本信息
-            totalCount--
+            totalCount--;
             $('#totalCount').html('<h1 style="color: red">'+totalCount+'</h1>');//计数-1
         });
 
@@ -184,7 +184,7 @@
         var postData = {
             barcodes:barcodes,
             userCode:userId
-        }
+        };
         $.ajax({
             type: "post",
             url: prefix + "/Packing",
@@ -192,7 +192,7 @@
             success: function(r) {
                 var msg =JSON.parse(r.msg);
                 if (r.code == 0) {
-                    $.modal.closeLoading()
+                    $.modal.closeLoading();
                     console.log(msg.Body.rtncode);
                     if(confirm("打包成功是否直接打印") ==true){
                         JsBarcode("#imgCodelogistics",msg.Body.rtncode,{
@@ -203,8 +203,8 @@
                         $("#bbsl").html(msg.Body.bbsl);
                         $("#cjsj").html(msg.Body.cjsj);
                         $.modal.loading("条码打印中");
-                        prn1_preview('logisticsPrint')
-                        $.modal.closeLoading()
+                        prn1_preview('logisticsPrint');
+                        $.modal.closeLoading();
                         $.modal.close();
                         parent.$.table.refresh();
                     }else{
@@ -212,7 +212,7 @@
                         parent.$.table.refresh();
                     }
                 } else {
-                    $.modal.closeLoading()
+                    $.modal.closeLoading();
                     $.modal.alertError('打包失败！'+msg.Body.rtntext)
                 }
             }
@@ -236,7 +236,7 @@
         LODOP.SET_PRINT_PAGESIZE(1,500,300,"CreateCustomPage");
         //LODOP.PREVIEW();//打印预览
         LODOP.PRINT();//直接打印
-    };
+    }
     function CreateOneFormPage(printName){
         LODOP=getLodop();
         //LODOP.PRINT_INIT("打印控件功能演示_Lodop功能_表单一");
@@ -248,7 +248,7 @@
         //LODOP.SET_PRINT_MODE("WINDOW_DEFPRINTER","Microsoft XPS Document Writer");
         LODOP.SET_PRINT_MODE("PRINT_PAGE_PERCENT","Full-Page");//整页缩放
         LODOP.ADD_PRINT_HTM("0%","0%","100%","100%",document.getElementById(printName).innerHTML);
-    };
+    }
 
 </script>
 </html>

@@ -298,7 +298,7 @@
             }
         }
         return fmt;
-    }
+    };
     var dateNow = new Date();
     $('#endDate').val(dateNow.format("yyyy-MM-dd hh:mm:ss"));
     dateNow = dateNow.setDate(dateNow.getDate()-1);
@@ -311,13 +311,13 @@
     var SampleTypeFormatterData=[[${SampleTypeFormatter}]];  //得到所有标本类型字典值
     var SampleTypeMap = new Map(); //创建标本类型map
     var currentTableId='orderBarCode'; //设置当前活动table 为医嘱条码
-    var userId= [[${userCode}]]
+    var userId= [[${userCode}]];
     $(function() {
         //全部table 在页面刷新时初始化
         queryBarcodeData('orderBarCode');
         queryBarcodeData('collectionConfirmation');
         queryBarcodeData('collectionComplete');
-        queryBarcodeData('receiveComplete')
+        queryBarcodeData('receiveComplete');
         queryBarcodeData('cancellationReturn');
         queryBarcodeData('overtimeBarcode');
         queryBarcodeData('specimenLogistics');
@@ -680,7 +680,7 @@
         }else{
             $.table.search('dateSpan', 'orderBarCode', '');
         }
-        console.log($('#sampleState').val())
+        console.log($('#sampleState').val());
         if($('#sampleState').val() !=0 && $('#sampleState').val() !=-1 && $('#sampleState').val() !=1){
             $('#btn_barcodePrint').attr("disabled","disabled")
         }else{
@@ -712,7 +712,7 @@
     function infoRefresh() {
         queryBarcodeSearch(currentTableId);
         /*请求后台异步生成条码*/
-        var deptId = [[${department}]]
+        var deptId = [[${department}]];
         $.ajax({
             type: "post",
             url: prefix + "/GenerateBarcode",
@@ -728,7 +728,7 @@
         currentTableId= e.target.id.replace('Tab','');
         console.log('切换到'+currentTableId);
         queryBarcodeSearch(currentTableId);
-    })
+    });
     /*创建物流按钮*/
     function  createLogistics() {
         var deptId=  [[${department}]];
@@ -766,7 +766,7 @@
                     var barcode= r.msg.split("|");
                     if(barcode.length>0){
                         for(let i = 0 ; i<barcode.length;i++){
-                            var data = $('#'+tableId).bootstrapTable('getRowByUniqueId',barcode[i])
+                            var data = $('#'+tableId).bootstrapTable('getRowByUniqueId',barcode[i]);
                             if(data!=null){
                                 JsBarcode("#imgCode",data.barcode,{
                                     format:"CODE128",
@@ -911,7 +911,7 @@
         LODOP.SET_PRINT_PAGESIZE(1,500,300,"CreateCustomPage");
         //LODOP.PREVIEW();//打印预览
         LODOP.PRINT();//直接打印
-    };
+    }
     function CreateOneFormPage(printName){
         LODOP=getLodop();
         //LODOP.PRINT_INIT("打印控件功能演示_Lodop功能_表单一");
@@ -923,7 +923,7 @@
         //LODOP.SET_PRINT_MODE("WINDOW_DEFPRINTER","Microsoft XPS Document Writer");
         LODOP.SET_PRINT_MODE("PRINT_PAGE_PERCENT","Full-Page");//整页缩放
         LODOP.ADD_PRINT_HTM("0%","0%","100%","100%",document.getElementById(printName).innerHTML);
-    };
+    }
 </script>
 </body>
 </html>

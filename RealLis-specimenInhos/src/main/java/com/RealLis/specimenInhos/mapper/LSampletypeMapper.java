@@ -7,5 +7,5 @@ import java.util.List;
 
 @Repository
 public interface LSampletypeMapper {
-    public List<LSampletype> queryLSampleType(LSampletype lSampletype);
+    List<LSampletype> queryLSampleType(LSampletype lSampletype);
 }

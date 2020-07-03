@@ -319,7 +319,9 @@ public class SpecimenInhosController extends BaseController {
         return success(result);
     }
 
-    @RequestMapping("/ReportPostBack/{sampleno}")
+    @ApiOperation("Lis报告回传接口")
+    @ApiImplicitParam(name = "sampleno", value = "检验条码号", dataType = "String", paramType = "path")
+    @GetMapping("/ReportPostBack/{sampleno}")
     @ResponseBody
     public String getReportPostBack(@PathVariable String sampleno) {
         String result = "";
@@ -392,7 +394,9 @@ public class SpecimenInhosController extends BaseController {
         return lisCommonWSService.reportPostBack(result);
     }
 
-    @RequestMapping("/germReportPostBack/{sampleno}")
+    @ApiOperation("细菌报告回传接口")
+    @ApiImplicitParam(name = "barcode", value = "检验条码号", dataType = "String", paramType = "path")
+    @GetMapping("/germReportPostBack/{sampleno}")
     @ResponseBody
     public String germgetReportPostBack(@PathVariable String sampleno) {
         String result = "";
