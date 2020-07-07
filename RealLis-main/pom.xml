@@ -107,6 +107,13 @@
             <artifactId>RealLis-specimenInhos</artifactId>
         </dependency>
 
+
+        <!-- 定时任务-->
+        <dependency>
+            <groupId>com.RealLis</groupId>
+            <artifactId>RealLis-quartz</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>

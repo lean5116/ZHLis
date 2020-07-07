@@ -12,6 +12,7 @@
         <module>RealLis-framework</module>
         <module>RealLis-main</module>
         <module>RealLis-specimenInhos</module>
+        <module>RealLis-quartz</module>
     </modules>
 
 
@@ -183,6 +184,13 @@
             <dependency>
                 <groupId>com.RealLis</groupId>
                 <artifactId>RealLis-specimenInhos</artifactId>
+                <version>${RealLis.version}</version>
+            </dependency>
+
+            <!-- 定时任务-->
+            <dependency>
+                <groupId>com.RealLis</groupId>
+                <artifactId>RealLis-quartz</artifactId>
                 <version>${RealLis.version}</version>
             </dependency>
         </dependencies>

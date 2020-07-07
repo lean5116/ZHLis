@@ -328,5 +328,16 @@
     <select id="queryGermOBX" resultMap="germOBX">
         select * from OML_O21_OBX_XJ where sampleno = #{sampleno}
     </select>
-
+    <resultMap id="postList" type="com.RealLis.specimenInhos.domain.PostBack.PostList">
+        <result property="jlxh" column="JLXH" />
+        <result property="eventName" column="EVENNAME" />
+        <result property="eventData" column="EVENTDATA" />
+        <result property="micType" column="MICTYPE" />
+    </resultMap>
+    <select id="queryPostList" resultMap="postList">
+        select * from L_DATA_TRANSFER order by jlxh
+    </select>
+    <delete id="deletePostList">
+        delete from L_DATA_TRANSFER where jlxh = #{jlxh}
+    </delete>
 </mapper>

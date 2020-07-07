@@ -1,9 +1,6 @@
 package com.RealLis.specimenInhos.service.impl;
 
-import com.RealLis.specimenInhos.domain.PostBack.OBR;
-import com.RealLis.specimenInhos.domain.PostBack.ORC;
-import com.RealLis.specimenInhos.domain.PostBack.PID;
-import com.RealLis.specimenInhos.domain.PostBack.PV1;
+import com.RealLis.specimenInhos.domain.PostBack.*;
 import com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.ZMIC;
 import com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.germOBX;
 import com.RealLis.specimenInhos.domain.PostBack.reportPostBack.*;
@@ -51,5 +48,15 @@ public class ReportPostBackServiceImpl implements ReportPostBackService {
     @Override
     public List<germOBX> getGermOBXBySampleno(String sampleno) {
         return reportPostBackMapper.queryGermOBX(sampleno);
+    }
+
+    @Override
+    public List<PostList> getPostList() {
+        return reportPostBackMapper.queryPostList();
+    }
+
+    @Override
+    public int deletePostList(Long jlxh) {
+        return reportPostBackMapper.deletePostList(jlxh);
     }
 }

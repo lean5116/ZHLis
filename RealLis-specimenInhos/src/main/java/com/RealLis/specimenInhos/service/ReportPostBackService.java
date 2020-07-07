@@ -1,9 +1,6 @@
 package com.RealLis.specimenInhos.service;
 
-import com.RealLis.specimenInhos.domain.PostBack.OBR;
-import com.RealLis.specimenInhos.domain.PostBack.ORC;
-import com.RealLis.specimenInhos.domain.PostBack.PID;
-import com.RealLis.specimenInhos.domain.PostBack.PV1;
+import com.RealLis.specimenInhos.domain.PostBack.*;
 import com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.ZMIC;
 import com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.germOBX;
 import com.RealLis.specimenInhos.domain.PostBack.reportPostBack.*;
@@ -19,4 +16,7 @@ public interface ReportPostBackService {
 
     List<ZMIC> getGermZMICBySampleno(String sampleno);
     List<germOBX> getGermOBXBySampleno(String sampleno);
+
+    List<PostList> getPostList();
+    int deletePostList(Long jlxh);
 }
