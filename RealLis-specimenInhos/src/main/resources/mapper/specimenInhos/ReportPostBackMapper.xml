@@ -192,7 +192,7 @@
         <result property="OBR23" column="OBR23" />
         <result property="OBR24" column="OBR24" />
         <result property="OBR25" column="OBR25" />
-        <result property="OBR26" column="OBR26" />
+
         <result property="OBR27" column="OBR27" />
         <result property="OBR28" column="OBR28" />
         <result property="OBR29" column="OBR29" />
@@ -220,6 +220,10 @@
         <association property="OBR15" javaType="com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR15">
             <id property="OBR15_1" column="OBR15_1"/>
             <result property="OBR15_2" column="OBR15_2"/>
+        </association>
+        <association property="OBR26" javaType="com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR26">
+            <id property="OBR26_1" column="OBR26_1"/>
+            <result property="OBR26_2" column="OBR26_2"/>
         </association>
         <association property="OBR32" javaType="com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR32">
             <id property="OBR32_1" column="OBR32_1"/>

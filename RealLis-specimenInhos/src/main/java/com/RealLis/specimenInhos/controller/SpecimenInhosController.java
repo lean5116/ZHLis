@@ -54,12 +54,12 @@ public class SpecimenInhosController extends BaseController {
     @Autowired
     private LisCommonWSService lisCommonWSService;
 
-    @GetMapping("/{deptId}/{userId}")
-    public String specimenInhos(@PathVariable String deptId, @PathVariable String userId, Model model) {
-        model.addAttribute("department", deptId);
-        model.addAttribute("userCode", userId);
-        model.addAttribute("departmentName", deptId);
-        model.addAttribute("userName", userId);
+    @GetMapping("")
+    public String specimenInhos( String appDeptCode,  String userCode, Model model) {
+        model.addAttribute("department", appDeptCode);
+        model.addAttribute("userCode", userCode);
+        model.addAttribute("departmentName", appDeptCode);
+        model.addAttribute("userName", userCode);
         List<Formatter> formatters = lSampletypeService.getLSampleTypeFormatter(null);
         model.addAttribute("SampleTypeFormatter", JSON.toJSONString(formatters));
         return "specimenInhos/index";
@@ -347,8 +347,8 @@ public class SpecimenInhosController extends BaseController {
         PID pid = reportPostBackService.getPIDbySampleno(sampleno);
         if (pid != null) {
             pid.setPID1("1");
-            pid.setPID2("10000250");
-            pid.setPID3("10000250");
+//            pid.setPID2("10000250");
+//            pid.setPID3("10000250");
             result += pid.toString();
         } else {
             result += new PID().toString();
@@ -356,14 +356,14 @@ public class SpecimenInhosController extends BaseController {
         PV1 pv1 = reportPostBackService.getPV1bySampleno(sampleno);
         if (pv1 != null) {
             pv1.setPV1_1("1");
-            pv1.setPV1_19("20200701000003");
+//            pv1.setPV1_19("20200701000003");
             result += pv1.toString();
         } else {
             result += new PV1().toString();
         }
         ORC orc = reportPostBackService.getORCbySampleno(sampleno);
         if (orc != null) {
-            orc.getORC4().setORC4_1("2020070100000206");
+//            orc.getORC4().setORC4_1("2020070100000206");
             result += orc.toString();
         } else {
             result += new ORC().toString();
@@ -422,19 +422,19 @@ public class SpecimenInhosController extends BaseController {
         PID pid = reportPostBackService.getPIDbySampleno(sampleno);
         if (pid != null) {
             pid.setPID1("1");
-            pid.setPID2("10000250");
-            pid.setPID3("10000250");
+            //pid.setPID2("10000250");
+            //pid.setPID3("10000250");
             result += pid.toString();
         }
         PV1 pv1 = reportPostBackService.getPV1bySampleno(sampleno);
         if (pv1 != null) {
             pv1.setPV1_1("1");
-            pv1.setPV1_19("20200701000003");
+           // pv1.setPV1_19("20200701000003");
             result += pv1.toString();
         }
         ORC orc = reportPostBackService.getORCbySampleno(sampleno);
         if (orc != null) {
-            orc.getORC4().setORC4_1("2020070100000206");
+           // orc.getORC4().setORC4_1("2020070100000206");
             result += orc.toString();
         } else {
             result += new ORC().toString();
@@ -454,7 +454,7 @@ public class SpecimenInhosController extends BaseController {
         if (obxList != null) {
             if (obxList.size() > 0) {
                 for (int i = 0; i < obxList.size(); i++) {
-                    obxList.get(i).setOBX1(Convert.toStr(i + 1));
+                    obxList.get(i).setOBX1(obxList.get(i).getOBX3().getOBX3_1());
                     result += obxList.get(i).toString();
                 }
             }

@@ -54,7 +54,7 @@ public class OBR {
     /*检验状态*/
     private String OBR25="";
     /**/
-    private String OBR26="";
+    private OBR26 OBR26=new OBR26();
     /**/
     private String OBR27="";
     /**/
@@ -96,7 +96,11 @@ public class OBR {
     /*样本性状*/
     private String OBR46="";
 
-    public OBR(String OBR1, String OBR2, String OBR3, com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR4 OBR4, String OBR5, String OBR6, String OBR7, String OBR8, String OBR9, String OBR10, String OBR11, String OBR12, String OBR13, String OBR14, com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR15 OBR15, String OBR16, String OBR17, String OBR18, String OBR19, String OBR20, String OBR21, String OBR22, String OBR23, String OBR24, String OBR25, String OBR26, String OBR27, String OBR28, String OBR29, String OBR30, String OBR31, com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR32 OBR32, com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR33 OBR33, com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR34 OBR34, com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR35 OBR35, String OBR36, String OBR37, String OBR38, com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR39 OBR39, String OBR40, String OBR41, String OBR42, String OBR43, String OBR44, String OBR45, String OBR46) {
+
+    public OBR() {
+    }
+
+    public OBR(String OBR1, String OBR2, String OBR3, com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR4 OBR4, String OBR5, String OBR6, String OBR7, String OBR8, String OBR9, String OBR10, String OBR11, String OBR12, String OBR13, String OBR14, com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR15 OBR15, String OBR16, String OBR17, String OBR18, String OBR19, String OBR20, String OBR21, String OBR22, String OBR23, String OBR24, String OBR25, com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR26 OBR26, String OBR27, String OBR28, String OBR29, String OBR30, String OBR31, com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR32 OBR32, com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR33 OBR33, com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR34 OBR34, com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR35 OBR35, String OBR36, String OBR37, String OBR38, com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR39 OBR39, String OBR40, String OBR41, String OBR42, String OBR43, String OBR44, String OBR45, String OBR46) {
         this.OBR1 = OBR1;
         this.OBR2 = OBR2;
         this.OBR3 = OBR3;
@@ -143,9 +147,6 @@ public class OBR {
         this.OBR44 = OBR44;
         this.OBR45 = OBR45;
         this.OBR46 = OBR46;
-    }
-
-    public OBR() {
     }
 
     public String getOBR1() {
@@ -348,11 +349,11 @@ public class OBR {
         this.OBR25 = OBR25;
     }
 
-    public String getOBR26() {
+    public com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR26 getOBR26() {
         return OBR26;
     }
 
-    public void setOBR26(String OBR26) {
+    public void setOBR26(com.RealLis.specimenInhos.domain.PostBack.packageOBR.OBR26 OBR26) {
         this.OBR26 = OBR26;
     }
 
@@ -544,7 +545,7 @@ public class OBR {
                  OBR23 + '|' +
                  OBR24 + '|' +
                  OBR25 + '|' +
-                 OBR26 + '|' +
+                 OBR26.toString() + '|' +
                  OBR27 + '|' +
                  OBR28 + '|' +
                  OBR29 + '|' +
