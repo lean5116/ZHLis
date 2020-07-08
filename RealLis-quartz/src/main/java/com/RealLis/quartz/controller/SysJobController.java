@@ -6,7 +6,9 @@ import com.RealLis.common.core.domain.AjaxResult;
 import com.RealLis.common.core.page.TableDataInfo;
 import com.RealLis.common.enums.BusinessType;
 import com.RealLis.common.exception.job.TaskException;
+import com.RealLis.common.utils.ServletUtils;
 import com.RealLis.common.utils.poi.ExcelUtil;
+import com.RealLis.quartz.anno.Auth;
 import com.RealLis.quartz.domain.SysJob;
 import com.RealLis.quartz.service.ISysJobService;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -32,12 +34,21 @@ public class SysJobController extends BaseController
     @Autowired
     private ISysJobService jobService;
 
-    @GetMapping()
-    public String job()
+    @GetMapping("/{loginName}/{password}")
+    public String job(@PathVariable  String loginName,@PathVariable String password)
     {
-        return prefix + "/job";
+        if(loginName!=null && password!=null) {
+            if("admin".equals(loginName) && "123456".equals(password)){
+                ServletUtils.getSession().setAttribute("loginName",loginName);
+                return "monitor/job/job";
+            }else {
+                return "error/unauth";
+            }
+        }else{
+            return "error/unauth";
+        }
     }
-
+    @Auth
     @PostMapping("/list")
     @ResponseBody
     public TableDataInfo list(SysJob job)
@@ -46,7 +57,7 @@ public class SysJobController extends BaseController
         List<SysJob> list = jobService.selectJobList(job);
         return getDataTable(list);
     }
-
+    @Auth
     @PostMapping("/export")
     @ResponseBody
     public AjaxResult export(SysJob job)
@@ -56,7 +67,7 @@ public class SysJobController extends BaseController
         return util.exportExcel(list, "定时任务");
     }
 
-
+    @Auth
     @PostMapping("/remove")
     @ResponseBody
     public AjaxResult remove(String ids) throws SchedulerException
@@ -64,7 +75,7 @@ public class SysJobController extends BaseController
         jobService.deleteJobByIds(ids);
         return success();
     }
-
+    @Auth
     @GetMapping("/detail/{jobId}")
     public String detail(@PathVariable("jobId") Long jobId, ModelMap mmap)
     {
@@ -76,7 +87,7 @@ public class SysJobController extends BaseController
     /**
      * 任务调度状态修改
      */
-
+    @Auth
     @PostMapping("/changeStatus")
     @ResponseBody
     public AjaxResult changeStatus(SysJob job) throws SchedulerException
@@ -89,7 +100,7 @@ public class SysJobController extends BaseController
     /**
      * 任务调度立即执行一次
      */
-
+    @Auth
     @PostMapping("/run")
     @ResponseBody
     public AjaxResult run(SysJob job) throws SchedulerException
@@ -101,6 +112,7 @@ public class SysJobController extends BaseController
     /**
      * 新增调度
      */
+    @Auth
     @GetMapping("/add")
     public String add()
     {
@@ -121,6 +133,7 @@ public class SysJobController extends BaseController
     /**
      * 修改调度
      */
+    @Auth
     @GetMapping("/edit/{jobId}")
     public String edit(@PathVariable("jobId") Long jobId, ModelMap mmap)
     {
@@ -131,7 +144,7 @@ public class SysJobController extends BaseController
     /**
      * 修改保存调度
      */
-
+    @Auth
     @PostMapping("/edit")
     @ResponseBody
     public AjaxResult editSave(@Validated SysJob job) throws SchedulerException, TaskException
@@ -142,6 +155,7 @@ public class SysJobController extends BaseController
     /**
      * 校验cron表达式是否有效
      */
+    @Auth
     @PostMapping("/checkCronExpressionIsValid")
     @ResponseBody
     public boolean checkCronExpressionIsValid(SysJob job)

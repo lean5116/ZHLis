@@ -6,6 +6,7 @@ import com.RealLis.common.core.page.TableDataInfo;
 import com.RealLis.common.enums.BusinessType;
 import com.RealLis.common.utils.StringUtils;
 import com.RealLis.common.utils.poi.ExcelUtil;
+import com.RealLis.quartz.anno.Auth;
 import com.RealLis.quartz.domain.SysJob;
 import com.RealLis.quartz.domain.SysJobLog;
 import com.RealLis.quartz.service.ISysJobLogService;
@@ -32,7 +33,7 @@ public class SysJobLogController extends BaseController
 
     @Autowired
     private ISysJobLogService jobLogService;
-
+    @Auth
     @GetMapping()
     public String jobLog(@RequestParam(value = "jobId", required = false) Long jobId, ModelMap mmap)
     {
@@ -43,7 +44,7 @@ public class SysJobLogController extends BaseController
         }
         return prefix + "/jobLog";
     }
-
+    @Auth
     @PostMapping("/list")
     @ResponseBody
     public TableDataInfo list(SysJobLog jobLog)
@@ -53,7 +54,7 @@ public class SysJobLogController extends BaseController
         return getDataTable(list);
     }
 
-
+    @Auth
     @PostMapping("/export")
     @ResponseBody
     public AjaxResult export(SysJobLog jobLog)
@@ -63,14 +64,14 @@ public class SysJobLogController extends BaseController
         return util.exportExcel(list, "调度日志");
     }
 
-
+    @Auth
     @PostMapping("/remove")
     @ResponseBody
     public AjaxResult remove(String ids)
     {
         return toAjax(jobLogService.deleteJobLogByIds(ids));
     }
-
+    @Auth
     @GetMapping("/detail/{jobLogId}")
     public String detail(@PathVariable("jobLogId") Long jobLogId, ModelMap mmap)
     {
@@ -79,7 +80,7 @@ public class SysJobLogController extends BaseController
         return prefix + "/detail";
     }
 
-
+    @Auth
     @PostMapping("/clean")
     @ResponseBody
     public AjaxResult clean()
