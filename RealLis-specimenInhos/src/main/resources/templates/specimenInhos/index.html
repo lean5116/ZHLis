@@ -300,7 +300,7 @@
         return fmt;
     };
     var dateNow = new Date();
-    $('#endDate').val(dateNow.format("yyyy-MM-dd hh:mm:ss"));
+    $('#endDate').val(dateNow.format("yyyy-MM-dd 23:59:59"));
     dateNow = dateNow.setDate(dateNow.getDate()-1);
     dateNow  = new Date(dateNow);
     $('#startDate').val(dateNow.format("yyyy-MM-dd 00:00:00"));
@@ -431,7 +431,10 @@
                 { field: 'canceltime', title: '操作时间' ,sortable: true },
                 { field: 'canceler', title: '操作人'  },
                 { field: 'requettime', title: '申请时间' ,sortable: true },
-                { field: 'specimencode', title: '样本类型'  ,align: 'center',editable:{type:'select',title:'类型',source:specimencodeFormatterEdit}},
+                { field: 'specimencode', title: '样本类型'  ,align: 'center',
+                    //editable:{type:'select',title:'类型',source:specimencodeFormatterEdit}
+                formatter:specimencodeFormatter
+                    },
                 { field: 'requestdoctor', title: '申请医生'  ,align: 'center'},
                 { field: 'requestmode', title: '申请模式'  ,align: 'center',formatter:function (value,row,index) {
                         if(value=='0'){
