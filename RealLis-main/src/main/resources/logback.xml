@@ -93,6 +93,24 @@
     <logger name="sys-user" level="info">
         <appender-ref ref="sys-user"/>
     </logger>
+    <appender name="sql" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/mybatis-logs/mybatis-sql.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${log.path}/mybatis-logs/mybatis-sql.log.%d{yyyy-MM-dd}</FileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%thread|%d{yyyy-MM-dd HH:mm:ss.SSS}|%level|%logger{36}|%m%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="mapper" level="DEBUG" additivity="false">
+        <appender-ref ref="sql" />
+    </logger>
+    <logger name="org.mybatis" level="DEBUG" additivity="false" >
+        <appender-ref ref="sql" />
+    </logger>
+
 
 
 </configuration>

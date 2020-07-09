@@ -3,6 +3,7 @@ package com.RealLis.quartz.service.impl;
 import com.RealLis.common.constant.ScheduleConstants;
 import com.RealLis.common.core.text.Convert;
 import com.RealLis.common.exception.job.TaskException;
+import com.RealLis.quartz.anno.Auth;
 import com.RealLis.quartz.domain.SysJob;
 import com.RealLis.quartz.mapper.SysJobMapper;
 import com.RealLis.quartz.service.ISysJobService;
@@ -22,6 +23,7 @@ import java.util.List;
 /**
  * 定时任务调度信息 服务层
  */
+
 @Service
 public class SysJobServiceImpl implements ISysJobService
 {

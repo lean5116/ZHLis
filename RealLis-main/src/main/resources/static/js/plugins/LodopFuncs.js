@@ -67,22 +67,30 @@ function getLodop(oOBJECT, oEMBED) {
     var strHtmInstall
          = "<br><font color='#FF00FF'>打印控件未安装!联系信息中心,安装后请刷新页面或重新进入。</font>";
     var strHtmUpdate
+        = "<br><font color='#FF00FF'>打印控件未安装!联系信息中心,安装后请刷新页面或重新进入。</font>";
          //= "<br><font color='#FF00FF'>打印控件需要升级!点击这里<a href='install_lodop32.exe' target='_self'>执行升级</a>,升级后请重新进入。</font>";
     var strHtm64_Install
          = "<br><font color='#FF00FF'>打印控件未安装!联系信息中心,安装后请刷新页面或重新进入。</font>";
     var strHtm64_Update
+        = "<br><font color='#FF00FF'>打印控件未安装!联系信息中心,安装后请刷新页面或重新进入。</font>";
         // = "<br><font color='#FF00FF'>打印控件需要升级!点击这里<a href='install_lodop64.exe' target='_self'>执行升级</a>,升级后请重新进入。</font>";
     var strHtmFireFox
+        = "<br><font color='#FF00FF'>打印控件未安装!联系信息中心,安装后请刷新页面或重新进入。</font>";
         // = "<br><br><font color='#FF00FF'>（注意：如曾安装过Lodop旧版附件npActiveXPLugin,请在【工具】->【附加组件】->【扩展】中先卸它）</font>";
     var strHtmChrome
+        = "<br><font color='#FF00FF'>打印控件未安装!联系信息中心,安装后请刷新页面或重新进入。</font>";
         // = "<br><br><font color='#FF00FF'>(如果此前正常，仅因浏览器升级或重安装而出问题，需重新执行以上安装）</font>";
     var strCLodopInstall_1
+        = "<br><font color='#FF00FF'>打印控件未安装!联系信息中心,安装后请刷新页面或重新进入。</font>";
         // = "<br><font color='#FF00FF'>Web打印服务CLodop未安装启动，点击这里<a href='' target='_self'>下载执行安装</a>";
     var strCLodopInstall_2
+        = "<br><font color='#FF00FF'>打印控件未安装!联系信息中心,安装后请刷新页面或重新进入。</font>";
         // = "<br>（若此前已安装过，可<a href='../static/app/CLodop.protocol:setup' target='_self'>点这里直接再次启动</a>）";
     var strCLodopInstall_3
+        = "<br><font color='#FF00FF'>打印控件未安装!联系信息中心,安装后请刷新页面或重新进入。</font>";
         // = "，成功后请刷新本页面。</font>";
     var strCLodopUpdate
+        = "<br><font color='#FF00FF'>打印控件未安装!联系信息中心,安装后请刷新页面或重新进入。</font>";
         // = "<br><font color='#FF00FF'>Web打印服务CLodop需升级!点击这里<a href='CLodop_Setup_for_Win32NT.exe' target='_self'>执行升级</a>,升级后请刷新页面。</font>";
     var LODOP;
     try {

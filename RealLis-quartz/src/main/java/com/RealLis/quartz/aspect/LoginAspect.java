@@ -14,25 +14,26 @@ public class LoginAspect {
     public void LoginAspect(){
 
     }
-    @Before("LoginAspect()")
-    public void doBefore(JoinPoint joinPoint){
-        System.out.println("doBefore");
-    }
-    @After("LoginAspect()")
-    public void doAfter(JoinPoint joinPoint){
-        System.out.println("doAfter");
-    }
-
-    @AfterReturning("LoginAspect()" )
-    public void doAfterReturning(JoinPoint joinPoint){
-        System.out.println("doAfterReturning");
-    }
-
-    @AfterThrowing("LoginAspect()")
-    public void deAfterThrowing(JoinPoint joinPoint){
-        System.out.println("deAfterThrowing");
-    }
-
+    //region 其他选项
+//    @Before("LoginAspect()")
+//    public void doBefore(JoinPoint joinPoint){
+//        System.out.println("doBefore");
+//    }
+//    @After("LoginAspect()")
+//    public void doAfter(JoinPoint joinPoint){
+//        System.out.println("doAfter");
+//    }
+//
+//    @AfterReturning("LoginAspect()" )
+//    public void doAfterReturning(JoinPoint joinPoint){
+//        System.out.println("doAfterReturning");
+//    }
+//
+//    @AfterThrowing("LoginAspect()")
+//    public void deAfterThrowing(JoinPoint joinPoint){
+//        System.out.println("deAfterThrowing");
+//    }
+    //endregion
     @Around("LoginAspect()")
     public Object deAround(ProceedingJoinPoint joinPoint) throws Throwable{
         System.out.println("deAround");

@@ -1,6 +1,7 @@
 package com.RealLis.quartz.service.impl;
 
 import com.RealLis.common.core.text.Convert;
+import com.RealLis.quartz.anno.Auth;
 import com.RealLis.quartz.domain.SysJobLog;
 import com.RealLis.quartz.mapper.SysJobLogMapper;
 import com.RealLis.quartz.service.ISysJobLogService;
@@ -12,6 +13,7 @@ import java.util.List;
 /**
  * 定时任务调度日志信息 服务层
  */
+
 @Service
 public class SysJobLogServiceImpl implements ISysJobLogService
 {

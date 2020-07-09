@@ -39,7 +39,7 @@ public class SysJobController extends BaseController
     {
         if(loginName!=null && password!=null) {
             if("admin".equals(loginName) && "123456".equals(password)){
-                ServletUtils.getSession().setAttribute("loginName",loginName);
+                ServletUtils.getSession().setAttribute("LoginName",loginName);
                 return "monitor/job/job";
             }else {
                 return "error/unauth";

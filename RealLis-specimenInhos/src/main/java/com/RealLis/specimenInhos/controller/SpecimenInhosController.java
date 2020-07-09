@@ -10,6 +10,7 @@ import com.RealLis.specimenInhos.domain.PostBack.*;
 import com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.ZMIC;
 import com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.germOBX;
 import com.RealLis.specimenInhos.domain.PostBack.reportPostBack.OBX;
+import com.RealLis.specimenInhos.domain.ReturnAudit.auditBody;
 import com.RealLis.specimenInhos.service.*;
 import com.RealLis.specimenInhos.ws.service.LisCommonWS.LisCommonWSService;
 import com.RealLis.specimenInhos.ws.service.zhlisWsHerenLet.zhlisWsHerenLetService;
@@ -470,5 +471,13 @@ public class SpecimenInhosController extends BaseController {
         }
         System.out.println(result);
         return lisCommonWSService.reportPostBack(result);
+    }
+
+    @Autowired
+    private ReturnAuditService returnAuditService;
+    @GetMapping("/audit")
+    @ResponseBody
+    public String audit(){
+        return    returnAuditService.getAudit().toString();
     }
 }

@@ -13,4 +13,9 @@ public class LisCommonWSServiceImpl implements LisCommonWSService{
     public String reportPostBack(String inputString) {
         return  lisCommonWSSoap.messageIn("HL7",inputString);
     }
+
+    @Override
+    public String returnAudit(String inputString) {
+        return lisCommonWSSoap.messageIn("JSON",inputString);
+    }
 }

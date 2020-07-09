@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.RealLis.specimenInhos.mapper.ReturnAuditMapper">
+    <resultMap id="audit" type="com.RealLis.specimenInhos.domain.ReturnAudit.auditBody">
+        <result property="jlxh" column="JLXH" />
+        <result property="patientID" column="PATIENTID" />
+        <result property="visitNo" column="VISITNO" />
+        <result property="orderId" column="ORDERID" />
+        <result property="reportId" column="REPORTID" />
+        <result property="operDocId" column="OPERDOCID" />
+        <result property="operDocName" column="OPERDOCNAME" />
+        <result property="operTime" column="OPERTIME" />
+    </resultMap>
+
+    <select id="queryAll" resultMap="audit">
+        select * from lab203 order by JLXH
+    </select>
+    <delete id="delete">
+        delete  from lab203 where jlxh=#{jlxh}
+    </delete>
+</mapper>
