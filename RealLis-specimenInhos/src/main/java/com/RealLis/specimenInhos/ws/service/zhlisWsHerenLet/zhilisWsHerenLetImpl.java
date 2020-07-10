@@ -13,7 +13,6 @@ public class zhilisWsHerenLetImpl  implements zhlisWsHerenLetService {
     @Async
     public String LabBarMake(String patientId) {
         String response = webServiceLisSoap.labBarMake(patientId);
-        System.out.println(response);
         return response;
     }
 

@@ -45,7 +45,7 @@ public class ReturnAuditTask {
                     log.info(inputString);
                     log.info(result);
                     auditRes auditRes = JSON.parseObject(result,auditRes.class);
-                    if("AA".equals(auditRes.getHead().getTradeCode())){
+                    if("AA".equals(auditRes.getHead().getTradeStatus())){
                         int delFlag= returnAuditService.deleteByJlxh(audit.getJlxh());
                         log.info(" 报告号"+audit.getReportId() +" 删除标志:"+ Integer.toString(delFlag));
                     }

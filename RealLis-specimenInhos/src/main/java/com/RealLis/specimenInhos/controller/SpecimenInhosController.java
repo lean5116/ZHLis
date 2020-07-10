@@ -22,6 +22,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -54,6 +56,7 @@ public class SpecimenInhosController extends BaseController {
     private ReportPostBackService reportPostBackService;
     @Autowired
     private LisCommonWSService lisCommonWSService;
+
 
     @GetMapping("")
     public String specimenInhos( String appDeptCode,  String userCode, Model model) {
@@ -154,14 +157,13 @@ public class SpecimenInhosController extends BaseController {
         HisAdvice params = new HisAdvice();
         params.setOrderStatus("1");
         params.setSampleFlag("0");
-        params.setOrderingDeptCode(deptId);
+        params.setReqDeptNo(deptId);
         List<HisAdvice> hisAdviceList = hisAdviceService.getDisPatientIdList(params);
         if (hisAdviceList != null) {
             for (HisAdvice hisAdvice : hisAdviceList
             ) {
                 System.out.println(hisAdvice.getPatientId());
-                zhlisWsHerenLetService.LabBarMake(hisAdvice.getPatientId());
-
+                logger.info(hisAdvice.getPatientId() + zhlisWsHerenLetService.LabBarMake(hisAdvice.getPatientId()));
             }
         }
     }
