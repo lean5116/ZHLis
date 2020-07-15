@@ -713,7 +713,7 @@
     }
     /*信息刷新按钮*/
     function infoRefresh() {
-        queryBarcodeSearch(currentTableId);
+        $.modal.loading("条码生成中");
         /*请求后台异步生成条码*/
         var deptId = [[${department}]];
         $.ajax({
@@ -722,6 +722,13 @@
             data:{
                 "deptId":deptId
             },
+            success:function () {
+                $.modal.closeLoading();
+                queryBarcodeSearch(currentTableId);
+            },
+            error:function () {
+                $.modal.closeLoading();
+            }
         });
 
     }

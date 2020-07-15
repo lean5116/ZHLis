@@ -56,7 +56,8 @@ public class SpecimenInhosController extends BaseController {
     private ReportPostBackService reportPostBackService;
     @Autowired
     private LisCommonWSService lisCommonWSService;
-
+    @Autowired
+    private ViLisAdviseHerenService viLisAdviseHerenService;
 
     @GetMapping("")
     public String specimenInhos( String appDeptCode,  String userCode, Model model) {
@@ -154,16 +155,17 @@ public class SpecimenInhosController extends BaseController {
     @PostMapping("/GenerateBarcode")
     @ResponseBody
     private void GenerateBarcode(String deptId) {
-        HisAdvice params = new HisAdvice();
+        ViLisAdviseHeren params = new ViLisAdviseHeren();
         params.setOrderStatus("1");
         params.setSampleFlag("0");
-        params.setReqDeptNo(deptId);
-        List<HisAdvice> hisAdviceList = hisAdviceService.getDisPatientIdList(params);
-        if (hisAdviceList != null) {
-            for (HisAdvice hisAdvice : hisAdviceList
+        params.setDeptcode(deptId);
+        List<ViLisAdviseHeren> viLisAdviseHerenList = viLisAdviseHerenService.getDistinctAdviseList(params);
+
+        if (viLisAdviseHerenList != null) {
+            for (ViLisAdviseHeren viLisAdviseHeren : viLisAdviseHerenList
             ) {
-                System.out.println(hisAdvice.getPatientId());
-                logger.info(hisAdvice.getPatientId() + zhlisWsHerenLetService.LabBarMake(hisAdvice.getPatientId()));
+                System.out.println(viLisAdviseHeren.getPatientid());
+                logger.info(viLisAdviseHeren.getPatientid() + zhlisWsHerenLetService.LabBarMake(viLisAdviseHeren.getPatientid()));
             }
         }
     }

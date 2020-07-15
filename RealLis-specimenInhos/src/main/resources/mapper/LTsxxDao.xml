@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.RealLis.specimenInhos.mapper.dao.LTsxxDao">
+
+    <resultMap type="com.RealLis.specimenInhos.mapper.entity.LTsxx" id="LTsxxMap">
+        <result property="xh" column="XH" jdbcType="OTHER"/>
+        <result property="bbbh" column="BBBH" jdbcType="OTHER"/>
+        <result property="tsnr" column="TSNR" jdbcType="OTHER"/>
+        <result property="qrr" column="QRR" jdbcType="OTHER"/>
+        <result property="qrrq" column="QRRQ" jdbcType="OTHER"/>
+        <result property="qrbz" column="QRBZ" jdbcType="OTHER"/>
+        <result property="qrks" column="QRKS" jdbcType="OTHER"/>
+        <result property="bz" column="BZ" jdbcType="OTHER"/>
+        <result property="tslx" column="TSLX" jdbcType="OTHER"/>
+        <result property="tsrq" column="TSRQ" jdbcType="OTHER"/>
+        <result property="tsks" column="TSKS" jdbcType="OTHER"/>
+        <result property="tsr" column="TSR" jdbcType="OTHER"/>
+        <result property="tsworkstation" column="TSWORKSTATION" jdbcType="OTHER"/>
+        <result property="qrworkstation" column="QRWORKSTATION" jdbcType="OTHER"/>
+        <result property="zgys" column="ZGYS" jdbcType="OTHER"/>
+        <result property="zghs" column="ZGHS" jdbcType="OTHER"/>
+        <result property="dzsj" column="DZSJ" jdbcType="OTHER"/>
+        <result property="clys" column="CLYS" jdbcType="OTHER"/>
+        <result property="clrYs" column="CLR_YS" jdbcType="OTHER"/>
+        <result property="clsjYs" column="CLSJ_YS" jdbcType="OTHER"/>
+        <result property="clbzYs" column="CLBZ_YS" jdbcType="OTHER"/>
+        <result property="clrHs" column="CLR_HS" jdbcType="OTHER"/>
+        <result property="clsjHs" column="CLSJ_HS" jdbcType="OTHER"/>
+        <result property="clnrHs" column="CLNR_HS" jdbcType="OTHER"/>
+        <result property="clbzHs" column="CLBZ_HS" jdbcType="OTHER"/>
+        <result property="cname" column="CNAME" jdbcType="OTHER"/>
+        <result property="cip" column="CIP" jdbcType="OTHER"/>
+        <result property="bqdm" column="BQDM" jdbcType="OTHER"/>
+        <result property="ksdm" column="KSDM" jdbcType="OTHER"/>
+        <result property="systype" column="SYSTYPE" jdbcType="OTHER"/>
+        <result property="kdys" column="KDYS" jdbcType="OTHER"/>
+        <result property="brid" column="BRID" jdbcType="OTHER"/>
+        <result property="jzlb" column="JZLB" jdbcType="OTHER"/>
+        <result property="telP" column="TEL_P" jdbcType="OTHER"/>
+        <result property="telYs" column="TEL_YS" jdbcType="OTHER"/>
+        <result property="sendflag" column="SENDFLAG" jdbcType="OTHER"/>
+        <result property="sentime" column="SENTIME" jdbcType="OTHER"/>
+        <result property="id" column="ID" jdbcType="OTHER"/>
+        <result property="tsrxm" column="TSRXM" jdbcType="OTHER"/>
+        <result property="tsrdh" column="TSRDH" jdbcType="OTHER"/>
+        <result property="clnrYs" column="CLNR_YS" jdbcType="OTHER"/>
+        <result property="transed" column="TRANSED" jdbcType="OTHER"/>
+        <result property="bzsm" column="BZSM" jdbcType="OTHER"/>
+        <result property="mpi" column="MPI" jdbcType="OTHER"/>
+        <result property="brxm" column="BRXM" jdbcType="OTHER"/>
+        <result property="ksmc" column="KSMC" jdbcType="OTHER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="LTsxxMap">
+        select
+          XH, BBBH, TSNR, QRR, QRRQ, QRBZ, QRKS, BZ, TSLX, TSRQ, TSKS, TSR, TSWORKSTATION, QRWORKSTATION, ZGYS, ZGHS, DZSJ, CLYS, CLR_YS, CLSJ_YS, CLBZ_YS, CLR_HS, CLSJ_HS, CLNR_HS, CLBZ_HS, CNAME, CIP, BQDM, KSDM, SYSTYPE, KDYS, BRID, JZLB, TEL_P, TEL_YS, SENDFLAG, SENTIME, ID, TSRXM, TSRDH, CLNR_YS, TRANSED, BZSM, MPI, BRXM, KSMC
+        from ZHLIS.L_TSXX
+        where XH = #{xh}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="LTsxxMap">
+        select
+          XH, BBBH, TSNR, QRR, QRRQ, QRBZ, QRKS, BZ, TSLX, TSRQ, TSKS, TSR, TSWORKSTATION, QRWORKSTATION, ZGYS, ZGHS, DZSJ, CLYS, CLR_YS, CLSJ_YS, CLBZ_YS, CLR_HS, CLSJ_HS, CLNR_HS, CLBZ_HS, CNAME, CIP, BQDM, KSDM, SYSTYPE, KDYS, BRID, JZLB, TEL_P, TEL_YS, SENDFLAG, SENTIME, ID, TSRXM, TSRDH, CLNR_YS, TRANSED, BZSM, MPI, BRXM, KSMC
+        from ZHLIS.L_TSXX
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="LTsxxMap">
+        select
+          XH, BBBH, TSNR, QRR, QRRQ, QRBZ, QRKS, BZ, TSLX, TSRQ, TSKS, TSR, TSWORKSTATION, QRWORKSTATION, ZGYS, ZGHS, DZSJ, CLYS, CLR_YS, CLSJ_YS, CLBZ_YS, CLR_HS, CLSJ_HS, CLNR_HS, CLBZ_HS, CNAME, CIP, BQDM, KSDM, SYSTYPE, KDYS, BRID, JZLB, TEL_P, TEL_YS, SENDFLAG, SENTIME, ID, TSRXM, TSRDH, CLNR_YS, TRANSED, BZSM, MPI, BRXM, KSMC
+        from ZHLIS.L_TSXX
+        <where>
+            <if test="xh != null">
+                and XH = #{xh}
+            </if>
+            <if test="bbbh != null">
+                and BBBH = #{bbbh}
+            </if>
+            <if test="tsnr != null">
+                and TSNR = #{tsnr}
+            </if>
+            <if test="qrr != null">
+                and QRR = #{qrr}
+            </if>
+            <if test="qrrq != null">
+                and QRRQ = #{qrrq}
+            </if>
+            <if test="qrbz != null">
+                and QRBZ = #{qrbz}
+            </if>
+            <if test="qrks != null">
+                and QRKS = #{qrks}
+            </if>
+            <if test="bz != null">
+                and BZ = #{bz}
+            </if>
+            <if test="tslx != null">
+                and TSLX = #{tslx}
+            </if>
+            <if test="tsrq != null">
+                and TSRQ = #{tsrq}
+            </if>
+            <if test="tsks != null">
+                and TSKS = #{tsks}
+            </if>
+            <if test="tsr != null">
+                and TSR = #{tsr}
+            </if>
+            <if test="tsworkstation != null">
+                and TSWORKSTATION = #{tsworkstation}
+            </if>
+            <if test="qrworkstation != null">
+                and QRWORKSTATION = #{qrworkstation}
+            </if>
+            <if test="zgys != null">
+                and ZGYS = #{zgys}
+            </if>
+            <if test="zghs != null">
+                and ZGHS = #{zghs}
+            </if>
+            <if test="dzsj != null">
+                and DZSJ = #{dzsj}
+            </if>
+            <if test="clys != null">
+                and CLYS = #{clys}
+            </if>
+            <if test="clrYs != null">
+                and CLR_YS = #{clrYs}
+            </if>
+            <if test="clsjYs != null">
+                and CLSJ_YS = #{clsjYs}
+            </if>
+            <if test="clbzYs != null">
+                and CLBZ_YS = #{clbzYs}
+            </if>
+            <if test="clrHs != null">
+                and CLR_HS = #{clrHs}
+            </if>
+            <if test="clsjHs != null">
+                and CLSJ_HS = #{clsjHs}
+            </if>
+            <if test="clnrHs != null">
+                and CLNR_HS = #{clnrHs}
+            </if>
+            <if test="clbzHs != null">
+                and CLBZ_HS = #{clbzHs}
+            </if>
+            <if test="cname != null">
+                and CNAME = #{cname}
+            </if>
+            <if test="cip != null">
+                and CIP = #{cip}
+            </if>
+            <if test="bqdm != null">
+                and BQDM = #{bqdm}
+            </if>
+            <if test="ksdm != null">
+                and KSDM = #{ksdm}
+            </if>
+            <if test="systype != null">
+                and SYSTYPE = #{systype}
+            </if>
+            <if test="kdys != null">
+                and KDYS = #{kdys}
+            </if>
+            <if test="brid != null">
+                and BRID = #{brid}
+            </if>
+            <if test="jzlb != null">
+                and JZLB = #{jzlb}
+            </if>
+            <if test="telP != null">
+                and TEL_P = #{telP}
+            </if>
+            <if test="telYs != null">
+                and TEL_YS = #{telYs}
+            </if>
+            <if test="sendflag != null">
+                and SENDFLAG = #{sendflag}
+            </if>
+            <if test="sentime != null">
+                and SENTIME = #{sentime}
+            </if>
+            <if test="id != null">
+                and ID = #{id}
+            </if>
+            <if test="tsrxm != null">
+                and TSRXM = #{tsrxm}
+            </if>
+            <if test="tsrdh != null">
+                and TSRDH = #{tsrdh}
+            </if>
+            <if test="clnrYs != null">
+                and CLNR_YS = #{clnrYs}
+            </if>
+            <if test="transed != null">
+                and TRANSED = #{transed}
+            </if>
+            <if test="bzsm != null">
+                and BZSM = #{bzsm}
+            </if>
+            <if test="mpi != null">
+                and MPI = #{mpi}
+            </if>
+            <if test="brxm != null">
+                and BRXM = #{brxm}
+            </if>
+            <if test="ksmc != null">
+                and KSMC = #{ksmc}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="xh" useGeneratedKeys="true">
+        insert into ZHLIS.L_TSXX(BBBH, TSNR, QRR, QRRQ, QRBZ, QRKS, BZ, TSLX, TSRQ, TSKS, TSR, TSWORKSTATION, QRWORKSTATION, ZGYS, ZGHS, DZSJ, CLYS, CLR_YS, CLSJ_YS, CLBZ_YS, CLR_HS, CLSJ_HS, CLNR_HS, CLBZ_HS, CNAME, CIP, BQDM, KSDM, SYSTYPE, KDYS, BRID, JZLB, TEL_P, TEL_YS, SENDFLAG, SENTIME, ID, TSRXM, TSRDH, CLNR_YS, TRANSED, BZSM, MPI, BRXM, KSMC)
+        values (#{bbbh}, #{tsnr}, #{qrr}, #{qrrq}, #{qrbz}, #{qrks}, #{bz}, #{tslx}, #{tsrq}, #{tsks}, #{tsr}, #{tsworkstation}, #{qrworkstation}, #{zgys}, #{zghs}, #{dzsj}, #{clys}, #{clrYs}, #{clsjYs}, #{clbzYs}, #{clrHs}, #{clsjHs}, #{clnrHs}, #{clbzHs}, #{cname}, #{cip}, #{bqdm}, #{ksdm}, #{systype}, #{kdys}, #{brid}, #{jzlb}, #{telP}, #{telYs}, #{sendflag}, #{sentime}, #{id}, #{tsrxm}, #{tsrdh}, #{clnrYs}, #{transed}, #{bzsm}, #{mpi}, #{brxm}, #{ksmc})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update ZHLIS.L_TSXX
+        <set>
+            <if test="bbbh != null">
+                BBBH = #{bbbh},
+            </if>
+            <if test="tsnr != null">
+                TSNR = #{tsnr},
+            </if>
+            <if test="qrr != null">
+                QRR = #{qrr},
+            </if>
+            <if test="qrrq != null">
+                QRRQ = #{qrrq},
+            </if>
+            <if test="qrbz != null">
+                QRBZ = #{qrbz},
+            </if>
+            <if test="qrks != null">
+                QRKS = #{qrks},
+            </if>
+            <if test="bz != null">
+                BZ = #{bz},
+            </if>
+            <if test="tslx != null">
+                TSLX = #{tslx},
+            </if>
+            <if test="tsrq != null">
+                TSRQ = #{tsrq},
+            </if>
+            <if test="tsks != null">
+                TSKS = #{tsks},
+            </if>
+            <if test="tsr != null">
+                TSR = #{tsr},
+            </if>
+            <if test="tsworkstation != null">
+                TSWORKSTATION = #{tsworkstation},
+            </if>
+            <if test="qrworkstation != null">
+                QRWORKSTATION = #{qrworkstation},
+            </if>
+            <if test="zgys != null">
+                ZGYS = #{zgys},
+            </if>
+            <if test="zghs != null">
+                ZGHS = #{zghs},
+            </if>
+            <if test="dzsj != null">
+                DZSJ = #{dzsj},
+            </if>
+            <if test="clys != null">
+                CLYS = #{clys},
+            </if>
+            <if test="clrYs != null">
+                CLR_YS = #{clrYs},
+            </if>
+            <if test="clsjYs != null">
+                CLSJ_YS = #{clsjYs},
+            </if>
+            <if test="clbzYs != null">
+                CLBZ_YS = #{clbzYs},
+            </if>
+            <if test="clrHs != null">
+                CLR_HS = #{clrHs},
+            </if>
+            <if test="clsjHs != null">
+                CLSJ_HS = #{clsjHs},
+            </if>
+            <if test="clnrHs != null">
+                CLNR_HS = #{clnrHs},
+            </if>
+            <if test="clbzHs != null">
+                CLBZ_HS = #{clbzHs},
+            </if>
+            <if test="cname != null">
+                CNAME = #{cname},
+            </if>
+            <if test="cip != null">
+                CIP = #{cip},
+            </if>
+            <if test="bqdm != null">
+                BQDM = #{bqdm},
+            </if>
+            <if test="ksdm != null">
+                KSDM = #{ksdm},
+            </if>
+            <if test="systype != null">
+                SYSTYPE = #{systype},
+            </if>
+            <if test="kdys != null">
+                KDYS = #{kdys},
+            </if>
+            <if test="brid != null">
+                BRID = #{brid},
+            </if>
+            <if test="jzlb != null">
+                JZLB = #{jzlb},
+            </if>
+            <if test="telP != null">
+                TEL_P = #{telP},
+            </if>
+            <if test="telYs != null">
+                TEL_YS = #{telYs},
+            </if>
+            <if test="sendflag != null">
+                SENDFLAG = #{sendflag},
+            </if>
+            <if test="sentime != null">
+                SENTIME = #{sentime},
+            </if>
+            <if test="id != null">
+                ID = #{id},
+            </if>
+            <if test="tsrxm != null">
+                TSRXM = #{tsrxm},
+            </if>
+            <if test="tsrdh != null">
+                TSRDH = #{tsrdh},
+            </if>
+            <if test="clnrYs != null">
+                CLNR_YS = #{clnrYs},
+            </if>
+            <if test="transed != null">
+                TRANSED = #{transed},
+            </if>
+            <if test="bzsm != null">
+                BZSM = #{bzsm},
+            </if>
+            <if test="mpi != null">
+                MPI = #{mpi},
+            </if>
+            <if test="brxm != null">
+                BRXM = #{brxm},
+            </if>
+            <if test="ksmc != null">
+                KSMC = #{ksmc},
+            </if>
+        </set>
+        where XH = #{xh}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from ZHLIS.L_TSXX where XH = #{xh}
+    </delete>
+
+</mapper>

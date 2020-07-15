@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.RealLis.specimenInhos.mapper.ViLisAdviseHerenMapper">
+
+    <resultMap type="com.RealLis.specimenInhos.domain.ViLisAdviseHeren" id="ViLisAdviseHerenMap">
+        <result property="patientid" column="PATIENTID" />
+        <result property="visitnumber" column="VISITNUMBER" />
+        <result property="adviseid" column="ADVISEID" />
+        <result property="deptcode" column="DEPTCODE" />
+        <result property="deprtname" column="DEPRTNAME" />
+        <result property="clinicdiag" column="CLINICDIAG" />
+        <result property="labgroupid" column="LABGROUPID" />
+        <result property="labgroupname" column="LABGROUPNAME" />
+        <result property="specimentype" column="SPECIMENTYPE" />
+        <result property="labtube" column="LABTUBE" />
+        <result property="reportFlag" column="REPORT_FLAG" />
+        <result property="laboratory" column="LABORATORY" />
+        <result property="requesttime" column="REQUESTTIME" />
+        <result property="itemprice" column="ITEMPRICE" />
+        <result property="itemsum" column="ITEMSUM" />
+        <result property="doctorcode" column="DOCTORCODE" />
+        <result property="advisegroupcode" column="ADVISEGROUPCODE" />
+        <result property="requestmode" column="REQUESTMODE" />
+        <result property="sampleFlag" column="SAMPLE_FLAG" />
+        <result property="orderStatus" column="ORDER_STATUS" />
+        <result property="labgroupcode" column="LABGROUPCODE" />
+        <result property="inhosstaus" column="INHOSSTAUS" />
+        <result property="docsubmit" column="DOCSUBMIT" />
+        <result property="preinhosstatus" column="PREINHOSSTATUS" />
+    </resultMap>
+    <select id="queryDistinctAdviseList" parameterType="com.RealLis.specimenInhos.domain.ViLisAdviseHeren" resultMap="ViLisAdviseHerenMap">
+        select
+        PATIENTID, VISITNUMBER, ADVISEID, DEPTCODE, DEPRTNAME, CLINICDIAG, LABGROUPID, LABGROUPNAME, SPECIMENTYPE, LABTUBE, REPORT_FLAG, LABORATORY, REQUESTTIME, ITEMPRICE, ITEMSUM, DOCTORCODE, ADVISEGROUPCODE, REQUESTMODE, SAMPLE_FLAG, ORDER_STATUS, LABGROUPCODE, INHOSSTAUS, DOCSUBMIT, PREINHOSSTATUS
+        from ZHLIS.VI_LIS_ADVISE_HEREN
+        <where>
+            <if test="patientid != null">
+                and PATIENTID = #{patientid}
+            </if>
+            <if test="visitnumber != null">
+                and VISITNUMBER = #{visitnumber}
+            </if>
+            <if test="adviseid != null">
+                and ADVISEID = #{adviseid}
+            </if>
+            <if test="deptcode != null">
+                and DEPTCODE = #{deptcode}
+            </if>
+            <if test="deprtname != null">
+                and DEPRTNAME = #{deprtname}
+            </if>
+            <if test="clinicdiag != null">
+                and CLINICDIAG = #{clinicdiag}
+            </if>
+            <if test="labgroupid != null">
+                and LABGROUPID = #{labgroupid}
+            </if>
+            <if test="labgroupname != null">
+                and LABGROUPNAME = #{labgroupname}
+            </if>
+            <if test="specimentype != null">
+                and SPECIMENTYPE = #{specimentype}
+            </if>
+            <if test="labtube != null">
+                and LABTUBE = #{labtube}
+            </if>
+            <if test="reportFlag != null">
+                and REPORT_FLAG = #{reportFlag}
+            </if>
+            <if test="laboratory != null">
+                and LABORATORY = #{laboratory}
+            </if>
+            <if test="requesttime != null">
+                and REQUESTTIME = #{requesttime}
+            </if>
+            <if test="itemprice != null">
+                and ITEMPRICE = #{itemprice}
+            </if>
+            <if test="itemsum != null">
+                and ITEMSUM = #{itemsum}
+            </if>
+            <if test="doctorcode != null">
+                and DOCTORCODE = #{doctorcode}
+            </if>
+            <if test="advisegroupcode != null">
+                and ADVISEGROUPCODE = #{advisegroupcode}
+            </if>
+            <if test="requestmode != null">
+                and REQUESTMODE = #{requestmode}
+            </if>
+            <if test="sampleFlag != null">
+                and SAMPLE_FLAG = #{sampleFlag}
+            </if>
+            <if test="orderStatus != null">
+                and ORDER_STATUS = #{orderStatus}
+            </if>
+            <if test="labgroupcode != null">
+                and LABGROUPCODE = #{labgroupcode}
+            </if>
+            <if test="inhosstaus != null">
+                and INHOSSTAUS = #{inhosstaus}
+            </if>
+            <if test="docsubmit != null">
+                and DOCSUBMIT = #{docsubmit}
+            </if>
+            <if test="preinhosstatus != null">
+                and PREINHOSSTATUS = #{preinhosstatus}
+            </if>
+        </where>
+    </select>
+</mapper>

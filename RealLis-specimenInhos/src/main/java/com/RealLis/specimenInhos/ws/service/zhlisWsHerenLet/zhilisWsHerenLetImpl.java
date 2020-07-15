@@ -10,7 +10,6 @@ public class zhilisWsHerenLetImpl  implements zhlisWsHerenLetService {
     WebServiceLis webServiceLis = new WebServiceLis();
     WebServiceLisSoap  webServiceLisSoap = webServiceLis.getWebServiceLisSoap();
     @Override
-    @Async
     public String LabBarMake(String patientId) {
         String response = webServiceLisSoap.labBarMake(patientId);
         return response;
