@@ -39,6 +39,7 @@ public class CriticalTask {
             ) {
                 LTsxx lTsxx  = lTsxxService.getByHisxh(ltsxxTr.getXh());
                 LTsxxHis lTsxxHis = lTsxxHisService.getByXh(ltsxxTr.getXh());
+
                 if(lTsxxHis==null){
                     if(lTsxxTrHisService.deleteByHisxh(ltsxxTr.getJlxh())>0) {
                         logger.info(ltsxxTr.getXh() +"his 未检索到 TR表 记录删除成功");
@@ -49,6 +50,7 @@ public class CriticalTask {
                     BeanUtils.copyBeanProp(ltSxxParam, lTsxxHis);
                     ltSxxParam.setHisxh(lTsxxHis.getXh());
                 }
+                logger.info(ltSxxParam.toString());
                 if(lTsxx!=null){
                     switch (ltsxxTr.getEventype()){
                         case "INSERT":
@@ -116,6 +118,7 @@ public class CriticalTask {
                     BeanUtils.copyBeanProp(ltSxxParam, lTsxx);
                     ltSxxParam.setLisxh(lTsxx.getXh());
                 }
+                logger.info(ltSxxParam.toString());
                 if(lTsxxHis!=null){
                     switch (ltsxxTr.getEventype()){
                         case "INSERT":

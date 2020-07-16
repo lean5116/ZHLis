@@ -13,7 +13,7 @@ public class LTsxx {
   private String qrbz;
   private String qrks;
   private String bz;
-  private String tslx;
+  private Long tslx;
   private Date tsrq;
   private String tsks;
   private String tsr;
@@ -56,7 +56,7 @@ public class LTsxx {
   public LTsxx() {
   }
 
-  public LTsxx(Long xh, String bbbh, String tsnr, String qrr, Date qrrq, String qrbz, String qrks, String bz, String tslx, Date tsrq, String tsks, String tsr, String tsworkstation, String qrworkstation, String zgys, String zghs, Date dzsj, String clys, String clrYs, Date clsjYs, Long clbzYs, String clrHs, Date clsjHs, String clnrHs, Long clbzHs, String cname, String cip, Long bqdm, Long ksdm, String systype, String kdys, String brid, Long jzlb, String telP, String telYs, Long sendflag, Date sentime, Long id, String tsrxm, String tsrdh, String clnrYs, Long transed, String bzsm, String mpi, String brxm, String ksmc, Long hisxh) {
+  public LTsxx(Long xh, String bbbh, String tsnr, String qrr, Date qrrq, String qrbz, String qrks, String bz, Long tslx, Date tsrq, String tsks, String tsr, String tsworkstation, String qrworkstation, String zgys, String zghs, Date dzsj, String clys, String clrYs, Date clsjYs, Long clbzYs, String clrHs, Date clsjHs, String clnrHs, Long clbzHs, String cname, String cip, Long bqdm, Long ksdm, String systype, String kdys, String brid, Long jzlb, String telP, String telYs, Long sendflag, Date sentime, Long id, String tsrxm, String tsrdh, String clnrYs, Long transed, String bzsm, String mpi, String brxm, String ksmc, Long hisxh) {
     this.xh = xh;
     this.bbbh = bbbh;
     this.tsnr = tsnr;
@@ -138,7 +138,7 @@ public class LTsxx {
     return bz;
   }
 
-  public String getTslx() {
+  public Long getTslx() {
     return tslx;
   }
 
@@ -326,7 +326,7 @@ public class LTsxx {
     this.bz = bz;
   }
 
-  public void setTslx(String tslx) {
+  public void setTslx(Long tslx) {
     this.tslx = tslx;
   }
 

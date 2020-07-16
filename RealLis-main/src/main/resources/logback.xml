@@ -7,6 +7,9 @@
 
 	<!-- 控制台输出 -->
 	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>debug</level>
+        </filter>
 		<encoder>
 			<pattern>${log.pattern}</pattern>
 		</encoder>
@@ -101,7 +104,7 @@
             <maxHistory>30</maxHistory>
             <timeBasedFileNamingAndTriggeringPolicy
                     class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <maxFileSize>1MB</maxFileSize><!-- 日志文件分割的条件为日志文件大小达到1M -->
+                <maxFileSize>5MB</maxFileSize><!-- 日志文件分割的条件为日志文件大小达到1M -->
             </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -111,9 +114,11 @@
 
     <logger name="mapper" level="DEBUG" additivity="false">
         <appender-ref ref="sql" />
+        <appender-ref ref="console" />
     </logger>
     <logger name="org.mybatis" level="DEBUG" additivity="false" >
         <appender-ref ref="sql" />
+        <appender-ref ref="console" />
     </logger>
 
 
