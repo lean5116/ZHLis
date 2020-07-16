@@ -38,7 +38,10 @@
         <artifactId>RealLis-specimenInhos</artifactId>
     </dependency>
 
-
+    <dependency>
+        <groupId>com.RealLis</groupId>
+        <artifactId>RealLis-dataSync</artifactId>
+    </dependency>
 </dependencies>
 
 </project>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.RealLis.specimenInhos.mapper.dao.LTsxxDao">
+<mapper namespace="com.RealLis.dataSync.domain.dao.LTsxxDao">
 
-    <resultMap type="com.RealLis.specimenInhos.mapper.entity.LTsxx" id="LTsxxMap">
-        <result property="xh" column="XH" jdbcType="OTHER"/>
+    <resultMap type="com.RealLis.dataSync.domain.entity.LTsxx" id="LTsxxMap">
+        <result property="xh" column="XH" jdbcType="INTEGER"/>
         <result property="bbbh" column="BBBH" jdbcType="OTHER"/>
         <result property="tsnr" column="TSNR" jdbcType="OTHER"/>
         <result property="qrr" column="QRR" jdbcType="OTHER"/>
@@ -44,17 +44,18 @@
         <result property="tsrxm" column="TSRXM" jdbcType="OTHER"/>
         <result property="tsrdh" column="TSRDH" jdbcType="OTHER"/>
         <result property="clnrYs" column="CLNR_YS" jdbcType="OTHER"/>
-        <result property="transed" column="TRANSED" jdbcType="OTHER"/>
-        <result property="bzsm" column="BZSM" jdbcType="OTHER"/>
-        <result property="mpi" column="MPI" jdbcType="OTHER"/>
-        <result property="brxm" column="BRXM" jdbcType="OTHER"/>
-        <result property="ksmc" column="KSMC" jdbcType="OTHER"/>
+        <result property="transed" column="TRANSED" jdbcType="VARCHAR"/>
+        <result property="bzsm" column="BZSM" jdbcType="VARCHAR"/>
+        <result property="mpi" column="MPI" jdbcType="VARCHAR"/>
+        <result property="brxm" column="BRXM" jdbcType="VARCHAR"/>
+        <result property="ksmc" column="KSMC" jdbcType="VARCHAR"/>
+        <result property="hisxh" column="HISXH" jdbcType="INTEGER"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="LTsxxMap">
         select
-          XH, BBBH, TSNR, QRR, QRRQ, QRBZ, QRKS, BZ, TSLX, TSRQ, TSKS, TSR, TSWORKSTATION, QRWORKSTATION, ZGYS, ZGHS, DZSJ, CLYS, CLR_YS, CLSJ_YS, CLBZ_YS, CLR_HS, CLSJ_HS, CLNR_HS, CLBZ_HS, CNAME, CIP, BQDM, KSDM, SYSTYPE, KDYS, BRID, JZLB, TEL_P, TEL_YS, SENDFLAG, SENTIME, ID, TSRXM, TSRDH, CLNR_YS, TRANSED, BZSM, MPI, BRXM, KSMC
+          XH, BBBH, TSNR, QRR, QRRQ, QRBZ, QRKS, BZ, TSLX, TSRQ, TSKS, TSR, TSWORKSTATION, QRWORKSTATION, ZGYS, ZGHS, DZSJ, CLYS, CLR_YS, CLSJ_YS, CLBZ_YS, CLR_HS, CLSJ_HS, CLNR_HS, CLBZ_HS, CNAME, CIP, BQDM, KSDM, SYSTYPE, KDYS, BRID, JZLB, TEL_P, TEL_YS, SENDFLAG, SENTIME, ID, TSRXM, TSRDH, CLNR_YS, TRANSED, BZSM, MPI, BRXM, KSMC, HISXH
         from ZHLIS.L_TSXX
         where XH = #{xh}
     </select>
@@ -62,7 +63,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="LTsxxMap">
         select
-          XH, BBBH, TSNR, QRR, QRRQ, QRBZ, QRKS, BZ, TSLX, TSRQ, TSKS, TSR, TSWORKSTATION, QRWORKSTATION, ZGYS, ZGHS, DZSJ, CLYS, CLR_YS, CLSJ_YS, CLBZ_YS, CLR_HS, CLSJ_HS, CLNR_HS, CLBZ_HS, CNAME, CIP, BQDM, KSDM, SYSTYPE, KDYS, BRID, JZLB, TEL_P, TEL_YS, SENDFLAG, SENTIME, ID, TSRXM, TSRDH, CLNR_YS, TRANSED, BZSM, MPI, BRXM, KSMC
+          XH, BBBH, TSNR, QRR, QRRQ, QRBZ, QRKS, BZ, TSLX, TSRQ, TSKS, TSR, TSWORKSTATION, QRWORKSTATION, ZGYS, ZGHS, DZSJ, CLYS, CLR_YS, CLSJ_YS, CLBZ_YS, CLR_HS, CLSJ_HS, CLNR_HS, CLBZ_HS, CNAME, CIP, BQDM, KSDM, SYSTYPE, KDYS, BRID, JZLB, TEL_P, TEL_YS, SENDFLAG, SENTIME, ID, TSRXM, TSRDH, CLNR_YS, TRANSED, BZSM, MPI, BRXM, KSMC, HISXH
         from ZHLIS.L_TSXX
         limit #{offset}, #{limit}
     </select>
@@ -70,7 +71,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="LTsxxMap">
         select
-          XH, BBBH, TSNR, QRR, QRRQ, QRBZ, QRKS, BZ, TSLX, TSRQ, TSKS, TSR, TSWORKSTATION, QRWORKSTATION, ZGYS, ZGHS, DZSJ, CLYS, CLR_YS, CLSJ_YS, CLBZ_YS, CLR_HS, CLSJ_HS, CLNR_HS, CLBZ_HS, CNAME, CIP, BQDM, KSDM, SYSTYPE, KDYS, BRID, JZLB, TEL_P, TEL_YS, SENDFLAG, SENTIME, ID, TSRXM, TSRDH, CLNR_YS, TRANSED, BZSM, MPI, BRXM, KSMC
+          XH, BBBH, TSNR, QRR, QRRQ, QRBZ, QRKS, BZ, TSLX, TSRQ, TSKS, TSR, TSWORKSTATION, QRWORKSTATION, ZGYS, ZGHS, DZSJ, CLYS, CLR_YS, CLSJ_YS, CLBZ_YS, CLR_HS, CLSJ_HS, CLNR_HS, CLBZ_HS, CNAME, CIP, BQDM, KSDM, SYSTYPE, KDYS, BRID, JZLB, TEL_P, TEL_YS, SENDFLAG, SENTIME, ID, TSRXM, TSRDH, CLNR_YS, TRANSED, BZSM, MPI, BRXM, KSMC, HISXH
         from ZHLIS.L_TSXX
         <where>
             <if test="xh != null">
@@ -196,28 +197,31 @@
             <if test="clnrYs != null">
                 and CLNR_YS = #{clnrYs}
             </if>
-            <if test="transed != null">
+            <if test="transed != null and transed != ''">
                 and TRANSED = #{transed}
             </if>
-            <if test="bzsm != null">
+            <if test="bzsm != null and bzsm != ''">
                 and BZSM = #{bzsm}
             </if>
-            <if test="mpi != null">
+            <if test="mpi != null and mpi != ''">
                 and MPI = #{mpi}
             </if>
-            <if test="brxm != null">
+            <if test="brxm != null and brxm != ''">
                 and BRXM = #{brxm}
             </if>
-            <if test="ksmc != null">
+            <if test="ksmc != null and ksmc != ''">
                 and KSMC = #{ksmc}
+            </if>
+            <if test="hisxh != null">
+                and HISXH = #{hisxh}
             </if>
         </where>
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="xh" useGeneratedKeys="true">
-        insert into ZHLIS.L_TSXX(BBBH, TSNR, QRR, QRRQ, QRBZ, QRKS, BZ, TSLX, TSRQ, TSKS, TSR, TSWORKSTATION, QRWORKSTATION, ZGYS, ZGHS, DZSJ, CLYS, CLR_YS, CLSJ_YS, CLBZ_YS, CLR_HS, CLSJ_HS, CLNR_HS, CLBZ_HS, CNAME, CIP, BQDM, KSDM, SYSTYPE, KDYS, BRID, JZLB, TEL_P, TEL_YS, SENDFLAG, SENTIME, ID, TSRXM, TSRDH, CLNR_YS, TRANSED, BZSM, MPI, BRXM, KSMC)
-        values (#{bbbh}, #{tsnr}, #{qrr}, #{qrrq}, #{qrbz}, #{qrks}, #{bz}, #{tslx}, #{tsrq}, #{tsks}, #{tsr}, #{tsworkstation}, #{qrworkstation}, #{zgys}, #{zghs}, #{dzsj}, #{clys}, #{clrYs}, #{clsjYs}, #{clbzYs}, #{clrHs}, #{clsjHs}, #{clnrHs}, #{clbzHs}, #{cname}, #{cip}, #{bqdm}, #{ksdm}, #{systype}, #{kdys}, #{brid}, #{jzlb}, #{telP}, #{telYs}, #{sendflag}, #{sentime}, #{id}, #{tsrxm}, #{tsrdh}, #{clnrYs}, #{transed}, #{bzsm}, #{mpi}, #{brxm}, #{ksmc})
+        insert into ZHLIS.L_TSXX(BBBH, TSNR, QRR, QRRQ, QRBZ, QRKS, BZ, TSLX, TSRQ, TSKS, TSR, TSWORKSTATION, QRWORKSTATION, ZGYS, ZGHS, DZSJ, CLYS, CLR_YS, CLSJ_YS, CLBZ_YS, CLR_HS, CLSJ_HS, CLNR_HS, CLBZ_HS, CNAME, CIP, BQDM, KSDM, SYSTYPE, KDYS, BRID, JZLB, TEL_P, TEL_YS, SENDFLAG, SENTIME, ID, TSRXM, TSRDH, CLNR_YS, TRANSED, BZSM, MPI, BRXM, KSMC, HISXH)
+        values (#{bbbh}, #{tsnr}, #{qrr}, #{qrrq}, #{qrbz}, #{qrks}, #{bz}, #{tslx}, #{tsrq}, #{tsks}, #{tsr}, #{tsworkstation}, #{qrworkstation}, #{zgys}, #{zghs}, #{dzsj}, #{clys}, #{clrYs}, #{clsjYs}, #{clbzYs}, #{clrHs}, #{clsjHs}, #{clnrHs}, #{clbzHs}, #{cname}, #{cip}, #{bqdm}, #{ksdm}, #{systype}, #{kdys}, #{brid}, #{jzlb}, #{telP}, #{telYs}, #{sendflag}, #{sentime}, #{id}, #{tsrxm}, #{tsrdh}, #{clnrYs}, #{transed}, #{bzsm}, #{mpi}, #{brxm}, #{ksmc}, #{hisxh})
     </insert>
 
     <!--通过主键修改数据-->
@@ -344,20 +348,23 @@
             <if test="clnrYs != null">
                 CLNR_YS = #{clnrYs},
             </if>
-            <if test="transed != null">
+            <if test="transed != null and transed != ''">
                 TRANSED = #{transed},
             </if>
-            <if test="bzsm != null">
+            <if test="bzsm != null and bzsm != ''">
                 BZSM = #{bzsm},
             </if>
-            <if test="mpi != null">
+            <if test="mpi != null and mpi != ''">
                 MPI = #{mpi},
             </if>
-            <if test="brxm != null">
+            <if test="brxm != null and brxm != ''">
                 BRXM = #{brxm},
             </if>
-            <if test="ksmc != null">
+            <if test="ksmc != null and ksmc != ''">
                 KSMC = #{ksmc},
+            </if>
+            <if test="hisxh != null">
+                HISXH = #{hisxh},
             </if>
         </set>
         where XH = #{xh}

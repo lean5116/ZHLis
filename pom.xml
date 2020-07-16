@@ -13,6 +13,7 @@
         <module>RealLis-main</module>
         <module>RealLis-specimenInhos</module>
         <module>RealLis-quartz</module>
+        <module>RealLis-dataSync</module>
     </modules>
 
 
@@ -184,6 +185,13 @@
             <dependency>
                 <groupId>com.RealLis</groupId>
                 <artifactId>RealLis-specimenInhos</artifactId>
+                <version>${RealLis.version}</version>
+            </dependency>
+
+            <!-- 数据同步-->
+            <dependency>
+                <groupId>com.RealLis</groupId>
+                <artifactId>RealLis-dataSync</artifactId>
                 <version>${RealLis.version}</version>
             </dependency>
 
