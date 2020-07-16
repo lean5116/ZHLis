@@ -20,8 +20,8 @@ public class LTsxxHis {
     private String cip;
     private String zgys;
     private String zghs;
-    private String bqdm;
-    private String ksdm;
+    private Long bqdm;
+    private Long ksdm;
     private String systype;
     private String kdys;
     private String brid;
@@ -30,7 +30,7 @@ public class LTsxxHis {
     private String telYs;
     private Long sendflag;
     private Date sentime;
-    private String id;
+    private Long id;
     private String tsrxm;
     private String tsrdh;
     private String tsks;
@@ -45,7 +45,7 @@ public class LTsxxHis {
     public LTsxxHis() {
     }
 
-    public LTsxxHis(Long xh, String bbbh, String tsnr, String clrYs, Date clsjYs, Long clbzYs, String clrHs, Date clsjHs, String clnrHs, Long clbzHs, Long tslx, Date tsrq, String tsr, String cname, String cip, String zgys, String zghs, String bqdm, String ksdm, String systype, String kdys, String brid, Long jzlb, String telP, String telYs, Long sendflag, Date sentime, String id, String tsrxm, String tsrdh, String tsks, String clnrYs, Long transed, String bzsm, String mpi, String brxm, String ksmc, Long lisxh) {
+    public LTsxxHis(Long xh, String bbbh, String tsnr, String clrYs, Date clsjYs, Long clbzYs, String clrHs, Date clsjHs, String clnrHs, Long clbzHs, Long tslx, Date tsrq, String tsr, String cname, String cip, String zgys, String zghs, Long bqdm, Long ksdm, String systype, String kdys, String brid, Long jzlb, String telP, String telYs, Long sendflag, Date sentime, Long id, String tsrxm, String tsrdh, String tsks, String clnrYs, Long transed, String bzsm, String mpi, String brxm, String ksmc, Long lisxh) {
         this.xh = xh;
         this.bbbh = bbbh;
         this.tsnr = tsnr;
@@ -222,19 +222,19 @@ public class LTsxxHis {
         this.zghs = zghs;
     }
 
-    public String getBqdm() {
+    public Long getBqdm() {
         return bqdm;
     }
 
-    public void setBqdm(String bqdm) {
+    public void setBqdm(Long bqdm) {
         this.bqdm = bqdm;
     }
 
-    public String getKsdm() {
+    public Long getKsdm() {
         return ksdm;
     }
 
-    public void setKsdm(String ksdm) {
+    public void setKsdm(Long ksdm) {
         this.ksdm = ksdm;
     }
 
@@ -302,11 +302,11 @@ public class LTsxxHis {
         this.sentime = sentime;
     }
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

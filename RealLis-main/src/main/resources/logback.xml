@@ -93,11 +93,16 @@
     <logger name="sys-user" level="info">
         <appender-ref ref="sys-user"/>
     </logger>
+
     <appender name="sql" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${log.path}/mybatis-logs/mybatis-sql.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <FileNamePattern>${log.path}/mybatis-logs/mybatis-sql.log.%d{yyyy-MM-dd}</FileNamePattern>
+            <FileNamePattern>${log.path}/mybatis-logs/mybatis-sql.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
             <maxHistory>30</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy
+                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>1MB</maxFileSize><!-- 日志文件分割的条件为日志文件大小达到1M -->
+            </timeBasedFileNamingAndTriggeringPolicy>
         </rollingPolicy>
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>%thread|%d{yyyy-MM-dd HH:mm:ss.SSS}|%level|%logger{36}|%m%n</pattern>

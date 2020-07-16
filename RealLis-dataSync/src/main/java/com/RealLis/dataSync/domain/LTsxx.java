@@ -25,28 +25,28 @@ public class LTsxx {
   private String clys;
   private String clrYs;
   private Date clsjYs;
-  private String clbzYs;
+  private Long clbzYs;
   private String clrHs;
   private Date clsjHs;
   private String clnrHs;
-  private String clbzHs;
+  private Long clbzHs;
   private String cname;
   private String cip;
-  private String bqdm;
-  private String ksdm;
+  private Long bqdm;
+  private Long ksdm;
   private String systype;
   private String kdys;
   private String brid;
-  private String jzlb;
+  private Long jzlb;
   private String telP;
   private String telYs;
-  private String sendflag;
+  private Long sendflag;
   private Date sentime;
-  private String id;
+  private Long id;
   private String tsrxm;
   private String tsrdh;
   private String clnrYs;
-  private String transed;
+  private Long transed;
   private String bzsm;
   private String mpi;
   private String brxm;
@@ -56,7 +56,7 @@ public class LTsxx {
   public LTsxx() {
   }
 
-  public LTsxx(Long xh, String bbbh, String tsnr, String qrr, Date qrrq, String qrbz, String qrks, String bz, String tslx, Date tsrq, String tsks, String tsr, String tsworkstation, String qrworkstation, String zgys, String zghs, Date dzsj, String clys, String clrYs, Date clsjYs, String clbzYs, String clrHs, Date clsjHs, String clnrHs, String clbzHs, String cname, String cip, String bqdm, String ksdm, String systype, String kdys, String brid, String jzlb, String telP, String telYs, String sendflag, Date sentime, String id, String tsrxm, String tsrdh, String clnrYs, String transed, String bzsm, String mpi, String brxm, String ksmc, Long hisxh) {
+  public LTsxx(Long xh, String bbbh, String tsnr, String qrr, Date qrrq, String qrbz, String qrks, String bz, String tslx, Date tsrq, String tsks, String tsr, String tsworkstation, String qrworkstation, String zgys, String zghs, Date dzsj, String clys, String clrYs, Date clsjYs, Long clbzYs, String clrHs, Date clsjHs, String clnrHs, Long clbzHs, String cname, String cip, Long bqdm, Long ksdm, String systype, String kdys, String brid, Long jzlb, String telP, String telYs, Long sendflag, Date sentime, Long id, String tsrxm, String tsrdh, String clnrYs, Long transed, String bzsm, String mpi, String brxm, String ksmc, Long hisxh) {
     this.xh = xh;
     this.bbbh = bbbh;
     this.tsnr = tsnr;
@@ -110,372 +110,372 @@ public class LTsxx {
     return xh;
   }
 
-  public void setXh(Long xh) {
-    this.xh = xh;
-  }
-
   public String getBbbh() {
     return bbbh;
-  }
-
-  public void setBbbh(String bbbh) {
-    this.bbbh = bbbh;
   }
 
   public String getTsnr() {
     return tsnr;
   }
 
-  public void setTsnr(String tsnr) {
-    this.tsnr = tsnr;
-  }
-
   public String getQrr() {
     return qrr;
-  }
-
-  public void setQrr(String qrr) {
-    this.qrr = qrr;
   }
 
   public Date getQrrq() {
     return qrrq;
   }
 
-  public void setQrrq(Date qrrq) {
-    this.qrrq = qrrq;
-  }
-
   public String getQrbz() {
     return qrbz;
-  }
-
-  public void setQrbz(String qrbz) {
-    this.qrbz = qrbz;
   }
 
   public String getQrks() {
     return qrks;
   }
 
-  public void setQrks(String qrks) {
-    this.qrks = qrks;
-  }
-
   public String getBz() {
     return bz;
-  }
-
-  public void setBz(String bz) {
-    this.bz = bz;
   }
 
   public String getTslx() {
     return tslx;
   }
 
-  public void setTslx(String tslx) {
-    this.tslx = tslx;
-  }
-
   public Date getTsrq() {
     return tsrq;
-  }
-
-  public void setTsrq(Date tsrq) {
-    this.tsrq = tsrq;
   }
 
   public String getTsks() {
     return tsks;
   }
 
-  public void setTsks(String tsks) {
-    this.tsks = tsks;
-  }
-
   public String getTsr() {
     return tsr;
-  }
-
-  public void setTsr(String tsr) {
-    this.tsr = tsr;
   }
 
   public String getTsworkstation() {
     return tsworkstation;
   }
 
-  public void setTsworkstation(String tsworkstation) {
-    this.tsworkstation = tsworkstation;
-  }
-
   public String getQrworkstation() {
     return qrworkstation;
-  }
-
-  public void setQrworkstation(String qrworkstation) {
-    this.qrworkstation = qrworkstation;
   }
 
   public String getZgys() {
     return zgys;
   }
 
-  public void setZgys(String zgys) {
-    this.zgys = zgys;
-  }
-
   public String getZghs() {
     return zghs;
-  }
-
-  public void setZghs(String zghs) {
-    this.zghs = zghs;
   }
 
   public Date getDzsj() {
     return dzsj;
   }
 
-  public void setDzsj(Date dzsj) {
-    this.dzsj = dzsj;
-  }
-
   public String getClys() {
     return clys;
-  }
-
-  public void setClys(String clys) {
-    this.clys = clys;
   }
 
   public String getClrYs() {
     return clrYs;
   }
 
-  public void setClrYs(String clrYs) {
-    this.clrYs = clrYs;
-  }
-
   public Date getClsjYs() {
     return clsjYs;
   }
 
-  public void setClsjYs(Date clsjYs) {
-    this.clsjYs = clsjYs;
-  }
-
-  public String getClbzYs() {
+  public Long getClbzYs() {
     return clbzYs;
-  }
-
-  public void setClbzYs(String clbzYs) {
-    this.clbzYs = clbzYs;
   }
 
   public String getClrHs() {
     return clrHs;
   }
 
-  public void setClrHs(String clrHs) {
-    this.clrHs = clrHs;
-  }
-
   public Date getClsjHs() {
     return clsjHs;
-  }
-
-  public void setClsjHs(Date clsjHs) {
-    this.clsjHs = clsjHs;
   }
 
   public String getClnrHs() {
     return clnrHs;
   }
 
-  public void setClnrHs(String clnrHs) {
-    this.clnrHs = clnrHs;
-  }
-
-  public String getClbzHs() {
+  public Long getClbzHs() {
     return clbzHs;
-  }
-
-  public void setClbzHs(String clbzHs) {
-    this.clbzHs = clbzHs;
   }
 
   public String getCname() {
     return cname;
   }
 
-  public void setCname(String cname) {
-    this.cname = cname;
-  }
-
   public String getCip() {
     return cip;
   }
 
-  public void setCip(String cip) {
-    this.cip = cip;
-  }
-
-  public String getBqdm() {
+  public Long getBqdm() {
     return bqdm;
   }
 
-  public void setBqdm(String bqdm) {
-    this.bqdm = bqdm;
-  }
-
-  public String getKsdm() {
+  public Long getKsdm() {
     return ksdm;
-  }
-
-  public void setKsdm(String ksdm) {
-    this.ksdm = ksdm;
   }
 
   public String getSystype() {
     return systype;
   }
 
-  public void setSystype(String systype) {
-    this.systype = systype;
-  }
-
   public String getKdys() {
     return kdys;
-  }
-
-  public void setKdys(String kdys) {
-    this.kdys = kdys;
   }
 
   public String getBrid() {
     return brid;
   }
 
-  public void setBrid(String brid) {
-    this.brid = brid;
-  }
-
-  public String getJzlb() {
+  public Long getJzlb() {
     return jzlb;
-  }
-
-  public void setJzlb(String jzlb) {
-    this.jzlb = jzlb;
   }
 
   public String getTelP() {
     return telP;
   }
 
-  public void setTelP(String telP) {
-    this.telP = telP;
-  }
-
   public String getTelYs() {
     return telYs;
   }
 
-  public void setTelYs(String telYs) {
-    this.telYs = telYs;
-  }
-
-  public String getSendflag() {
+  public Long getSendflag() {
     return sendflag;
-  }
-
-  public void setSendflag(String sendflag) {
-    this.sendflag = sendflag;
   }
 
   public Date getSentime() {
     return sentime;
   }
 
-  public void setSentime(Date sentime) {
-    this.sentime = sentime;
-  }
-
-  public String getId() {
+  public Long getId() {
     return id;
-  }
-
-  public void setId(String id) {
-    this.id = id;
   }
 
   public String getTsrxm() {
     return tsrxm;
   }
 
-  public void setTsrxm(String tsrxm) {
-    this.tsrxm = tsrxm;
-  }
-
   public String getTsrdh() {
     return tsrdh;
-  }
-
-  public void setTsrdh(String tsrdh) {
-    this.tsrdh = tsrdh;
   }
 
   public String getClnrYs() {
     return clnrYs;
   }
 
-  public void setClnrYs(String clnrYs) {
-    this.clnrYs = clnrYs;
-  }
-
-  public String getTransed() {
+  public Long getTransed() {
     return transed;
-  }
-
-  public void setTransed(String transed) {
-    this.transed = transed;
   }
 
   public String getBzsm() {
     return bzsm;
   }
 
-  public void setBzsm(String bzsm) {
-    this.bzsm = bzsm;
-  }
-
   public String getMpi() {
     return mpi;
-  }
-
-  public void setMpi(String mpi) {
-    this.mpi = mpi;
   }
 
   public String getBrxm() {
     return brxm;
   }
 
-  public void setBrxm(String brxm) {
-    this.brxm = brxm;
-  }
-
   public String getKsmc() {
     return ksmc;
   }
 
-  public void setKsmc(String ksmc) {
-    this.ksmc = ksmc;
-  }
-
   public Long getHisxh() {
     return hisxh;
+  }
+
+  public void setXh(Long xh) {
+    this.xh = xh;
+  }
+
+  public void setBbbh(String bbbh) {
+    this.bbbh = bbbh;
+  }
+
+  public void setTsnr(String tsnr) {
+    this.tsnr = tsnr;
+  }
+
+  public void setQrr(String qrr) {
+    this.qrr = qrr;
+  }
+
+  public void setQrrq(Date qrrq) {
+    this.qrrq = qrrq;
+  }
+
+  public void setQrbz(String qrbz) {
+    this.qrbz = qrbz;
+  }
+
+  public void setQrks(String qrks) {
+    this.qrks = qrks;
+  }
+
+  public void setBz(String bz) {
+    this.bz = bz;
+  }
+
+  public void setTslx(String tslx) {
+    this.tslx = tslx;
+  }
+
+  public void setTsrq(Date tsrq) {
+    this.tsrq = tsrq;
+  }
+
+  public void setTsks(String tsks) {
+    this.tsks = tsks;
+  }
+
+  public void setTsr(String tsr) {
+    this.tsr = tsr;
+  }
+
+  public void setTsworkstation(String tsworkstation) {
+    this.tsworkstation = tsworkstation;
+  }
+
+  public void setQrworkstation(String qrworkstation) {
+    this.qrworkstation = qrworkstation;
+  }
+
+  public void setZgys(String zgys) {
+    this.zgys = zgys;
+  }
+
+  public void setZghs(String zghs) {
+    this.zghs = zghs;
+  }
+
+  public void setDzsj(Date dzsj) {
+    this.dzsj = dzsj;
+  }
+
+  public void setClys(String clys) {
+    this.clys = clys;
+  }
+
+  public void setClrYs(String clrYs) {
+    this.clrYs = clrYs;
+  }
+
+  public void setClsjYs(Date clsjYs) {
+    this.clsjYs = clsjYs;
+  }
+
+  public void setClbzYs(Long clbzYs) {
+    this.clbzYs = clbzYs;
+  }
+
+  public void setClrHs(String clrHs) {
+    this.clrHs = clrHs;
+  }
+
+  public void setClsjHs(Date clsjHs) {
+    this.clsjHs = clsjHs;
+  }
+
+  public void setClnrHs(String clnrHs) {
+    this.clnrHs = clnrHs;
+  }
+
+  public void setClbzHs(Long clbzHs) {
+    this.clbzHs = clbzHs;
+  }
+
+  public void setCname(String cname) {
+    this.cname = cname;
+  }
+
+  public void setCip(String cip) {
+    this.cip = cip;
+  }
+
+  public void setBqdm(Long bqdm) {
+    this.bqdm = bqdm;
+  }
+
+  public void setKsdm(Long ksdm) {
+    this.ksdm = ksdm;
+  }
+
+  public void setSystype(String systype) {
+    this.systype = systype;
+  }
+
+  public void setKdys(String kdys) {
+    this.kdys = kdys;
+  }
+
+  public void setBrid(String brid) {
+    this.brid = brid;
+  }
+
+  public void setJzlb(Long jzlb) {
+    this.jzlb = jzlb;
+  }
+
+  public void setTelP(String telP) {
+    this.telP = telP;
+  }
+
+  public void setTelYs(String telYs) {
+    this.telYs = telYs;
+  }
+
+  public void setSendflag(Long sendflag) {
+    this.sendflag = sendflag;
+  }
+
+  public void setSentime(Date sentime) {
+    this.sentime = sentime;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public void setTsrxm(String tsrxm) {
+    this.tsrxm = tsrxm;
+  }
+
+  public void setTsrdh(String tsrdh) {
+    this.tsrdh = tsrdh;
+  }
+
+  public void setClnrYs(String clnrYs) {
+    this.clnrYs = clnrYs;
+  }
+
+  public void setTransed(Long transed) {
+    this.transed = transed;
+  }
+
+  public void setBzsm(String bzsm) {
+    this.bzsm = bzsm;
+  }
+
+  public void setMpi(String mpi) {
+    this.mpi = mpi;
+  }
+
+  public void setBrxm(String brxm) {
+    this.brxm = brxm;
+  }
+
+  public void setKsmc(String ksmc) {
+    this.ksmc = ksmc;
   }
 
   public void setHisxh(Long hisxh) {
