@@ -2,11 +2,11 @@ package com.RealLis.dataSync.controller;
 
 import com.RealLis.common.core.controller.BaseController;
 import com.RealLis.common.utils.bean.BeanUtils;
-import com.RealLis.dataSync.domain.LTsxx;
+import com.RealLis.dataSync.domain.LTsxxLis;
 import com.RealLis.dataSync.domain.LTsxxHis;
 import com.RealLis.dataSync.domain.LTsxxTr;
 import com.RealLis.dataSync.service.LTsxxHisService;
-import com.RealLis.dataSync.service.LTsxxService;
+import com.RealLis.dataSync.service.LTsxxLisService;
 import com.RealLis.dataSync.service.LTsxxTrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -29,7 +29,7 @@ public class LTsxxController extends BaseController {
     @Qualifier("LTsxxTrLisService")
     private LTsxxTrService lTsxxTrLisService;
     @Autowired
-    private LTsxxService lTsxxService;
+    private LTsxxLisService lTsxxLisService;
     @GetMapping("/criticalHis2Lis")
     @ResponseBody
     public String criticalHis2Lis(){
@@ -37,43 +37,43 @@ public class LTsxxController extends BaseController {
         if(lTsxxTrList!=null) {
             for (LTsxxTr ltsxxTr : lTsxxTrList
             ) {
-                LTsxx lTsxx  = lTsxxService.getByHisxh(ltsxxTr.getXh());
+                LTsxxLis lTsxxLis = lTsxxLisService.getByHisxh(ltsxxTr.getXh());
                 LTsxxHis lTsxxHis = lTsxxHisService.getByXh(ltsxxTr.getXh());
                 if(lTsxxHis==null){
-                    if(lTsxxTrHisService.deleteByHisxh(ltsxxTr.getJlxh())>0) {
+                    if(lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh())>0) {
                         logger.info(ltsxxTr.getXh() +" TR表 记录删除成功");
                     }
                 }
-                LTsxx ltSxxParam =  new LTsxx();
+                LTsxxLis ltSxxParam =  new LTsxxLis();
                 if(lTsxxHis!=null) {
                     BeanUtils.copyBeanProp(ltSxxParam, lTsxxHis);
                     ltSxxParam.setHisxh(lTsxxHis.getXh());
                 }
-                if(lTsxx!=null){
+                if(lTsxxLis !=null){
                     switch (ltsxxTr.getEventype()){
                         case "INSERT":
-                            int k = lTsxxService.updateByHisxh(ltSxxParam);
+                            int k = lTsxxLisService.updateByHisxh(ltSxxParam);
                             if(k>0){
                                 logger.info(ltSxxParam.getHisxh() +"记录修改成功");
-                                if(lTsxxTrHisService.deleteByHisxh(ltsxxTr.getJlxh())>0) {
+                                if(lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh())>0) {
                                     logger.info(ltSxxParam.getHisxh() +" TR表 记录删除成功");
                                 }
                             }
                             break;
                         case "UPDATE":
-                            int i = lTsxxService.updateByHisxh(ltSxxParam);
+                            int i = lTsxxLisService.updateByHisxh(ltSxxParam);
                             if(i>0){
                                 logger.info(ltSxxParam.getHisxh() +"记录修改成功");
-                                if(lTsxxTrHisService.deleteByHisxh(ltsxxTr.getJlxh())>0) {
+                                if(lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh())>0) {
                                     logger.info(ltSxxParam.getHisxh() +" TR表 记录删除成功");
                                 }
                             }
                             break;
                         case "DELETE":
-                            int j = lTsxxService.deleteByHisxh(ltSxxParam.getHisxh());
+                            int j = lTsxxLisService.deleteByHisxh(ltSxxParam.getHisxh());
                             if(j>0){
                                 logger.info(ltSxxParam.getHisxh() +"记录删除成功");
-                                if(lTsxxTrHisService.deleteByHisxh(ltsxxTr.getJlxh())>0) {
+                                if(lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh())>0) {
                                     logger.info(ltSxxParam.getHisxh() +" TR表 记录删除成功");
                                 }
                             }
@@ -82,12 +82,12 @@ public class LTsxxController extends BaseController {
                 }else {
                     int i=0;
                     try{
-                    lTsxxService.insert(ltSxxParam);}
+                    lTsxxLisService.insert(ltSxxParam);}
                     catch (Exception e){
                     }
                     if(i>0){
                         logger.info(ltSxxParam.getHisxh() +"记录插入成功");
-                        if(lTsxxTrHisService.deleteByHisxh(ltsxxTr.getJlxh())>0) {
+                        if(lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh())>0) {
                             logger.info(ltSxxParam.getHisxh() +" TR表 记录删除成功");
                         }
                     }
@@ -104,17 +104,17 @@ public class LTsxxController extends BaseController {
         if(lTsxxTrList!=null) {
             for (LTsxxTr ltsxxTr : lTsxxTrList
             ) {
-                LTsxx lTsxx  = lTsxxService.getByxh(ltsxxTr.getXh());
+                LTsxxLis lTsxxLis = lTsxxLisService.getByxh(ltsxxTr.getXh());
                 LTsxxHis lTsxxHis = lTsxxHisService.getByLisxh(ltsxxTr.getXh());
-                if(lTsxx==null){
-                    if(lTsxxTrLisService.deleteByHisxh(ltsxxTr.getJlxh())>0) {
+                if(lTsxxLis ==null){
+                    if(lTsxxTrLisService.deleteByJlxh(ltsxxTr.getJlxh())>0) {
                         logger.info(ltsxxTr.getXh() +" lis 未检索到 ，TR表 记录删除成功");
                     }
                 }
                 LTsxxHis ltSxxParam =  new LTsxxHis();
-                if(lTsxx!=null) {
-                    BeanUtils.copyBeanProp(ltSxxParam, lTsxx);
-                    ltSxxParam.setLisxh(lTsxx.getXh());
+                if(lTsxxLis !=null) {
+                    BeanUtils.copyBeanProp(ltSxxParam, lTsxxLis);
+                    ltSxxParam.setLisxh(lTsxxLis.getXh());
                 }
                 if(lTsxxHis!=null){
                     switch (ltsxxTr.getEventype()){
@@ -122,7 +122,7 @@ public class LTsxxController extends BaseController {
                             int k = lTsxxHisService.updateByLisxh(ltSxxParam);
                             if(k>0){
                                 logger.info(ltSxxParam.getLisxh() +"记录修改成功");
-                                if(lTsxxTrLisService.deleteByHisxh(ltsxxTr.getJlxh())>0) {
+                                if(lTsxxTrLisService.deleteByJlxh(ltsxxTr.getJlxh())>0) {
                                     logger.info(ltSxxParam.getLisxh() +" TR表 记录删除成功");
                                 }
                             }
@@ -131,7 +131,7 @@ public class LTsxxController extends BaseController {
                             int i = lTsxxHisService.updateByLisxh(ltSxxParam);
                             if(i>0){
                                 logger.info(ltSxxParam.getLisxh() +"记录修改成功");
-                                if(lTsxxTrLisService.deleteByHisxh(ltsxxTr.getJlxh())>0) {
+                                if(lTsxxTrLisService.deleteByJlxh(ltsxxTr.getJlxh())>0) {
                                     logger.info(ltSxxParam.getLisxh() +" TR表 记录删除成功");
                                 }
                             }
@@ -140,7 +140,7 @@ public class LTsxxController extends BaseController {
                             int j = lTsxxHisService.deleteByLisxh(ltSxxParam.getLisxh());
                             if(j>0){
                                 logger.info(ltSxxParam.getLisxh() +"记录删除成功");
-                                if(lTsxxTrLisService.deleteByHisxh(ltsxxTr.getJlxh())>0) {
+                                if(lTsxxTrLisService.deleteByJlxh(ltsxxTr.getJlxh())>0) {
                                     logger.info(ltSxxParam.getLisxh() +" TR表 记录删除成功");
                                 }
                             }
@@ -154,7 +154,7 @@ public class LTsxxController extends BaseController {
                     }
                     if(i>0){
                         logger.info(ltSxxParam.getLisxh() +"记录插入成功");
-                        if(lTsxxTrLisService.deleteByHisxh(ltsxxTr.getJlxh())>0) {
+                        if(lTsxxTrLisService.deleteByJlxh(ltsxxTr.getJlxh())>0) {
                             logger.info(ltSxxParam.getLisxh() +" TR表 记录删除成功");
                         }
                     }

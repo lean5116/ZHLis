@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.RealLis.dataSync.mapper.LTsxxMapper">
+<mapper namespace="com.RealLis.dataSync.mapper.LTsxxLisMapper">
 
-    <resultMap type="com.RealLis.dataSync.domain.LTsxx" id="LTsxxMap">
+    <resultMap type="com.RealLis.dataSync.domain.LTsxxLis" id="LTsxxMap">
         <result property="xh" column="XH"  />
         <result property="bbbh" column="BBBH" jdbcType="VARCHAR"/>
         <result property="tsnr" column="TSNR" jdbcType="VARCHAR"/>
@@ -52,8 +52,8 @@
         <result property="hisxh" column="HISXH" />
     </resultMap>
 
-    <!--查询单个-->
-    <select id="queryById" resultMap="LTsxxMap">
+    <!--查询hisxh-->
+    <select id="queryByHisxh" resultMap="LTsxxMap">
         select
           XH, BBBH, TSNR, QRR, QRRQ, QRBZ, QRKS, BZ, TSLX, TSRQ, TSKS, TSR, TSWORKSTATION, QRWORKSTATION, ZGYS, ZGHS, DZSJ, CLYS, CLR_YS, CLSJ_YS, CLBZ_YS, CLR_HS, CLSJ_HS, CLNR_HS, CLBZ_HS, CNAME, CIP, BQDM, KSDM, SYSTYPE, KDYS, BRID, JZLB, TEL_P, TEL_YS, SENDFLAG, SENTIME, ID, TSRXM, TSRDH, CLNR_YS, TRANSED, BZSM, MPI, BRXM, KSMC,HISXH
         from ZHLIS.L_TSXX
@@ -61,21 +61,13 @@
         and rownum &lt; 2
     </select>
 
-    <!--查询单个-->
+    <!--查询xh-->
     <select id="queryByxh" resultMap="LTsxxMap">
         select
           XH, BBBH, TSNR, QRR, QRRQ, QRBZ, QRKS, BZ, TSLX, TSRQ, TSKS, TSR, TSWORKSTATION, QRWORKSTATION, ZGYS, ZGHS, DZSJ, CLYS, CLR_YS, CLSJ_YS, CLBZ_YS, CLR_HS, CLSJ_HS, CLNR_HS, CLBZ_HS, CNAME, CIP, BQDM, KSDM, SYSTYPE, KDYS, BRID, JZLB, TEL_P, TEL_YS, SENDFLAG, SENTIME, ID, TSRXM, TSRDH, CLNR_YS, TRANSED, BZSM, MPI, BRXM, KSMC,HISXH
         from ZHLIS.L_TSXX
         where XH = #{xh}
         and rownum &lt; 2
-    </select>
-
-    <!--查询指定行数据-->
-    <select id="queryAllByLimit" resultMap="LTsxxMap">
-        select
-          XH, BBBH, TSNR, QRR, QRRQ, QRBZ, QRKS, BZ, TSLX, TSRQ, TSKS, TSR, TSWORKSTATION, QRWORKSTATION, ZGYS, ZGHS, DZSJ, CLYS, CLR_YS, CLSJ_YS, CLBZ_YS, CLR_HS, CLSJ_HS, CLNR_HS, CLBZ_HS, CNAME, CIP, BQDM, KSDM, SYSTYPE, KDYS, BRID, JZLB, TEL_P, TEL_YS, SENDFLAG, SENTIME, ID, TSRXM, TSRDH, CLNR_YS, TRANSED, BZSM, MPI, BRXM, KSMC
-        from ZHLIS.L_TSXX
-        limit #{offset}, #{limit}
     </select>
 
     <!--通过实体作为筛选条件查询-->
@@ -225,9 +217,7 @@
         </where>
     </select>
 
-
-
-    <insert id="insert" parameterType="com.RealLis.dataSync.domain.LTsxx">
+    <insert id="insert" parameterType="com.RealLis.dataSync.domain.LTsxxLis">
         insert into ZHLIS.L_TSXX
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="bbbh != null">
@@ -654,8 +644,8 @@
         where HISXH = #{hisxh}
     </update>
 
-    <!--通过主键删除-->
-    <delete id="deleteById">
+    <!--通过hisxh删除-->
+    <delete id="deleteByHisxh">
         delete from ZHLIS.L_TSXX where HISXH = #{hisxh} and HISXH !=-1
     </delete>
 

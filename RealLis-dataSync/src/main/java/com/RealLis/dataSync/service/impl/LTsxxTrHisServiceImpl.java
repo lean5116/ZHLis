@@ -21,7 +21,7 @@ public class LTsxxTrHisServiceImpl implements LTsxxTrService {
     }
 
     @Override
-    public int deleteByHisxh(Long jlxh) {
+    public int deleteByJlxh(Long jlxh) {
         return lTsxxTrMapper.deleteById(jlxh);
     }
 }

@@ -10,5 +10,5 @@ public interface LTsxxTrMapper {
     List<LTsxxTr>queryAll(LTsxxTr lTsxxTr);
     int insert(LTsxxTr lTsxxTr);
     int update(LTsxxTr lTsxxTr);
-    int deleteById(Long xh);
+    int deleteById(Long jlxh);
 }

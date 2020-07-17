@@ -3,7 +3,7 @@ package com.RealLis.dataSync.domain;
 
 import java.util.Date;
 
-public class LTsxx {
+public class LTsxxLis {
 
   private Long xh;
   private String bbbh;
@@ -53,10 +53,10 @@ public class LTsxx {
   private String ksmc;
   private Long hisxh;
 
-  public LTsxx() {
+  public LTsxxLis() {
   }
 
-  public LTsxx(Long xh, String bbbh, String tsnr, String qrr, Date qrrq, String qrbz, String qrks, String bz, Long tslx, Date tsrq, String tsks, String tsr, String tsworkstation, String qrworkstation, String zgys, String zghs, Date dzsj, String clys, String clrYs, Date clsjYs, Long clbzYs, String clrHs, Date clsjHs, String clnrHs, Long clbzHs, String cname, String cip, Long bqdm, Long ksdm, String systype, String kdys, String brid, Long jzlb, String telP, String telYs, Long sendflag, Date sentime, Long id, String tsrxm, String tsrdh, String clnrYs, Long transed, String bzsm, String mpi, String brxm, String ksmc, Long hisxh) {
+  public LTsxxLis(Long xh, String bbbh, String tsnr, String qrr, Date qrrq, String qrbz, String qrks, String bz, Long tslx, Date tsrq, String tsks, String tsr, String tsworkstation, String qrworkstation, String zgys, String zghs, Date dzsj, String clys, String clrYs, Date clsjYs, Long clbzYs, String clrHs, Date clsjHs, String clnrHs, Long clbzHs, String cname, String cip, Long bqdm, Long ksdm, String systype, String kdys, String brid, Long jzlb, String telP, String telYs, Long sendflag, Date sentime, Long id, String tsrxm, String tsrdh, String clnrYs, Long transed, String bzsm, String mpi, String brxm, String ksmc, Long hisxh) {
     this.xh = xh;
     this.bbbh = bbbh;
     this.tsnr = tsnr;

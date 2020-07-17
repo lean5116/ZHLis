@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface LTsxxTrService {
     List<LTsxxTr> getAll();
-    int deleteByHisxh(Long jlxh);
+    int deleteByJlxh(Long jlxh);
 }

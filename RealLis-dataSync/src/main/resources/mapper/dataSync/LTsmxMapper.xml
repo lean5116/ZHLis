@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.RealLis.dataSync.mapper.LTsmxMapper">
+
+    <resultMap type="com.RealLis.dataSync.domain.LTsmx" id="LTsmxMap">
+        <result property="sampleno" column="SAMPLENO" />
+        <result property="testid" column="TESTID" />
+        <result property="testresult1" column="TESTRESULT1" />
+        <result property="testresult2" column="TESTRESULT2" />
+        <result property="chinesename" column="CHINESENAME" />
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="LTsmxMap">
+        select
+          SAMPLENO, TESTID, TESTRESULT1, TESTRESULT2, CHINESENAME
+        from L_TSMX
+        where SAMPLENO = #{sampleno}
+    </select>
+
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="LTsmxMap">
+        select
+        SAMPLENO, TESTID, TESTRESULT1, TESTRESULT2, CHINESENAME
+        from L_TSMX
+        <where>
+            <if test="sampleno != null">
+                and SAMPLENO = #{sampleno}
+            </if>
+            <if test="testid != null">
+                and TESTID = #{testid}
+            </if>
+            <if test="testresult1 != null">
+                and TESTRESULT1 = #{testresult1}
+            </if>
+            <if test="testresult2 != null">
+                and TESTRESULT2 = #{testresult2}
+            </if>
+            <if test="chinesename != null">
+                and CHINESENAME = #{chinesename}
+            </if>
+        </where>
+    </select>
+
+
+    <insert id="insert" parameterType="com.RealLis.dataSync.domain.LTsmx">
+        insert into L_TSMX
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="sampleno != null">
+                 SAMPLENO ,
+            </if>
+            <if test="testid != null">
+                 TESTID ,
+            </if>
+            <if test="testresult1 != null">
+                TESTRESULT1 ,
+            </if>
+            <if test="testresult2 != null">
+                TESTRESULT2 ,
+            </if>
+            <if test="chinesename != null">
+                CHINESENAME ,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="sampleno != null">
+                 #{sampleno},
+            </if>
+            <if test="testid != null">
+                 #{testid},
+            </if>
+            <if test="testresult1 != null">
+                #{testresult1},
+            </if>
+            <if test="testresult2 != null">
+                 #{testresult2},
+            </if>
+            <if test="chinesename != null">
+                 #{chinesename},
+            </if>
+        </trim>
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update L_TSMX
+        <set>
+            <if test="testresult1 != null">
+                TESTRESULT1 = #{testresult1},
+            </if>
+            <if test="testresult2 != null">
+                TESTRESULT2 = #{testresult2},
+            </if>
+            <if test="chinesename != null">
+                CHINESENAME = #{chinesename},
+            </if>
+        </set>
+        where SAMPLENO = #{sampleno}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from L_TSMX where SAMPLENO = #{sampleno}
+    </delete>
+
+</mapper>
