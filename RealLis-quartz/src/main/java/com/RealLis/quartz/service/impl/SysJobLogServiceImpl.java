@@ -52,7 +52,7 @@ public class SysJobLogServiceImpl implements ISysJobLogService
     @Override
     public void addJobLog(SysJobLog jobLog)
     {
-        jobLogMapper.insertJobLog(jobLog);
+//        jobLogMapper.insertJobLog(jobLog);
     }
 
     /**
