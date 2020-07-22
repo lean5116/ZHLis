@@ -90,7 +90,7 @@ function getLodop(oOBJECT, oEMBED) {
         = "<br><font color='#FF00FF'>打印控件未安装!联系信息中心,安装后请刷新页面或重新进入。</font>";
         // = "，成功后请刷新本页面。</font>";
     var strCLodopUpdate
-        = "<br><font color='#FF00FF'>打印控件未安装!联系信息中心,安装后请刷新页面或重新进入。</font>";
+        = "<br><font color='#FF00FF'>打印控件未安装!联系信息中心,安装后请刷新页面或重新进入。</font>" ;
         // = "<br><font color='#FF00FF'>Web打印服务CLodop需升级!点击这里<a href='CLodop_Setup_for_Win32NT.exe' target='_self'>执行升级</a>,升级后请刷新页面。</font>";
     var LODOP;
     try {

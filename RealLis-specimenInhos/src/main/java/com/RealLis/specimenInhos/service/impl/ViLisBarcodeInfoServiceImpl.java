@@ -1,5 +1,7 @@
 package com.RealLis.specimenInhos.service.impl;
 
+import com.RealLis.specimenInhos.domain.GyHyxm;
+import com.RealLis.specimenInhos.domain.GyKsdm;
 import com.RealLis.specimenInhos.domain.ViLisBarcodeInfo;
 import com.RealLis.specimenInhos.mapper.ViLisBarcodeInfoMapper;
 import com.RealLis.specimenInhos.service.IViLisBarcodeInfoService;
@@ -19,5 +21,15 @@ public class ViLisBarcodeInfoServiceImpl implements IViLisBarcodeInfoService {
     @Override
     public ViLisBarcodeInfo getInfo(ViLisBarcodeInfo viLisBarcodeInfo) {
         return viLisBarcodeInfoMapper.queryInfo(viLisBarcodeInfo);
+    }
+
+    @Override
+    public List<GyHyxm> queryHyxm() {
+        return viLisBarcodeInfoMapper.queryHyxm();
+    }
+
+    @Override
+    public GyKsdm getKsdmByKsdm(String ksdm) {
+        return viLisBarcodeInfoMapper.queryKsdmByKsdm(ksdm);
     }
 }

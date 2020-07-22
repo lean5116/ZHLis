@@ -61,12 +61,21 @@ public class SpecimenInhosController extends BaseController {
 
     @GetMapping("")
     public String specimenInhos( String appDeptCode,  String userCode, Model model) {
-        model.addAttribute("department", appDeptCode);
-        model.addAttribute("userCode", userCode);
-        model.addAttribute("departmentName", appDeptCode);
-        model.addAttribute("userName", userCode);
         List<Formatter> formatters = lSampletypeService.getLSampleTypeFormatter(null);
         model.addAttribute("SampleTypeFormatter", JSON.toJSONString(formatters));
+        List<GyHyxm> gyHyxmsList = viLisBarcodeInfoService.queryHyxm();
+        model.addAttribute("BGBS", JSON.toJSONString(gyHyxmsList));
+        if(appDeptCode!=null&&userCode!=null) {
+            GyKsdm gyksdm = viLisBarcodeInfoService.getKsdmByKsdm(appDeptCode);
+            model.addAttribute("department", appDeptCode);
+            model.addAttribute("userCode", userCode);
+            model.addAttribute("departmentName", gyksdm.getKsmc());
+            model.addAttribute("userName", userCode);
+            model.addAttribute("isInhos","1");
+        }else{
+            model.addAttribute("departmentName", "入院准备中心");
+            model.addAttribute("isInhos","0");
+        }
         return "specimenInhos/index";
     }
 
@@ -249,6 +258,12 @@ public class SpecimenInhosController extends BaseController {
         } else {
             return error();
         }
+    }
+    @GetMapping("/getHyxm")
+    @ResponseBody
+    public AjaxResult getHyxm(){
+        List<GyHyxm> gyHyxmsList = viLisBarcodeInfoService.queryHyxm();
+        return success(JSON.toJSONString(gyHyxmsList));
     }
 
     @ApiOperation("条码状态修改")

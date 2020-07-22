@@ -31,10 +31,14 @@
         <result property="canceler" column="CANCELER" />
         <result property="canceltime" column="CANCELTIME" />
         <result property="diagnostic" column="DIAGNOSTIC"/>
+        <result property="tube" column="TUBE" />
+        <result property="receiveaddr" column="RECEIVEADDR"/>
+        <result property="hyxm" column="HYXM"/>
+        <result property="departmentName" column="DEPARTMENTNAME"/>
     </resultMap>
     <select id="queryInfoList" resultMap="ViLisBarcodeInfoMap" parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
         select
-        BARCODE, BARCODE2,REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID, PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST, COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME, DIAGNOSTIC
+        BARCODE, BARCODE2,REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID, PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST, COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME, DIAGNOSTIC,TUBE,RECEIVEADDR,hyxm,departmentName
         from ZHLIS.VI_LIS_BARCODE_INFO
         <where>
 <!--            <if test="params.beginTime != null and params.beginTime != ''">-->
@@ -64,6 +68,9 @@
             <if test="searchValue!=null and searchValue!=''">
                 and BARCODE like concat(concat('%',#{searchValue,jdbcType=VARCHAR}),'%')
             </if>
+            <if test="params.isInhos==0">
+                and PREADMISSION = '1'
+            </if>
         </where>
         order by  BEDNUM,REQUETTIME
     </select>
@@ -71,7 +78,7 @@
 
     <select id="queryInfo" resultMap="ViLisBarcodeInfoMap" parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
         select
-        BARCODE, BARCODE,REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID, PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST, COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME, DIAGNOSTIC
+        BARCODE, BARCODE,REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID, PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST, COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME, DIAGNOSTIC,TUBE,RECEIVEADDR,hyxm,departmentName
         from ZHLIS.VI_LIS_BARCODE_INFO
         <where>
             <if test="department!=null and department !=''">
@@ -98,9 +105,19 @@
             <if test="barcode!=null and barcode !=''">
                 and BARCODE = #{barcode}
             </if>
+            <if test="params.isInhos==0">
+                and PREADMISSION = '1'
+            </if>
             and rownum &lt; 2
         </where>
         order by  BEDNUM
     </select>
 
+    <select id="queryHyxm" resultType="com.RealLis.specimenInhos.domain.GyHyxm">
+        select hyxm ,bgbs from GY_HYXM where hismc  ='HEREN'
+    </select>
+
+    <select id="queryKsdmByKsdm" resultType="com.RealLis.specimenInhos.domain.GyKsdm">
+        select ksdm ,ksmc from ZHLIS.GY_KSDM where ksdm = #{ksdm} and rownum &lt;2
+    </select>
 </mapper>

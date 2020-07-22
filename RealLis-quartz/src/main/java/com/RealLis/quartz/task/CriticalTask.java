@@ -9,6 +9,7 @@ import com.RealLis.dataSync.service.LTsmxService;
 import com.RealLis.dataSync.service.LTsxxHisService;
 import com.RealLis.dataSync.service.LTsxxLisService;
 import com.RealLis.dataSync.service.LTsxxTrService;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -152,7 +153,7 @@ public class CriticalTask {
                 }else {
                     int i=0;
                     try{
-                        lTsxxHisService.insert(lTsxxHisParam);}
+                        i = lTsxxHisService.insert(lTsxxHisParam);}
                     catch (Exception e){
                     }
                     if(i>0){

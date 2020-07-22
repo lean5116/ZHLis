@@ -44,6 +44,43 @@ public class ViLisBarcodeInfo extends BaseEntity {
   private String overTime;
   private String sampleState;
   private String searchValue;
+  private String tube;
+  private String receiveaddr;
+  private String hyxm;
+  private String departmentName;
+
+  public String getDepartmentName() {
+    return departmentName;
+  }
+
+  public void setDepartmentName(String departmentName) {
+    this.departmentName = departmentName;
+  }
+
+  public String getHyxm() {
+    return hyxm;
+  }
+
+  public void setHyxm(String hyxm) {
+    this.hyxm = hyxm;
+  }
+
+
+  public String getTube() {
+    return tube;
+  }
+
+  public void setTube(String tube) {
+    this.tube = tube;
+  }
+
+  public String getReceiveaddr() {
+    return receiveaddr;
+  }
+
+  public void setReceiveaddr(String receiveaddr) {
+    this.receiveaddr = receiveaddr;
+  }
 
   public String getBarcode() {
     return barcode;

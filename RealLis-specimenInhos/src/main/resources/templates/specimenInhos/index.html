@@ -13,13 +13,15 @@
                 <div class="ibox-title">
                     <h5 style="font-size: large">住院标本 <small class="m-l-sm">住院标本</small></h5>
                     <div class="ibox-tools">
-                        <a class="btn btn-default fa fa-indent"  th:text="${department}">
+                        <a class="btn btn-default fa fa-indent"  th:text="${departmentName}">
 
                         </a>
                         <a class="btn btn-default fa fa-user-md" th:text="${userCode}">
 
                         </a>
-
+                        <a class="btn btn-default fa fa-user-md"  onclick="downloadplugin()">
+                            插件下载
+                        </a>
 
                     </div>
                 </div>
@@ -43,6 +45,7 @@
                                         </div>
                                     </div>
                                     <input name="department" th:value="${department}" hidden>
+                                    <input type="text"  name="params[isInhos]" th:value="${isInhos}" hidden>
                                 </form>
                             </div>
                         </div>
@@ -160,13 +163,14 @@
 <div id="orderBarCodeToolbar" class="fixed-table-toolbar">
     <div class="form-inline">
 
-        <button type="button" class="btn btn-success" onclick="barcodePrintSelect('orderBarCode')"  disabled="disabled" id="btn_barcodePrint"><i class="fa fa-print"></i>条码打印</button>
+        <button type="button" class="btn btn-success" onclick="barcodePrintSelect('orderBarCode')"   id="btn_barcodePrint"><i class="fa fa-print"></i>条码打印</button>
+
         <button type="button" class="btn btn-danger" onclick="barcodeCancelSelect('orderBarCode')" disabled="disabled" id="btn_barcodeCancel"><i class="fa fa-trash-o"></i>条码作废</button>
 
         <label for="sampleState" class="label label-warning">样本状态:</label>
         <select class=" input-sm mb-md " id="sampleState" onchange="orderBarcodeFilter()">
-            <option value="-99" selected>0、全部</option>
-            <option value="0">1、未打印</option>
+            <option value="-99" >0、全部</option>
+            <option value="0" selected>1、未打印</option>
             <option value="1">2、已打印</option>
             <option value="2">3、已采集</option>
             <option value="3">4、已接收</option>
@@ -206,23 +210,29 @@
 <section hidden>
     <div > 条码预览</div>
     <div id="barcodePrint" >
-        <table  border=1 style="border:solid 1px black;border-collapse:collapse;width: 500px;height: 300px">
+        <table   style="width: 500px;height: 300px">
             <tr>
-                <td colspan="2"><div id="patientname">测试姓名</div></td>
-                <td><div id="bednum">测试床号</div></td>
+                <td ><div id="patientname" style="font-size: 15px;font-family: 微软雅黑">测试姓名</div></td>
+                <td> <div id="departmentName">测试科室</div></td>
+                <td><div id="bednum" >测试床号</div></td>
             </tr>
             <tr>
-                <td><div>左箭头</div></td>
-                <td><div style="text-align: center"> <img id="imgCode" style="width: auto"></div></td>
-                <td > <div id = "sglx" style="writing-mode: vertical-lr;writing-mode: tb-lr">ceshi</div></td>
+                <td><div style="font-size: 30px">←</div>
+
+               </td>
+                <td><div style="text-align: left"> <svg id="imgCode" style=""/></div></td>
+                <td > <div id = "sglx" style=" margin:0 auto;width:20px;line-height:24px" >ceshi</div>
+                    <div id ="bgbs">报告标识</div>
+                </td>
             </tr>
+
             <tr>
                 <td colspan="3"><div id ="examname">检验目的</div></td>
             </tr>
             <tr>
-                <td><div id="specimencode">样本类型</div></td>
-                <td><div id="requettime">申请时间</div></td>
-                <td><div id="jsdd">接收地点</div></td>
+                <td><div id="specimencode" style="font-size: large">样本类型</div></td>
+                <td><div id="requettime" style="font-size: large;text-align: right">>申请时间</div></td>
+                <td><div id="jsdd" style="font-size: large">>接收地点</div></td>
             </tr>
         </table>
     </div>
@@ -233,13 +243,14 @@
 <section hidden>
     <div > 条码预览</div>
     <div id="logisticsPrint" >
-        <table   style="border:solid 1px black;border-collapse:collapse;width: 500px;height: 300px">
+        <table   style="width:500px;height: 300px">
+<!--            border:solid 1px black;border-collapse:collapse;-->
             <tr >
                 <td colspan="3" align="center" style="font-size:xx-large" ><strong>台一医 标本送检单</strong></td>
             </tr>
             <tr>
 
-                <td colspan="3"><div style="text-align: center;"> <img id="imgCodelogistics" style="height: 200px"></div></td>
+                <td colspan="3"><div style="text-align: center;"> <svg id="imgCodelogistics" style="height: 200px"></svg></div></td>
 
             </tr>
             <tr>
@@ -310,6 +321,8 @@
     var prefix = ctx + "specimenInhos";
     var SampleTypeFormatterData=[[${SampleTypeFormatter}]];  //得到所有标本类型字典值
     var SampleTypeMap = new Map(); //创建标本类型map
+    var BGBSData = [[${BGBS}]];
+    var BGBSMap = new Map();
     var currentTableId='orderBarCode'; //设置当前活动table 为医嘱条码
     var userId= [[${userCode}]];
     $(function() {
@@ -322,12 +335,22 @@
         queryBarcodeData('overtimeBarcode');
         queryBarcodeData('specimenLogistics');
         SampleTypeMapInit();
+        BGBSMapInit()
+        infoRefresh();
     });
     /*标本类型map初始化*/
     function SampleTypeMapInit() {
         var data = JSON.parse(SampleTypeFormatterData);
         for(i=0;i<data.length;i++){
             SampleTypeMap.set(data[i].value,data[i].text);
+        }
+    }
+
+    /*标本类型map初始化*/
+    function BGBSMapInit() {
+        var data = JSON.parse(BGBSData);
+        for(i=0;i<data.length;i++){
+            BGBSMap.set(data[i].hyxm,data[i].bgbs);
         }
     }
 
@@ -359,9 +382,9 @@
                     }},
                 { field: 'cost', title: '费用'  ,formatter:feeFormatter},
               //  { field: 'coststatus', title: '费用状态' ,formatter:coststatusFormatter ,align: 'center'},
-                { field: 'sglx', title: '试管类型'  },
+                { field: 'tube', title: '试管类型'  },
              //   { field: 'xqcs', title: '血气参数'  },
-                { field: 'jsdd', title: '接收地点'  }
+                { field: 'receiveaddr', title: '接收地点'  }
         ]
         }else if (tableId=='collectionConfirmation'){//采集确认
             columns=[
@@ -445,9 +468,9 @@
                     }},
                 { field: 'cost', title: '费用'  ,formatter:feeFormatter},
                // { field: 'coststatus', title: '费用状态' ,formatter:coststatusFormatter ,align: 'center'},
-                { field: 'sglx', title: '试管类型'  },
+                { field: 'tube', title: '试管类型'  },
                // { field: 'xqcs', title: '血气参数'  },
-                { field: 'jsdd', title: '接收地点'  },
+                { field: 'receiveaddr', title: '接收地点'  },
 
             ]
         }else if(tableId=='overtimeBarcode'){//超时条码
@@ -479,9 +502,9 @@
                     }},
                 { field: 'cost', title: '费用'  ,formatter:feeFormatter},
                 //{ field: 'coststatus', title: '费用状态' ,formatter:coststatusFormatter ,align: 'center'},
-                { field: 'sglx', title: '试管类型'  },
+                { field: 'tube', title: '试管类型'  },
                // { field: 'xqcs', title: '血气参数'  },
-                { field: 'jsdd', title: '接收地点'  },
+                { field: 'receiveaddr', title: '接收地点'  },
 
             ]
         }
@@ -780,17 +803,36 @@
                             if(data!=null){
                                 JsBarcode("#imgCode",data.barcode,{
                                     format:"CODE128",
-                                    width:2,
+                                    width:4,
+                                    height: 150
                                 });
-
-                                $("#patientname").html(data.patientname);
-                                $("#examname").html(data.examname);
-                                $("#requettime").html(data.requettime);
-                                $("#bednum").html(data.bednum);
-                                $("#sglx").html(data.sglx);
-                                $("#jsdd").html(data.jsdd);
-                                prn1_preview("barcodePrint");
-                                queryBarcodeSearch(tableId);
+                                LODOP = getLodop();
+                                LODOP.SET_PRINT_PAGESIZE(1,500,300,"CreateCustomPage");
+                                LODOP.SET_PRINT_STYLE("FontSize", 9);
+                                LODOP.SET_PRINT_STYLE("Bold", 0);
+                                LODOP.SET_PRINTER_INDEX("Zebra  888-TT");
+                                LODOP.ADD_PRINT_TEXT(0,0,"20mm","4mm",data.patientname);
+                                LODOP.ADD_PRINT_TEXT(0,"20mm","15mm","4mm",data.departmentName);
+                                LODOP.ADD_PRINT_TEXT(0,"40mm","15mm","4mm",data.bednum +"床");
+                                LODOP.ADD_PRINT_TEXT("10mm",0,"10mm","4mm","←");
+                                LODOP.ADD_PRINT_BARCODE("5mm", "9mm", "24mm", "15mm", "128Auto", data.barcode);//条码
+                                LODOP.ADD_PRINT_TEXT("5mm","42mm","8mm","15mm",data.tube);
+                                LODOP.SET_PRINT_STYLEA(4,"FontSize",12);
+                                LODOP.SET_PRINT_STYLEA(6,"FontSize",7);
+                                LODOP.SET_PRINT_STYLEA(5,"FontSize",5);//设置上面这个条码下方的文字字体大小
+                                LODOP.ADD_PRINT_TEXT("20mm",0,"45mm","4mm",data.examname);
+                                LODOP.ADD_PRINT_TEXT("27mm",0,"10mm","3mm",SampleTypeMap.get(data.specimencode));
+                                LODOP.ADD_PRINT_TEXT("27mm","15mm","30mm","3mm",data.requettime.substring(0,16));
+                                LODOP.ADD_PRINT_TEXT("27mm","40mm","10mm","3mm",data.receiveaddr);
+                                var hyxms = data.hyxm.split(',');
+                                console.log(data.hyxm);
+                                for(let k = 0 ;k<hyxms.length;k++){
+                                    if(BGBSMap.get(hyxms[k])!=null){
+                                        LODOP.ADD_PRINT_TEXT("20mm","40mm","10mm","4mm",BGBSMap.get(hyxms[k]));
+                                        break;
+                                    }
+                                }
+                                LODOP.PRINT();//直接打印
                             }
                         }
                     }
@@ -813,10 +855,25 @@
                 format:"CODE128",
                 width:3,
             });
+            LODOP = getLodop();
+            LODOP.SET_PRINT_PAGESIZE(1,500,300,"CreateCustomPage");
+            LODOP.SET_PRINT_STYLE("FontSize", 9);
+            LODOP.SET_PRINT_STYLE("Bold", 0);
+            LODOP.SET_PRINTER_INDEX("Zebra  888-TT");
+            LODOP.ADD_PRINT_BARCODE("5mm", "9mm", "30mm", "15mm", "128Auto", data[i].wlbh);//条码
+            LODOP.SET_PRINT_STYLEA(1,"FontSize",5);//设置上面这个条码下方的文字字体大小
+            LODOP.ADD_PRINT_TEXT(0,"10mm","50mm","5mm","台一医 标本送检单");
+            LODOP.SET_PRINT_STYLEA(2,"Alignment",1);//
+            LODOP.SET_PRINT_STYLEA(2,"FontSize",9);//
+            LODOP.ADD_PRINT_TEXT("25mm","0mm","30mm","5mm","("+data[i].bbsl+")");
+            LODOP.SET_PRINT_STYLEA(3,"FontSize",13);//
+            LODOP.ADD_PRINT_TEXT("27mm","15mm","30mm","3mm",data[i].cjsj.substring(0,16));
+            LODOP.ADD_PRINT_TEXT("22mm","20mm","30mm","5mm",data[i].bqmc);
+            LODOP.PRINT();//直接打印
             $("#bqmc").html(data[i].bqmc);
             $("#bbsl").html(data[i].bbsl);
             $("#cjsj").html(data[i].cjsj);
-            prn1_preview("logisticsPrint");
+            //prn1_preview("logisticsPrint");
         }
     }
     /*标本条码打印*/
@@ -911,28 +968,46 @@
             }
         }
     });
-
+    function downloadplugin() {
+        window.location.href = ctx + "common/download?fileName=" + '打印插件.rar';
+    }
     /*=======================================================按钮事件================================================*/
 </script>
 <script>
     var LODOP; //声明为全局变量
     function prn1_preview(printName) {
+
         CreateOneFormPage(printName);
-        LODOP.SET_PRINT_PAGESIZE(1,500,300,"CreateCustomPage");
+        //LODOP.SET_PRINT_PAGESIZE(1,500,300,"CreateCustomPage");
         //LODOP.PREVIEW();//打印预览
         LODOP.PRINT();//直接打印
     }
     function CreateOneFormPage(printName){
-        LODOP=getLodop();
-        //LODOP.PRINT_INIT("打印控件功能演示_Lodop功能_表单一");
-        LODOP.SET_PRINT_STYLE("FontSize",18);
-        LODOP.SET_PRINT_STYLE("Bold",1);
+        LODOP = getLodop();
+        LODOP.SET_PRINT_PAGESIZE(1,500,300,"CreateCustomPage");
+        LODOP.SET_PRINT_STYLE("FontSize", 9);
+        LODOP.SET_PRINT_STYLE("Bold", 0);
+        LODOP.SET_PRINTER_INDEX("Zebra  888-TT");
+       // LODOP.SET_PRINT_MODE("WINDOW_DEFPRINTER","Zebra  888-TT");
+        LODOP.ADD_PRINT_BARCODE("10mm", "9mm", "24mm", "15mm", "128Auto", "1234567890");//条码
         //LODOP.ADD_PRINT_TEXT(0,0,0,0,"打印页面部分内容");
         // LODOP.SET_PRINT_MODE("FULL_HEIGHT_FOR_OVERFLOW",true);//高度溢出缩放
-        LODOP.SET_PRINT_MODE("WINDOW_DEFPRINTER","Zebra  888-TT");
-        //LODOP.SET_PRINT_MODE("WINDOW_DEFPRINTER","Microsoft XPS Document Writer");
-        LODOP.SET_PRINT_MODE("PRINT_PAGE_PERCENT","Full-Page");//整页缩放
-        LODOP.ADD_PRINT_HTM("0%","0%","100%","100%",document.getElementById(printName).innerHTML);
+        //LODOP.SET_PRINT_MODE("WINDOW_DEFPRINTER","Zebra  888-TT");
+        //LODOP.SET_PRINT_MODE("PRINT_PAGE_PERCENT","Full-Page");//整页缩放
+        //LODOP.ADD_PRINT_HTM("0%","0%",500,300,document.getElementById(printName).innerHTML);
+    }
+    //打印大条码
+    function printBig(data) {
+        LODOP = getLodop();
+        LODOP.PRINT_INITA(0, 0, "50mm", "30mm", "打印控件");
+        LODOP.SET_PRINT_STYLE("FontSize", 9);
+        LODOP.SET_PRINT_STYLE("Bold", 0);
+        LODOP.ADD_PRINT_TEXT("0mm", "0mm", "9mm", "9mm", "部件：");//（上，右，宽，高，内容）
+        LODOP.ADD_PRINT_BARCODE("0mm", "9mm", "34mm", "15mm", "128Auto", "1234567890");//条码
+        //LODOP.PRINT();//打印
+        LODOP.PREVIEW();//预览
+        //LODOP.SET_PRINT_STYLEA(0, data.pList.length, data.pList.length);
+
     }
 </script>
 </body>
