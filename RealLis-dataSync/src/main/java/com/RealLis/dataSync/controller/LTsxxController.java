@@ -53,7 +53,7 @@ public class LTsxxController extends BaseController {
                 if(lTsxxLis !=null){
                     switch (ltsxxTr.getEventype()){
                         case "INSERT":
-                            int k = lTsxxLisService.updateByHisxh(ltSxxParam);
+                            int k = lTsxxLisService.updateByXh(ltSxxParam);
                             if(k>0){
                                 logger.info(ltSxxParam.getHisxh() +"记录修改成功");
                                 if(lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh())>0) {
@@ -62,7 +62,7 @@ public class LTsxxController extends BaseController {
                             }
                             break;
                         case "UPDATE":
-                            int i = lTsxxLisService.updateByHisxh(ltSxxParam);
+                            int i = lTsxxLisService.updateByXh(ltSxxParam);
                             if(i>0){
                                 logger.info(ltSxxParam.getHisxh() +"记录修改成功");
                                 if(lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh())>0) {
@@ -120,7 +120,7 @@ public class LTsxxController extends BaseController {
                 if(lTsxxHis!=null){
                     switch (ltsxxTr.getEventype()){
                         case "INSERT":
-                            int k = lTsxxHisService.updateByLisxh(ltSxxParam);
+                            int k = lTsxxHisService.updateByXh(ltSxxParam);
                             if(k>0){
                                 logger.info(ltSxxParam.getLisxh() +"记录修改成功");
                                 if(lTsxxTrLisService.deleteByJlxh(ltsxxTr.getJlxh())>0) {
@@ -129,7 +129,7 @@ public class LTsxxController extends BaseController {
                             }
                             break;
                         case "UPDATE":
-                            int i = lTsxxHisService.updateByLisxh(ltSxxParam);
+                            int i = lTsxxHisService.updateByXh(ltSxxParam);
                             if(i>0){
                                 logger.info(ltSxxParam.getLisxh() +"记录修改成功");
                                 if(lTsxxTrLisService.deleteByJlxh(ltsxxTr.getJlxh())>0) {

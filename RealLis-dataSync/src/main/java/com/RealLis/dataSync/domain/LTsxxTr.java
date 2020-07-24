@@ -50,4 +50,14 @@ public class LTsxxTr {
 
   public LTsxxTr() {
   }
+
+  @Override
+  public String toString() {
+    return "LTsxxTr{" +
+            "jlxh=" + jlxh +
+            ", xh=" + xh +
+            ", eventype='" + eventype + '\'' +
+            ", jlsj=" + jlsj +
+            '}';
+  }
 }

@@ -60,21 +60,26 @@ public class SpecimenInhosController extends BaseController {
     private ViLisAdviseHerenService viLisAdviseHerenService;
 
     @GetMapping("")
-    public String specimenInhos( String appDeptCode,  String userCode, Model model) {
+    public String specimenInhos( String appDeptCode,  String userCode,String inpatient_id, Model model) {
         List<Formatter> formatters = lSampletypeService.getLSampleTypeFormatter(null);
         model.addAttribute("SampleTypeFormatter", JSON.toJSONString(formatters));
         List<GyHyxm> gyHyxmsList = viLisBarcodeInfoService.queryHyxm();
         model.addAttribute("BGBS", JSON.toJSONString(gyHyxmsList));
-        if(appDeptCode!=null&&userCode!=null) {
-            GyKsdm gyksdm = viLisBarcodeInfoService.getKsdmByKsdm(appDeptCode);
-            model.addAttribute("department", appDeptCode);
-            model.addAttribute("userCode", userCode);
-            model.addAttribute("departmentName", gyksdm.getKsmc());
-            model.addAttribute("userName", userCode);
-            model.addAttribute("isInhos","1");
-        }else{
+        if (inpatient_id != null) {
+            model.addAttribute("inpatientId",inpatient_id);
             model.addAttribute("departmentName", "入院准备中心");
-            model.addAttribute("isInhos","0");
+            model.addAttribute("isInhos", "0");
+        }else {
+            if (appDeptCode != null && userCode != null) {
+                GyKsdm gyksdm = viLisBarcodeInfoService.getKsdmByKsdm(appDeptCode);
+                model.addAttribute("department", appDeptCode);
+                model.addAttribute("userCode", userCode);
+                model.addAttribute("departmentName", gyksdm.getKsmc());
+                model.addAttribute("userName", userCode);
+                model.addAttribute("isInhos", "1");
+            } else {
+                return "error";
+            }
         }
         return "specimenInhos/index";
     }
@@ -163,11 +168,15 @@ public class SpecimenInhosController extends BaseController {
     @ApiImplicitParam(name = "deptId", value = "科室id", dataType = "String")
     @PostMapping("/GenerateBarcode")
     @ResponseBody
-    private void GenerateBarcode(String deptId) {
+    private void GenerateBarcode(String deptId,String isInhos) {
         ViLisAdviseHeren params = new ViLisAdviseHeren();
         params.setOrderStatus("1");
         params.setSampleFlag("0");
-        params.setDeptcode(deptId);
+        if(deptId.length()>0) {
+            params.setDeptcode(deptId);
+        }else{
+            params.setPreinhosstatus("1");
+        }
         List<ViLisAdviseHeren> viLisAdviseHerenList = viLisAdviseHerenService.getDistinctAdviseList(params);
 
         if (viLisAdviseHerenList != null) {

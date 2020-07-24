@@ -389,4 +389,38 @@ public class LTsxxHis {
     public void setLisxh(Long lisxh) {
         this.lisxh = lisxh;
     }
+
+    @Override
+    public String toString() {
+        return "{" +
+                "clrYs='" + clrYs + '\'' +
+                ", clsjYs=" + clsjYs +
+                ", clbzYs=" + clbzYs +
+                ", clrHs='" + clrHs + '\'' +
+                ", clsjHs=" + clsjHs +
+                ", clnrHs='" + clnrHs + '\'' +
+                ", clbzHs=" + clbzHs +
+
+
+                ", bqdm=" + bqdm +
+                ", ksdm=" + ksdm +
+
+                ", kdys='" + kdys + '\'' +
+                ", brid='" + brid + '\'' +
+                ", telP='" + telP + '\'' +
+                ", telYs='" + telYs + '\'' +
+                ", sendflag=" + sendflag +
+                ", sentime=" + sentime +
+                ", id=" + id +
+                ", tsrxm='" + tsrxm + '\'' +
+                ", tsrdh='" + tsrdh + '\'' +
+                ", tsks='" + tsks + '\'' +
+                ", clnrYs='" + clnrYs + '\'' +
+
+                ", bzsm='" + bzsm + '\'' +
+                ", mpi='" + mpi + '\'' +
+                ", brxm='" + brxm + '\'' +
+                ", ksmc='" + ksmc + '\'' +
+                '}';
+    }
 }

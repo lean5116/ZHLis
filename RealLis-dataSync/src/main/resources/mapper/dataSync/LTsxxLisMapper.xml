@@ -640,8 +640,11 @@
             <if test="ksmc != null">
                 KSMC = #{ksmc},
             </if>
+            <if test="hisxh!=null">
+                HISXH =#{hisxh}
+            </if>
         </set>
-        where HISXH = #{hisxh}
+        where xh = #{xh}
     </update>
 
     <!--通过hisxh删除-->

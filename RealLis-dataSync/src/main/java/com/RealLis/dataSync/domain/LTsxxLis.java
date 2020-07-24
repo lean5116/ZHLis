@@ -484,54 +484,30 @@ public class LTsxxLis {
 
   @Override
   public String toString() {
-    return "LTsxx{" +
-            "xh='" + xh + '\'' +
-            ", bbbh='" + bbbh + '\'' +
-            ", tsnr='" + tsnr + '\'' +
-            ", qrr='" + qrr + '\'' +
-            ", qrrq=" + qrrq +
-            ", qrbz='" + qrbz + '\'' +
-            ", qrks='" + qrks + '\'' +
-            ", bz='" + bz + '\'' +
-            ", tslx='" + tslx + '\'' +
-            ", tsrq=" + tsrq +
-            ", tsks='" + tsks + '\'' +
-            ", tsr='" + tsr + '\'' +
-            ", tsworkstation='" + tsworkstation + '\'' +
-            ", qrworkstation='" + qrworkstation + '\'' +
-            ", zgys='" + zgys + '\'' +
-            ", zghs='" + zghs + '\'' +
-            ", dzsj=" + dzsj +
-            ", clys='" + clys + '\'' +
-            ", clrYs='" + clrYs + '\'' +
+    return "{" +
+            "clrYs='" + clrYs + '\'' +
             ", clsjYs=" + clsjYs +
-            ", clbzYs='" + clbzYs + '\'' +
+            ", clbzYs=" + clbzYs +
             ", clrHs='" + clrHs + '\'' +
             ", clsjHs=" + clsjHs +
             ", clnrHs='" + clnrHs + '\'' +
-            ", clbzHs='" + clbzHs + '\'' +
-            ", cname='" + cname + '\'' +
-            ", cip='" + cip + '\'' +
-            ", bqdm='" + bqdm + '\'' +
-            ", ksdm='" + ksdm + '\'' +
-            ", systype='" + systype + '\'' +
+            ", clbzHs=" + clbzHs +
+            ", bqdm=" + bqdm +
+            ", ksdm=" + ksdm +
             ", kdys='" + kdys + '\'' +
             ", brid='" + brid + '\'' +
-            ", jzlb='" + jzlb + '\'' +
             ", telP='" + telP + '\'' +
             ", telYs='" + telYs + '\'' +
-            ", sendflag='" + sendflag + '\'' +
-            ", sentime=" + sentime +
-            ", id='" + id + '\'' +
+            ", id=" + id +
             ", tsrxm='" + tsrxm + '\'' +
             ", tsrdh='" + tsrdh + '\'' +
+            ", tsks='" + tsks + '\'' +
             ", clnrYs='" + clnrYs + '\'' +
-            ", transed='" + transed + '\'' +
             ", bzsm='" + bzsm + '\'' +
             ", mpi='" + mpi + '\'' +
             ", brxm='" + brxm + '\'' +
             ", ksmc='" + ksmc + '\'' +
-            ", hisxh='" + hisxh + '\'' +
             '}';
+
   }
 }

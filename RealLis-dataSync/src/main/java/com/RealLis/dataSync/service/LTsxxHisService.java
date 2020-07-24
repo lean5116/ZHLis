@@ -7,7 +7,7 @@ import java.util.List;
 public interface LTsxxHisService {
     LTsxxHis getByXh(Long xh);
     LTsxxHis getByLisxh(Long lisxh);
-    int updateByLisxh(LTsxxHis lTsxxHis);
+    int updateByXh(LTsxxHis lTsxxHis);
     int insert(LTsxxHis lTsxxHis);
     int deleteByLisxh(Long lisxh);
 }

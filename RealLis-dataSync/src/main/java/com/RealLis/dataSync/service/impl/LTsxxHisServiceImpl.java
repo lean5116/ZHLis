@@ -26,7 +26,7 @@ public class LTsxxHisServiceImpl implements LTsxxHisService {
     }
 
     @Override
-    public int updateByLisxh(LTsxxHis lTsxxHis) {
+    public int updateByXh(LTsxxHis lTsxxHis) {
         return lTsxxHisMapper.update(lTsxxHis);
     }
 

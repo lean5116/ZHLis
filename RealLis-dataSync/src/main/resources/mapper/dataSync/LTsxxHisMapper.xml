@@ -536,7 +536,7 @@
                 lisxh = #{lisxh},
             </if>
         </set>
-        where LISXH = #{lisxh}
+        where xh = #{xh}
     </update>
 
     <!--通过主键删除-->

@@ -46,6 +46,7 @@
                                     </div>
                                     <input name="department" th:value="${department}" hidden>
                                     <input type="text"  name="params[isInhos]" th:value="${isInhos}" hidden>
+                                    <input type="text"  name="params[inpatientId]" th:value="${inpatientId}" hidden>
                                 </form>
                             </div>
                         </div>
@@ -364,6 +365,7 @@
                 {fielId:'rownum',checkbox: true },
                 {field: 'bednum', title: '床号', align: 'center'},
                 {field:'patientname',title:'病人姓名' ,align: 'center'},
+                {field:'patientid',title:'住院号' },
                 { field: 'barcode',  title: '条码号'  ,align: 'center' },
                 {field: 'examname', title: '检验目的' , formatter: function(value, row, index) {
                         return $.table.tooltip(value);
@@ -390,7 +392,7 @@
             columns=[
                 {checkbox: true },
                 {field: 'bednum', title: '床号', align: 'center'},
-                {field:'patientname',title:'病人姓名'},
+                {field:'patientname',title:'病人姓名',visible:false},
                 { field: 'barcode',  title: '条码号'  ,align: 'center' },
                 { field: 'barcode2',  title: '条码长号'  ,align: 'center', visible:false},
                 { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
@@ -546,7 +548,7 @@
                 columns: columns,
                 pagination: false,
                 uniqueId: 'barcode',
-                height:600,
+                height:450,
                 onLoadSuccess: function () {
                     onLoadFix(tableId, $('#' + tableId).bootstrapTable('getData'));//加载成功事件触发合并床号方法
                 }
@@ -558,9 +560,11 @@
                 modalName: "医嘱条码",
                 toolbar: tableId + 'Toolbar',
                 columns: columns,
-                showPageGo: true,
-                search: true,
+                pagination: false,
+                // showPageGo: true,
+                // search: true,
                 uniqueId: 'barcode2',
+                height:450,
                 onEditableSave: onEditableSave,
                 onLoadSuccess: function () {
                     onLoadFix(tableId, $('#' + tableId).bootstrapTable('getData'));//加载成功事件触发合并床号方法
@@ -739,11 +743,13 @@
         $.modal.loading("条码生成中");
         /*请求后台异步生成条码*/
         var deptId = [[${department}]];
+        var isInhos =[[${isInhos}]];
         $.ajax({
             type: "post",
             url: prefix + "/GenerateBarcode",
             data:{
-                "deptId":deptId
+                "deptId":deptId,
+                "isInhos":isInhos
             },
             success:function () {
                 $.modal.closeLoading();
@@ -807,28 +813,33 @@
                                     height: 150
                                 });
                                 LODOP = getLodop();
+
                                 LODOP.SET_PRINT_PAGESIZE(1,500,300,"CreateCustomPage");
                                 LODOP.SET_PRINT_STYLE("FontSize", 9);
                                 LODOP.SET_PRINT_STYLE("Bold", 0);
                                 LODOP.SET_PRINTER_INDEX("Zebra  888-TT");
-                                LODOP.ADD_PRINT_TEXT(0,0,"20mm","4mm",data.patientname);
-                                LODOP.ADD_PRINT_TEXT(0,"20mm","15mm","4mm",data.departmentName);
-                                LODOP.ADD_PRINT_TEXT(0,"40mm","15mm","4mm",data.bednum +"床");
-                                LODOP.ADD_PRINT_TEXT("10mm",0,"10mm","4mm","←");
-                                LODOP.ADD_PRINT_BARCODE("5mm", "9mm", "24mm", "15mm", "128Auto", data.barcode);//条码
-                                LODOP.ADD_PRINT_TEXT("5mm","42mm","8mm","15mm",data.tube);
+                                LODOP.ADD_PRINT_TEXT(0,0,"12mm","3mm",data.patientname);
+                                LODOP.ADD_PRINT_TEXT(0,"30mm","10mm","3mm",data.departmentName);
+                                LODOP.SET_PRINT_STYLEA(0,"FontSize",6);//设置上面这个条码下方的文字字体大小
+                                LODOP.ADD_PRINT_TEXT(0,"37mm","15mm","3mm",data.bednum +"床");
+                                LODOP.ADD_PRINT_TEXT("10mm",0,"10mm","3mm","←");
+                                LODOP.ADD_PRINT_BARCODE("5mm", "9mm", "24mm", "13mm", "128Auto", data.barcode);//条码
+                                LODOP.ADD_PRINT_TEXT("3mm","42mm","8mm","15mm",data.tube);
                                 LODOP.SET_PRINT_STYLEA(4,"FontSize",12);
                                 LODOP.SET_PRINT_STYLEA(6,"FontSize",7);
                                 LODOP.SET_PRINT_STYLEA(5,"FontSize",5);//设置上面这个条码下方的文字字体大小
-                                LODOP.ADD_PRINT_TEXT("20mm",0,"45mm","4mm",data.examname);
-                                LODOP.ADD_PRINT_TEXT("27mm",0,"10mm","3mm",SampleTypeMap.get(data.specimencode));
-                                LODOP.ADD_PRINT_TEXT("27mm","15mm","30mm","3mm",data.requettime.substring(0,16));
-                                LODOP.ADD_PRINT_TEXT("27mm","40mm","10mm","3mm",data.receiveaddr);
+                                LODOP.ADD_PRINT_TEXT("18mm",0,"50mm","10mm",data.examname);
+                                LODOP.SET_PRINT_STYLEA(0,"FontSize",7);//设置上面这个文本框的文字字体大小
+                                LODOP.ADD_PRINT_TEXT("28mm",0,"10mm","2mm",SampleTypeMap.get(data.specimencode));
+                                LODOP.ADD_PRINT_TEXT("28mm","15mm","30mm","2mm",data.requettime.substring(0,16));
+                                LODOP.ADD_PRINT_TEXT("28mm","40mm","10mm","2mm",data.receiveaddr);
+                                LODOP.ADD_PRINT_TEXT(0,"12mm","23mm","4mm",data.patientid);
+                                console.log(data.patientid);
                                 var hyxms = data.hyxm.split(',');
                                 console.log(data.hyxm);
                                 for(let k = 0 ;k<hyxms.length;k++){
                                     if(BGBSMap.get(hyxms[k])!=null){
-                                        LODOP.ADD_PRINT_TEXT("20mm","40mm","10mm","4mm",BGBSMap.get(hyxms[k]));
+                                        LODOP.ADD_PRINT_TEXT("15mm","40mm","10mm","4mm",BGBSMap.get(hyxms[k]));
                                         break;
                                     }
                                 }
