@@ -205,14 +205,14 @@ public class CriticalTask {
                         lTsxxHisParam.setXh(judge.getXh());
                         if (lTsxxLis.toString().equals(judge.toString())) {
                             logger.info("lis表数据与his完全相同，不执行update~" + lTsxxLis.toString());
-                            if (lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {                                   //操作成功删删除tr表数据
+                            if (lTsxxTrLisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {                                   //操作成功删删除tr表数据
                                 logger.info(lTsxxHisParam.getLisxh() + " TR表 记录删除成功 his");
                             }
                         } else {
                             logger.info("lis数据与his数据不完全完全相同，执行update~；lis数据:" + lTsxxLis.toString() + "~his数据:" + judge.toString());
                             if (lTsxxHisService.updateByXh(lTsxxHisParam) > 0) {
                                 logger.info(lTsxxHisParam.getLisxh() + "记录修改成功 his入参~" + lTsxxHisParam.toString());
-                                if (lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {                                   //操作成功删删除tr表数据
+                                if (lTsxxTrLisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {                                   //操作成功删删除tr表数据
                                     logger.info(lTsxxHisParam.getLisxh() + " TR表 记录删除成功 his");
                                 }
                             }
