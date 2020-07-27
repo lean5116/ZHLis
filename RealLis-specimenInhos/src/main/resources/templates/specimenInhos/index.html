@@ -47,6 +47,8 @@
                                     <input name="department" th:value="${department}" hidden>
                                     <input type="text"  name="params[isInhos]" th:value="${isInhos}" hidden>
                                     <input type="text"  name="params[inpatientId]" th:value="${inpatientId}" hidden>
+                                    <input type="text"  name="params[operation]" th:value="${operation}" hidden>
+
                                 </form>
                             </div>
                         </div>
@@ -94,9 +96,9 @@
                 <li class="">
                     <a href="#cancellationReturnTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id ="cancellationReturnTab" >5、作废退回</a>
                 </li>
-                <li class="">
-                    <a href="#inspectInformationTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id="inspectInformationTab">检验信息</a>
-                </li>
+<!--                <li class="">-->
+<!--                    <a href="#inspectInformationTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id="inspectInformationTab">检验信息</a>-->
+<!--                </li>-->
                 <!--                            <li class="">-->
                 <!--                                <a href="#tabDoctorOrderContent" data-toggle="tab" class="text-center" aria-expanded="false"> <i class="fa fa-table" id = "tabDoctorOrder"></i>医生医嘱</a>-->
                 <!--                            </li>-->
@@ -392,26 +394,25 @@
             columns=[
                 {checkbox: true },
                 {field: 'bednum', title: '床号', align: 'center'},
-                {field:'patientname',title:'病人姓名',visible:false},
-                { field: 'barcode',  title: '条码号'  ,align: 'center' },
-                { field: 'barcode2',  title: '条码长号'  ,align: 'center', visible:false},
-                { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
+                {field:'patientname',title:'病人姓名' ,align: 'center'},
                 {field: 'patientid', title: '住院号', align: 'center'},
+                { field: 'barcode',  title: '条码号'  ,align: 'center' },
                 {field: 'examname', title: '项目内容', formatter: function(value, row, index) {
                         return $.table.tooltip(value);
                     }},
                 { field: 'specimencode', title: '样本类型' ,formatter:specimencodeFormatter },
-                // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
+                { field: 'barcode2',  title: '条码长号'  ,align: 'center', visible:false},
                 { field: 'samplingtime', title: '采集时间' ,sortable: true },
                 { field: 'samplingdoctor', title: '采集人'  },
+               // { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
+                // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
                 { field: 'requettime', title: '申请时间' ,sortable: true },
-                { field: 'requestdoctor', title: '申请医生' ,sortable: true },
                 { field: 'zyzt', title: '在院状态'  },]
         }else if(tableId=='collectionComplete'){//采集完成
             columns=[
                 {checkbox: true },
-                {field: 'patientid', title: '住院号', align: 'center'},
                 {field: 'bednum', title: '床号', align: 'center'},
+                {field: 'patientid', title: '住院号', align: 'center'},
                 {field:'patientname',title:'病人姓名'},
                 { field: 'barcode',  title: '条码号'  ,align: 'center' },
                 {field: 'examname', title: '项目内容', formatter: function(value, row, index) {
@@ -427,18 +428,32 @@
         }else if(tableId=='receiveComplete'){//接收完成
             columns= [
                 {checkbox: true },
+                { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
                 {field: 'bednum', title: '床号', align: 'center'},
                 {field:'patientname',title:'病人姓名'},
                 { field: 'barcode',  title: '条码号'  ,align: 'center' },
-                {field: 'patientid', title: '住院号', align: 'center'},
+                //{field: 'patientid', title: '住院号', align: 'center'},
                 {field: 'examname', title: '项目内容', formatter: function(value, row, index) {
                         return $.table.tooltip(value);
                     }},
-                { field: 'specimencode', title: '样本类型' ,formatter:specimencodeFormatter },
                 { field: 'samplingtime', title: '采集时间' ,sortable: true },
                 { field: 'samplingdoctor', title: '采集人'  },
+
                 // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
                 { field: 'requettime', title: '申请时间' ,sortable: true },
+                { field: 'requestdoctor', title: '申请医生'  },
+                { field: 'specimencode', title: '样本类型' ,formatter:specimencodeFormatter },
+                { field: 'requestmode', title: '申请模式'  ,align: 'center',formatter:function (value,row,index) {
+                        if(value=='0'){
+                            return '<span class="label label-primary">平诊</span>';
+                        }else if(value=='1'){
+                            return '<span class="label label-danger">急诊</span>';
+                        }
+                    }},
+                { field: 'cost', title: '费用'  ,formatter:feeFormatter},
+                { field: 'coststatus', title: '费用状态' ,formatter:coststatusFormatter ,align: 'center'},
+                { field: 'tube', title: '试管类型'  },
+                { field: 'receiveaddr', title: '接收地点'  },
                 { field: 'zyzt', title: '在院状态'  },
             ]
         }else if(tableId=='cancellationReturn'){//作废退回
@@ -453,8 +468,9 @@
                 { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
                 { field: 'bzxx', title: '备注信息'   },
                 // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
-                { field: 'canceltime', title: '操作时间' ,sortable: true },
                 { field: 'canceler', title: '操作人'  },
+                { field: 'canceltime', title: '操作时间' ,sortable: true },
+
                 { field: 'requettime', title: '申请时间' ,sortable: true },
                 { field: 'specimencode', title: '样本类型'  ,align: 'center',
                     //editable:{type:'select',title:'类型',source:specimencodeFormatterEdit}
@@ -469,7 +485,7 @@
                         }
                     }},
                 { field: 'cost', title: '费用'  ,formatter:feeFormatter},
-               // { field: 'coststatus', title: '费用状态' ,formatter:coststatusFormatter ,align: 'center'},
+                { field: 'coststatus', title: '费用状态' ,formatter:coststatusFormatter ,align: 'center'},
                 { field: 'tube', title: '试管类型'  },
                // { field: 'xqcs', title: '血气参数'  },
                 { field: 'receiveaddr', title: '接收地点'  },
@@ -478,22 +494,22 @@
         }else if(tableId=='overtimeBarcode'){//超时条码
             columns=[
                 {checkbox: true },
-                {field: 'bednum', title: '床号', align: 'center'},
-                {field:'patientname',title:'病人姓名'},
-                { field: 'barcode',  title: '条码号'  ,align: 'center' },
                 { field: 'overTime', title: '超时时间' ,align:'center',formatter:function (value,row,index) {
                         return '<span class="label label-danger">'+value+'</span>';
                     } },
+                {field: 'bednum', title: '床号', align: 'center'},
+                {field:'patientname',title:'病人姓名'},
+                { field: 'barcode',  title: '条码号'  ,align: 'center' },
+
                 {field: 'examname', title: '检验目的', formatter: function(value, row, index) {
                         return $.table.tooltip(value);
                     }},
-                { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
-                { field: 'bzxx', title: '备注信息'   },
-                // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
-                { field: 'canceltime', title: '操作时间' ,sortable: true },
-                { field: 'canceler', title: '操作人'  },
                 { field: 'requettime', title: '申请时间' ,sortable: true },
+                { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
                 { field: 'specimencode', title: '样本类型'  ,align: 'center',formatter:specimencodeFormatter},
+
+
+
                 { field: 'requestdoctor', title: '申请医生'  ,align: 'center'},
                 { field: 'requestmode', title: '申请模式'  ,align: 'center',formatter:function (value,row,index) {
                         if(value=='0'){
@@ -503,9 +519,9 @@
                         }
                     }},
                 { field: 'cost', title: '费用'  ,formatter:feeFormatter},
-                //{ field: 'coststatus', title: '费用状态' ,formatter:coststatusFormatter ,align: 'center'},
+                { field: 'coststatus', title: '费用状态' ,formatter:coststatusFormatter ,align: 'center'},
                 { field: 'tube', title: '试管类型'  },
-               // { field: 'xqcs', title: '血气参数'  },
+                // { field: 'xqcs', title: '血气参数'  },
                 { field: 'receiveaddr', title: '接收地点'  },
 
             ]
@@ -744,12 +760,14 @@
         /*请求后台异步生成条码*/
         var deptId = [[${department}]];
         var isInhos =[[${isInhos}]];
+        var operation =[[${operation}]];
         $.ajax({
             type: "post",
             url: prefix + "/GenerateBarcode",
             data:{
                 "deptId":deptId,
-                "isInhos":isInhos
+                "isInhos":isInhos,
+                "operation":operation
             },
             success:function () {
                 $.modal.closeLoading();

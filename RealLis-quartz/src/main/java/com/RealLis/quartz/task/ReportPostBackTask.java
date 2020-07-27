@@ -77,6 +77,8 @@ public class ReportPostBackTask {
         if (pid != null) {
             pid.setPID1("1");
             result += pid.toString();
+        }else{
+            return "MSA|AA";
         }
         PV1 pv1 = reportPostBackService.getPV1bySampleno(sampleno);
         if (pv1 != null) {
@@ -152,6 +154,7 @@ public class ReportPostBackTask {
             result += pid.toString();
         } else {
             result += new PID().toString();
+            return "MSA|AA";
         }
         PV1 pv1 = reportPostBackService.getPV1bySampleno(sampleno);
         if (pv1 != null) {

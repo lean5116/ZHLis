@@ -68,9 +68,12 @@
             <if test="searchValue!=null and searchValue!=''">
                 and BARCODE like concat(concat('%',#{searchValue,jdbcType=VARCHAR}),'%')
             </if>
-<!--            <if test="params.isInhos==0">-->
-<!--                and PREADMISSION = '1'-->
-<!--            </if>-->
+            <if test="params.isInhos==0">
+                and PREADMISSION = '1'
+            </if>
+            <if test="params.operation==1">
+                and PREADMISSION = '5'
+            </if>
             <if test="params.inpatientId!=null and params.inpatientId!=''">
                 and visitnumber =#{params.inpatientId}
             </if>

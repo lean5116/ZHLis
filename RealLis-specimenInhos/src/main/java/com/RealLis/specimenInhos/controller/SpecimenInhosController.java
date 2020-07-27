@@ -4,6 +4,7 @@ import com.RealLis.common.core.controller.BaseController;
 import com.RealLis.common.core.domain.AjaxResult;
 import com.RealLis.common.core.page.TableDataInfo;
 import com.RealLis.common.core.text.Convert;
+import com.RealLis.common.utils.StringUtils;
 import com.RealLis.specimenInhos.domain.*;
 import com.RealLis.specimenInhos.domain.Formatter;
 import com.RealLis.specimenInhos.domain.PostBack.*;
@@ -22,6 +23,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.apache.poi.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,16 +62,21 @@ public class SpecimenInhosController extends BaseController {
     private ViLisAdviseHerenService viLisAdviseHerenService;
 
     @GetMapping("")
-    public String specimenInhos( String appDeptCode,  String userCode,String inpatient_id, Model model) {
+    public String specimenInhos( String appDeptCode,  String userCode,String inpatient_id,String operation, Model model) {
         List<Formatter> formatters = lSampletypeService.getLSampleTypeFormatter(null);
         model.addAttribute("SampleTypeFormatter", JSON.toJSONString(formatters));
         List<GyHyxm> gyHyxmsList = viLisBarcodeInfoService.queryHyxm();
         model.addAttribute("BGBS", JSON.toJSONString(gyHyxmsList));
-        if (inpatient_id != null) {
+        if (inpatient_id != null && StringUtils.isEmpty(operation)) {
             model.addAttribute("inpatientId",inpatient_id);
             model.addAttribute("departmentName", "入院准备中心");
             model.addAttribute("isInhos", "0");
-        }else {
+        }else if(inpatient_id != null && !StringUtils.isEmpty(operation)){
+            model.addAttribute("inpatientId",inpatient_id);
+            model.addAttribute("departmentName", "手术科室");
+            model.addAttribute("operation", "1");
+        }
+        else{
             if (appDeptCode != null && userCode != null) {
                 GyKsdm gyksdm = viLisBarcodeInfoService.getKsdmByKsdm(appDeptCode);
                 model.addAttribute("department", appDeptCode);
@@ -139,16 +146,16 @@ public class SpecimenInhosController extends BaseController {
         }
         if ("receiveComplete".equals(tableId)) {
             logger.info("进入" + tableId);
-            viLisBarcodeInfo.setSampleState("3");
+            viLisBarcodeInfo.setSampleState("3,4");
         }
         if ("cancellationReturn".equals(tableId)) {
             logger.info(tableId + "，增加条码状态为作废的数据");
-            viLisBarcodeInfo.setSampleState("1,-2");
+            viLisBarcodeInfo.setSampleState("-1,-2");
             logger.info(viLisBarcodeInfo.getBarstatus());
         }
         if ("overtimeBarcode".equals(tableId)) {
             logger.info("进入tabOvertimeBarcode，增加条码状态为0的数据");
-            viLisBarcodeInfo.setSampleState("-1,0");
+            viLisBarcodeInfo.setSampleState("0,1");
 
         }
 
@@ -160,6 +167,19 @@ public class SpecimenInhosController extends BaseController {
             return getDataTable(logisticses);
         } else {
             viLisBarcodeInfoList = viLisBarcodeInfoService.getInfoList(viLisBarcodeInfo);
+            if ("overtimeBarcode".equals(tableId)) {
+                List<ViLisBarcodeInfo>  viLisBarcodeInfoListFilter = new ArrayList<ViLisBarcodeInfo>();
+                for (ViLisBarcodeInfo viLisBarcodeInfoChildren:viLisBarcodeInfoList
+                ) {
+                    Date DateNow =new Date();
+                    Long overTime = (viLisBarcodeInfoChildren.getRequettime().getTime() - DateNow.getTime() )/(24 * 60 * 60 * 1000);
+                    if(overTime<-3 ){
+                        viLisBarcodeInfoChildren.setOverTime(Long.toString(overTime+3) +"天");
+                        viLisBarcodeInfoListFilter.add(viLisBarcodeInfoChildren);
+                    }
+                }
+                viLisBarcodeInfoList =new ArrayList<ViLisBarcodeInfo>(viLisBarcodeInfoListFilter) ;
+            }
             return getDataTable(viLisBarcodeInfoList);
         }
     }
@@ -168,14 +188,16 @@ public class SpecimenInhosController extends BaseController {
     @ApiImplicitParam(name = "deptId", value = "科室id", dataType = "String")
     @PostMapping("/GenerateBarcode")
     @ResponseBody
-    private void GenerateBarcode(String deptId,String isInhos) {
+    private void GenerateBarcode(String deptId,String isInhos,String operation) {
         ViLisAdviseHeren params = new ViLisAdviseHeren();
         params.setOrderStatus("1");
         params.setSampleFlag("0");
         if(deptId.length()>0) {
             params.setDeptcode(deptId);
-        }else{
+        }else if(isInhos.length()>0){
             params.setPreinhosstatus("1");
+        }else if(operation.length()>0){
+            params.setPreinhosstatus("5");
         }
         List<ViLisAdviseHeren> viLisAdviseHerenList = viLisAdviseHerenService.getDistinctAdviseList(params);
 

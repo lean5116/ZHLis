@@ -40,6 +40,7 @@ public class CriticalTask {
     @Qualifier("LTsmxLisService")
     private LTsmxService lTsmxLisService;
 
+    @Test
     public void criticalHis2Lis() {
         List<LTsxxTr> lTsxxTrList = lTsxxTrHisService.getAll();
         logger.info("检索his库tr表得到~" + lTsxxTrList.toArray().toString());
@@ -61,9 +62,9 @@ public class CriticalTask {
                 lTsxxLisParam.setHisxh(lTsxxHis.getXh());
                 logger.info("组装lis入参：" + lTsxxLisParam.toString());
                 //region 如果his表的lisxh = -1  执行插入操作
-                if (lTsxxHis.getLisxh() == -1) {
+                if ( -1==lTsxxHis.getLisxh() ) {
                     LTsxxLis judge = lTsxxLisService.getByHisxh(lTsxxHis.getXh());
-                    logger.info("his库lisxh为-1,通过his的xh查询lis的hisxh;检索条件 getByHisxh;lis入参：" + lTsxxHis.getXh() + "~lis出参:" + judge.toString());
+
                     if (judge == null) {
                         int i = 0;
                         try {
@@ -79,6 +80,7 @@ public class CriticalTask {
                             }
                         }
                     } else {
+                        logger.info("his库lisxh为-1,通过his的xh查询lis的hisxh;检索条件 getByHisxh;lis入参：" + lTsxxHis.getXh() + "~lis出参:" + judge.toString());
                         logger.info("lis中已经存在hisxh为" + lTsxxHis.getXh() + "的记录，执行update");
                         lTsxxLisParam.setXh(judge.getXh());
                         if (lTsxxHis.toString().equals(judge.toString())) {
@@ -160,7 +162,7 @@ public class CriticalTask {
         }
     }
 
-
+    @Test
     public void criticalLis2His() {
         List<LTsxxTr> lTsxxTrList = lTsxxTrLisService.getAll();
         logger.info("检索his库tr表得到~" + lTsxxTrList.toArray().toString());
@@ -180,9 +182,9 @@ public class CriticalTask {
                 BeanUtils.copyBeanProp(lTsxxHisParam, lTsxxLis);                                                    //实体类复制从lis到his入参类
                 lTsxxHisParam.setLisxh(lTsxxLis.getXh());
                 logger.info("组装his入参：" + lTsxxHisParam.toString());
-                if (lTsxxLis.getHisxh() == -1) {
+                if  (-1==lTsxxLis.getHisxh() ) {
                     LTsxxHis judge = lTsxxHisService.getByLisxh(lTsxxLis.getXh());
-                    logger.info("lis库hisxh为-1,通过lis的xh查询his的lisxh;检索条件 getByLisxh;His入参：" + lTsxxLis.getXh() + "~His出参:" + judge.toString());
+
                     if (judge == null) {
                         int i = 0;
                         try {
@@ -198,6 +200,7 @@ public class CriticalTask {
                             }
                         }
                     } else {
+                        logger.info("lis库hisxh为-1,通过lis的xh查询his的lisxh;检索条件 getByLisxh;His入参：" + lTsxxLis.getXh() + "~His出参:" + judge.toString());
                         logger.info("his中已经存在lisxh为" + lTsxxLis.getXh() + "的记录，执行update");
                         lTsxxHisParam.setXh(judge.getXh());
                         if (lTsxxLis.toString().equals(judge.toString())) {

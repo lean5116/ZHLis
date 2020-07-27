@@ -101,7 +101,7 @@
         <file>${log.path}/mybatis-logs/mybatis-sql.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <FileNamePattern>${log.path}/mybatis-logs/mybatis-sql.%d{yyyy-MM-dd}.%i.log</FileNamePattern>
-            <maxHistory>30</maxHistory>
+            <maxHistory>2</maxHistory>
             <timeBasedFileNamingAndTriggeringPolicy
                     class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
                 <maxFileSize>5MB</maxFileSize><!-- 日志文件分割的条件为日志文件大小达到1M -->
