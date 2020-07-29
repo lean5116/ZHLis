@@ -62,15 +62,20 @@ public class SpecimenInhosController extends BaseController {
     private ViLisAdviseHerenService viLisAdviseHerenService;
 
     @GetMapping("")
-    public String specimenInhos( String appDeptCode,  String userCode,String inpatient_id,String operation, Model model) {
+    public String specimenInhos( String appDeptCode,  String userCode,String inpatient_id,String operation,String isInhos, Model model) {
         List<Formatter> formatters = lSampletypeService.getLSampleTypeFormatter(null);
         model.addAttribute("SampleTypeFormatter", JSON.toJSONString(formatters));
         List<GyHyxm> gyHyxmsList = viLisBarcodeInfoService.queryHyxm();
         model.addAttribute("BGBS", JSON.toJSONString(gyHyxmsList));
         if (inpatient_id != null && StringUtils.isEmpty(operation)) {
             model.addAttribute("inpatientId",inpatient_id);
-            model.addAttribute("departmentName", "入院准备中心");
-            model.addAttribute("isInhos", "0");
+            if(isInhos==null) {
+                model.addAttribute("departmentName", "入院准备中心");
+                model.addAttribute("isInhos", "0");
+            }else if("1".equals(isInhos)){
+                model.addAttribute("departmentName", "急诊检验");
+                model.addAttribute("isInhos", "1");
+            }
         }else if(inpatient_id != null && !StringUtils.isEmpty(operation)){
             model.addAttribute("inpatientId",inpatient_id);
             model.addAttribute("departmentName", "手术科室");
@@ -194,13 +199,12 @@ public class SpecimenInhosController extends BaseController {
         params.setSampleFlag("0");
         if(deptId.length()>0) {
             params.setDeptcode(deptId);
-        }else if(isInhos.length()>0){
+        }else if("0".equals(isInhos)){
             params.setPreinhosstatus("1");
         }else if(operation.length()>0){
             params.setPreinhosstatus("5");
         }
         List<ViLisAdviseHeren> viLisAdviseHerenList = viLisAdviseHerenService.getDistinctAdviseList(params);
-
         if (viLisAdviseHerenList != null) {
             for (ViLisAdviseHeren viLisAdviseHeren : viLisAdviseHerenList
             ) {

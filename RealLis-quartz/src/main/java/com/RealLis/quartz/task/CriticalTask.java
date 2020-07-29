@@ -50,13 +50,14 @@ public class CriticalTask {
                 logger.info("中间表：" + "~" + ltsxxTr.toString() +"操作开始~");
                 //通过his'xh关联 tr表xh即是lis表 his'xh
                 LTsxxHis lTsxxHis = lTsxxHisService.getByXh(ltsxxTr.getXh());
-                logger.info("xh检索his库tsxx表，入参：" + ltsxxTr.getXh() + "~出参：" + lTsxxHis.toString());
+
                 if (lTsxxHis == null) {                                                                                     //若his表检索不到该xh信息，则为无效数据，删除
                     if (lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {
                         logger.info(ltsxxTr.getXh() + "his 未检索到 TR表 记录删除成功");
                     }
                     continue;
                 }
+                logger.info("xh检索his库tsxx表，入参：" + ltsxxTr.getXh() + "~出参：" + lTsxxHis.toString());
                 LTsxxLis lTsxxLisParam = new LTsxxLis();                                                                                          //确保该xh存在数据
                 BeanUtils.copyBeanProp(lTsxxLisParam, lTsxxHis);                                                    //实体类数据复制 从his到lis入参类
                 lTsxxLisParam.setHisxh(lTsxxHis.getXh());
@@ -64,7 +65,6 @@ public class CriticalTask {
                 //region 如果his表的lisxh = -1  执行插入操作
                 if ( -1==lTsxxHis.getLisxh() ) {
                     LTsxxLis judge = lTsxxLisService.getByHisxh(lTsxxHis.getXh());
-
                     if (judge == null) {
                         int i = 0;
                         try {
@@ -84,9 +84,12 @@ public class CriticalTask {
                         logger.info("lis中已经存在hisxh为" + lTsxxHis.getXh() + "的记录，执行update");
                         lTsxxLisParam.setXh(judge.getXh());
                         if (lTsxxHis.toString().equals(judge.toString())) {
-                            logger.info("his数据与lis数据完全相同，不执行update~" + lTsxxHis.toString());
-                            if (lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {                                   //操作成功删删除tr表数据
-                                logger.info(lTsxxLisParam.getHisxh() + " TR表 记录删除成功 his");
+                            logger.info("his数据与lis数据完全相同，不执行update~" + lTsxxHis.toString()+"但是由于lisxh为-1,update lisxh");
+                            if (lTsxxLisService.updateByXh(lTsxxLisParam) > 0) {
+                                logger.info(lTsxxLisParam.getHisxh() + "记录修改成功 lis入参"+lTsxxLisParam.toString());
+                                if (lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {                                   //操作成功删删除tr表数据
+                                    logger.info(lTsxxLisParam.getHisxh() + " TR表 记录删除成功 his");
+                                }
                             }
                         } else {
                             logger.info("his数据与lis数据不完全完全相同，执行update~；his数据:" + lTsxxHis.toString() + "~lis数据:" + judge.toString());
@@ -108,6 +111,14 @@ public class CriticalTask {
                             logger.info("中间表参数" + ltsxxTr.getEventype() + "，执行" + ltsxxTr.getEventype() + "操作");
                             if (lTsxxHis.toString().equals(lTsxxLis.toString())) {
                                 logger.info("his数据与lis数据完全相同，不执行update~" + lTsxxHis.toString());
+                                if(-1==lTsxxLis.getHisxh()){
+                                    if (lTsxxLisService.updateByXh(lTsxxLisParam) > 0) {
+                                        logger.info(lTsxxLisParam.getHisxh() + "记录修改成功 lis");
+                                        if (lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {                                   //操作成功删删除tr表数据
+                                            logger.info(lTsxxLisParam.getHisxh() + " TR表 记录删除成功 his");
+                                        }
+                                    }
+                                }
                                 if (lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {                                   //操作成功删删除tr表数据
                                     logger.info(lTsxxLisParam.getHisxh() + " TR表 记录删除成功 his");
                                 }
@@ -205,8 +216,11 @@ public class CriticalTask {
                         lTsxxHisParam.setXh(judge.getXh());
                         if (lTsxxLis.toString().equals(judge.toString())) {
                             logger.info("lis表数据与his完全相同，不执行update~" + lTsxxLis.toString());
-                            if (lTsxxTrLisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {                                   //操作成功删删除tr表数据
-                                logger.info(lTsxxHisParam.getLisxh() + " TR表 记录删除成功 his");
+                            if (lTsxxHisService.updateByXh(lTsxxHisParam) > 0) {
+                                logger.info(lTsxxHisParam.getLisxh() + "记录修改成功 his入参~" + lTsxxHisParam.toString());
+                                if (lTsxxTrLisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {                                   //操作成功删删除tr表数据
+                                    logger.info(lTsxxHisParam.getLisxh() + " TR表 记录删除成功 his");
+                                }
                             }
                         } else {
                             logger.info("lis数据与his数据不完全完全相同，执行update~；lis数据:" + lTsxxLis.toString() + "~his数据:" + judge.toString());
@@ -228,6 +242,14 @@ public class CriticalTask {
                             logger.info("中间表参数" + ltsxxTr.getEventype() + "，执行" + ltsxxTr.getEventype() + "操作");
                             if (lTsxxLis.toString().equals(lTsxxHis.toString())) {
                                 logger.info("lis数据与his完全相同不执行update~"+lTsxxHis.toString());
+                                if(-1==lTsxxHis.getLisxh()){
+                                    if (lTsxxHisService.updateByXh(lTsxxHisParam) > 0) {
+                                        logger.info(lTsxxHisParam.getLisxh() + "记录修改成功  his");
+                                        if (lTsxxTrLisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {
+                                            logger.info(lTsxxHisParam.getLisxh() + " TR表 记录删除成功 lis");
+                                        }
+                                    }
+                                }
                                 if (lTsxxTrLisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {
                                     logger.info(lTsxxHisParam.getLisxh() + " TR表 记录删除成功 lis");
                                 }

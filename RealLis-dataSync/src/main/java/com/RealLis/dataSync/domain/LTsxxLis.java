@@ -496,15 +496,14 @@ public class LTsxxLis {
             ", ksdm=" + ksdm +
             ", kdys='" + kdys + '\'' +
             ", brid='" + brid + '\'' +
-            ", telP='" + telP + '\'' +
-            ", telYs='" + telYs + '\'' +
+
             ", id=" + id +
             ", tsrxm='" + tsrxm + '\'' +
-            ", tsrdh='" + tsrdh + '\'' +
+
             ", tsks='" + tsks + '\'' +
             ", clnrYs='" + clnrYs + '\'' +
             ", bzsm='" + bzsm + '\'' +
-            ", mpi='" + mpi + '\'' +
+
             ", brxm='" + brxm + '\'' +
             ", ksmc='" + ksmc + '\'' +
             '}';
