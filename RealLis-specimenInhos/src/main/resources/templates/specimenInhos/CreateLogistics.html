@@ -204,7 +204,7 @@
                         LODOP.SET_PRINT_STYLE("FontSize", 9);
                         LODOP.SET_PRINT_STYLE("Bold", 0);
                         LODOP.SET_PRINTER_INDEX("Zebra  888-TT");
-                        LODOP.ADD_PRINT_BARCODE("5mm", "9mm", "30mm", "15mm", "128Auto", msg.Body.wlbh);//条码
+                        LODOP.ADD_PRINT_BARCODE("5mm", "9mm", "30mm", "15mm", "128Auto", msg.Body.rtncode);//条码
                         LODOP.SET_PRINT_STYLEA(1,"FontSize",5);//设置上面这个条码下方的文字字体大小
                         LODOP.ADD_PRINT_TEXT(0,"10mm","50mm","5mm","台一医 标本送检单");
                         LODOP.SET_PRINT_STYLEA(2,"Alignment",1);//

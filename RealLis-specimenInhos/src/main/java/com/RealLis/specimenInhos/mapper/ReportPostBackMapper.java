@@ -21,4 +21,5 @@ public interface ReportPostBackMapper {
 
     List<PostList> queryPostList();
     int deletePostList(Long jlxh);
+    int updateTransfer(Long jlxh);
 }

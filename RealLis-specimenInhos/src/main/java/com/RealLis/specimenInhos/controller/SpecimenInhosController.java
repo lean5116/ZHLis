@@ -62,7 +62,7 @@ public class SpecimenInhosController extends BaseController {
     private ViLisAdviseHerenService viLisAdviseHerenService;
 
     @GetMapping("")
-    public String specimenInhos( String appDeptCode,  String userCode,String inpatient_id,String operation,String isInhos, Model model) {
+    public String specimenInhos( String appDeptCode,  String userCode,String inpatient_id,String operation,String isInhos,String patientClass ,Model model) {
         List<Formatter> formatters = lSampletypeService.getLSampleTypeFormatter(null);
         model.addAttribute("SampleTypeFormatter", JSON.toJSONString(formatters));
         List<GyHyxm> gyHyxmsList = viLisBarcodeInfoService.queryHyxm();
@@ -71,14 +71,18 @@ public class SpecimenInhosController extends BaseController {
             model.addAttribute("inpatientId",inpatient_id);
             if(isInhos==null) {
                 model.addAttribute("departmentName", "入院准备中心");
-                model.addAttribute("isInhos", "0");
-            }else if("1".equals(isInhos)){
+                model.addAttribute("isInhos", "-1");
+                model.addAttribute("operation", "99");
+            }else if("1".equals(isInhos) ){
                 model.addAttribute("departmentName", "急诊检验");
-                model.addAttribute("isInhos", "1");
+                model.addAttribute("isInhos", "-2");
+                model.addAttribute("patientClass",patientClass);
+                model.addAttribute("operation", "99");
             }
         }else if(inpatient_id != null && !StringUtils.isEmpty(operation)){
             model.addAttribute("inpatientId",inpatient_id);
-            model.addAttribute("departmentName", "手术科室");
+            model.addAttribute("departmentName", "changeBarcodeStatus手术科室");
+            model.addAttribute("isInhos", "3");
             model.addAttribute("operation", "1");
         }
         else{
@@ -89,6 +93,7 @@ public class SpecimenInhosController extends BaseController {
                 model.addAttribute("departmentName", gyksdm.getKsmc());
                 model.addAttribute("userName", userCode);
                 model.addAttribute("isInhos", "1");
+                model.addAttribute("operation", "99");
             } else {
                 return "error";
             }
@@ -193,23 +198,26 @@ public class SpecimenInhosController extends BaseController {
     @ApiImplicitParam(name = "deptId", value = "科室id", dataType = "String")
     @PostMapping("/GenerateBarcode")
     @ResponseBody
-    private void GenerateBarcode(String deptId,String isInhos,String operation) {
+    private void GenerateBarcode(String deptId,String isInhos,String operation,String inpatientId) {
         ViLisAdviseHeren params = new ViLisAdviseHeren();
         params.setOrderStatus("1");
         params.setSampleFlag("0");
         if(deptId.length()>0) {
             params.setDeptcode(deptId);
-        }else if("0".equals(isInhos)){
-            params.setPreinhosstatus("1");
+        }else if("-1".equals(isInhos)){
+           // params.setPreinhosstatus("1");
         }else if(operation.length()>0){
-            params.setPreinhosstatus("5");
+           // params.setPreinhosstatus("5");
+        }
+        if(inpatientId.length()>0){
+            params.setVisitnumber(inpatientId);
         }
         List<ViLisAdviseHeren> viLisAdviseHerenList = viLisAdviseHerenService.getDistinctAdviseList(params);
         if (viLisAdviseHerenList != null) {
             for (ViLisAdviseHeren viLisAdviseHeren : viLisAdviseHerenList
             ) {
-                System.out.println(viLisAdviseHeren.getPatientid());
-                logger.info(viLisAdviseHeren.getPatientid() + zhlisWsHerenLetService.LabBarMake(viLisAdviseHeren.getPatientid()));
+                System.out.println(viLisAdviseHeren.getVisitnumber());
+                logger.info(viLisAdviseHeren.getVisitnumber() + zhlisWsHerenLetService.LabBarMake(viLisAdviseHeren.getVisitnumber()));
             }
         }
     }
@@ -343,7 +351,7 @@ public class SpecimenInhosController extends BaseController {
                             if (lJytmxxService.updateByBarcode(lJytmxx) > 0) {
                                 n++;
                                 result = Integer.toString(n);
-                                zhlisWsHerenLetService.SetBarOrderStatus(barcode[i], "-2");
+                                zhlisWsHerenLetService.SetBarOrderStatus(barcode[i], "11");
                             }
                         } else if ("collectionConfirm".equals(czfs)) {
                             lJytmxx.setExecutor(czz);
@@ -364,7 +372,7 @@ public class SpecimenInhosController extends BaseController {
                             if (lJytmxxService.updateByBarcode(lJytmxx) > 0) {
                                 n++;
                                 result = Integer.toString(n);
-                                zhlisWsHerenLetService.SetBarOrderStatus(barcode[i], "11"); //lis退回标本
+                                zhlisWsHerenLetService.SetBarOrderStatus(barcode[i], "2"); //改会已打印
                             }
                         }
                     }

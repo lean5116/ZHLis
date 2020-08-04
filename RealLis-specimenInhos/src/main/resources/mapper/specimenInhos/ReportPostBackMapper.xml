@@ -333,10 +333,21 @@
         <result property="eventName" column="EVENNAME" />
         <result property="eventData" column="EVENTDATA" />
         <result property="micType" column="MICTYPE" />
+        <result property="repeat" column="REPEAT" />
+        <result property="patientId" column="PATIENTID" />
+        <result property="visitNo" column="VISITNO" />
+        <result property="orderId" column="ORDERID" />
+        <result property="reportId" column="REPORTID" />
+        <result property="operdocId" column="OPERDOCID" />
+        <result property="operdocName" column="OPERDOCNAME" />
+        <result property="operTime" column="OPERTIME" />
     </resultMap>
     <select id="queryPostList" resultMap="postList">
-        select * from L_DATA_TRANSFER order by jlxh
+        select * from L_DATA_TRANSFER  where REPEAT &lt; 5 order by jlxh
     </select>
+    <update id="updateTransfer" >
+        update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = #{jlxh}
+    </update>
     <delete id="deletePostList">
         delete from L_DATA_TRANSFER where jlxh = #{jlxh}
     </delete>

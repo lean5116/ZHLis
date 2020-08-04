@@ -19,4 +19,5 @@ public interface ReportPostBackService {
 
     List<PostList> getPostList();
     int deletePostList(Long jlxh);
+    int updateTransfer(Long jlxh);
 }

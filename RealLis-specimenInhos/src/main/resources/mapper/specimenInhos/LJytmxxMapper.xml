@@ -240,7 +240,7 @@
                 And NVL(DYCS,0) &lt; 9
             </if>
             <if test="params.barcodeCancel == 0">
-                and (BarStatus !=3  and BarStatus !=4)
+                and (BarStatus !=3  and BarStatus !=4 and  BarStatus!=-2)
             </if>
             <if test="params.collectionConfirm == 0">
                 and (BarStatus = 1 )

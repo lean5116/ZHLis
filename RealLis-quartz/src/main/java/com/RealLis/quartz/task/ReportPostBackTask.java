@@ -1,14 +1,20 @@
 package com.RealLis.quartz.task;
 
 import com.RealLis.common.core.text.Convert;
+import com.RealLis.common.utils.DateUtils;
 import com.RealLis.common.utils.StringUtils;
 import com.RealLis.specimenInhos.domain.PostBack.*;
 import com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.ZMIC;
 import com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.germOBX;
 import com.RealLis.specimenInhos.domain.PostBack.reportPostBack.OBX;
+import com.RealLis.specimenInhos.domain.ReturnAudit.auditHead;
+import com.RealLis.specimenInhos.domain.ReturnAudit.auditRes;
 import com.RealLis.specimenInhos.service.ReportPostBackService;
+import com.RealLis.specimenInhos.service.ReturnAuditService;
 import com.RealLis.specimenInhos.ws.service.LisCommonWS.LisCommonWSService;
 import com.RealLis.specimenInhos.ws.service.zhlisWsHerenLet.zhlisWsHerenLetService;
+import com.alibaba.fastjson.JSON;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,30 +33,69 @@ public class ReportPostBackTask {
     private ReportPostBackService reportPostBackService;
     @Autowired
     private LisCommonWSService lisCommonWSService;
-    private static final Logger log = LoggerFactory.getLogger(ReportPostBackTask.class);
+    @Autowired
+    private ReturnAuditService returnAuditService;
+
+    public  void test(){
+        System.out.println("test");
+    }
+//    private static final Logger log = LoggerFactory.getLogger(ReportPostBackTask.class);
+
     public void reportPostBack(){
         List<PostList> postList = reportPostBackService.getPostList();
         if(postList!=null){
             if(postList.size()>0){
                 for (PostList post:postList
                      ) {
+
                     if("CK01".equals(post.getEventName())){
                         String result ="";
+                        reportPostBackService.updateTransfer(post.getJlxh());
                         if(post.getMicType()==0){
+
                             result=  ReportPostBack(post.getEventData());
-                            log.info(result);
+//                            log.info(result);
                         }else if(post.getMicType()==1){
+
                             result=germReportPostBack(post.getEventData());
                         }
-                        log.info("条码号:" +post.getEventData()+" 返回值："+result);
+//                        log.info("条码号:" +post.getEventData()+" 返回值："+result);
                         if(result.indexOf("MSA|AA")>-1){
                            int delFlag= reportPostBackService.deletePostList(post.getJlxh());
-                           log.info("条码号："+post.getEventData() +" 删除标志:"+ Integer.toString(delFlag));
+//                           log.info("条码号："+post.getEventData() +" 删除标志:"+ Integer.toString(delFlag));
+                        }
+                    }else if("CK99".equals(post.getEventName())){
+                        reportPostBackService.updateTransfer(post.getJlxh());
+                        auditHead auditHead = new auditHead("LAB203",
+                                DateUtils.parseDateToStr("yyyy-MM-dd HH:mm:ss",new Date()),
+                                UUID.randomUUID().toString(),
+                                "01",
+                                "",
+                                "HIS",
+                                "xBzrURjFUl4Q1E9nTaCu5C==");
+                        post.setOrderId(post.getOrderId().replaceAll(",","\",\""));
+                        String inputString = '{'+auditHead.toString()+","+returnAuditToString(post)+'}';
+                        String result = lisCommonWSService.returnAudit(inputString);
+                        auditRes auditRes = JSON.parseObject(result,auditRes.class);
+                        if("AA".equals(auditRes.getHead().getTradeStatus())){
+                            reportPostBackService.deletePostList(post.getJlxh());
                         }
                     }
                 }
             }
         }
+    }
+    public static String returnAuditToString(PostList postList){
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return "\"Body\":{" +
+                "\"patientID\":\"" + postList.getPatientId() + '\"' +
+                ", \"visitNo\":\"" + postList.getVisitNo() + '\"' +
+                ", \"orderId\":[\"" + postList.getOrderId() + "\"]" +
+                ", \"reportId\":\"" + postList.getReportId() + '\"' +
+                ", \"operDocId\":\"" + postList.getOperdocId() + '\"' +
+                ", \"operDocName\":\"" + postList.getOperdocName() + '\"' +
+                ", \"operTime\":\"" + formatter.format(postList.getOperTime()) + '\"' +
+                '}';
     }
     public String germReportPostBack(String sampleno){
         String result = "";
@@ -107,7 +152,7 @@ public class ReportPostBackTask {
             if (obxList.size() > 0) {
                 for (int i = 0; i < obxList.size(); i++) {
                     obxList.get(i).setOBX1(obxList.get(i).getOBX3().getOBX3_1());
-                    result += obxList.get(i).toString();
+                    result += obxList.get(i).toString().replace("\n"," ")+"\n";
                 }
             }
         } else {
@@ -124,10 +169,11 @@ public class ReportPostBackTask {
         } else {
             result += new ZMIC().toString();
         }
-        log.info(result);
+//        log.info(result);
         return lisCommonWSService.reportPostBack(result);
     }
     public String ReportPostBack(String sampleno){
+
         String result = "";
         MSH msh = new MSH();
         //region MSH初始化
@@ -185,13 +231,13 @@ public class ReportPostBackTask {
             if (obxList.size() > 0) {
                 for (int i = 0; i < obxList.size(); i++) {
                     obxList.get(i).setOBX1(Convert.toStr(i + 1));
-                    result += obxList.get(i).toString();
+                    result += obxList.get(i).toString().replace("\n"," ")+"\n";
                 }
             }
         } else {
             result += new OBX().toString();
         }
-        log.info(result);
+//        log.info(result);
         return lisCommonWSService.reportPostBack(result);
     }
 

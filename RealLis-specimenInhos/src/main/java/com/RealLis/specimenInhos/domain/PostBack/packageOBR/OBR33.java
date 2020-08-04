@@ -32,7 +32,7 @@ public class OBR33 {
 
     @Override
     public String toString() {
-        return  OBR33_1 + '^' +
+        return  OBR33_1 + '&' +
                 OBR33_2 ;
     }
 }
