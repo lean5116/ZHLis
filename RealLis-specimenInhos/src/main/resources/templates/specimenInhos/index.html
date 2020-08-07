@@ -792,12 +792,15 @@
     function  createLogistics() {
         var deptId=  [[${department}]];
         var userId=  [[${userCode}]];
+        var deptCode = [[${deptCode}]];
         if(deptId!=null) {
             var url = prefix +"/createLogistics/"+deptId+"/"+userId;
             $.modal.open("创建物流", url);
 
-        }else
+        }else {
+            if(dep)
             $.modal.msgError("请选择科室");
+        }
     }
     /*开始运送按钮*/
     function startShipping(){

@@ -71,18 +71,21 @@ public class SpecimenInhosController extends BaseController {
             model.addAttribute("inpatientId",inpatient_id);
             if(isInhos==null) {
                 model.addAttribute("departmentName", "入院准备中心");
+           //     model.addAttribute("department", "-1");
                 model.addAttribute("isInhos", "-1");
                 model.addAttribute("operation", "99");
             }else if("1".equals(isInhos) ){
                 model.addAttribute("departmentName", "急诊检验");
                 model.addAttribute("isInhos", "-2");
+           //     model.addAttribute("department", "-2");
                 model.addAttribute("patientClass",patientClass);
                 model.addAttribute("operation", "99");
             }
         }else if(inpatient_id != null && !StringUtils.isEmpty(operation)){
             model.addAttribute("inpatientId",inpatient_id);
-            model.addAttribute("departmentName", "changeBarcodeStatus手术科室");
-            model.addAttribute("isInhos", "3");
+            model.addAttribute("departmentName", "手术科室");
+            model.addAttribute("department", "-3");
+          //  model.addAttribute("isInhos", "3");
             model.addAttribute("operation", "1");
         }
         else{
