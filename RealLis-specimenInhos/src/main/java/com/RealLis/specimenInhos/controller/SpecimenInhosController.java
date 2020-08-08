@@ -545,4 +545,13 @@ public class SpecimenInhosController extends BaseController {
     public String audit(){
         return    returnAuditService.getAudit().toString();
     }
+
+    @PostMapping("/updateSpecimencode")
+    @ResponseBody
+    public AjaxResult updateSpecimencode(String barcode2,String specimencode){
+        LJytmxx lJytmxx = new LJytmxx();
+        lJytmxx.setDoctadviseno(barcode2);
+        lJytmxx.setSampletype(specimencode);
+        return  toAjax(lJytmxxService.updateByBarcode(lJytmxx));
+    }
 }

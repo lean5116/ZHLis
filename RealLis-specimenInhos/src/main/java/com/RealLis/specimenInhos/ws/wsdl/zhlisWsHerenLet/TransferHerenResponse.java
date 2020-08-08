@@ -3,6 +3,7 @@ package com.RealLis.specimenInhos.ws.wsdl.zhlisWsHerenLet;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -17,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="strSeqNo" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="TransferHerenResult" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -28,35 +29,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "strSeqNo"
+    "transferHerenResult"
 })
-@XmlRootElement(name = "SendRiskValue")
-public class SendRiskValue {
+@XmlRootElement(name = "TransferHerenResponse")
+public class TransferHerenResponse {
 
-    protected String strSeqNo;
+    @XmlElement(name = "TransferHerenResult")
+    protected String transferHerenResult;
 
     /**
-     * 获取strSeqNo属性的值。
+     * 获取transferHerenResult属性的值。
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getStrSeqNo() {
-        return strSeqNo;
+    public String getTransferHerenResult() {
+        return transferHerenResult;
     }
 
     /**
-     * 设置strSeqNo属性的值。
+     * 设置transferHerenResult属性的值。
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setStrSeqNo(String value) {
-        this.strSeqNo = value;
+    public void setTransferHerenResult(String value) {
+        this.transferHerenResult = value;
     }
 
 }

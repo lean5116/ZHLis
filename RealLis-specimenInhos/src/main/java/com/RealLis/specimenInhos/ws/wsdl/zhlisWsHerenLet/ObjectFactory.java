@@ -178,6 +178,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link TransferHerenResponse }
+     * 
+     */
+    public TransferHerenResponse createTransferHerenResponse() {
+        return new TransferHerenResponse();
+    }
+
+    /**
      * Create an instance of {@link GetQueueNoResponse }
      * 
      */
@@ -239,6 +247,14 @@ public class ObjectFactory {
      */
     public LabDownInfoAll createLabDownInfoAll() {
         return new LabDownInfoAll();
+    }
+
+    /**
+     * Create an instance of {@link TransferHeren }
+     * 
+     */
+    public TransferHeren createTransferHeren() {
+        return new TransferHeren();
     }
 
     /**

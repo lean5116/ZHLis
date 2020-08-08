@@ -375,7 +375,19 @@
                 // { field: 'status',  title: '状态',  align: 'center', formatter: 'statusFormatter'  },
                 { field: 'requettime', title: '申请时间' ,align: 'center' },
                 { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter ,align: 'center'},
-                { field: 'specimencode', title: '样本类型'  ,align: 'center' ,formatter:specimencodeFormatter},
+                { field: 'specimencode', title: '样本类型'  ,align: 'center' ,editable:
+                        {
+                            type:'select',
+                            title:'类型',
+                            source:specimencodeFormatterEdit,
+                            validate:function (row) {
+                                var sampleState = $('#sampleState').val();
+                                console.log(row["barstatus"]);
+                                if(sampleState=="1" || sampleState =="0"){
+                                }else {
+                                    return "只有未采集的标本才可以修改类型";
+                                }
+                        }}},
                 { field: 'requestdoctor', title: '申请医生'  ,align: 'center'},
                 { field: 'requestmode', title: '申请模式'  ,align: 'center',formatter:function (value,row,index) {
                         if(value=='0'){
@@ -565,6 +577,7 @@
                 pagination: false,
                 uniqueId: 'barcode',
                 height:450,
+                onEditableSave: onEditableSave,
                 onLoadSuccess: function () {
                     onLoadFix(tableId, $('#' + tableId).bootstrapTable('getData'));//加载成功事件触发合并床号方法
                 }
@@ -713,7 +726,31 @@
     }
     /*行内编辑事件*/
     function onEditableSave (field, row, oldValue, $el) {
-        alert("字段名：" + field + "，当前值：" + row[field]  + "，旧值：" + oldValue);
+        var sampleState = $('#sampleState').val();
+        var barcode = row["barcode2"]
+        var specimencode= row[field];
+        if("specimencode"==field){
+            if(sampleState=="1" || sampleState =="0"){
+                $.ajax({
+                    type: "post",
+                    url: prefix + "/updateSpecimencode",
+                    data:{
+                        "barcode2":barcode,
+                        "specimencode":specimencode
+                    },
+                    success:function (r) {
+                        $.modal.msg(r.msg);
+
+                    },
+                    error:function () {
+                        $.modal.msgError("修改失败");
+                    }
+                });
+            }else{
+                $.modal.msgError("修改失败");
+            }
+        }
+
     }
     /*=====================================================表格初始化事件============================================*/
 
