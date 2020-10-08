@@ -113,8 +113,8 @@
             <div class="tab-content">
 
                 <div id="orderBarCodeTabContent" class="tab-pane active">
-                    <div class="col-sm-12 select-table table-bordered">
-                        <table id="orderBarCode" data-search=”true”></table></div>
+                    <div class="col-sm-12  select-table table-bordered" >
+                        <table id="orderBarCode" data-search=”true” ></table></div>
 
                 </div>
                 <div id="collectionConfirmationTabContent" class="tab-pane">
@@ -656,6 +656,9 @@
     function  onLoadFix(tableName,data) {
         var fieldList=["bednum"];
         mergeCells(data, "bednum", 0, $('#'+tableName),fieldList);
+        $("table tr").find('td').each(function(){
+            $(this).css("vertical-align","top")
+        })
     }
     /**
      * 合并单元格
@@ -900,6 +903,8 @@
                                 LODOP.ADD_PRINT_TEXT("28mm","40mm","10mm","2mm",data.receiveaddr);
                                 LODOP.ADD_PRINT_TEXT(0,"17mm","23mm","4mm",data.patientid);
                                 LODOP.SET_PRINT_STYLEA(0,"FontSize",8);//设置上面这个文本框的文字字体大小
+                                LODOP.ADD_PRINT_IMAGE("5mm","0mm","4mm","4mm","<img src='data:image/gif;base64,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'>");
+                                LODOP.SET_PRINT_STYLEA(0,"Stretch",1);
                                 console.log(data.patientid);
                                 var hyxms = data.hyxm.split(',');
                                 console.log(data.hyxm);
@@ -909,6 +914,7 @@
                                         break;
                                     }
                                 }
+                                //LODOP.PREVIEW();//预览
                                 LODOP.PRINT();//直接打印
 
                             }

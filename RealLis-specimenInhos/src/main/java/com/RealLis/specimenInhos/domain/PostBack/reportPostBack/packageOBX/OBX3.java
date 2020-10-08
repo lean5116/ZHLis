@@ -2,9 +2,9 @@ package com.RealLis.specimenInhos.domain.PostBack.reportPostBack.packageOBX;
 
 public class OBX3 {
     /*检查项目ID*/
-    private String OBX3_1;
+    private String OBX3_1="";
     /*检查项目名称*/
-    private String OBX3_2;
+    private String OBX3_2="";
 
     public OBX3(String OBX3_1, String OBX3_2) {
         this.OBX3_1 = OBX3_1;

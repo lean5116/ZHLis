@@ -79,6 +79,10 @@
                 and PREADMISSION = '0'
                 and INOPERATION!='1'
             </if>
+            <if test="params.isInhos==4 ">
+                and PREADMISSION = '0'
+                and INOPERATION!='1'
+            </if>
             <if test="params.operation==1 and params.isInhos==3">
                 and INOPERATION = '1'
                 and PREADMISSION = '0'
@@ -87,7 +91,7 @@
                 and visitnumber =#{params.inpatientId}
             </if>
         </where>
-        order by  BEDNUM,REQUETTIME
+        order by  to_number(translate(BEDNUM,'0123456789'|| BEDNUM,'0123456789')),REQUETTIME
     </select>
 
 
@@ -125,7 +129,7 @@
             </if>
             and rownum &lt; 2
         </where>
-        order by  BEDNUM
+        order by  to_number(translate(BEDNUM,'0123456789'|| BEDNUM,'0123456789'))
     </select>
 
     <select id="queryHyxm" resultType="com.RealLis.specimenInhos.domain.GyHyxm">

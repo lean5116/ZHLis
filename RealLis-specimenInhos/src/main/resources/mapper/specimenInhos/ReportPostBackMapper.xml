@@ -252,9 +252,8 @@
     </select>
 
     <resultMap id="OBX" type="com.RealLis.specimenInhos.domain.PostBack.reportPostBack.OBX">
-        <result property="OBX1" column="OBX1" />
+        <id  column="OBX1" property="OBX1"  />
         <result property="OBX2" column="OBX2" />
-
         <result property="OBX4" column="OBX4" />
         <result property="OBX5" column="OBX5" />
         <result property="OBX6" column="OBX6" />

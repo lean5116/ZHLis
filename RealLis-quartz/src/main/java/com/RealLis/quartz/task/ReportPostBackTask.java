@@ -39,7 +39,7 @@ public class ReportPostBackTask {
     public  void test(){
         System.out.println("test");
     }
-//    private static final Logger log = LoggerFactory.getLogger(ReportPostBackTask.class);
+    private static final Logger log = LoggerFactory.getLogger(ReportPostBackTask.class);
 
     public void reportPostBack(){
         List<PostList> postList = reportPostBackService.getPostList();
@@ -169,7 +169,7 @@ public class ReportPostBackTask {
         } else {
             result += new ZMIC().toString();
         }
-//        log.info(result);
+        log.info(result);
         return lisCommonWSService.reportPostBack(result);
     }
     public String ReportPostBack(String sampleno){
@@ -229,15 +229,17 @@ public class ReportPostBackTask {
         List<OBX> obxList = reportPostBackService.getOBXbySampleno(sampleno);
         if (obxList != null) {
             if (obxList.size() > 0) {
+                log.info(Convert.toStr(obxList.size()));
                 for (int i = 0; i < obxList.size(); i++) {
                     obxList.get(i).setOBX1(Convert.toStr(i + 1));
                     result += obxList.get(i).toString().replace("\n"," ")+"\n";
+
                 }
             }
         } else {
             result += new OBX().toString();
         }
-//        log.info(result);
+        log.info(result);
         return lisCommonWSService.reportPostBack(result);
     }
 

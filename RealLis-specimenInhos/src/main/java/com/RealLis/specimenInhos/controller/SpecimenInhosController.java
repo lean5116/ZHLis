@@ -51,7 +51,7 @@ public class SpecimenInhosController extends BaseController {
     @Autowired
     private zhlisWsHerenLetService zhlisWsHerenLetService;
     @Autowired
-    private HisAdviceService hisAdviceService;
+    private HisAdviceService hisAdviceServijce;
     @Autowired
     private LJytmxxService lJytmxxService;
     @Autowired
@@ -80,12 +80,17 @@ public class SpecimenInhosController extends BaseController {
            //     model.addAttribute("department", "-2");
                 model.addAttribute("patientClass",patientClass);
                 model.addAttribute("operation", "99");
+            }else if("4".equals(isInhos)){
+                model.addAttribute("departmentName", "个人查询");
+                //     model.addAttribute("department", "-1");
+                model.addAttribute("isInhos", "4");
+                model.addAttribute("operation", "99");
             }
         }else if(inpatient_id != null && !StringUtils.isEmpty(operation)){
             model.addAttribute("inpatientId",inpatient_id);
             model.addAttribute("departmentName", "手术科室");
-            model.addAttribute("department", "-3");
-          //  model.addAttribute("isInhos", "3");
+            //model.addAttribute("department", "-3");
+            model.addAttribute("isInhos", "3");
             model.addAttribute("operation", "1");
         }
         else{
@@ -318,7 +323,6 @@ public class SpecimenInhosController extends BaseController {
             @ApiImplicitParam(name = "czz", value = "操作员", dataType = "String"),
             @ApiImplicitParam(name = "czfs", value = "操作方式", dataType = "String")
     })
-
     @PostMapping("/changeBarcodeStatus")
     @ResponseBody
     public AjaxResult changeBarcodeStatus(String barcodes, String czz, String czfs) {
@@ -366,7 +370,7 @@ public class SpecimenInhosController extends BaseController {
                             if (lJytmxxService.updateByBarcode(lJytmxx) > 0) {
                                 n++;
                                 result = Integer.toString(n);
-                                zhlisWsHerenLetService.SetBarOrderStatus(barcode[i], "3"); //标本已采集
+                                System.out.println( zhlisWsHerenLetService.SetBarOrderStatus(barcode[i], "3"));//标本已采集
                             }
                         } else if ("confirmCancel".equals(czfs)) {
                             Map<String, Object> params = new HashMap<>();
