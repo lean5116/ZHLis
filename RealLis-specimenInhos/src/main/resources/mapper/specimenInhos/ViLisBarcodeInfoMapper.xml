@@ -47,6 +47,9 @@
 <!--            <if test="params.endTime != null and params.endTime != ''">-->
 <!--                and SAMPLINGTIME  &lt;= to_date(#{params.endTime},'yyyy-MM-dd HH24:mi:ss')-->
 <!--            </if>-->
+            <if test="barstatus!=null and barstatus!=''">
+                and barstatus=#{barstatus}
+            </if>
             <if test="department!=null and department !=''">
                 and department = #{department}
                 and   INOPERATION != '1'

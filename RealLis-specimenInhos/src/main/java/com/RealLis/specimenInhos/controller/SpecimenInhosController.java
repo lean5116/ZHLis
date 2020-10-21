@@ -113,8 +113,12 @@ public class SpecimenInhosController extends BaseController {
     public String createLogistics(@PathVariable String deptId, @PathVariable String userId, Model model) {
         model.addAttribute("department", deptId);
         model.addAttribute("userCode", userId);
+        if("10401000".equals(deptId)){
+            return "specimenInhos/CreateLogisticsInfected";
+        }
         return "specimenInhos/CreateLogistics";
     }
+
 
     @GetMapping("/LogisticsDetail/{wlbh}/{wlzt}")
     public String LogisticDetail(@PathVariable String wlbh, @PathVariable String wlzt, Model model) {
@@ -271,6 +275,16 @@ public class SpecimenInhosController extends BaseController {
         } else {
             return error("条码号与打包人不能为空");
         }
+    }
+
+    @PostMapping("/logistics/infected")
+    @ResponseBody
+    public TableDataInfo createLogisticsInfected(){
+        ViLisBarcodeInfo params = new ViLisBarcodeInfo();
+        params.setDepartment("10401000");
+        params.setBarstatus("2");
+        List<ViLisBarcodeInfo> viLisBarcodeInfoList = viLisBarcodeInfoService.getInfoList(params);
+        return getDataTable(viLisBarcodeInfoList);
     }
 
     @ApiOperation("获取物流明细信息")
