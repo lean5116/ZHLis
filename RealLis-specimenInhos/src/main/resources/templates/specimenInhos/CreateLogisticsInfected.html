@@ -98,6 +98,16 @@
     });
     $(function() {
         tableInit();
+        $.ajax({
+            type: "post",
+            url: prefix + "/logistics/infected" ,
+            async:false,//取消异步，防止因异步产生的刷入两条相同条码
+            success: function (r) {
+                console.log(r);
+                totalCount=r.total;
+                $('#totalCount').html('<h1 style="color: red">'+totalCount+'</h1>');//计数+1
+            }
+        });
     });
     /*表格初始化事件*/
     function tableInit() {
@@ -129,7 +139,6 @@
             paginationDetailHAlign:"right",
         };
         $.table.init(options);
-
     }
 
     /*获取条码信息*/

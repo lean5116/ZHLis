@@ -11624,3 +11624,136 @@ java.lang.ArrayIndexOutOfBoundsException: 0
             
                 and REQUETTIME < ? 
         order by to_number(translate(BEDNUM,'0123456789'|| BEDNUM,'0123456789')),REQUETTIME["10426000","2020-10-21 00:00:00","2020-10-22 23:59:59","2020-10-21 00:00:00","2020-10-22 23:59:59"]
+16:38:33.747 [http-nio-20201-exec-14] ERROR c.a.d.f.s.StatFilter - [internalAfterStatementExecute,478] - slow sql 2765 millis. select
+        BARCODE, BARCODE2,REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID,
+        PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST,
+        COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME,
+        DIAGNOSTIC,TUBE,RECEIVEADDR,hyxm,departmentName
+        from ZHLIS.VI_LIS_BARCODE_INFO vzb
+         WHERE  exists (select distinct visitnumber from ZHLIS.VI_LIS_BARCODE_INFO vzbi
+            WHERE  department = ?
+                
+                
+                    and REQUETTIME > ?
+                
+                
+                    and REQUETTIME < ?
+                
+                
+                
+                and vzbi.visitnumber = vzb.visitnumber
+            )
+            
+            
+                and REQUETTIME > ?
+            
+            
+                and REQUETTIME < ?
+            
+            
+            
+            
+                and Barstatus in (3,4) 
+        order by to_number(translate(BEDNUM,'0123456789'|| BEDNUM,'0123456789')),REQUETTIME["10401000","2020-10-21 00:00:00","2020-10-22 23:59:59","2020-10-21 00:00:00","2020-10-22 23:59:59"]
+16:38:34.305 [http-nio-20201-exec-9] ERROR c.a.d.f.s.StatFilter - [internalAfterStatementExecute,478] - slow sql 3361 millis. select
+        BARCODE, BARCODE2,REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID,
+        PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST,
+        COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME,
+        DIAGNOSTIC,TUBE,RECEIVEADDR,hyxm,departmentName
+        from ZHLIS.VI_LIS_BARCODE_INFO vzb
+         WHERE  exists (select distinct visitnumber from ZHLIS.VI_LIS_BARCODE_INFO vzbi
+            WHERE  department = ?
+                
+                
+                    and REQUETTIME > ?
+                
+                
+                    and REQUETTIME < ?
+                
+                
+                
+                and vzbi.visitnumber = vzb.visitnumber
+            )
+            
+            
+                and REQUETTIME > ?
+            
+            
+                and REQUETTIME < ? 
+        order by to_number(translate(BEDNUM,'0123456789'|| BEDNUM,'0123456789')),REQUETTIME["10401000","2020-10-21 00:00:00","2020-10-22 23:59:59","2020-10-21 00:00:00","2020-10-22 23:59:59"]
+16:38:43.745 [http-nio-20201-exec-2] ERROR c.a.d.f.s.StatFilter - [internalAfterStatementExecute,478] - slow sql 2816 millis. select
+        BARCODE, BARCODE2,REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID,
+        PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST,
+        COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME,
+        DIAGNOSTIC,TUBE,RECEIVEADDR,hyxm,departmentName
+        from ZHLIS.VI_LIS_BARCODE_INFO vzb
+         WHERE  exists (select distinct visitnumber from ZHLIS.VI_LIS_BARCODE_INFO vzbi
+            WHERE  department = ?
+                
+                
+                    and REQUETTIME > ?
+                
+                
+                    and REQUETTIME < ?
+                
+                
+                
+                and vzbi.visitnumber = vzb.visitnumber
+            )
+            
+            
+                and REQUETTIME > ?
+            
+            
+                and REQUETTIME < ?
+            
+            
+            
+            
+                and Barstatus in (3,4) 
+        order by to_number(translate(BEDNUM,'0123456789'|| BEDNUM,'0123456789')),REQUETTIME["10401000","2020-10-21 00:00:00","2020-10-22 23:59:59","2020-10-21 00:00:00","2020-10-22 23:59:59"]
+16:38:44.168 [http-nio-20201-exec-1] ERROR c.a.d.f.s.StatFilter - [internalAfterStatementExecute,478] - slow sql 3283 millis. select
+        BARCODE, BARCODE2,REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID,
+        PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST,
+        COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME,
+        DIAGNOSTIC,TUBE,RECEIVEADDR,hyxm,departmentName
+        from ZHLIS.VI_LIS_BARCODE_INFO vzb
+         WHERE  exists (select distinct visitnumber from ZHLIS.VI_LIS_BARCODE_INFO vzbi
+            WHERE  department = ?
+                
+                
+                    and REQUETTIME > ?
+                
+                
+                    and REQUETTIME < ?
+                
+                
+                
+                and vzbi.visitnumber = vzb.visitnumber
+            )
+            
+            
+                and REQUETTIME > ?
+            
+            
+                and REQUETTIME < ? 
+        order by to_number(translate(BEDNUM,'0123456789'|| BEDNUM,'0123456789')),REQUETTIME["10401000","2020-10-21 00:00:00","2020-10-22 23:59:59","2020-10-21 00:00:00","2020-10-22 23:59:59"]
+16:42:03.492 [restartedMain] ERROR o.s.b.d.LoggingFailureAnalysisReporter - [report,40] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
