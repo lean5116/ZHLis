@@ -1,0 +1,13 @@
+
+n	java:S116"RRename this field "PID11_2" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹óÑ„8âÙ¯—°.
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„±‘~8§İ±—°.
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òĞ¸ùÿÿÿÿ8Ô‰±—°.
+j	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÍŞ­8Ô‰±—°.
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(„±‘~8§İ±—°.
+o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ƒçÍÿÿÿÿÿ8Ô‰±—°.
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸ƒçÍÿÿÿÿÿ8Ô‰±—°.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(“ÜÚ¬ıÿÿÿÿ
+o	java:S100
+"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›³±¹ùÿÿÿÿ8Ô‰±—°.
+s	java:S116"RRename this field "PID11_1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ùÛ·èşÿÿÿÿ8âÙ¯—°.
+o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òĞ¸ùÿÿÿÿ8Ô‰±—°.

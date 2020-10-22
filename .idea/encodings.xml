@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/RealLis-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RealLis-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RealLis-dataSync/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RealLis-dataSync/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RealLis-framework/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RealLis-framework/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RealLis-main/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RealLis-main/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RealLis-quartz/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RealLis-quartz/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/controller/SpecimenInhosController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/herenLisBarcode/UfPack.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/GetQueueNo.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/GetQueueNoResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/HelloWorld.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/HelloWorldResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/LabBarMake.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/LabBarMakeResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/LabChargeFee.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/LabChargeFeeResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/LabDownInfoAll.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/LabDownInfoAllResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/LabDownInfoDept.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/LabDownInfoDeptResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/LabDownInfoFee.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/LabDownInfoFeeResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/LabDownInfoItem.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/LabDownInfoItemResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/LabDownInfoStaff.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/LabDownInfoStaffResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/LabFeeCharge.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/LabFeeChargeResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/SendRiskValue.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/SendRiskValueResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/SetBarOrderStatus.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/SetBarOrderStatusResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/TransferHeren.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/TransferHerenResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/WebServiceLisHttpGet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/WebServiceLisHttpPost.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/WebServiceLisSoap.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/WebTest.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/WebTestResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/ZhLisHeren.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/ZhLisHerenResponse.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

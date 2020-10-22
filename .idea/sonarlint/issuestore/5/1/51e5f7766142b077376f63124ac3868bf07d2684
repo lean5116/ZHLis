@@ -1,0 +1,27 @@
+
+7javascript:S1116"Unnecessary semicolon.(´ş¥Èÿÿÿÿÿ
+Mjavascript:S1117*",'S2' is already declared in the upper scope.(¿¾ï¸üÿÿÿÿ
+3javascript:S2814,"'S2' is already defined.(ÿöš
+[javascript:S1117Ï"9'decoratedMethod' is already declared in the upper scope.(Â¶ñ¢ûÿÿÿÿ
+Njavascript:S1117¢",'id' is already declared in the upper scope.(¬Ú¹îùÿÿÿÿ
+Njavascript:S1117¯",'id' is already declared in the upper scope.(¬Ú¹îùÿÿÿÿ
+Njavascript:S1117¿",'id' is already declared in the upper scope.(¬Ú¹îùÿÿÿÿ
+Tjavascript:S1481œ"7Remove the declaration of the unused '$label' variable.(º²ğ™
+Qjavascript:S1854œ"4Remove this useless assignment to variable "$label".(º²ğ™
+Ujavascript:S1481"3Remove the declaration of the unused 'id' variable.(¯üŞÁúÿÿÿÿ
+Rjavascript:S1854"0Remove this useless assignment to variable "id".(¯üŞÁúÿÿÿÿ
+Wjavascript:S1481ë"5Remove the declaration of the unused 'self' variable.(‚Ì¡‘üÿÿÿÿ
+Tjavascript:S1854ë"2Remove this useless assignment to variable "self".(‚Ì¡‘üÿÿÿÿ
+Xjavascript:S1481õ"6Remove the declaration of the unused '$this' variable.(Ü“§¨şÿÿÿÿ
+Ujavascript:S1854õ"3Remove this useless assignment to variable "$this".(Ü“§¨şÿÿÿÿ
+Jjavascript:S1117ó"-'val' is already declared in the upper scope.(¹ÙŞ¤
+Kjavascript:S1117Œ".'item' is already declared in the upper scope.(å¹Óğ
+Zjavascript:S1481Ş"8Remove the declaration of the unused 'matches' variable.(Öçé‡ûÿÿÿÿ
+Vjavascript:S1481”"4Remove the declaration of the unused 'tag' variable.(ªÖØÃşÿÿÿÿ
+Sjavascript:S1854”"1Remove this useless assignment to variable "tag".(ªÖØÃşÿÿÿÿ
+Rjavascript:S1117î"0'params' is already declared in the upper scope.(…ıÅçúÿÿÿÿ
+javascript:S2692‰&"bThis check ignores index 0; consider using 'includes' method to make this check safe and explicit.(ù›ÓÂ
+[javascript:S1481Ã-"9Remove the declaration of the unused 'instance' variable.(ÕºƒËıÿÿÿÿ
+Xjavascript:S1854Ã-"6Remove this useless assignment to variable "instance".(ÕºƒËıÿÿÿÿ
+cjavascript:S2259Ğ"FTypeError can be thrown as "callback" might be null or undefined here.(Ì€—Ä
+cjavascript:S2259Õ-"FTypeError can be thrown as "instance" might be null or undefined here.(úõ«ü

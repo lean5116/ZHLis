@@ -1,0 +1,22 @@
+
+\
+java:S1192"FDefine a constant instead of duplicating this literal "UTF-8" 3 times.(«ØÈ‚
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(π•¥ø
+Z
+java:S22599"DA "NullPointerException" could be thrown; "toHex()" can return null.(⁄ı£µ
+z
+java:S1488"eImmediately return this expression instead of assigning it to the temporary variable "messageDigest".(Ö«√:
+u
+java:S1149'"_Replace the synchronized class "StringBuffer" by an unsynchronized one such as "StringBuilder".(±ç†û
+P
+java:S1118":Add a private constructor to hide the implicit public one.(Ø“ßÏ
+O
+java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(«ØÈ‚
+<
+java:S1168"&Return an empty array instead of null.(•πÔç
+M
+java:S1197!"8Move the array designator from the variable to the type.(‰≥¸}
+O
+java:S47199"9Replace charset name argument with StandardCharsets.UTF_8(⁄ı£µ
+O
+java:S47199"9Replace charset name argument with StandardCharsets.UTF_8(⁄ı£µ

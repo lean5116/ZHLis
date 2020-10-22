@@ -1,0 +1,23 @@
+
+s	java:S116"WRename this field "TradeMessage" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â²—Í8•œç².
+q	java:S116"URename this field "BranchCode" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°İ½8•œç².
+r	java:S116"VRename this field "TradeStatus" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óï˜ö8•œç².
+r	java:S117F"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ‚—˜üÿÿÿÿ8•œç².
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†ÌÆ^8•œç².
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÇııÿÿÿÿ8•œç².
+m	java:S117("QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡î†¢8•œç².
+m	java:S117."QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãÌÎÑ8•œç².
+x	java:S116"WRename this field "HospitalCode" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”»êùÿÿÿÿ8•œç².
+q	java:S116"URename this field "SystemCode" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ”¤š8•œç².
+r	java:S117@"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ğ¬ãúÿÿÿÿ8•œç².
+u	java:S116"TRename this field "TradeCode" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸öÿ§ÿÿÿÿÿ8•œç².
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¤Ø¤…
+]	java:S107M"AConstructor has 9 parameters, which is greater than 7 authorized.(È”˜Ê8åÕç².
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¶¼¨—øÿÿÿÿ
+r	java:S117:"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼¥Âıÿÿÿÿ8•œç².
+u	java:S116
+"TRename this field "SessionId" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æºïùÿÿÿÿÿ8•œç².
+m	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒòÿù8•œç².
+r	java:S1174"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(úÌ˜äúÿÿÿÿ8•œç².
+p	java:S116"TRename this field "TradeTime" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òë8•œç².
+s	java:S116"RRename this field "TradeNo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ´ Îüÿÿÿÿ8•œç².

@@ -1,0 +1,6 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Š£àŸ
+j
+java:S3252="OUse static access with "com.github.pagehelper.page.PageMethod" for "startPage".(î´ñŽüÿÿÿÿ
+c
+java:S3252J"MUse static access with "com.github.pagehelper.page.PageMethod" for "orderBy".(ôúæƒ

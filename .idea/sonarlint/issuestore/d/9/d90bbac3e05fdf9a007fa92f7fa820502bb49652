@@ -1,0 +1,11 @@
+
+i
+java:S1192"SDefine a constant instead of duplicating this literal "http://tempurl.org" 5 times.(Âº×Æ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(úö¹—ÿÿÿÿÿ
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(‹şÉ¡ùÿÿÿÿ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(‰ã„œ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Âº×Æ
+h	java:S100m"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”»áùÿÿÿÿ

@@ -1,0 +1,14 @@
+
+C
+java:S1481"&Remove this unused "b" local variable.(ñı«¦8Êí³µ.
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(óÎ °ùÿÿÿÿ
+W
+java:S2123
+":Remove this increment or correct the code not to waste it.(ŸˆÃ8ƒÿµ.
+]	java:S125"<This block of commented-out lines of code should be removed.(ş½Â™ûÿÿÿÿ8ğÇñµ.
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŒñÁå
+R
+java:S1854"5Remove this useless assignment to local variable "b".(ñı«¦8Êí³µ.
+R
+java:S1854
+"5Remove this useless assignment to local variable "i".(ŸˆÃ8ƒÿµ.

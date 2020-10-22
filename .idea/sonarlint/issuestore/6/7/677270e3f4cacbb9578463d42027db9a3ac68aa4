@@ -1,0 +1,15 @@
+
+c
+java:S1192"MDefine a constant instead of duplicating this literal "15666666666" 25 times.(šÝâô
+f
+java:S1192"KDefine a constant instead of duplicating this literal "ry@qq.com" 26 times.(à‚ÚÆøÿÿÿÿ
+W	java:S107²"AConstructor has 8 parameters, which is greater than 7 authorized.(Íç¾‘
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•ÐÓ"
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(¯†ô¶ûÿÿÿÿ
+t
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¯†ô¶ûÿÿÿÿ
+t
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
+o
+java:S2293î"YReplace the type specification in this constructor call with the diamond operator ("<>").(‡Œ |

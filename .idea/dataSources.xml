@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="@172.16.1.39" uuid="fc75da5f-2e1c-44ca-9912-1feaf6b51f21">
+      <driver-ref>oracle</driver-ref>
+      <synchronize>true</synchronize>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@172.16.1.39:1521:zhlis</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="@172.16.1.36" uuid="0baf1a84-030a-43c2-97db-3114107a6e69">
+      <driver-ref>oracle</driver-ref>
+      <synchronize>true</synchronize>
+      <auto-commit>false</auto-commit>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@172.16.1.36:1521:zhlis</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="@172.16.0.5" uuid="d57ab1ed-f4d4-4e57-a918-9a1246bd3305">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://172.16.0.5:1433</jdbc-url>
+    </data-source>
+  </component>
+</project>

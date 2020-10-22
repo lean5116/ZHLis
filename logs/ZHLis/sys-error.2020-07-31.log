@@ -1,0 +1,12 @@
+09:32:58.260 [LeanScheduler_QuartzSchedulerThread] ERROR o.q.c.QuartzSchedulerThread - [run,435] - Runtime error occurred in main trigger firing loop.
+java.lang.IllegalStateException: JobStore is shutdown - aborting retry
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.retryExecuteInNonManagedTXLock(JobStoreSupport.java:3833)
+	at org.quartz.impl.jdbcjobstore.JobStoreSupport.releaseAcquiredTrigger(JobStoreSupport.java:2940)
+	at org.quartz.core.QuartzSchedulerThread.releaseIfScheduleChangedSignificantly(QuartzSchedulerThread.java:472)
+	at org.quartz.core.QuartzSchedulerThread.run(QuartzSchedulerThread.java:333)
+09:35:04.055 [LeanScheduler_QuartzSchedulerThread] ERROR c.a.d.f.s.StatFilter - [internalAfterStatementExecute,478] - slow sql 1751 millis. SELECT TRIGGER_GROUP FROM QRTZ_PAUSED_TRIGGER_GRPS WHERE SCHED_NAME = 'LeanScheduler' AND TRIGGER_GROUP = ?["_$_ALL_GROUPS_PAUSED_$_"]
+09:35:08.532 [LeanScheduler_Worker-7] ERROR c.a.d.f.s.StatFilter - [internalAfterStatementExecute,478] - slow sql 2636 millis. select * from L_DATA_TRANSFER order by jlxh[]
+09:35:08.534 [LeanScheduler_QuartzSchedulerThread] ERROR c.a.d.f.s.StatFilter - [internalAfterStatementExecute,478] - slow sql 2612 millis. UPDATE QRTZ_TRIGGERS SET TRIGGER_STATE = ? WHERE SCHED_NAME = 'LeanScheduler' AND JOB_NAME = ? AND JOB_GROUP = ? AND TRIGGER_STATE = ?["PAUSED_BLOCKED","TASK_CLASS_NAME141","DEFAULT","PAUSED"]
+09:36:25.155 [LeanScheduler_Worker-16] ERROR c.a.d.f.s.StatFilter - [internalAfterStatementExecute,478] - slow sql 49825 millis. UPDATE QRTZ_TRIGGERS SET TRIGGER_STATE = ? WHERE SCHED_NAME = 'LeanScheduler' AND JOB_NAME = ? AND JOB_GROUP = ? AND TRIGGER_STATE = ?["WAITING","TASK_CLASS_NAME141","DEFAULT","BLOCKED"]
+09:36:25.157 [LeanScheduler_QuartzSchedulerThread] ERROR c.a.d.f.s.StatFilter - [internalAfterStatementExecute,478] - slow sql 49824 millis. UPDATE QRTZ_TRIGGERS SET TRIGGER_STATE = ? WHERE SCHED_NAME = 'LeanScheduler' AND TRIGGER_NAME = ? AND TRIGGER_GROUP = ? AND TRIGGER_STATE = ?["ACQUIRED","TASK_CLASS_NAME120","DEFAULT","WAITING"]
+09:37:04.429 [LeanScheduler_QuartzSchedulerThread] ERROR c.a.d.f.s.StatFilter - [internalAfterStatementExecute,478] - slow sql 37786 millis. SELECT * FROM QRTZ_JOB_DETAILS WHERE SCHED_NAME = 'LeanScheduler' AND JOB_NAME = ? AND JOB_GROUP = ?["TASK_CLASS_NAME120","DEFAULT"]

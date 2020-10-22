@@ -1,0 +1,11 @@
+
+CWeb:PageWithoutTitleCheck"Add a <title> tag to this page.(Õ¶¯M
+‰	Web:S5148"oAdd rel="noopener noreferrer" to this link to prevent the original page from being modified by the opened link.(ë’­¦ùÿÿÿÿ
+CWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(÷Ãø§
+MWeb:TableWithoutCaptionCheck" Add a description to this table.( øìïüÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheck ";Add either an 'id' or a 'scope' attribute to this <th> tag.(ç¥÷“
+l Web:TableHeaderHasIdOrScopeCheck!";Add either an 'id' or a 'scope' attribute to this <th> tag.(³º£¢ýÿÿÿÿ
+CWeb:BoldAndItalicTagsCheckc"Replace this <i> tag by <em>.(÷Ãø§
+MWeb:TableWithoutCaptionCheckh" Add a description to this table.( øìïüÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheckk";Add either an 'id' or a 'scope' attribute to this <th> tag.(ç¥÷“
+l Web:TableHeaderHasIdOrScopeCheckl";Add either an 'id' or a 'scope' attribute to this <th> tag.(³º£¢ýÿÿÿÿ

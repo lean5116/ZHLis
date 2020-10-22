@@ -1,0 +1,20 @@
+
+d
+java:S1192Ò"HDefine a constant instead of duplicating this literal "(é›¶.)+" 3 times.(ÏşØãıÿÿÿÿ
+8
+java:S1643Ò"Use a StringBuilder instead.(ÏşØãıÿÿÿÿ
+8
+java:S1643ß"Use a StringBuilder instead.(ÎÜ× ıÿÿÿÿ
+3
+java:S1643â"Use a StringBuilder instead.(‚æåŸ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‘á£úÿÿÿÿ
+{
+java:S1488»"dImmediately return this expression instead of assigning it to the temporary variable "returnString".(­æºŸ
+U
+java:S1118":Add a private constructor to hide the implicit public one.(šïÅ³ıÿÿÿÿ
+@
+java:S1905Ÿ")Remove this unnecessary cast to "Byte[]".(ÉÂÖÙ
+N
+java:S1197ÿ"8Move the array designator from the variable to the type.(£Î†T
+O
+java:S1197©"8Move the array designator from the variable to the type.(ÉÖÿ

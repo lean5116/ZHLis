@@ -1,0 +1,12 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÜŽ½‡ýÿÿÿÿ
+`
+java:S3252I"JUse static access with "org.apache.commons.lang3.StringUtils" for "EMPTY".(„›ÎÕ
+<
+java:S1659j"!Declare "pos" on a separate line.(£Ÿ˜Òÿÿÿÿÿ
+[
+java:S3027n"FPut single-quotes around '%' to use the faster "indexOf(char)" method.(“–™0
+T	java:S106”"9Replace this use of System.out or System.err by a logger.(ÜÏÙøÿÿÿÿ
+O	java:S106•"9Replace this use of System.out or System.err by a logger.(ÛØÅ
+O	java:S106–"9Replace this use of System.out or System.err by a logger.(¬£¬æ
+W	java:S125’"<This block of commented-out lines of code should be removed.(©öœÅûÿÿÿÿ

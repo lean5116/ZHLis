@@ -1,0 +1,20 @@
+
+Q
+java:S1128"4Remove this unused import 'java.lang.reflect.Field'.(„‡Áú8ÚÓÉÜ·.
+>	java:S131y""Add a default case to this switch.(å«ùà8Ì„¯µ.
+K	java:S108š")Either remove or fill this block of code.(ñ“Š±üÿÿÿÿ8Ì„¯µ.
+>	java:S1316""Add a default case to this switch.(å«ùà8–ˆ·®µ.
+Q
+java:S1066o"/Merge this if statement with the enclosing one.(šºå¦ûÿÿÿÿ8ÚÓÉÜ·.
+J	java:S108W")Either remove or fill this block of code.(ñ“Š±üÿÿÿÿ8–ˆ·®µ.
+u
+java:S1192:"SDefine a constant instead of duplicating this literal "è®°å½•ä¿®æ”¹æˆåŠŸ" 4 times.(‰æƒ§ûÿÿÿÿ8Ì„¯µ.
+|
+java:S1192-"ZDefine a constant instead of duplicating this literal " TRè¡¨ è®°å½•åˆ é™¤æˆåŠŸ" 9 times.(ËË¦·ùÿÿÿÿ8˜¼¼¬µ.
+t
+java:S3776$"RRefactor this method to reduce its Cognitive Complexity from 67 to the 15 allowed.(ì«¯°ıÿÿÿÿ8–ˆ·®µ.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(®Ò¼Ğşÿÿÿÿ
+o
+java:S3776g"RRefactor this method to reduce its Cognitive Complexity from 67 to the 15 allowed.(Ö”¡Š8Ì„¯µ.
+L
+java:S1066,"/Merge this if statement with the enclosing one.(÷¶Ó¡8ÚÓÉÜ·.

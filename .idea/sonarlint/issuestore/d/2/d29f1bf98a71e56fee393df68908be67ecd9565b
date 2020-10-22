@@ -1,0 +1,7 @@
+
+~javascript:S2692s"bThis check ignores index 0; consider using 'includes' method to make this check safe and explicit.(±ˆÚ•
+Xjavascript:S3516„";Refactor this function to not always return the same value.(¯Ìœø
+bjavascript:S905†"FExpected an assignment or function call and instead saw an expression.(ü´‰Ñ
+=javascript:S878†"!Unexpected use of comma operator.(ü´‰Ñ
+|javascript:S2703†"_Add the "let", "const" or "var" keyword to this declaration of "dataIndex" to make it explicit.(ü´‰Ñ
+|javascript:S2703‡"ZAdd the "let", "const" or "var" keyword to this declaration of "flag" to make it explicit.(³ÖÉÿÿÿÿÿ

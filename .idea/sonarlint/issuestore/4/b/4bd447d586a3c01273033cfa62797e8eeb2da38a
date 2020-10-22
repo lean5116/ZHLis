@@ -1,0 +1,14 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÛñÄ
+U
+java:S1118":Add a private constructor to hide the implicit public one.(Ô«‡úÿÿÿÿ
+<
+java:S1452"&Remove usage of generic wildcard type.(š¾ƒÔ
+<
+java:S1452"&Remove usage of generic wildcard type.(š¾ƒÔ
+Œ
+java:S1130"vRemove the declaration of thrown exception 'java.io.FileNotFoundException', as it cannot be thrown from method's body.(š¾ƒÔ
+\
+java:S3027-"FPut single-quotes around '.' to use the faster "indexOf(char)" method.(„ò¢Ô
+\
+java:S3027I"FPut single-quotes around '.' to use the faster "indexOf(char)" method.(„ò¢Ô

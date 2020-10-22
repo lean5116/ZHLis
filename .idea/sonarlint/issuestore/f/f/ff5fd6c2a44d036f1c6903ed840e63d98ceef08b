@@ -1,0 +1,46 @@
+
+b
+java:S1192s"GDefine a constant instead of duplicating this literal "strong" 3 times.(¾ØñÑıÿÿÿÿ
+F
+java:S1066É"/Merge this if statement with the enclosing one.(¥åíÈ
+K
+java:S1066Ë"/Merge this if statement with the enclosing one.(¤Àş¸üÿÿÿÿ
+k	java:S117e"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğŞïƒùÿÿÿÿ
+k	java:S117j"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ®ÓÊıÿÿÿÿ
+e	java:S117q"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Š´‰D
+l	java:S117º"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æªÜ¬úÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ü½‡ıÿÿÿÿ
+D
+java:S4274Œ"(Replace this assert with a proper check.( Í¨öøÿÿÿÿ
+D
+java:S4274"(Replace this assert with a proper check.(ñŸ¦‰şÿÿÿÿ
+?
+java:S4274"(Replace this assert with a proper check.(À«œ¾
+?
+java:S4274"(Replace this assert with a proper check.(ÆªÀ
+?
+java:S4274"(Replace this assert with a proper check.(‚õÛ
+?
+java:S4274‘"(Replace this assert with a proper check.(÷Ü•º
+D
+java:S4274’"(Replace this assert with a proper check.(õÓï¡øÿÿÿÿ
+>
+java:S4274“"(Replace this assert with a proper check.(‰¬f
+?
+java:S1125"(Remove the literal "true" boolean value.(¢·£Ä
+>
+java:S1125"(Remove the literal "true" boolean value.(òİ•
+?
+java:S1125Ÿ"(Remove the literal "true" boolean value.(¼¶ŞŞ
+K
+java:S2864š"4Iterate over the "entrySet" instead of the "keySet".(ÄŠ‰
+i
+java:S3776À"RRefactor this method to reduce its Cognitive Complexity from 50 to the 15 allowed.(éÆŠ¢
+@
+java:S1125É")Remove the literal "false" boolean value.(¥åíÈ
+?
+java:S1659ğ"(Declare "paramValue" on a separate line.(ŸÉÛÚ
+Q	java:S125 "<This block of commented-out lines of code should be removed.(•òØò
+R	java:S125ó"<This block of commented-out lines of code should be removed.(Æ¸²ù
+R	java:S125Ü"<This block of commented-out lines of code should be removed.(Ò»´
+W	java:S125ö"<This block of commented-out lines of code should be removed.(ñç¤Üÿÿÿÿÿ

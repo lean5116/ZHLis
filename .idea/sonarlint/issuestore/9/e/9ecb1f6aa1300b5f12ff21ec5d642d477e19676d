@@ -1,0 +1,57 @@
+
+j	java:S116"ORename this field "MSH1" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ïµ)8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+r	java:S117e"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·Ã¡øüÿÿÿÿ8õÎÁ¾°.
+r	java:S117U"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ĞÆ¶Ùÿÿÿÿÿ8õÎÁ¾°.
+q	java:S116"PRename this field "MSH10" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶—¯ÿÿÿÿÿ8õÎÁ¾°.
+_	java:S107¹"BConstructor has 18 parameters, which is greater than 7 authorized.(àÈìê8õÎÁ¾°.
+n	java:S117µ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™Æ£8õÎÁ¾°.
+p	java:S116"ORename this field "MSH6" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(œà—Šıÿÿÿÿ8õÎÁ¾°.
+p	java:S116"ORename this field "MSH8" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ê‹«®ûÿÿÿÿ8õÎÁ¾°.
+m	java:S117E"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à­§Ò8õÎÁ¾°.
+m	java:S117]"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Úï–8õÎÁ¾°.
+k	java:S116"PRename this field "MSH14" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Åô¢18õÎÁ¾°.
+l	java:S116"PRename this field "MSH11" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶…õè8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+p	java:S116"ORename this field "MSH9" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(şÓ•ùüÿÿÿÿ8õÎÁ¾°.
+k	java:S116"ORename this field "MSH2" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(§×µ“8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+q	java:S116"PRename this field "MSH13" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ãÀŸÂıÿÿÿÿ8õÎÁ¾°.
+p	java:S116"ORename this field "MSH7" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ş÷‹çøÿÿÿÿ8õÎÁ¾°.
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ô•Â8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+m	java:S117­"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıíÉ8õÎÁ¾°.
+m	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®üÂ8õÎÁ¾°.
+n	java:S117•"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Å¤¸µ8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+k	java:S116"ORename this field "MSH5" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(âğĞÚ8õÎÁ¾°.
+l	java:S116#"PRename this field "MSH16" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‰Ë³8õÎÁ¾°.
+n	java:S117¥"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”âö¡8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+q	java:S116!"PRename this field "MSH15" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±½Õ¾ıÿÿÿÿ8õÎÁ¾°.
+s	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æøüõûÿÿÿÿ8õÎÁ¾°.
+k	java:S116	"ORename this field "MSH3" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿³‡ü8õÎÁ¾°.
+r	java:S117M"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×Ñçøıÿÿÿÿ8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+m	java:S117m"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ööë8õÎÁ¾°.
+r	java:S117}"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒÖäÂÿÿÿÿÿ8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+n	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ê¹š¢8õÎÁ¾°.
+k	java:S116"ORename this field "MSH4" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ı§…8õÎÁ¾°.
+q	java:S116'"PRename this field "MSH18" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õåÑšøÿÿÿÿ8õÎÁ¾°.
+r	java:S117u"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î·âÅşÿÿÿÿ8õÎÁ¾°.
+q	java:S116%"PRename this field "MSH17" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ş‰„ûÿÿÿÿ8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+m	java:S1175"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷¢¨ª8õÎÁ¾°.
+r	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Õ“¶İşÿÿÿÿ8õÎÁ¾°.
+q	java:S116"PRename this field "MSH12" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ğŞÊÿÿÿÿÿ8õÎÁ¾°.
+n	java:S117…"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜ôıˆ8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.
+n	java:S117¹"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÈìê8õÎÁ¾°.

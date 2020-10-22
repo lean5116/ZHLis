@@ -1,0 +1,14 @@
+
+T
+java:S1128"7Remove this unused import 'java.text.SimpleDateFormat'.(ú¡ÙÛ8·¥Ð½³.
+e
+java:S5361*"HReplace this call to "replaceAll()" by a call to the "replace()" method.(¼ŽÇÜ8·¥Ð½³.
+Q
+java:S1066 "/Merge this if statement with the enclosing one.(ˆÌ…Žÿÿÿÿÿ8µ¥Ð½³.
+~
+java:S26292"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Ð–‚ÿÿÿÿÿ8·¥Ð½³.
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ý“ÁÙÿÿÿÿÿ8·¥Ð½³.
+c
+java:S34572"AFormat specifiers should be used instead of string concatenation.(Ð–‚ÿÿÿÿÿ8·¥Ð½³.
+`
+java:S1155 ">Use isEmpty() to check whether the collection is empty or not.(ˆÌ…Žÿÿÿÿÿ8·¥Ð½³.

@@ -1,0 +1,235 @@
+
+z
+java:S2629·"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(È¦‘ı8ù¤Ø¹.
+^
+java:S3457a"AFormat specifiers should be used instead of string concatenation.(‚Ğ…°8ù¤Ø¹.
+
+java:S2629–"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(İÕ•îûÿÿÿÿ8ù¤Ø¹.
+_
+java:S3457÷"AFormat specifiers should be used instead of string concatenation.(âÀ™ğ8äç©‚¹.
+n
+java:S1192_"LDefine a constant instead of duplicating this literal "~lisæ•°æ®:" 3 times.(ÿè« ıÿÿÿÿ8ù¤Ø¹.
+
+java:S2629Ã"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(ÛÂ†ÿÿÿÿÿ8ù¤Ø¹.
+d
+java:S3457Ú"AFormat specifiers should be used instead of string concatenation.(Û£à­ÿÿÿÿÿ8ù¤Ø¹.
+y
+java:S2629W"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(‹ı§†8¿ëÖû¸.
+
+java:S2629Ü"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Æî…çıÿÿÿÿ8ƒæ¦‚¹.
+d
+java:S3457–"AFormat specifiers should be used instead of string concatenation.(İÕ•îûÿÿÿÿ8ù¤Ø¹.
+L
+java:S1066s"/Merge this if statement with the enclosing one.(ÕÏéè8­‚¹.
+d
+java:S3457’"AFormat specifiers should be used instead of string concatenation.(¿Ã°ùøÿÿÿÿ8ù¤Ø¹.
+R
+java:S1066ö"/Merge this if statement with the enclosing one.(ˆóÅÂúÿÿÿÿ8äç©‚¹.
+
+java:S2629Ÿ"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(¸°Ñ»ûÿÿÿÿ8£ì¥‚¹.
+c
+java:S3457o"AFormat specifiers should be used instead of string concatenation.(Óò“˜ÿÿÿÿÿ8ù¤Ø¹.
+^
+java:S3457q"AFormat specifiers should be used instead of string concatenation.(ÌÒÎÒ8ù¤Ø¹.
+^
+java:S3457Y"AFormat specifiers should be used instead of string concatenation.(‚Ğ…°8‡Ù¹.
+d
+java:S3457¼"AFormat specifiers should be used instead of string concatenation.(üãí¦ùÿÿÿÿ8ù¤Ø¹.
+d
+java:S3457©"AFormat specifiers should be used instead of string concatenation.(õ¼§Œüÿÿÿÿ8£ì¥‚¹.
+^
+java:S3457M"AFormat specifiers should be used instead of string concatenation.(ï©à8¥«®š¸.
+«
+java:S1192_"ˆDefine a constant instead of duplicating this literal "hisæ•°æ®ä¸lisæ•°æ®ä¸å®Œå…¨å®Œå…¨ç›¸åŒï¼Œæ‰§è¡Œupdate~ï¼›hisæ•°æ®:" 3 times.(ÿè« ıÿÿÿÿ8ù¤Ø¹.
+
+java:S2629®"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(æˆ ˆÿÿÿÿÿ8£ì¥‚¹.
+z
+java:S2629•"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(ÌÇ—ï8£ì¥‚¹.
+_
+java:S3457¹"AFormat specifiers should be used instead of string concatenation.(öøıŒ8ù¤Ø¹.
+_
+java:S3457Ş"AFormat specifiers should be used instead of string concatenation.(¨›İª8ƒæ¦‚¹.
+~
+java:S2629_"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(ÿè« ıÿÿÿÿ8ù¤Ø¹.
+~
+java:S2629."\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(â£¤¡üÿÿÿÿ8¥«®š¸.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(İ“ÁÙÿÿÿÿÿ
+_
+java:S3457§"AFormat specifiers should be used instead of string concatenation.(áø©Ö8£ì¥‚¹.
+q
+java:S3776±"SRefactor this method to reduce its Cognitive Complexity from 187 to the 15 allowed.(„…Ó8ù¤Ø¹.
+c
+java:S3457["AFormat specifiers should be used instead of string concatenation.(¼¡‡ÿúÿÿÿÿ8‡Ù¹.
+d
+java:S3457…"AFormat specifiers should be used instead of string concatenation.(õ¼§Œüÿÿÿÿ8£ì¥‚¹.
+y
+java:S2629Y"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(‚Ğ…°8‡Ù¹.
+c
+java:S3457t"AFormat specifiers should be used instead of string concatenation.(…«ÀÅşÿÿÿÿ8­‚¹.
+_
+java:S3457"AFormat specifiers should be used instead of string concatenation.(Ã‰É8£ì¥‚¹.
+R
+java:S1066‘"/Merge this if statement with the enclosing one.(áíÍÿÿÿÿÿ8ù¤Ø¹.
+
+java:S1192Ò"^Define a constant instead of duplicating this literal " TRè¡¨ è®°å½•åˆ é™¤æˆåŠŸ lis" 6 times.(õ¼§Œüÿÿÿÿ8ù¤Ø¹.
+d
+java:S3457‹"AFormat specifiers should be used instead of string concatenation.(¼¡‡ÿúÿÿÿÿ8ù¤Ø¹.
+^
+java:S3457~"AFormat specifiers should be used instead of string concatenation.(Ã‰É8ù¤Ø¹.
+d
+java:S3457ù"AFormat specifiers should be used instead of string concatenation.(õ¼§Œüÿÿÿÿ8äç©‚¹.
+d
+java:S3457«"AFormat specifiers should be used instead of string concatenation.(æˆ ˆÿÿÿÿÿ8ù¤Ø¹.
+d
+java:S3457â"AFormat specifiers should be used instead of string concatenation.(Áèàûûÿÿÿÿ8£ì¥‚¹.
+
+java:S2629Ú"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Û£à­ÿÿÿÿÿ8ù¤Ø¹.
+^
+java:S3457<"AFormat specifiers should be used instead of string concatenation.(…ËÇ×8†İÿ¸.
+d
+java:S3457Œ"AFormat specifiers should be used instead of string concatenation.(¬ˆ–ñşÿÿÿÿ8£ì¥‚¹.
+z
+java:S2629œ"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(¢îÂÌ8ù¤Ø¹.
+_
+java:S3457æ"AFormat specifiers should be used instead of string concatenation.(¨›İª8£ì¥‚¹.
+y
+java:S2629~"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Ã‰É8ù¤Ø¹.
+_
+java:S3457×"AFormat specifiers should be used instead of string concatenation.(ú‚àÄ8ù¤Ø¹.
+d
+java:S3457€"AFormat specifiers should be used instead of string concatenation.(…«ÀÅşÿÿÿÿ8ù¤Ø¹.
+d
+java:S3457¦"AFormat specifiers should be used instead of string concatenation.(¼¡‡ÿúÿÿÿÿ8ù¤Ø¹.
+c
+java:S3457v"AFormat specifiers should be used instead of string concatenation.(¼¡‡ÿúÿÿÿÿ8­‚¹.
+z
+java:S2629"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Ã‰É8£ì¥‚¹.
+
+java:S1192O"_Define a constant instead of duplicating this literal " TRè¡¨ è®°å½•åˆ é™¤æˆåŠŸ his" 10 times.(¼¡‡ÿúÿÿÿÿ8‰ç÷ó·.
+G
+java:S2116."%Use "Arrays.toString(array)" instead.(â£¤¡üÿÿÿÿ8¥«®š¸.
+_
+java:S3457ƒ"AFormat specifiers should be used instead of string concatenation.(âÀ™ğ8£ì¥‚¹.
+s
+java:S1128"QRemove this unused import 'org.springframework.web.bind.annotation.ResponseBody'.(•¶¶êøÿÿÿÿ8ßŞàÖ·.
+c
+java:S3457c"AFormat specifiers should be used instead of string concatenation.(¼¡‡ÿúÿÿÿÿ8ù¤Ø¹.
+d
+java:S3457Ã"AFormat specifiers should be used instead of string concatenation.(ÛÂ†ÿÿÿÿÿ8ù¤Ø¹.
+_
+java:S3457Ğ"AFormat specifiers should be used instead of string concatenation.(áø©Ö8ù¤Ø¹.
+y
+java:S2629q"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(ÌÒÎÒ8ù¤Ø¹.
+_
+java:S3457ô"AFormat specifiers should be used instead of string concatenation.(ş¾Ÿ»8£ì¥‚¹.
+d
+java:S3457Ê"AFormat specifiers should be used instead of string concatenation.(“öÚÙüÿÿÿÿ8ù¤Ø¹.
+a
+java:S1155‘">Use isEmpty() to check whether the collection is empty or not.(áíÍÿÿÿÿÿ8ù¤Ø¹.
+d
+java:S3457®"AFormat specifiers should be used instead of string concatenation.(æˆ ˆÿÿÿÿÿ8£ì¥‚¹.
+H
+java:S2116³"%Use "Arrays.toString(array)" instead.(â£¤¡üÿÿÿÿ8ù¤Ø¹.
+_
+java:S3457•"AFormat specifiers should be used instead of string concatenation.(ÌÇ—ï8£ì¥‚¹.
+a
+java:S1155”">Use isEmpty() to check whether the collection is empty or not.(ÃÔ¼·ûÿÿÿÿ8£ì¥‚¹.
+d
+java:S3457‰"AFormat specifiers should be used instead of string concatenation.(Ì¾Ïõıÿÿÿÿ8ù¤Ø¹.
+l
+java:S1128"ORemove this unused import 'org.springframework.web.bind.annotation.GetMapping'.(‡¡‰Ø8ßŞàÖ·.
+d
+java:S3457™"AFormat specifiers should be used instead of string concatenation.(Ú‚š¾ÿÿÿÿÿ8£ì¥‚¹.
+_
+java:S3457¤"AFormat specifiers should be used instead of string concatenation.(ï©à8ù¤Ø¹.
+z
+java:S2629ô"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(ş¾Ÿ»8£ì¥‚¹.
+d
+java:S3457¡"AFormat specifiers should be used instead of string concatenation.(òÄªşûÿÿÿÿ8ù¤Ø¹.
+d
+java:S3457ş"AFormat specifiers should be used instead of string concatenation.(õ¼§Œüÿÿÿÿ8£ì¥‚¹.
+d
+java:S3457‚"AFormat specifiers should be used instead of string concatenation.(¼¡‡ÿúÿÿÿÿ8ù¤Ø¹.
+y
+java:S26292"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(È¦‘ı8¥«®š¸.
+y
+java:S2629a"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(‚Ğ…°8ù¤Ø¹.
+d
+java:S3457Ò"AFormat specifiers should be used instead of string concatenation.(õ¼§Œüÿÿÿÿ8ù¤Ø¹.
+_
+java:S3457·"AFormat specifiers should be used instead of string concatenation.(È¦‘ı8ù¤Ø¹.
+
+java:S2629«"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(æˆ ˆÿÿÿÿÿ8ù¤Ø¹.
+c
+java:S3457."AFormat specifiers should be used instead of string concatenation.(â£¤¡üÿÿÿÿ8¥«®š¸.
+d
+java:S3457³"AFormat specifiers should be used instead of string concatenation.(â£¤¡üÿÿÿÿ8ù¤Ø¹.
+~
+java:S2629G"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Â²¡øÿÿÿÿ8¥«®š¸.
+d
+java:S3457ä"AFormat specifiers should be used instead of string concatenation.(Æî…çıÿÿÿÿ8£ì¥‚¹.
+_
+java:S3457œ"AFormat specifiers should be used instead of string concatenation.(¢îÂÌ8ù¤Ø¹.
+
+java:S2629Ê"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(“öÚÙüÿÿÿÿ8ù¤Ø¹.
+~
+java:S2629k"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Áæëªıÿÿÿÿ8ù¤Ø¹.
+R
+java:S1066”"/Merge this if statement with the enclosing one.(ÃÔ¼·ûÿÿÿÿ8£ì¥‚¹.
+^	java:S125í"<This block of commented-out lines of code should be removed.(“¿ºøşÿÿÿÿ8£ì¥‚¹.
+c
+java:S3457O"AFormat specifiers should be used instead of string concatenation.(¼¡‡ÿúÿÿÿÿ8¥«®š¸.
+y
+java:S2629<"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(…ËÇ×8†İÿ¸.
+d
+java:S3457Ö"AFormat specifiers should be used instead of string concatenation.(˜×²èüÿÿÿÿ8ÿ×¹.
+
+java:S2629ä"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Æî…çıÿÿÿÿ8£ì¥‚¹.
+
+java:S2629’"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(¿Ã°ùøÿÿÿÿ8ù¤Ø¹.
+y
+java:S2629S"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(×öº8¿ëÖû¸.
+d
+java:S3457Ü"AFormat specifiers should be used instead of string concatenation.(Æî…çıÿÿÿÿ8ƒæ¦‚¹.
+
+java:S2629™"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Ú‚š¾ÿÿÿÿÿ8£ì¥‚¹.
+
+java:S2629â"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(Áèàûûÿÿÿÿ8£ì¥‚¹.
+d
+java:S3457Ÿ"AFormat specifiers should be used instead of string concatenation.(¸°Ñ»ûÿÿÿÿ8£ì¥‚¹.
+
+java:S2629³"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(â£¤¡üÿÿÿÿ8ù¤Ø¹.
+^
+java:S3457W"AFormat specifiers should be used instead of string concatenation.(‹ı§†8¿ëÖû¸.
+c
+java:S3457T"AFormat specifiers should be used instead of string concatenation.(Üñ£Éüÿÿÿÿ8¿ëÖû¸.
+~
+java:S2629@"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(ûÕ®úÿÿÿÿ8¥«®š¸.
+u
+java:S3776,"SRefactor this method to reduce its Cognitive Complexity from 187 to the 15 allowed.(£‡“¦ÿÿÿÿÿ8ßŞàÖ·.
+^
+java:S34572"AFormat specifiers should be used instead of string concatenation.(È¦‘ı8¥«®š¸.
+d
+java:S3457ò"AFormat specifiers should be used instead of string concatenation.(Óò“˜ÿÿÿÿÿ8£ì¥‚¹.
+c
+java:S3457G"AFormat specifiers should be used instead of string concatenation.(Â²¡øÿÿÿÿ8¥«®š¸.
+d
+java:S3457¤"AFormat specifiers should be used instead of string concatenation.(°–îºúÿÿÿÿ8£ì¥‚¹.
+z
+java:S2629¹"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(öøıŒ8ù¤Ø¹.
+
+java:S2629Ö"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(˜×²èüÿÿÿÿ8ù¤Ø¹.
+c
+java:S3457{"AFormat specifiers should be used instead of string concatenation.(¼¡‡ÿúÿÿÿÿ8ù¤Ø¹.
+^
+java:S3457S"AFormat specifiers should be used instead of string concatenation.(×öº8›ÅÖû¸.
+c
+java:S3457_"AFormat specifiers should be used instead of string concatenation.(ÿè« ıÿÿÿÿ8ù¤Ø¹.
+c
+java:S3457@"AFormat specifiers should be used instead of string concatenation.(ûÕ®úÿÿÿÿ8¥«®š¸.
+c
+java:S34578"AFormat specifiers should be used instead of string concatenation.(—õ¾ûùÿÿÿÿ8¥«®š¸.
+c
+java:S3457k"AFormat specifiers should be used instead of string concatenation.(Áæëªıÿÿÿÿ8ù¤Ø¹.
+d
+java:S3457"AFormat specifiers should be used instead of string concatenation.(õ¼§Œüÿÿÿÿ8£ì¥‚¹.

@@ -1,0 +1,11 @@
+
+g
+java:S1192"LDefine a constant instead of duplicating this literal "15666666666" 4 times.(ŒÁ¥”ýÿÿÿÿ
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(•ÐÓ"
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(ëÑÖˆÿÿÿÿÿ
+t
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ëÑÖˆÿÿÿÿÿ
+t
+java:S1171"YMove the contents of this initializer to a standard constructor or to field initializers.(ÒÌâ–øÿÿÿÿ
+h	java:S100X"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ìµÖÙøÿÿÿÿ

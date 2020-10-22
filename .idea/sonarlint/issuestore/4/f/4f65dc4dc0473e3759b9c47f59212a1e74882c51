@@ -1,0 +1,56 @@
+
+Y	java:S125¬"<This block of commented-out lines of code should be removed.(İÉ²µ8¾Æ©Ìº.
+d
+java:S1192?"GDefine a constant instead of duplicating this literal "MSA|AA" 3 times.(ùôõ8Ïó³Æº.
+]
+java:S1854Ê":Remove this useless assignment to local variable "result".(Õ ıåùÿÿÿÿ8¾Æ©Ìº.
+e
+java:S5361L"HReplace this call to "replaceAll()" by a call to the "replace()" method.(·¸‹ê8ããÌº.
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(İ“ÁÙÿÿÿÿÿ
+`
+java:S1155/">Use isEmpty() to check whether the collection is empty or not.(ç‰¥Ïøÿÿÿÿ8ˆ¸õ¾².
+X
+java:S1854@";Remove this useless assignment to local variable "delFlag".(øîİ¡8Ïó³Æº.
+˜
+java:S1845¯"uRename method "ReportPostBack" to prevent any misunderstanding/clash with method "reportPostBack" defined on line 44.(™ì¸Îÿÿÿÿÿ8¾Æ©Ìº.
+U	java:S106("9Replace this use of System.out or System.err by a logger.(ëôßÊ8£•’¯º.
+o
+java:S3776,"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(’Ğİ“8İÚ¾².
+t
+java:S3776d"RRefactor this method to reduce its Cognitive Complexity from 26 to the 15 allowed.(†›âÁşÿÿÿÿ8¾Æ©Ìº.
+u
+java:S3776¯"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(™ì¸Îÿÿÿÿÿ8¾Æ©Ìº.
+X	java:S125A"<This block of commented-out lines of code should be removed.(À‚”½8Ïó³Æº.
+a
+java:S1155">Use isEmpty() to check whether the collection is empty or not.(áí¼Ğıÿÿÿÿ8¾Æ©Ìº.
+]	java:S125>"<This block of commented-out lines of code should be removed.(Ü‚²×øÿÿÿÿ8Ïó³Æº.
+M
+java:S1128"+Remove this unused import 'org.junit.Test'.(ùøèøÿÿÿÿ8¼ã£¯º.
+a
+java:S1155İ">Use isEmpty() to check whether the collection is empty or not.(áí¼Ğıÿÿÿÿ8¾Æ©Ìº.
+\
+java:S1155˜">Use isEmpty() to check whether the collection is empty or not.(£ëù‘8¾Æ©Ìº.
+X	java:S1259"<This block of commented-out lines of code should be removed.(İÉ²µ8Ïó³Æº.
+Y	java:S125ğ"<This block of commented-out lines of code should be removed.(İÉ²µ8¾Æ©Ìº.
+:
+java:S1643¦"Use a StringBuilder instead.(ÉëºÖ8¾Æ©Ìº.
+:
+java:S1643"Use a StringBuilder instead.(µçé×8¾Æ©Ìº.
+?
+java:S1643›"Use a StringBuilder instead.(êÁºÔüÿÿÿÿ8¾Æ©Ìº.
+\
+java:S1155ç">Use isEmpty() to check whether the collection is empty or not.(£ëù‘8¾Æ©Ìº.
+c
+java:S1128"ARemove this unused import 'com.RealLis.common.utils.StringUtils'.(‰‚ úÿÿÿÿ8¥Åû¾².
+X	java:S125*"<This block of commented-out lines of code should be removed.(ôÈ‘‹8ÏÈ¯º.
+\
+java:S1155¤">Use isEmpty() to check whether the collection is empty or not.(ëÎº8¾Æ©Ìº.
+p	java:S100¯"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(™ì¸Îÿÿÿÿÿ8¾Æ©Ìº.
+:
+java:S1643ß"Use a StringBuilder instead.(µçé×8¾Æ©Ìº.
+Q
+java:S1066/"/Merge this if statement with the enclosing one.(ç‰¥Ïøÿÿÿÿ8‘ÆÓ¾².
+?
+java:S1643ê"Use a StringBuilder instead.(êÁºÔüÿÿÿÿ8¾Æ©Ìº.
+I
+java:S1481@",Remove this unused "delFlag" local variable.(øîİ¡8Ïó³Æº.

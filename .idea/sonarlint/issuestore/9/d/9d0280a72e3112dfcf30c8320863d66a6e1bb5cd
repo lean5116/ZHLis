@@ -1,0 +1,149 @@
+
+Rjavascript:S1481q"6Remove the declaration of the unused 'SHIFT' variable.(ýëàÕ
+Ojavascript:S1854q"3Remove this useless assignment to variable "SHIFT".(ýëàÕ
+Xjavascript:S1481u"7Remove the declaration of the unused 'MODULO' variable.(ó¡‘Çüÿÿÿÿ
+Ujavascript:S1854u"4Remove this useless assignment to variable "MODULO".(ó¡‘Çüÿÿÿÿ
+Qjavascript:S1481v"5Remove the declaration of the unused 'STOP' variable.(Îÿ£Ã
+Njavascript:S1854v"2Remove this useless assignment to variable "STOP".(Îÿ£Ã
+Qjavascript:S1481w"5Remove the declaration of the unused 'FNC1' variable.(¾–Ó¼
+Njavascript:S1854w"2Remove this useless assignment to variable "FNC1".(¾–Ó¼
+]javascript:S1481z"<Remove the declaration of the unused 'SET_BY_CODE' variable.(Ê·“üÿÿÿÿ
+Zjavascript:S1854z"9Remove this useless assignment to variable "SET_BY_CODE".(Ê·“üÿÿÿÿ
+Vjavascript:S1481}"5Remove the declaration of the unused 'SWAP' variable.(°…ëµúÿÿÿÿ
+Sjavascript:S1854}"2Remove this useless assignment to variable "SWAP".(°…ëµúÿÿÿÿ
+Zjavascript:S1481ƒ"=Remove the declaration of the unused 'A_START_CHAR' variable.(þÔóà
+Wjavascript:S1854ƒ":Remove this useless assignment to variable "A_START_CHAR".(þÔóà
+_javascript:S1481„"=Remove the declaration of the unused 'B_START_CHAR' variable.(ø…ñçûÿÿÿÿ
+\javascript:S1854„":Remove this useless assignment to variable "B_START_CHAR".(ø…ñçûÿÿÿÿ
+Zjavascript:S1481…"=Remove the declaration of the unused 'C_START_CHAR' variable.(£ç¾Ë
+Wjavascript:S1854…":Remove this useless assignment to variable "C_START_CHAR".(£ç¾Ë
+Ujavascript:S1481‰"8Remove the declaration of the unused 'A_CHARS' variable.(¾ÿçð
+Rjavascript:S1854‰"5Remove this useless assignment to variable "A_CHARS".(¾ÿçð
+Ujavascript:S1481"8Remove the declaration of the unused 'B_CHARS' variable.(‘‚á©
+Rjavascript:S1854"5Remove this useless assignment to variable "B_CHARS".(‘‚á©
+Zjavascript:S1481‘"8Remove the declaration of the unused 'C_CHARS' variable.(‰Æ²²ÿÿÿÿÿ
+Wjavascript:S1854‘"5Remove this useless assignment to variable "C_CHARS".(‰Æ²²ÿÿÿÿÿ
+Wjavascript:S1481–"5Remove the declaration of the unused 'BARS' variable.(ó†À­üÿÿÿÿ
+Tjavascript:S1854–"2Remove this useless assignment to variable "BARS".(ó†À­üÿÿÿÿ
+[javascript:S1481£"9Remove the declaration of the unused 'SIDE_BIN' variable.(‡ÿ®°ùÿÿÿÿ
+Xjavascript:S1854£"6Remove this useless assignment to variable "SIDE_BIN".(‡ÿ®°ùÿÿÿÿ
+]javascript:S1481¤";Remove the declaration of the unused 'MIDDLE_BIN' variable.(§ÅµÐûÿÿÿÿ
+Zjavascript:S1854¤"8Remove this useless assignment to variable "MIDDLE_BIN".(§ÅµÐûÿÿÿÿ
+Vjavascript:S1481¦"9Remove the declaration of the unused 'BINARIES' variable.(¬…¥×
+Sjavascript:S1854¦"6Remove this useless assignment to variable "BINARIES".(¬…¥×
+ajavascript:S1481´"?Remove the declaration of the unused 'EAN2_STRUCTURE' variable.(—ÑÕáÿÿÿÿÿ
+^javascript:S1854´"<Remove this useless assignment to variable "EAN2_STRUCTURE".(—ÑÕáÿÿÿÿÿ
+[javascript:S1481·"?Remove the declaration of the unused 'EAN5_STRUCTURE' variable.(£Ÿ˜0
+Xjavascript:S1854·"<Remove this useless assignment to variable "EAN5_STRUCTURE".(£Ÿ˜0
+]javascript:S1481º"@Remove the declaration of the unused 'EAN13_STRUCTURE' variable.(±ß÷ž
+Zjavascript:S1854º"=Remove this useless assignment to variable "EAN13_STRUCTURE".(±ß÷ž
+˜javascript:S2681è"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681è"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681è"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Jjavascript:S1117ú"-'MSI' is already declared in the upper scope.(Ž¨–Õ
+˜javascript:S2681É"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681É"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681É"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Sjavascript:S1117Þ"1'CODE128' is already declared in the upper scope.(¥çþ¬üÿÿÿÿ
+ajavascript:S1117¢"?'InvalidInputException' is already declared in the upper scope.(žþÈúÿÿÿÿ
+cjavascript:S1117¶"A'InvalidElementException' is already declared in the upper scope.(§º‹Ãûÿÿÿÿ
+Yjavascript:S1117Æ"<'NoElementException' is already declared in the upper scope.(£‚›Ì
+˜javascript:S2681¥"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681¥"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681¥"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Ojavascript:S1117½"-'EAN' is already declared in the upper scope.(ï±­ƒúÿÿÿÿ
+˜javascript:S2681‡"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681‡"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681‡"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Ijavascript:S1117Ÿ"-'UPC' is already declared in the upper scope.(ù§Éd
+˜javascript:S2681²"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681²"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681²"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Ojavascript:S1117Å"-'ITF' is already declared in the upper scope.(ªí¬Ýýÿÿÿÿ
+˜javascript:S2681‰	"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681‰	"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681‰	"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Xjavascript:S1117	"6'ErrorHandler' is already declared in the upper scope.(«ÇÛÿÿÿÿÿ
+Pjavascript:S1117»".'name' is already declared in the upper scope.(ú‡Ë†úÿÿÿÿ
+Kjavascript:S1117Æ".'name' is already declared in the upper scope.(Ø¥úÌ
+Cjavascript:S1515¡"'Define this function outside of a loop.(ˆâ±9
+˜javascript:S2681ñ"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681ñ"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681ñ"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Tjavascript:S1117„"2'CODE128A' is already declared in the upper scope.(Û ¯Óÿÿÿÿÿ
+˜javascript:S2681¡"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681¡"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681¡"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Tjavascript:S1117´"2'CODE128B' is already declared in the upper scope.(†šè½úÿÿÿÿ
+˜javascript:S2681Ñ"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681Ñ"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681Ñ"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Tjavascript:S1117ä"2'CODE128C' is already declared in the upper scope.(Î¶Ëùÿÿÿÿ
+Wjavascript:S1117”"5'CODE128AUTO' is already declared in the upper scope.(Òì´ôúÿÿÿÿ
+=javascript:S2814›"'_this' is already defined.(³ÑØõøÿÿÿÿ
+˜javascript:S2681£"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681£"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681£"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Rjavascript:S1117µ"0'CODE39' is already declared in the upper scope.(¬’Œüÿÿÿÿÿ
+Zjavascript:S1117î"8'characterValue' is already declared in the upper scope.(÷…‡¨ùÿÿÿÿ
+Ujavascript:S1117ò"8'characterValue' is already declared in the upper scope.(¼Ñº·
+˜javascript:S2681‘"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681‘"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681‘"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681“"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(ôùÓÆ
+Ljavascript:S1117³"/'EAN13' is already declared in the upper scope.(áúü
+˜javascript:S2681Ž"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681Ž"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681Ž"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Pjavascript:S1117¦".'EAN2' is already declared in the upper scope.(¾Ð½¸ýÿÿÿÿ
+˜javascript:S2681Î"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681Î"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681Î"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Kjavascript:S1117ï".'EAN5' is already declared in the upper scope.(£Ã®˜
+˜javascript:S2681•"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681•"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681•"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681—"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(ôùÓÆ
+Pjavascript:S1117´".'EAN8' is already declared in the upper scope.(èÁ‚°ûÿÿÿÿ
+˜javascript:S2681ì"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681ì"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681ì"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Pjavascript:S1117‹".'UPCE' is already declared in the upper scope.(”‡ƒµûÿÿÿÿ
+˜javascript:S2681Ù"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681Ù"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681Ù"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Zjavascript:S1117ê"8'GenericBarcode' is already declared in the upper scope.(±›†¯ùÿÿÿÿ
+˜javascript:S2681•"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681•"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681•"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Ljavascript:S1117±"/'ITF14' is already declared in the upper scope.(ÐèÖ
+\javascript:S1481Ñ":Remove the declaration of the unused 'START_BIN' variable.(ð˜‚Áûÿÿÿÿ
+Yjavascript:S1854Ñ"7Remove this useless assignment to variable "START_BIN".(ð˜‚Áûÿÿÿÿ
+Ujavascript:S1481Ò"8Remove the declaration of the unused 'END_BIN' variable.(èÂ‘
+Rjavascript:S1854Ò"5Remove this useless assignment to variable "END_BIN".(èÂ‘
+Vjavascript:S1481Ô"9Remove the declaration of the unused 'BINARIES' variable.(Ì¾ö
+Sjavascript:S1854Ô"6Remove this useless assignment to variable "BINARIES".(Ì¾ö
+Ljavascript:S1117‹"/'MSI10' is already declared in the upper scope.(…§˜
+Njavascript:S1117²"1'MSI1010' is already declared in the upper scope.(­šŸÓ
+Qjavascript:S1117Û"/'MSI11' is already declared in the upper scope.(Ò´âÄùÿÿÿÿ
+Sjavascript:S1117‚"1'MSI1110' is already declared in the upper scope.(‘€§ßûÿÿÿÿ
+˜javascript:S2681Ã"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681Ã"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681Ã"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Sjavascript:S1117Õ"1'codabar' is already declared in the upper scope.(ùœ‹¹ýÿÿÿÿ
+˜javascript:S2681¥"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681¥"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681¥"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Vjavascript:S1117·"4'pharmacode' is already declared in the upper scope.(Åäà¿üÿÿÿÿ
+˜javascript:S2681¢"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681¢"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681¢"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Ujavascript:S1117¯"8'CanvasRenderer' is already declared in the upper scope.(›–è
+˜javascript:S2681á"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681á"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681á"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Ujavascript:S1117æ"8'ObjectRenderer' is already declared in the upper scope.(È—Ûö
+˜javascript:S2681…"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681…"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+˜javascript:S2681…"{This statement will not be executed conditionally; only the first statement will be. The rest will execute unconditionally.(òâ¿¾
+Rjavascript:S1117”"5'SVGRenderer' is already declared in the upper scope.(¤íÛì

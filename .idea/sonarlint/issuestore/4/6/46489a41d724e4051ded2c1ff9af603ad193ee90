@@ -1,0 +1,51 @@
+
+u
+java:S3252…"WUse static access with "org.apache.commons.lang3.StringUtils" for "containsIgnoreCase".(žžÞ»8¨—”º².
+ƒ
+java:S11301"mRemove the declaration of thrown exception 'java.lang.IllegalArgumentException' which is a runtime exception.(»«°Ó
+q
+java:S3252S"TUse static access with "org.apache.commons.lang3.StringUtils" for "substringBefore".(ØÂ–ž8¨—”º².
+z
+java:S3252€"WUse static access with "org.apache.commons.lang3.StringUtils" for "containsIgnoreCase".(ÌÚªØÿÿÿÿÿ8¨—”º².
+s
+java:S3252H"QUse static access with "org.apache.commons.lang3.StringUtils" for "countMatches".(ìÕý øÿÿÿÿ8¨—”º².
+t
+java:S3252‚"VUse static access with "org.apache.commons.lang3.StringUtils" for "replaceIgnoreCase".(ÉêÙç8¨—”º².
+t
+java:S3252‡"VUse static access with "org.apache.commons.lang3.StringUtils" for "replaceIgnoreCase".(Ùü£À8¨—”º².
+r
+java:S3252t"PUse static access with "org.apache.commons.lang3.StringUtils" for "trimToEmpty".(¿„Ôïÿÿÿÿÿ8¨—”º².
+v
+java:S3252_"TUse static access with "org.apache.commons.lang3.StringUtils" for "substringBefore".(š´¯‚úÿÿÿÿ8¨—”º².
+A
+java:S1168n"+Return an empty collection instead of null.(¥¹ï
+i
+java:S3252v"MUse static access with "org.apache.commons.lang3.StringUtils" for "contains".(¡Î§8¨—”º².
+b
+java:S2259 "L"NullPointerException" will be thrown when invoking method "invokeMethod()".(»Èê
+r
+java:S3252{"UUse static access with "org.apache.commons.lang3.StringUtils" for "equalsIgnoreCase".(‘Ø½¡8¨—”º².
+[	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(‘ôÖ·
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Åôš üÿÿÿÿ
+b
+java:S2259%"L"NullPointerException" will be thrown when invoking method "invokeMethod()".(»Èê
+|
+java:S11301"fRemove the declaration of thrown exception 'java.lang.SecurityException' which is a runtime exception.(»«°Ó
+u
+java:S3252T"XUse static access with "org.apache.commons.lang3.StringUtils" for "substringBeforeLast".(Éõã‚8¨—”º².
+w
+java:S3252k"UUse static access with "org.apache.commons.lang3.StringUtils" for "substringBetween".(ýœ·øÿÿÿÿ8¨—”º².
+P
+java:S1118":Add a private constructor to hide the implicit public one.(ïâª´
+N
+java:S1874$"3Remove this use of "newInstance"; it is deprecated.(ŠêþÌøÿÿÿÿ
+E
+java:S1905°")Remove this unnecessary cast to "Object".(„Æ¿Ïøÿÿÿÿ
+i
+java:S3252x"LUse static access with "org.apache.commons.lang3.StringUtils" for "replace".(ž·½8¨—”º².
+h
+java:S3252{"KUse static access with "org.apache.commons.lang3.StringUtils" for "equals".(‘Ø½¡8¨—”º².
+y
+java:S3252`"WUse static access with "org.apache.commons.lang3.StringUtils" for "substringAfterLast".(‰í”¼ýÿÿÿÿ8¨—”º².
+Y
+java:S11554">Use isEmpty() to check whether the collection is empty or not.(ð…–Æùÿÿÿÿ

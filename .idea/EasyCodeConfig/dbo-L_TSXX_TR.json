@@ -1,0 +1,31 @@
+{
+  "name" : "LTsxxTr",
+  "comment" : null,
+  "fullColumn" : [ {
+    "name" : "xh",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "eventype",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jlsj",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "com.RealLis.dataSync.mapper",
+  "savePath" : "./RealLis-dataSync/src/main/resources/mapper/dataSync",
+  "saveModelName" : "RealLis-dataSync"
+}

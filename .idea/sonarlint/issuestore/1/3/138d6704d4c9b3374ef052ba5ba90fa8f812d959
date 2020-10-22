@@ -1,0 +1,10 @@
+
+d
+java:S1128"BRemove this unused import 'com.RealLis.common.enums.BusinessType'.(ø¾ğ„şÿÿÿÿ8Œ¾º².
+o
+java:S2293B"YReplace the type specification in this constructor call with the diamond operator ("<>").(« ğğ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(‡¼¢Úøÿÿÿÿ
+o
+java:S1128"RRemove this unused import 'org.apache.shiro.authz.annotation.RequiresPermissions'.(ëÇ«º8 ì™¼².
+S
+java:S1128"6Remove this unused import 'javax.annotation.Resource'.(î¾Ì—8°Ë¾º².

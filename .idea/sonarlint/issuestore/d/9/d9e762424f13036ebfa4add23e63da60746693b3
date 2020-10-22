@@ -1,0 +1,8 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¢ú§‰øÿÿÿÿ8µ¥Ð½³.
+n
+java:S1128"LRemove this unused import 'org.springframework.scheduling.annotation.Async'.(Ýë€Ûúÿÿÿÿ8†õ²ä´.
+i	java:S101	"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(€Ï¢ª8µ¥Ð½³.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(˜Š¿Ûüÿÿÿÿ8µ¥Ð½³.
+}
+java:S1488"`Immediately return this expression instead of assigning it to the temporary variable "response".(Øµç…8µ¥Ð½³.

@@ -1,0 +1,91 @@
+
+m	java:S117A"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ÈÌ‹8ÕÙÚğ¸.
+Y	java:S125Ó"<This block of commented-out lines of code should be removed.(´¢¾°8‹Õ©ì».
+p	java:S100Ì"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ü«Ôøıÿÿÿÿ8‹Õ©ì».
+f
+java:S1854"HRemove this useless assignment to local variable "viLisBarcodeInfoList".(êäëİ8‹Õ©ì».
+\
+java:S1155…">Use isEmpty() to check whether the collection is empty or not.(£ëù‘8‹Õ©ì».
+Q
+java:S1128"4Remove this unused import 'org.slf4j.LoggerFactory'.(–ÿÚŞ8ÕÙÚğ¸.
+a
+java:S1155ú">Use isEmpty() to check whether the collection is empty or not.(áí¼Ğıÿÿÿÿ8‹Õ©ì».
+]	java:S125P"<This block of commented-out lines of code should be removed.(ı´üßüÿÿÿÿ8ú˜´ì».
+?
+java:S1643ˆ"Use a StringBuilder instead.(—½Êúıÿÿÿÿ8‹Õ©ì».
+p	java:S100ú"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ç…Ñğùÿÿÿÿ8‹Õ©ì».
+^	java:S125Õ"<This block of commented-out lines of code should be removed.(Ô—šáûÿÿÿÿ8‹Õ©ì».
+:
+java:S1643¶"Use a StringBuilder instead.(µçé×8‹Õ©ì».
+_
+java:S3457¡"AFormat specifiers should be used instead of string concatenation.(…Çã¤8‹Õ©ì».
+q
+java:S1192I"ODefine a constant instead of duplicating this literal "departmentName" 4 times.(üâ‘µşÿÿÿÿ8Ç‡ïÀ¹.
+[	java:S106Ç"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ8‹Õ©ì».
+u
+java:S3776ˆ"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ÙĞü„şÿÿÿÿ8‹Õ©ì».
+p
+java:S1128"SRemove this unused import 'com.RealLis.specimenInhos.domain.ReturnAudit.auditBody'.(İ…ÕĞ8Õù³š¸.
+^	java:S125ó"<This block of commented-out lines of code should be removed.(ÀŸßÃüÿÿÿÿ8‹Õ©ì».
+I
+java:S1128"-Remove this unused import 'org.slf4j.Logger'.(íØ®68Õù³š¸.
+j	java:S100s"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ŠÁğ€8‹Õ©ì».
+e
+java:S1192K"HDefine a constant instead of duplicating this literal "isInhos" 3 times.(‹¥Ø8ùğÀ¹.
+u
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ûÑñ€ÿÿÿÿÿ8‹Õ©ì».
+p
+java:S3776Ä"RRefactor this method to reduce its Cognitive Complexity from 42 to the 15 allowed.(›í’8‹Õ©ì».
+l
+java:S1192L"JDefine a constant instead of duplicating this literal "operation" 4 times.(â¥Çÿÿÿÿÿ8³Üó‘º.
+:
+java:S1643“"Use a StringBuilder instead.(ÉëºÖ8‹Õ©ì».
+U
+java:S2629¥"7Use the built-in formatting to construct this argument.(ëšë»8‹Õ©ì».
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(½åŠß8Õù³š¸.
+s	java:S117»"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä¹¬¨ÿÿÿÿÿ8‹Õ©ì».
+^
+java:S1854ƒ";Remove this useless assignment to local variable "packing".(Å¿’—ıÿÿÿÿ8‹Õ©ì».
+k	java:S100ƒ"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ïúß8‹Õ©ì».
+u
+java:S3776Ï"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(ú¯Ûùÿÿÿÿ8‹Õ©ì».
+
+java:S2629ß"\Invoke method(s) only conditionally. Use the built-in formatting to construct this argument.(âĞû¡ùÿÿÿÿ8‹Õ©ì».
+w
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(êäëİ8‹Õ©ì».
+=
+java:S3751Ì"Make this method "public".(ü«Ôøıÿÿÿÿ8‹Õ©ì».
+]	java:S125X"<This block of commented-out lines of code should be removed.(Ã¤üûÿÿÿÿ8ú˜´ì».
+:
+java:S1643ı"Use a StringBuilder instead.(µçé×8‹Õ©ì».
+V	java:S106Ş"9Replace this use of System.out or System.err by a logger.(ÃÓÖ8‹Õ©ì».
+Y	java:S125ç"<This block of commented-out lines of code should be removed.(ÎÆ¤İ8‹Õ©ì».
+?
+java:S1643Ö"Use a StringBuilder instead.(ä‘Ğûÿÿÿÿ8‹Õ©ì».
+a
+java:S1155´">Use isEmpty() to check whether the collection is empty or not.(áí¼Ğıÿÿÿÿ8‹Õ©ì».
+_
+java:S3457¥"AFormat specifiers should be used instead of string concatenation.(ëšë»8‹Õ©ì».
+X
+java:S1128";Remove this unused import 'org.apache.poi.util.StringUtil'.(¹·ê8’Ùğ¸.
+U
+java:S2629¡"7Use the built-in formatting to construct this argument.(…Çã¤8‹Õ©ì».
+?
+java:S1643Á"Use a StringBuilder instead.(—½Êúıÿÿÿÿ8‹Õ©ì».
+M
+java:S1066Ê"/Merge this if statement with the enclosing one.(ŒşÌü8‹Õ©ì».
+|
+java:S2293¸"YReplace the type specification in this constructor call with the diamond operator ("<>").(§»Ëúÿÿÿÿ8‹Õ©ì».
+\
+java:S1155¾">Use isEmpty() to check whether the collection is empty or not.(£ëù‘8‹Õ©ì».
+d
+java:S3457ß"AFormat specifiers should be used instead of string concatenation.(âĞû¡ùÿÿÿÿ8‹Õ©ì».
+w
+java:S2293Â"YReplace the type specification in this constructor call with the diamond operator ("<>").(şÚËê8‹Õ©ì».
+Y	java:S125î"<This block of commented-out lines of code should be removed.(¯ÓüÓ8‹Õ©ì».
+\
+java:S1155‘">Use isEmpty() to check whether the collection is empty or not.(ëÎº8‹Õ©ì».
+[	java:S106™"9Replace this use of System.out or System.err by a logger.(®ıáëûÿÿÿÿ8‹Õ©ì».
+h
+java:S1192W"KDefine a constant instead of duplicating this literal "department" 3 times.(œ‘°£8‹Ù´ì».
+]	java:S125J"<This block of commented-out lines of code should be removed.(ßÃËüùÿÿÿÿ8‹Ù´ì».

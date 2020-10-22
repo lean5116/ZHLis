@@ -1,0 +1,27 @@
+
+`	java:S112Q"FDefine and throw a dedicated exception instead of using a generic one.(èİšÙüÿÿÿÿ
+S
+java:S1155E">Use isEmpty() to check whether the collection is empty or not.( ¤n
+Y
+java:S1155K">Use isEmpty() to check whether the collection is empty or not.(Ä‚Ò¹ıÿÿÿÿ
+P
+java:S1141:"5Extract this nested try block into a separate method.(ç£êúÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¯ì’½ùÿÿÿÿ
+>
+java:S1148@"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+>
+java:S1148V"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+n
+java:S3305!"XInject this field value directly into "sqlSessionFactory", the only method that uses it.(«ª“ø
+h
+java:S3776%"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(™”»
+P
+java:S1905'":Remove this unnecessary cast to "ResourcePatternResolver".(ºİÎ½
+t
+java:S2293)"YReplace the type specification in this constructor call with the diamond operator ("<>").(Èûÿÿÿÿÿÿ
+o
+java:S2293."YReplace the type specification in this constructor call with the diamond operator ("<>").(Ä„ƒ
+o
+java:S2293G"YReplace the type specification in this constructor call with the diamond operator ("<>").(ïµ¼û
+F
+java:S1905M"+Remove this unnecessary cast to "String[]".(ğÏ³äúÿÿÿÿ

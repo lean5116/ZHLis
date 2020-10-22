@@ -1,0 +1,38 @@
+
+Ujavascript:S1481L"4Remove the declaration of the unused 'raw' variable.(·şòøşÿÿÿÿ
+Jjavascript:S1117V".'plot' is already declared in the upper scope.(×£ê
+Mjavascript:S1117V"1'options' is already declared in the upper scope.(×£ê
+Jjavascript:S1117{".'plot' is already declared in the upper scope.(ÍÕÜù
+Rjavascript:S1117}"1'options' is already declared in the upper scope.(âùá¤ÿÿÿÿÿ
+Bjavascript:S1481ˆ"%Remove unused function 'alertObject'.(ıºÿ‘
+Ojavascript:S1117‹"-'obj' is already declared in the upper scope.(Á‡ûˆÿÿÿÿÿ
+Pjavascript:S1117­".'plot' is already declared in the upper scope.(İ¢«ûùÿÿÿÿ
+Pjavascript:S1117".'plot' is already declared in the upper scope.(…ºùáşÿÿÿÿ
+9javascript:S2814Â"'radius' is already defined.(ÛßãÈ
+9javascript:S2814ä"'radius' is already defined.(ÛßãÈ
+9javascript:S2814ú"'i' is already defined.(ÉÏ”ùûÿÿÿÿ
+Xjavascript:S1117¨"6'currentAngle' is already declared in the upper scope.(ÕòÌ¡ûÿÿÿÿ
+Rjavascript:S1117¬"0'radius' is already declared in the upper scope.(öÛïÙùÿÿÿÿ
+>javascript:S2814®"'radius' is already defined.(ı«Ûÿüÿÿÿÿ
+Mjavascript:S1117°"+'i' is already declared in the upper scope.(ÉÏ”ùûÿÿÿÿ
+Sjavascript:S1117"1'options' is already declared in the upper scope.(’–º—ûÿÿÿÿ
+Pjavascript:S1117˜".'plot' is already declared in the upper scope.(ïê’÷ûÿÿÿÿ
+Sjavascript:S1117›"1'options' is already declared in the upper scope.(âùá¤ÿÿÿÿÿ
+{javascript:S2703°"YAdd the "let", "const" or "var" keyword to this declaration of "p3Y" to make it explicit.(•“í‘ıÿÿÿÿ
+ujavascript:S2703“"YAdd the "let", "const" or "var" keyword to this declaration of "ctx" to make it explicit.(ô·Ö
+vjavascript:S2703²"YAdd the "let", "const" or "var" keyword to this declaration of "p4Y" to make it explicit.(¡ìšë
+{javascript:S2703¶"^Add the "let", "const" or "var" keyword to this declaration of "arrPoint" to make it explicit.(á¬õà
+{javascript:S2703±"YAdd the "let", "const" or "var" keyword to this declaration of "p4X" to make it explicit.(¡ş§øÿÿÿÿ
+zjavascript:S2703µ"]Add the "let", "const" or "var" keyword to this declaration of "arrPoly" to make it explicit.(×şã
+{javascript:S2703¯"YAdd the "let", "const" or "var" keyword to this declaration of "p3X" to make it explicit.(à„î©ûÿÿÿÿ
+yjavascript:S2703"WAdd the "let", "const" or "var" keyword to this declaration of "y" to make it explicit.(ÛúŸÈüÿÿÿÿ
+{javascript:S2703­"YAdd the "let", "const" or "var" keyword to this declaration of "p2X" to make it explicit.(ŠûÄ—şÿÿÿÿ
+vjavascript:S2703³"YAdd the "let", "const" or "var" keyword to this declaration of "p5X" to make it explicit.(™ãß³
+vjavascript:S2703®"YAdd the "let", "const" or "var" keyword to this declaration of "p2Y" to make it explicit.(½º»¦
+yjavascript:S2703"WAdd the "let", "const" or "var" keyword to this declaration of "x" to make it explicit.(‰Â–³üÿÿÿÿ
+~javascript:S2703ë"aAdd the "let", "const" or "var" keyword to this declaration of "innerRadius" to make it explicit.(¦úè£
+{javascript:S2703´"YAdd the "let", "const" or "var" keyword to this declaration of "p5Y" to make it explicit.(õ´–¬øÿÿÿÿ
+yjavascript:S2703¤"WAdd the "let", "const" or "var" keyword to this declaration of "i" to make it explicit.(½è”şÿÿÿÿ
+{javascript:S2703¬"YAdd the "let", "const" or "var" keyword to this declaration of "p1Y" to make it explicit.(„üë›úÿÿÿÿ
+‚javascript:S2703Ş"`Add the "let", "const" or "var" keyword to this declaration of "startAngle" to make it explicit.(¹ææäÿÿÿÿÿ
+{javascript:S2703«"YAdd the "let", "const" or "var" keyword to this declaration of "p1X" to make it explicit.(î–ÂŠúÿÿÿÿ

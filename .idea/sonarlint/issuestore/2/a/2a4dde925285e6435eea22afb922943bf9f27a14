@@ -1,0 +1,11 @@
+
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(–¾Ğ¹
+`
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(œó‘úÿÿÿÿÿ
+i
+java:S1192"SDefine a constant instead of duplicating this literal "http://tempuri.org" 3 times.(–¾Ğ¹
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(áˆÚŒ
+[
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(òäßñ
+h	java:S100W"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”»áùÿÿÿÿ

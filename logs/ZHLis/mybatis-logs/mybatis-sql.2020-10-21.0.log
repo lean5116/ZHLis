@@ -1,0 +1,94 @@
+restartedMain|2020-10-21 13:13:50.370|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\HisAdviceMapper.class]
+restartedMain|2020-10-21 13:13:50.374|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\LLoginsticsMapper.class]
+restartedMain|2020-10-21 13:13:50.374|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\LSampletypeMapper.class]
+restartedMain|2020-10-21 13:13:50.375|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\LjytmxxMapper.class]
+restartedMain|2020-10-21 13:13:50.375|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\ReportPostBackMapper.class]
+restartedMain|2020-10-21 13:13:50.375|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\ReturnAuditMapper.class]
+restartedMain|2020-10-21 13:13:50.375|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\ViLisAdviseHerenMapper.class]
+restartedMain|2020-10-21 13:13:50.375|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\ViLisBarcodeInfoMapper.class]
+restartedMain|2020-10-21 13:13:50.376|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\com\RealLis\dataSync\mapper\LTsmxMapper.class]
+restartedMain|2020-10-21 13:13:50.376|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\com\RealLis\dataSync\mapper\LTsxxHisMapper.class]
+restartedMain|2020-10-21 13:13:50.376|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\com\RealLis\dataSync\mapper\LTsxxLisMapper.class]
+restartedMain|2020-10-21 13:13:50.376|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\com\RealLis\dataSync\mapper\LTsxxTrMapper.class]
+restartedMain|2020-10-21 13:13:50.376|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-quartz\target\classes\com\RealLis\quartz\mapper\SysJobLogMapper.class]
+restartedMain|2020-10-21 13:13:50.377|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-quartz\target\classes\com\RealLis\quartz\mapper\SysJobMapper.class]
+restartedMain|2020-10-21 13:13:50.377|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'hisAdviceMapper' and 'com.RealLis.specimenInhos.mapper.HisAdviceMapper' mapperInterface
+restartedMain|2020-10-21 13:13:50.379|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'hisAdviceMapper'.
+restartedMain|2020-10-21 13:13:50.380|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LLoginsticsMapper' and 'com.RealLis.specimenInhos.mapper.LLoginsticsMapper' mapperInterface
+restartedMain|2020-10-21 13:13:50.380|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LLoginsticsMapper'.
+restartedMain|2020-10-21 13:13:50.380|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LSampletypeMapper' and 'com.RealLis.specimenInhos.mapper.LSampletypeMapper' mapperInterface
+restartedMain|2020-10-21 13:13:50.381|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LSampletypeMapper'.
+restartedMain|2020-10-21 13:13:50.381|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'ljytmxxMapper' and 'com.RealLis.specimenInhos.mapper.LjytmxxMapper' mapperInterface
+restartedMain|2020-10-21 13:13:50.381|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'ljytmxxMapper'.
+restartedMain|2020-10-21 13:13:50.381|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'reportPostBackMapper' and 'com.RealLis.specimenInhos.mapper.ReportPostBackMapper' mapperInterface
+restartedMain|2020-10-21 13:13:50.381|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'reportPostBackMapper'.
+restartedMain|2020-10-21 13:13:50.382|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'returnAuditMapper' and 'com.RealLis.specimenInhos.mapper.ReturnAuditMapper' mapperInterface
+restartedMain|2020-10-21 13:13:50.382|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'returnAuditMapper'.
+restartedMain|2020-10-21 13:13:50.382|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'viLisAdviseHerenMapper' and 'com.RealLis.specimenInhos.mapper.ViLisAdviseHerenMapper' mapperInterface
+restartedMain|2020-10-21 13:13:50.383|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'viLisAdviseHerenMapper'.
+restartedMain|2020-10-21 13:13:50.383|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'viLisBarcodeInfoMapper' and 'com.RealLis.specimenInhos.mapper.ViLisBarcodeInfoMapper' mapperInterface
+restartedMain|2020-10-21 13:13:50.384|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'viLisBarcodeInfoMapper'.
+restartedMain|2020-10-21 13:13:50.384|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LTsmxMapper' and 'com.RealLis.dataSync.mapper.LTsmxMapper' mapperInterface
+restartedMain|2020-10-21 13:13:50.384|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LTsmxMapper'.
+restartedMain|2020-10-21 13:13:50.384|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LTsxxHisMapper' and 'com.RealLis.dataSync.mapper.LTsxxHisMapper' mapperInterface
+restartedMain|2020-10-21 13:13:50.384|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LTsxxHisMapper'.
+restartedMain|2020-10-21 13:13:50.385|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LTsxxLisMapper' and 'com.RealLis.dataSync.mapper.LTsxxLisMapper' mapperInterface
+restartedMain|2020-10-21 13:13:50.385|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LTsxxLisMapper'.
+restartedMain|2020-10-21 13:13:50.385|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LTsxxTrMapper' and 'com.RealLis.dataSync.mapper.LTsxxTrMapper' mapperInterface
+restartedMain|2020-10-21 13:13:50.385|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LTsxxTrMapper'.
+restartedMain|2020-10-21 13:13:50.385|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'sysJobLogMapper' and 'com.RealLis.quartz.mapper.SysJobLogMapper' mapperInterface
+restartedMain|2020-10-21 13:13:50.385|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'sysJobLogMapper'.
+restartedMain|2020-10-21 13:13:50.386|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'sysJobMapper' and 'com.RealLis.quartz.mapper.SysJobMapper' mapperInterface
+restartedMain|2020-10-21 13:13:50.386|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'sysJobMapper'.
+restartedMain|2020-10-21 13:13:52.360|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.ReturnAudit' for aliases
+restartedMain|2020-10-21 13:13:52.361|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.reportPostBack' for aliases
+restartedMain|2020-10-21 13:13:52.363|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.packageORC' for aliases
+restartedMain|2020-10-21 13:13:52.366|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack' for aliases
+restartedMain|2020-10-21 13:13:52.368|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.reportPostBack.packageOBX' for aliases
+restartedMain|2020-10-21 13:13:52.369|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.packagePID' for aliases
+restartedMain|2020-10-21 13:13:52.370|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.packagePV1' for aliases
+restartedMain|2020-10-21 13:13:52.372|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.packageOBR' for aliases
+restartedMain|2020-10-21 13:13:52.376|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain' for aliases
+restartedMain|2020-10-21 13:13:52.377|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.packageOBX' for aliases
+restartedMain|2020-10-21 13:13:52.379|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.germReportPostBack' for aliases
+restartedMain|2020-10-21 13:13:52.380|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.dataSync.domain' for aliases
+restartedMain|2020-10-21 13:13:52.381|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.common.core.domain' for aliases
+restartedMain|2020-10-21 13:13:52.382|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.web.controller.demo.domain' for aliases
+restartedMain|2020-10-21 13:13:52.383|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.quartz.domain' for aliases
+restartedMain|2020-10-21 13:13:52.384|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.packageZMIC' for aliases
+restartedMain|2020-10-21 13:13:52.442|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed configuration file: 'class path resource [mybatis/mybatis-config.xml]'
+restartedMain|2020-10-21 13:13:52.480|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\HisAdviceMapper.xml]'
+restartedMain|2020-10-21 13:13:52.496|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\LJytmxxMapper.xml]'
+restartedMain|2020-10-21 13:13:52.528|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\LLogisticsMapper.xml]'
+restartedMain|2020-10-21 13:13:52.534|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\LSampletypeMapper.xml]'
+restartedMain|2020-10-21 13:13:52.557|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\ReportPostBackMapper.xml]'
+restartedMain|2020-10-21 13:13:52.562|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\ReturnAuditMapper.xml]'
+restartedMain|2020-10-21 13:13:52.568|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\ViLisAdviseHerenMapper.xml]'
+restartedMain|2020-10-21 13:13:52.580|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\ViLisBarcodeInfoMapper.xml]'
+restartedMain|2020-10-21 13:13:52.590|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\mapper\dataSync\LTsmxMapper.xml]'
+restartedMain|2020-10-21 13:13:52.600|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\mapper\dataSync\LTsxxHisMapper.xml]'
+restartedMain|2020-10-21 13:13:52.610|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\mapper\dataSync\LTsxxLisMapper.xml]'
+restartedMain|2020-10-21 13:13:52.617|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\mapper\dataSync\LTsxxTrMapper.xml]'
+restartedMain|2020-10-21 13:13:52.629|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-quartz\target\classes\mapper\quartz\SysJobLogMapper.xml]'
+restartedMain|2020-10-21 13:13:52.637|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-quartz\target\classes\mapper\quartz\SysJobMapper.xml]'
+restartedMain|2020-10-21 13:13:54.054|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+restartedMain|2020-10-21 13:13:54.058|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@136d2c6e] was not registered for synchronization because synchronization is not active
+restartedMain|2020-10-21 13:13:54.065|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@13ced0d4] will not be managed by Spring
+restartedMain|2020-10-21 13:13:54.067|DEBUG|m.c.R.q.m.SysJobMapper.selectJobAll|==>  Preparing: select job_id, job_name, job_group, invoke_target, cron_expression, misfire_policy, concurrent, status, create_by, create_time, remark from sys_job 
+restartedMain|2020-10-21 13:13:54.078|DEBUG|m.c.R.q.m.SysJobMapper.selectJobAll|==> Parameters: 
+restartedMain|2020-10-21 13:13:54.097|DEBUG|m.c.R.q.m.SysJobMapper.selectJobAll|<==      Total: 2
+restartedMain|2020-10-21 13:13:54.098|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@136d2c6e]
+LeanScheduler_Worker-1|2020-10-21 13:13:59.034|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-1|2020-10-21 13:13:59.037|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3bdd9201] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-1|2020-10-21 13:13:59.039|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@44fed34e] will not be managed by Spring
+LeanScheduler_Worker-1|2020-10-21 13:13:59.039|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-1|2020-10-21 13:13:59.040|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-1|2020-10-21 13:13:59.041|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 0
+LeanScheduler_Worker-1|2020-10-21 13:13:59.042|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3bdd9201]
+LeanScheduler_Worker-2|2020-10-21 13:14:00.025|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-2|2020-10-21 13:14:00.026|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6bb520ff] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-2|2020-10-21 13:14:00.026|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@44fed34e] will not be managed by Spring
+LeanScheduler_Worker-2|2020-10-21 13:14:00.026|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-2|2020-10-21 13:14:00.027|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-2|2020-10-21 13:14:00.028|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 0
+LeanScheduler_Worker-2|2020-10-21 13:14:00.028|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6bb520ff]

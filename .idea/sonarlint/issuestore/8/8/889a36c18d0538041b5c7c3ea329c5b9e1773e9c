@@ -1,0 +1,18 @@
+
+n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(—˜¦Áıÿÿÿÿ8£„Óå².
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒòÿù8Ñç§å².
+l	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(†ÌÆ^8Ñç§å².
+u	java:S116"TRename this field "TradeCode" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¸öÿ§ÿÿÿÿÿ8Ñç§å².
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¤Ø¤…
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÇııÿÿÿÿ8Ñç§å².
+o	java:S116"SRename this field "HipKeyNo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ëìû…8Ñç§å².
+r	java:S117$"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼¥Âıÿÿÿÿ8Ñç§å².
+r	java:S117*"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ğ¬ãúÿÿÿÿ8Ñç§å².
+r	java:S1170"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ‚—˜üÿÿÿÿ8Ñç§å².
+p	java:S116"TRename this field "TradeTime" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(òë8Ñç§å².
+q	java:S116"URename this field "SystemCode" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(æ”¤š8Ñç§å².
+r	java:S1176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®ğÙ·úÿÿÿÿ8Ñç§å².
+s	java:S116"RRename this field "TradeNo" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆ´ Îüÿÿÿÿ8Ñç§å².
+x	java:S116"WRename this field "HospitalCode" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”»êùÿÿÿÿ8Ñç§å².
+q	java:S116
+"URename this field "BranchCode" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°İ½8Ñç§å².

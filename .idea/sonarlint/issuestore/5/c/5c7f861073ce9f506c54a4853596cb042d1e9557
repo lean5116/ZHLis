@@ -1,0 +1,6 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¯ì’½ùÿÿÿÿ
+e
+java:S3252$"JUse static access with "org.apache.commons.lang3.StringUtils" for "split".(Âñ´¦ÿÿÿÿÿ
+o
+java:S2293'"YReplace the type specification in this constructor call with the diamond operator ("<>").(Îä™š

@@ -1,0 +1,23 @@
+
+`	java:S112-"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+`	java:S112W"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+`	java:S112h"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112Î"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ
+a	java:S112Ø"FDefine and throw a dedicated exception instead of using a generic one.(°¾ÃÕûÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¬‰äüÿÿÿÿ
+A
+java:S5411ì"*Use the primitive boolean expression here.(áÆæ¶
+F
+java:S5411„"*Use the primitive boolean expression here.(õØ½¼øÿÿÿÿ
+?
+java:S1604Ú"(Make this anonymous inner class a lambda(“éŸ­
+>
+java:S1604ı"(Make this anonymous inner class a lambda(•“Å
+D
+java:S1604š"(Make this anonymous inner class a lambda(Ï¾ƒ‡ıÿÿÿÿ
+D
+java:S2447¬"-Null is returned but a "Boolean" is expected.(¥¹ï
+u
+java:S2293Ğ"YReplace the type specification in this constructor call with the diamond operator ("<>").(½áØÔùÿÿÿÿ
+P
+java:S2130Õ"9Use "Integer.parseInt" for this string-to-int conversion.(Ÿğ¸—

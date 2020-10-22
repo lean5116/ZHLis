@@ -1,0 +1,19 @@
+
+\
+java:S1126W"AReplace this if-then-else statement by a single return statement.(ê„½ÿÿÿÿÿ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Öç¢øÿÿÿÿ
+o
+java:S2293+"YReplace the type specification in this constructor call with the diamond operator ("<>").(´·ê
+7
+java:S1170"!Make this final field static too.(õ’î®
+b
+java:S2441B"LMake "Map" and its parameters serializable or don't store it in the session.(ÏÀ­Ó
+k	java:S116"VRename this field "REPEAT_TIME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õ’î®
+w	java:S116"]Rename this field "SESSION_REPEAT_KEY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İëáµÿÿÿÿÿ
+r	java:S116"XRename this field "REPEAT_PARAMS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íØ“†ùÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(íØ“†ùÿÿÿÿ
+t
+java:S2293@"YReplace the type specification in this constructor call with the diamond operator ("<>").(—‰¹âüÿÿÿÿ
+<
+java:S1170"!Make this final field static too.(İëáµÿÿÿÿÿ

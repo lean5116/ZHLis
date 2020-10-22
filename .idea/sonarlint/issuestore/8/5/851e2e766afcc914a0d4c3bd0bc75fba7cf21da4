@@ -1,0 +1,28 @@
+
+Pjavascript:S1117]"/'event' is already declared in the upper scope.(ª¤ éùÿÿÿÿ
+Kjavascript:S1117a"/'event' is already declared in the upper scope.(øÆ¼ß
+Kjavascript:S1117e"/'event' is already declared in the upper scope.(úˆ¯
+Pjavascript:S1117i"/'event' is already declared in the upper scope.(ó†„Çşÿÿÿÿ
+Ljavascript:S1117€"/'event' is already declared in the upper scope.(°–£å
+Qjavascript:S1117‰"/'event' is already declared in the upper scope.(§ÄŞşøÿÿÿÿ
+]javascript:S3516‘";Refactor this function to not always return the same value.(ß•Øşÿÿÿÿ
+Ljavascript:S1117¾"/'event' is already declared in the upper scope.(º½×´
+Mjavascript:S1117Ä"+'i' is already declared in the upper scope.(ê˜¼¿ûÿÿÿÿ
+Mjavascript:S1117Ä"+'l' is already declared in the upper scope.(ê˜¼¿ûÿÿÿÿ
+jjavascript:S1871Î"MThis branch's code block is the same as the block for the branch on line 459.(ûï®Ÿ
+]javascript:S2589¹"@This always evaluates to truthy. Consider refactoring this code.(¹¼®Ş
+Qjavascript:S1117Û"/'event' is already declared in the upper scope.(ü¥÷şúÿÿÿÿ
+Gjavascript:S1117ñ"+'i' is already declared in the upper scope.(»¶åc
+Gjavascript:S1117ñ"+'l' is already declared in the upper scope.(»¶åc
+Hjavascript:S1117‰"+'i' is already declared in the upper scope.(‡ÖÛú
+Hjavascript:S1117‰"+'l' is already declared in the upper scope.(‡ÖÛú
+Wjavascript:S3516";Refactor this function to not always return the same value.(±ñ­Y
+Wjavascript:S3516£";Refactor this function to not always return the same value.(±ñ­Y
+Qjavascript:S1117ê"/'event' is already declared in the upper scope.(Íüş€øÿÿÿÿ
+Ljavascript:S1117î"/'event' is already declared in the upper scope.(úÑëç
+Qjavascript:S1117õ"/'event' is already declared in the upper scope.(²š¢úÿÿÿÿ
+Ljavascript:S1117÷"/'event' is already declared in the upper scope.(´®İà
+Xjavascript:S1481×"6Remove the declaration of the unused 'event' variable.(öÚÎÍùÿÿÿÿ
+Ujavascript:S1854×"3Remove this useless assignment to variable "event".(öÚÎÍùÿÿÿÿ
+jjavascript:S2259Ì"HTypeError can be thrown as "targetNode" might be null or undefined here.(ÌŒ¼‘øÿÿÿÿ
+mjavascript:S2259ƒ"KTypeError can be thrown as "tmpTargetNode" might be null or undefined here.(“œŠûÿÿÿÿ
