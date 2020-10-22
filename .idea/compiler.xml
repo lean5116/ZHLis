@@ -8,11 +8,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="RealLis-main" />
+        <module name="RealLis-framework" />
         <module name="RealLis-specimenInhos" />
         <module name="RealLis-common" />
         <module name="RealLis-dataSync" />
         <module name="RealLis-quartz" />
-        <module name="RealLis-framework" />
       </profile>
     </annotationProcessing>
   </component>

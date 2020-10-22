@@ -10,6 +10,7 @@ import java.util.List;
 @Repository
 public interface ViLisBarcodeInfoMapper {
     List<ViLisBarcodeInfo> queryInfoList(ViLisBarcodeInfo viLisBarcodeInfo);
+    List<ViLisBarcodeInfo> queryInfoListWard(ViLisBarcodeInfo viLisBarcodeInfo);
     ViLisBarcodeInfo queryInfo(ViLisBarcodeInfo viLisBarcodeInfo);
     List<GyHyxm> queryHyxm();
     GyKsdm queryKsdmByKsdm(String ksdm);

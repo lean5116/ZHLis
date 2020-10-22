@@ -331,6 +331,16 @@
                 {field: 'patientid', title: '住院号'},
                 {field: 'barcode', title: '条码号', align: 'center'},
                 {
+                    field: 'departmentname', title: '病区', formatter: function (value, row, index) {
+                        return $.table.tooltip(value);
+                    }
+                },
+                {field: 'trans', title: '转', align: 'center',formatter:function (value) {
+                    if(value!=null) {
+                        return '<span class="label label-danger">' + value + '</span>';
+                    }
+                    }},
+                {
                     field: 'examname', title: '检验目的', formatter: function (value, row, index) {
                         return $.table.tooltip(value);
                     }
@@ -378,6 +388,16 @@
                 {field: 'patientid', title: '住院号', align: 'center'},
                 {field: 'barcode', title: '条码号', align: 'center'},
                 {
+                    field: 'departmentname', title: '病区', formatter: function (value, row, index) {
+                        return $.table.tooltip(value);
+                    }
+                },
+                {field: 'trans', title: '转', align: 'center',formatter:function (value) {
+                        if(value!=null) {
+                            return '<span class="label label-danger">' + value + '</span>';
+                        }
+                    }},
+                {
                     field: 'examname', title: '项目内容', formatter: function (value, row, index) {
                         return $.table.tooltip(value);
                     }
@@ -398,6 +418,16 @@
                 {field: 'patientname', title: '病人姓名'},
                 {field: 'barcode', title: '条码号', align: 'center'},
                 {
+                    field: 'departmentname', title: '病区', formatter: function (value, row, index) {
+                        return $.table.tooltip(value);
+                    }
+                },
+                {field: 'trans', title: '转', align: 'center',formatter:function (value) {
+                        if(value!=null) {
+                            return '<span class="label label-danger">' + value + '</span>';
+                        }
+                    }},
+                {
                     field: 'examname', title: '项目内容', formatter: function (value, row, index) {
                         return $.table.tooltip(value);
                     }
@@ -416,6 +446,16 @@
                 {field: 'bednum', title: '床号', align: 'center'},
                 {field: 'patientname', title: '病人姓名'},
                 {field: 'barcode', title: '条码号', align: 'center'},
+                {
+                    field: 'departmentname', title: '病区', formatter: function (value, row, index) {
+                        return $.table.tooltip(value);
+                    }
+                },
+                {field: 'trans', title: '转', align: 'center',formatter:function (value) {
+                        if(value!=null) {
+                            return '<span class="label label-danger">' + value + '</span>';
+                        }
+                    }},
                 {
                     field: 'examname', title: '项目内容', formatter: function (value, row, index) {
                         return $.table.tooltip(value);
@@ -449,6 +489,16 @@
                 {field: 'bednum', title: '床号', align: 'center'},
                 {field: 'patientname', title: '病人姓名'},
                 {field: 'barcode', title: '条码号', align: 'center'},
+                {
+                    field: 'departmentname', title: '病区', formatter: function (value, row, index) {
+                        return $.table.tooltip(value);
+                    }
+                },
+                {field: 'trans', title: '转', align: 'center',formatter:function (value) {
+                        if(value!=null) {
+                            return '<span class="label label-danger">' + value + '</span>';
+                        }
+                    }},
                 {
                     field: 'examname', title: '检验目的', formatter: function (value, row, index) {
                         return $.table.tooltip(value);
@@ -500,6 +550,12 @@
                         return $.table.tooltip(value);
                     }
                 },
+                {
+                    field: 'departmentname', title: '病区', formatter: function (value, row, index) {
+                        return $.table.tooltip(value);
+                    }
+                },
+                {field: 'trans', title: '转', align: 'center'},
                 {field: 'requettime', title: '申请时间', sortable: true},
                 {field: 'barstatus', title: '样本状态', formatter: barstatusFormatter},
                 {field: 'specimencode', title: '样本类型', align: 'center', formatter: specimencodeFormatter},

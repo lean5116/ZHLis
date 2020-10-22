@@ -8,6 +8,7 @@
         <result property="requestmode" column="REQUESTMODE"/>
         <result property="requestdoctor" column="REQUESTDOCTOR"/>
         <result property="requettime" column="REQUETTIME"/>
+        <result property="departmentname" column="DEPARTMENTNAME"/>
         <result property="department" column="DEPARTMENT"/>
         <result property="bednum" column="BEDNUM"/>
         <result property="patienttype" column="PATIENTTYPE"/>
@@ -101,6 +102,60 @@
         order by to_number(translate(BEDNUM,'0123456789'|| BEDNUM,'0123456789')),REQUETTIME
     </select>
 
+
+    <select id="queryInfoListWard" resultMap="ViLisBarcodeInfoMap"
+            parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
+        select
+        BARCODE, BARCODE2,REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID,
+        PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST,
+        COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME,
+        DIAGNOSTIC,TUBE,RECEIVEADDR,hyxm,departmentName
+        from ZHLIS.VI_LIS_BARCODE_INFO vzb
+        <where>
+            and exists (select distinct visitnumber from ZHLIS.VI_LIS_BARCODE_INFO vzbi
+            <where>
+                <if test="department!=null and department !=''">
+                    and department = #{department}
+                </if>
+                <if test="startRequettime!=null">
+                    and REQUETTIME &gt; #{startRequettime}
+                </if>
+                <if test="endRequettime!=null">
+                    and REQUETTIME &lt; #{endRequettime}
+                </if>
+                <if test="startSamplingtime!=null">
+                    and SAMPLINGTIME &gt; #{startSamplingtime}
+                </if>
+                <if test="endSamplingtime!=null">
+                    and SAMPLINGTIME &lt; #{endSamplingtime}
+                </if>
+                and vzbi.visitnumber = vzb.visitnumber
+            </where>
+            )
+            <if test="barstatus!=null and barstatus!=''">
+                and barstatus=#{barstatus}
+            </if>
+            <if test="startRequettime!=null">
+                and REQUETTIME &gt; #{startRequettime}
+            </if>
+            <if test="endRequettime!=null">
+                and REQUETTIME &lt; #{endRequettime}
+            </if>
+            <if test="startSamplingtime!=null">
+                and SAMPLINGTIME &gt; #{startSamplingtime}
+            </if>
+            <if test="endSamplingtime!=null">
+                and SAMPLINGTIME &lt; #{endSamplingtime}
+            </if>
+            <if test="sampleState!=null and sampleState !=''">
+                and Barstatus in (${sampleState})
+            </if>
+            <if test="searchValue!=null and searchValue!=''">
+                and BARCODE like concat(concat('%',#{searchValue,jdbcType=VARCHAR}),'%')
+            </if>
+        </where>
+        order by to_number(translate(BEDNUM,'0123456789'|| BEDNUM,'0123456789')),REQUETTIME
+    </select>
 
     <select id="queryInfo" resultMap="ViLisBarcodeInfoMap"
             parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">

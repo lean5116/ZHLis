@@ -13,6 +13,7 @@ public class ViLisBarcodeInfo extends BaseEntity {
   private String requestdoctor;
   private Date requettime;
   private String department;
+  private String departmentname;
   private String bednum;
   private String patienttype;
   private String patientid;
@@ -48,6 +49,7 @@ public class ViLisBarcodeInfo extends BaseEntity {
   private String receiveaddr;
   private String hyxm;
   private String departmentName;
+  private String trans;
 
   public String getDepartmentName() {
     return departmentName;
@@ -370,13 +372,30 @@ public class ViLisBarcodeInfo extends BaseEntity {
     this.sampleState = sampleState;
   }
 
+  public String getDepartmentname() {
+    return departmentname;
+  }
 
-  public ViLisBarcodeInfo(String barcode, String requestmode, String requestdoctor, Date requettime, String department, String bednum, String patienttype, String patientid, String patientname, String patientsex, Date birthday, String patientage, String ageunit, String specimencode, String barclass, String examcode, String examname, String cost, String coststatus, Date samplingtime, String samplingdoctor, Date receivertime, String labdoctor, String barstatus, String canceler, Date canceltime, String diagnostic, Date startRequettime, Date endRequettime, Date startReceivertime, Date endReceivertime, Date startSamplingtime, Date endSamplingtime, String overTime, String sampleState, String searchValue) {
+  public void setDepartmentname(String departmentname) {
+    this.departmentname = departmentname;
+  }
+
+  public String getTrans() {
+    return trans;
+  }
+
+  public void setTrans(String trans) {
+    this.trans = trans;
+  }
+
+  public ViLisBarcodeInfo(String barcode, String barcode2, String requestmode, String requestdoctor, Date requettime, String department, String departmentname, String bednum, String patienttype, String patientid, String patientname, String patientsex, Date birthday, String patientage, String ageunit, String specimencode, String barclass, String examcode, String examname, String cost, String coststatus, Date samplingtime, String samplingdoctor, Date receivertime, String labdoctor, String barstatus, String canceler, Date canceltime, String diagnostic, Date startRequettime, Date endRequettime, Date startReceivertime, Date endReceivertime, Date startSamplingtime, Date endSamplingtime, String overTime, String sampleState, String searchValue, String tube, String receiveaddr, String hyxm, String departmentName, String trans) {
     this.barcode = barcode;
+    this.barcode2 = barcode2;
     this.requestmode = requestmode;
     this.requestdoctor = requestdoctor;
     this.requettime = requettime;
     this.department = department;
+    this.departmentname = departmentname;
     this.bednum = bednum;
     this.patienttype = patienttype;
     this.patientid = patientid;
@@ -408,6 +427,11 @@ public class ViLisBarcodeInfo extends BaseEntity {
     this.overTime = overTime;
     this.sampleState = sampleState;
     this.searchValue = searchValue;
+    this.tube = tube;
+    this.receiveaddr = receiveaddr;
+    this.hyxm = hyxm;
+    this.departmentName = departmentName;
+    this.trans = trans;
   }
 
   public ViLisBarcodeInfo() {

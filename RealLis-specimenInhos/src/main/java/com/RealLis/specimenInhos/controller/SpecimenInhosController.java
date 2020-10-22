@@ -180,7 +180,6 @@ public class SpecimenInhosController extends BaseController {
         if ("overtimeBarcode".equals(tableId)) {
             logger.info("进入tabOvertimeBarcode，增加条码状态为0的数据");
             viLisBarcodeInfo.setSampleState("0,1");
-
         }
         if ("specimenLogistics".equals(tableId)) {
             LLogistics lLogistics = new LLogistics();
@@ -201,9 +200,24 @@ public class SpecimenInhosController extends BaseController {
             List<LLogistics> logisticses = lLogisticsService.getLlogisticsList(lLogistics);
             return getDataTable(logisticses);
         } else {
-            viLisBarcodeInfoList = viLisBarcodeInfoService.getInfoList(viLisBarcodeInfo);
+            String isInhos ;
+            try{
+                isInhos = viLisBarcodeInfo.getParams().get("isInhos").toString();
+            }catch (Exception e){
+                isInhos ="1";
+            }
+            if("1".equals(isInhos)){
+                viLisBarcodeInfoList = viLisBarcodeInfoService.getInfoListWard(viLisBarcodeInfo);
+                for(int i =0;i<viLisBarcodeInfoList.size();i++){
+                    if(!viLisBarcodeInfo.getDepartment().equals(viLisBarcodeInfoList.get(i).getDepartment())){
+                        viLisBarcodeInfoList.get(i).setTrans("转");
+                    }
+                }
+            }else {
+                viLisBarcodeInfoList = viLisBarcodeInfoService.getInfoList(viLisBarcodeInfo);
+            }
             if ("overtimeBarcode".equals(tableId)) {
-                List<ViLisBarcodeInfo> viLisBarcodeInfoListFilter = new ArrayList<ViLisBarcodeInfo>();
+                List<ViLisBarcodeInfo> viLisBarcodeInfoListFilter = new ArrayList<>();
                 for (ViLisBarcodeInfo viLisBarcodeInfoChildren : viLisBarcodeInfoList
                 ) {
                     Date DateNow = new Date();
