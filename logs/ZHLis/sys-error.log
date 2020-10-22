@@ -11757,3 +11757,67 @@ Consider the following:
 	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
 	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
 
+17:49:26.850 [LeanScheduler_Worker-6] ERROR c.R.s.w.s.L.LisCommonWSServiceImpl - [reportPostBack,20] - error: 0
+java.lang.ArrayIndexOutOfBoundsException: 0
+	at com.RealLis.specimenInhos.ws.service.LisCommonWS.LisCommonWSServiceImpl.reportPostBack(LisCommonWSServiceImpl.java:18)
+	at com.RealLis.quartz.task.ReportPostBackTask.ReportPostBack(ReportPostBackTask.java:243)
+	at com.RealLis.quartz.task.ReportPostBackTask.reportPostBack(ReportPostBackTask.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.RealLis.quartz.util.JobInvokeUtil.invokeMethod(JobInvokeUtil.java:60)
+	at com.RealLis.quartz.util.JobInvokeUtil.invokeMethod(JobInvokeUtil.java:32)
+	at com.RealLis.quartz.util.QuartzDisallowConcurrentExecution.doExecute(QuartzDisallowConcurrentExecution.java:17)
+	at com.RealLis.quartz.util.AbstractQuartzJob.execute(AbstractQuartzJob.java:42)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+17:49:26.850 [LeanScheduler_Worker-6] ERROR c.R.s.w.s.L.LisCommonWSServiceImpl - [reportPostBack,21] - 接口调调用错误
+17:50:26.760 [LeanScheduler_Worker-7] ERROR c.R.s.w.s.L.LisCommonWSServiceImpl - [reportPostBack,20] - error: 0
+java.lang.ArrayIndexOutOfBoundsException: 0
+	at com.RealLis.specimenInhos.ws.service.LisCommonWS.LisCommonWSServiceImpl.reportPostBack(LisCommonWSServiceImpl.java:18)
+	at com.RealLis.quartz.task.ReportPostBackTask.ReportPostBack(ReportPostBackTask.java:243)
+	at com.RealLis.quartz.task.ReportPostBackTask.reportPostBack(ReportPostBackTask.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.RealLis.quartz.util.JobInvokeUtil.invokeMethod(JobInvokeUtil.java:60)
+	at com.RealLis.quartz.util.JobInvokeUtil.invokeMethod(JobInvokeUtil.java:32)
+	at com.RealLis.quartz.util.QuartzDisallowConcurrentExecution.doExecute(QuartzDisallowConcurrentExecution.java:17)
+	at com.RealLis.quartz.util.AbstractQuartzJob.execute(AbstractQuartzJob.java:42)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+17:50:26.760 [LeanScheduler_Worker-7] ERROR c.R.s.w.s.L.LisCommonWSServiceImpl - [reportPostBack,21] - 接口调调用错误
+17:50:28.517 [LeanScheduler_Worker-8] ERROR c.R.s.w.s.L.LisCommonWSServiceImpl - [reportPostBack,20] - error: 0
+java.lang.ArrayIndexOutOfBoundsException: 0
+	at com.RealLis.specimenInhos.ws.service.LisCommonWS.LisCommonWSServiceImpl.reportPostBack(LisCommonWSServiceImpl.java:18)
+	at com.RealLis.quartz.task.ReportPostBackTask.ReportPostBack(ReportPostBackTask.java:243)
+	at com.RealLis.quartz.task.ReportPostBackTask.reportPostBack(ReportPostBackTask.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.RealLis.quartz.util.JobInvokeUtil.invokeMethod(JobInvokeUtil.java:60)
+	at com.RealLis.quartz.util.JobInvokeUtil.invokeMethod(JobInvokeUtil.java:32)
+	at com.RealLis.quartz.util.QuartzDisallowConcurrentExecution.doExecute(QuartzDisallowConcurrentExecution.java:17)
+	at com.RealLis.quartz.util.AbstractQuartzJob.execute(AbstractQuartzJob.java:42)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+17:50:28.517 [LeanScheduler_Worker-8] ERROR c.R.s.w.s.L.LisCommonWSServiceImpl - [reportPostBack,21] - 接口调调用错误
+17:50:59.690 [LeanScheduler_Worker-9] ERROR c.R.s.w.s.L.LisCommonWSServiceImpl - [reportPostBack,20] - error: 0
+java.lang.ArrayIndexOutOfBoundsException: 0
+	at com.RealLis.specimenInhos.ws.service.LisCommonWS.LisCommonWSServiceImpl.reportPostBack(LisCommonWSServiceImpl.java:18)
+	at com.RealLis.quartz.task.ReportPostBackTask.ReportPostBack(ReportPostBackTask.java:243)
+	at com.RealLis.quartz.task.ReportPostBackTask.reportPostBack(ReportPostBackTask.java:56)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at com.RealLis.quartz.util.JobInvokeUtil.invokeMethod(JobInvokeUtil.java:60)
+	at com.RealLis.quartz.util.JobInvokeUtil.invokeMethod(JobInvokeUtil.java:32)
+	at com.RealLis.quartz.util.QuartzDisallowConcurrentExecution.doExecute(QuartzDisallowConcurrentExecution.java:17)
+	at com.RealLis.quartz.util.AbstractQuartzJob.execute(AbstractQuartzJob.java:42)
+	at org.quartz.core.JobRunShell.run(JobRunShell.java:202)
+	at org.quartz.simpl.SimpleThreadPool$WorkerThread.run(SimpleThreadPool.java:573)
+17:50:59.690 [LeanScheduler_Worker-9] ERROR c.R.s.w.s.L.LisCommonWSServiceImpl - [reportPostBack,21] - 接口调调用错误

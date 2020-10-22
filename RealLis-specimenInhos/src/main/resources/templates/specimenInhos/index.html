@@ -930,11 +930,6 @@
                         for (let i = 0; i < barcode.length; i++) {
                             var data = $('#' + tableId).bootstrapTable('getRowByUniqueId', barcode[i]);
                             if (data != null) {
-                                JsBarcode("#imgCode", data.barcode, {
-                                    format: "CODE128",
-                                    width: 4,
-                                    height: 150
-                                });
                                 queryBarcodeSearch(currentTableId);
                                 LODOP = getLodop();
                                 LODOP.SET_PRINT_PAGESIZE(1, 500, 300, "CreateCustomPage");
@@ -992,10 +987,6 @@
         var data = getSelections("specimenLogistics");
         let i = 0;
         for (i = 0; i < data.length; i++) {
-            JsBarcode("#imgCodelogistics", data[i].wlbh, {
-                format: "CODE128",
-                width: 3,
-            });
             LODOP = getLodop();
             LODOP.SET_PRINT_PAGESIZE(1, 500, 300, "CreateCustomPage");
             LODOP.SET_PRINT_STYLE("FontSize", 9);

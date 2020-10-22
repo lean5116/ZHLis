@@ -13,6 +13,7 @@
     <file url="file://$PROJECT_DIR$/RealLis-quartz/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/controller/SpecimenInhosController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/service/LisCommonWS/LisCommonWSService.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/herenLisBarcode/UfPack.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/GetQueueNo.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/RealLis-specimenInhos/src/main/java/com/RealLis/specimenInhos/ws/wsdl/zhlisWsHerenLet/GetQueueNoResponse.java" charset="GBK" />

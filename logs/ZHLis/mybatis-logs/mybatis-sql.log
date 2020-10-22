@@ -13977,3 +13977,992 @@ LeanScheduler_Worker-20|2020-10-22 17:09:00.014|DEBUG|m.c.R.s.m.R.queryPostList|
 LeanScheduler_Worker-20|2020-10-22 17:09:00.014|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
 LeanScheduler_Worker-20|2020-10-22 17:09:00.015|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 0
 LeanScheduler_Worker-20|2020-10-22 17:09:00.015|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c380d5a]
+restartedMain|2020-10-22 17:42:14.597|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\HisAdviceMapper.class]
+restartedMain|2020-10-22 17:42:14.598|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\LLoginsticsMapper.class]
+restartedMain|2020-10-22 17:42:14.598|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\LSampletypeMapper.class]
+restartedMain|2020-10-22 17:42:14.598|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\LjytmxxMapper.class]
+restartedMain|2020-10-22 17:42:14.599|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\ReportPostBackMapper.class]
+restartedMain|2020-10-22 17:42:14.599|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\ReturnAuditMapper.class]
+restartedMain|2020-10-22 17:42:14.599|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\ViLisAdviseHerenMapper.class]
+restartedMain|2020-10-22 17:42:14.599|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\ViLisBarcodeInfoMapper.class]
+restartedMain|2020-10-22 17:42:14.599|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\com\RealLis\dataSync\mapper\LTsmxMapper.class]
+restartedMain|2020-10-22 17:42:14.599|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\com\RealLis\dataSync\mapper\LTsxxHisMapper.class]
+restartedMain|2020-10-22 17:42:14.600|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\com\RealLis\dataSync\mapper\LTsxxLisMapper.class]
+restartedMain|2020-10-22 17:42:14.600|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\com\RealLis\dataSync\mapper\LTsxxTrMapper.class]
+restartedMain|2020-10-22 17:42:14.600|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-quartz\target\classes\com\RealLis\quartz\mapper\SysJobLogMapper.class]
+restartedMain|2020-10-22 17:42:14.600|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-quartz\target\classes\com\RealLis\quartz\mapper\SysJobMapper.class]
+restartedMain|2020-10-22 17:42:14.601|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'hisAdviceMapper' and 'com.RealLis.specimenInhos.mapper.HisAdviceMapper' mapperInterface
+restartedMain|2020-10-22 17:42:14.602|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'hisAdviceMapper'.
+restartedMain|2020-10-22 17:42:14.602|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LLoginsticsMapper' and 'com.RealLis.specimenInhos.mapper.LLoginsticsMapper' mapperInterface
+restartedMain|2020-10-22 17:42:14.602|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LLoginsticsMapper'.
+restartedMain|2020-10-22 17:42:14.602|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LSampletypeMapper' and 'com.RealLis.specimenInhos.mapper.LSampletypeMapper' mapperInterface
+restartedMain|2020-10-22 17:42:14.603|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LSampletypeMapper'.
+restartedMain|2020-10-22 17:42:14.603|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'ljytmxxMapper' and 'com.RealLis.specimenInhos.mapper.LjytmxxMapper' mapperInterface
+restartedMain|2020-10-22 17:42:14.603|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'ljytmxxMapper'.
+restartedMain|2020-10-22 17:42:14.603|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'reportPostBackMapper' and 'com.RealLis.specimenInhos.mapper.ReportPostBackMapper' mapperInterface
+restartedMain|2020-10-22 17:42:14.603|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'reportPostBackMapper'.
+restartedMain|2020-10-22 17:42:14.603|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'returnAuditMapper' and 'com.RealLis.specimenInhos.mapper.ReturnAuditMapper' mapperInterface
+restartedMain|2020-10-22 17:42:14.603|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'returnAuditMapper'.
+restartedMain|2020-10-22 17:42:14.604|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'viLisAdviseHerenMapper' and 'com.RealLis.specimenInhos.mapper.ViLisAdviseHerenMapper' mapperInterface
+restartedMain|2020-10-22 17:42:14.604|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'viLisAdviseHerenMapper'.
+restartedMain|2020-10-22 17:42:14.604|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'viLisBarcodeInfoMapper' and 'com.RealLis.specimenInhos.mapper.ViLisBarcodeInfoMapper' mapperInterface
+restartedMain|2020-10-22 17:42:14.604|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'viLisBarcodeInfoMapper'.
+restartedMain|2020-10-22 17:42:14.604|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LTsmxMapper' and 'com.RealLis.dataSync.mapper.LTsmxMapper' mapperInterface
+restartedMain|2020-10-22 17:42:14.604|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LTsmxMapper'.
+restartedMain|2020-10-22 17:42:14.604|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LTsxxHisMapper' and 'com.RealLis.dataSync.mapper.LTsxxHisMapper' mapperInterface
+restartedMain|2020-10-22 17:42:14.605|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LTsxxHisMapper'.
+restartedMain|2020-10-22 17:42:14.605|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LTsxxLisMapper' and 'com.RealLis.dataSync.mapper.LTsxxLisMapper' mapperInterface
+restartedMain|2020-10-22 17:42:14.605|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LTsxxLisMapper'.
+restartedMain|2020-10-22 17:42:14.605|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LTsxxTrMapper' and 'com.RealLis.dataSync.mapper.LTsxxTrMapper' mapperInterface
+restartedMain|2020-10-22 17:42:14.605|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LTsxxTrMapper'.
+restartedMain|2020-10-22 17:42:14.605|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'sysJobLogMapper' and 'com.RealLis.quartz.mapper.SysJobLogMapper' mapperInterface
+restartedMain|2020-10-22 17:42:14.605|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'sysJobLogMapper'.
+restartedMain|2020-10-22 17:42:14.605|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'sysJobMapper' and 'com.RealLis.quartz.mapper.SysJobMapper' mapperInterface
+restartedMain|2020-10-22 17:42:14.606|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'sysJobMapper'.
+restartedMain|2020-10-22 17:42:16.863|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.ReturnAudit' for aliases
+restartedMain|2020-10-22 17:42:16.864|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.reportPostBack' for aliases
+restartedMain|2020-10-22 17:42:16.866|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.packageORC' for aliases
+restartedMain|2020-10-22 17:42:16.870|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack' for aliases
+restartedMain|2020-10-22 17:42:16.871|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.reportPostBack.packageOBX' for aliases
+restartedMain|2020-10-22 17:42:16.872|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.packagePID' for aliases
+restartedMain|2020-10-22 17:42:16.873|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.packagePV1' for aliases
+restartedMain|2020-10-22 17:42:16.875|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.packageOBR' for aliases
+restartedMain|2020-10-22 17:42:16.879|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain' for aliases
+restartedMain|2020-10-22 17:42:16.880|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.packageOBX' for aliases
+restartedMain|2020-10-22 17:42:16.882|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.germReportPostBack' for aliases
+restartedMain|2020-10-22 17:42:16.883|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.dataSync.domain' for aliases
+restartedMain|2020-10-22 17:42:16.884|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.common.core.domain' for aliases
+restartedMain|2020-10-22 17:42:16.885|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.web.controller.demo.domain' for aliases
+restartedMain|2020-10-22 17:42:16.885|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.quartz.domain' for aliases
+restartedMain|2020-10-22 17:42:16.886|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.packageZMIC' for aliases
+restartedMain|2020-10-22 17:42:16.922|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed configuration file: 'class path resource [mybatis/mybatis-config.xml]'
+restartedMain|2020-10-22 17:42:16.957|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\HisAdviceMapper.xml]'
+restartedMain|2020-10-22 17:42:16.970|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\LJytmxxMapper.xml]'
+restartedMain|2020-10-22 17:42:16.998|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\LLogisticsMapper.xml]'
+restartedMain|2020-10-22 17:42:17.005|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\LSampletypeMapper.xml]'
+restartedMain|2020-10-22 17:42:17.029|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\ReportPostBackMapper.xml]'
+restartedMain|2020-10-22 17:42:17.034|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\ReturnAuditMapper.xml]'
+restartedMain|2020-10-22 17:42:17.040|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\ViLisAdviseHerenMapper.xml]'
+restartedMain|2020-10-22 17:42:17.049|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\ViLisBarcodeInfoMapper.xml]'
+restartedMain|2020-10-22 17:42:17.056|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\mapper\dataSync\LTsmxMapper.xml]'
+restartedMain|2020-10-22 17:42:17.065|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\mapper\dataSync\LTsxxHisMapper.xml]'
+restartedMain|2020-10-22 17:42:17.076|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\mapper\dataSync\LTsxxLisMapper.xml]'
+restartedMain|2020-10-22 17:42:17.083|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\mapper\dataSync\LTsxxTrMapper.xml]'
+restartedMain|2020-10-22 17:42:17.094|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-quartz\target\classes\mapper\quartz\SysJobLogMapper.xml]'
+restartedMain|2020-10-22 17:42:17.102|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-quartz\target\classes\mapper\quartz\SysJobMapper.xml]'
+restartedMain|2020-10-22 17:42:18.318|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+restartedMain|2020-10-22 17:42:18.322|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1cb0d14f] was not registered for synchronization because synchronization is not active
+restartedMain|2020-10-22 17:42:18.327|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2a87bfcd] will not be managed by Spring
+restartedMain|2020-10-22 17:42:18.329|DEBUG|m.c.R.q.m.SysJobMapper.selectJobAll|==>  Preparing: select job_id, job_name, job_group, invoke_target, cron_expression, misfire_policy, concurrent, status, create_by, create_time, remark from sys_job 
+restartedMain|2020-10-22 17:42:18.338|DEBUG|m.c.R.q.m.SysJobMapper.selectJobAll|==> Parameters: 
+restartedMain|2020-10-22 17:42:18.354|DEBUG|m.c.R.q.m.SysJobMapper.selectJobAll|<==      Total: 2
+restartedMain|2020-10-22 17:42:18.355|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1cb0d14f]
+LeanScheduler_Worker-1|2020-10-22 17:42:59.032|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-1|2020-10-22 17:42:59.035|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@66b7e0be] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-1|2020-10-22 17:42:59.037|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7b6eed85] will not be managed by Spring
+LeanScheduler_Worker-1|2020-10-22 17:42:59.037|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-1|2020-10-22 17:42:59.037|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-1|2020-10-22 17:42:59.039|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 0
+LeanScheduler_Worker-1|2020-10-22 17:42:59.039|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@66b7e0be]
+LeanScheduler_Worker-2|2020-10-22 17:43:00.017|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-2|2020-10-22 17:43:00.017|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@74004aaf] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-2|2020-10-22 17:43:00.018|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7b6eed85] will not be managed by Spring
+LeanScheduler_Worker-2|2020-10-22 17:43:00.018|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-2|2020-10-22 17:43:00.018|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-2|2020-10-22 17:43:00.019|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 0
+LeanScheduler_Worker-2|2020-10-22 17:43:00.020|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@74004aaf]
+LeanScheduler_Worker-3|2020-10-22 17:43:59.017|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-3|2020-10-22 17:43:59.018|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1179a3d2] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-3|2020-10-22 17:43:59.018|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7b6eed85] will not be managed by Spring
+LeanScheduler_Worker-3|2020-10-22 17:43:59.018|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-3|2020-10-22 17:43:59.019|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-3|2020-10-22 17:43:59.020|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 0
+LeanScheduler_Worker-3|2020-10-22 17:43:59.020|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1179a3d2]
+LeanScheduler_Worker-4|2020-10-22 17:44:00.016|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-4|2020-10-22 17:44:00.016|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d717232] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-4|2020-10-22 17:44:00.017|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2a87bfcd] will not be managed by Spring
+LeanScheduler_Worker-4|2020-10-22 17:44:00.017|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-4|2020-10-22 17:44:00.017|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-4|2020-10-22 17:44:00.018|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 0
+LeanScheduler_Worker-4|2020-10-22 17:44:00.018|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5d717232]
+http-nio-20201-exec-7|2020-10-22 17:44:20.020|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+http-nio-20201-exec-7|2020-10-22 17:44:20.020|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71823977] was not registered for synchronization because synchronization is not active
+http-nio-20201-exec-7|2020-10-22 17:44:20.073|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2a87bfcd] will not be managed by Spring
+http-nio-20201-exec-7|2020-10-22 17:44:20.073|DEBUG|m.c.R.q.m.S.selectJobList_COUNT|==>  Preparing: SELECT count(0) FROM sys_job 
+http-nio-20201-exec-7|2020-10-22 17:44:20.074|DEBUG|m.c.R.q.m.S.selectJobList_COUNT|==> Parameters: 
+http-nio-20201-exec-7|2020-10-22 17:44:20.077|DEBUG|m.c.R.q.m.S.selectJobList_COUNT|<==      Total: 1
+http-nio-20201-exec-7|2020-10-22 17:44:20.084|DEBUG|m.c.R.q.m.SysJobMapper.selectJobList|==>  Preparing: SELECT * FROM ( SELECT TMP_PAGE.*, ROWNUM ROW_ID FROM ( SELECT job_id, job_name, job_group, invoke_target, cron_expression, misfire_policy, concurrent, status, create_by, create_time, remark FROM sys_job order by create_time desc ) TMP_PAGE WHERE ROWNUM <= ? ) WHERE ROW_ID > ? 
+http-nio-20201-exec-7|2020-10-22 17:44:20.087|DEBUG|m.c.R.q.m.SysJobMapper.selectJobList|==> Parameters: 10(Integer), 0(Integer)
+http-nio-20201-exec-7|2020-10-22 17:44:20.091|DEBUG|m.c.R.q.m.SysJobMapper.selectJobList|<==      Total: 2
+http-nio-20201-exec-7|2020-10-22 17:44:20.094|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@71823977]
+http-nio-20201-exec-6|2020-10-22 17:44:24.041|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+http-nio-20201-exec-6|2020-10-22 17:44:24.041|DEBUG|org.mybatis.spring.SqlSessionUtils|Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2567556a]
+http-nio-20201-exec-6|2020-10-22 17:44:24.043|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2a87bfcd] will be managed by Spring
+http-nio-20201-exec-6|2020-10-22 17:44:24.044|DEBUG|m.c.R.q.m.SysJobMapper.selectJobById|==>  Preparing: select job_id, job_name, job_group, invoke_target, cron_expression, misfire_policy, concurrent, status, create_by, create_time, remark from sys_job where job_id = ? 
+http-nio-20201-exec-6|2020-10-22 17:44:24.044|DEBUG|m.c.R.q.m.SysJobMapper.selectJobById|==> Parameters: 200(Long)
+http-nio-20201-exec-6|2020-10-22 17:44:24.046|DEBUG|m.c.R.q.m.SysJobMapper.selectJobById|<==      Total: 1
+http-nio-20201-exec-6|2020-10-22 17:44:24.047|DEBUG|org.mybatis.spring.SqlSessionUtils|Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2567556a]
+http-nio-20201-exec-6|2020-10-22 17:44:24.064|DEBUG|org.mybatis.spring.SqlSessionUtils|Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2567556a]
+http-nio-20201-exec-6|2020-10-22 17:44:24.065|DEBUG|org.mybatis.spring.SqlSessionUtils|Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2567556a]
+http-nio-20201-exec-6|2020-10-22 17:44:24.066|DEBUG|org.mybatis.spring.SqlSessionUtils|Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2567556a]
+http-nio-20201-exec-24|2020-10-22 17:44:24.084|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+http-nio-20201-exec-24|2020-10-22 17:44:24.084|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5fd12b2d] was not registered for synchronization because synchronization is not active
+http-nio-20201-exec-24|2020-10-22 17:44:24.086|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2a87bfcd] will not be managed by Spring
+http-nio-20201-exec-24|2020-10-22 17:44:24.086|DEBUG|m.c.R.q.m.S.selectJobList_COUNT|==>  Preparing: SELECT count(0) FROM sys_job 
+http-nio-20201-exec-24|2020-10-22 17:44:24.087|DEBUG|m.c.R.q.m.S.selectJobList_COUNT|==> Parameters: 
+http-nio-20201-exec-24|2020-10-22 17:44:24.089|DEBUG|m.c.R.q.m.S.selectJobList_COUNT|<==      Total: 1
+http-nio-20201-exec-24|2020-10-22 17:44:24.093|DEBUG|m.c.R.q.m.SysJobMapper.selectJobList|==>  Preparing: SELECT * FROM ( SELECT TMP_PAGE.*, ROWNUM ROW_ID FROM ( SELECT job_id, job_name, job_group, invoke_target, cron_expression, misfire_policy, concurrent, status, create_by, create_time, remark FROM sys_job order by create_time desc ) TMP_PAGE WHERE ROWNUM <= ? ) WHERE ROW_ID > ? 
+http-nio-20201-exec-24|2020-10-22 17:44:24.094|DEBUG|m.c.R.q.m.SysJobMapper.selectJobList|==> Parameters: 10(Integer), 0(Integer)
+http-nio-20201-exec-24|2020-10-22 17:44:24.097|DEBUG|m.c.R.q.m.SysJobMapper.selectJobList|<==      Total: 2
+http-nio-20201-exec-24|2020-10-22 17:44:24.097|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5fd12b2d]
+LeanScheduler_Worker-5|2020-10-22 17:44:59.014|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-5|2020-10-22 17:44:59.014|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a46e10a] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-5|2020-10-22 17:44:59.014|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@7b6eed85] will not be managed by Spring
+LeanScheduler_Worker-5|2020-10-22 17:44:59.015|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-5|2020-10-22 17:44:59.015|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-5|2020-10-22 17:44:59.016|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 0
+LeanScheduler_Worker-5|2020-10-22 17:44:59.016|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5a46e10a]
+LeanScheduler_Worker-6|2020-10-22 17:45:00.014|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:45:00.014|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30d28558] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:45:00.015|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@2a87bfcd] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:45:00.015|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-6|2020-10-22 17:45:00.015|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-6|2020-10-22 17:45:00.016|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 0
+LeanScheduler_Worker-6|2020-10-22 17:45:00.017|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@30d28558]
+restartedMain|2020-10-22 17:45:19.994|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\HisAdviceMapper.class]
+restartedMain|2020-10-22 17:45:19.995|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\LLoginsticsMapper.class]
+restartedMain|2020-10-22 17:45:19.995|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\LSampletypeMapper.class]
+restartedMain|2020-10-22 17:45:19.995|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\LjytmxxMapper.class]
+restartedMain|2020-10-22 17:45:19.995|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\ReportPostBackMapper.class]
+restartedMain|2020-10-22 17:45:19.995|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\ReturnAuditMapper.class]
+restartedMain|2020-10-22 17:45:19.995|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\ViLisAdviseHerenMapper.class]
+restartedMain|2020-10-22 17:45:19.996|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\com\RealLis\specimenInhos\mapper\ViLisBarcodeInfoMapper.class]
+restartedMain|2020-10-22 17:45:19.996|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\com\RealLis\dataSync\mapper\LTsmxMapper.class]
+restartedMain|2020-10-22 17:45:19.996|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\com\RealLis\dataSync\mapper\LTsxxHisMapper.class]
+restartedMain|2020-10-22 17:45:19.996|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\com\RealLis\dataSync\mapper\LTsxxLisMapper.class]
+restartedMain|2020-10-22 17:45:19.996|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\com\RealLis\dataSync\mapper\LTsxxTrMapper.class]
+restartedMain|2020-10-22 17:45:19.996|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-quartz\target\classes\com\RealLis\quartz\mapper\SysJobLogMapper.class]
+restartedMain|2020-10-22 17:45:19.997|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Identified candidate component class: file [E:\爪哇工作空间\RealLis\RealLis-quartz\target\classes\com\RealLis\quartz\mapper\SysJobMapper.class]
+restartedMain|2020-10-22 17:45:19.997|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'hisAdviceMapper' and 'com.RealLis.specimenInhos.mapper.HisAdviceMapper' mapperInterface
+restartedMain|2020-10-22 17:45:19.998|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'hisAdviceMapper'.
+restartedMain|2020-10-22 17:45:19.998|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LLoginsticsMapper' and 'com.RealLis.specimenInhos.mapper.LLoginsticsMapper' mapperInterface
+restartedMain|2020-10-22 17:45:19.998|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LLoginsticsMapper'.
+restartedMain|2020-10-22 17:45:19.999|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LSampletypeMapper' and 'com.RealLis.specimenInhos.mapper.LSampletypeMapper' mapperInterface
+restartedMain|2020-10-22 17:45:19.999|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LSampletypeMapper'.
+restartedMain|2020-10-22 17:45:19.999|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'ljytmxxMapper' and 'com.RealLis.specimenInhos.mapper.LjytmxxMapper' mapperInterface
+restartedMain|2020-10-22 17:45:19.999|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'ljytmxxMapper'.
+restartedMain|2020-10-22 17:45:19.999|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'reportPostBackMapper' and 'com.RealLis.specimenInhos.mapper.ReportPostBackMapper' mapperInterface
+restartedMain|2020-10-22 17:45:19.999|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'reportPostBackMapper'.
+restartedMain|2020-10-22 17:45:19.999|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'returnAuditMapper' and 'com.RealLis.specimenInhos.mapper.ReturnAuditMapper' mapperInterface
+restartedMain|2020-10-22 17:45:19.999|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'returnAuditMapper'.
+restartedMain|2020-10-22 17:45:20.000|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'viLisAdviseHerenMapper' and 'com.RealLis.specimenInhos.mapper.ViLisAdviseHerenMapper' mapperInterface
+restartedMain|2020-10-22 17:45:20.000|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'viLisAdviseHerenMapper'.
+restartedMain|2020-10-22 17:45:20.000|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'viLisBarcodeInfoMapper' and 'com.RealLis.specimenInhos.mapper.ViLisBarcodeInfoMapper' mapperInterface
+restartedMain|2020-10-22 17:45:20.000|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'viLisBarcodeInfoMapper'.
+restartedMain|2020-10-22 17:45:20.000|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LTsmxMapper' and 'com.RealLis.dataSync.mapper.LTsmxMapper' mapperInterface
+restartedMain|2020-10-22 17:45:20.000|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LTsmxMapper'.
+restartedMain|2020-10-22 17:45:20.000|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LTsxxHisMapper' and 'com.RealLis.dataSync.mapper.LTsxxHisMapper' mapperInterface
+restartedMain|2020-10-22 17:45:20.001|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LTsxxHisMapper'.
+restartedMain|2020-10-22 17:45:20.001|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LTsxxLisMapper' and 'com.RealLis.dataSync.mapper.LTsxxLisMapper' mapperInterface
+restartedMain|2020-10-22 17:45:20.001|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LTsxxLisMapper'.
+restartedMain|2020-10-22 17:45:20.001|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'LTsxxTrMapper' and 'com.RealLis.dataSync.mapper.LTsxxTrMapper' mapperInterface
+restartedMain|2020-10-22 17:45:20.001|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'LTsxxTrMapper'.
+restartedMain|2020-10-22 17:45:20.001|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'sysJobLogMapper' and 'com.RealLis.quartz.mapper.SysJobLogMapper' mapperInterface
+restartedMain|2020-10-22 17:45:20.001|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'sysJobLogMapper'.
+restartedMain|2020-10-22 17:45:20.001|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Creating MapperFactoryBean with name 'sysJobMapper' and 'com.RealLis.quartz.mapper.SysJobMapper' mapperInterface
+restartedMain|2020-10-22 17:45:20.001|DEBUG|o.m.s.mapper.ClassPathMapperScanner|Enabling autowire by type for MapperFactoryBean with name 'sysJobMapper'.
+restartedMain|2020-10-22 17:45:21.929|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.ReturnAudit' for aliases
+restartedMain|2020-10-22 17:45:21.931|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.reportPostBack' for aliases
+restartedMain|2020-10-22 17:45:21.932|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.packageORC' for aliases
+restartedMain|2020-10-22 17:45:21.935|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack' for aliases
+restartedMain|2020-10-22 17:45:21.937|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.reportPostBack.packageOBX' for aliases
+restartedMain|2020-10-22 17:45:21.938|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.packagePID' for aliases
+restartedMain|2020-10-22 17:45:21.939|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.packagePV1' for aliases
+restartedMain|2020-10-22 17:45:21.940|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.packageOBR' for aliases
+restartedMain|2020-10-22 17:45:21.945|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain' for aliases
+restartedMain|2020-10-22 17:45:21.946|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.packageOBX' for aliases
+restartedMain|2020-10-22 17:45:21.947|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.germReportPostBack' for aliases
+restartedMain|2020-10-22 17:45:21.948|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.dataSync.domain' for aliases
+restartedMain|2020-10-22 17:45:21.949|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.common.core.domain' for aliases
+restartedMain|2020-10-22 17:45:21.950|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.web.controller.demo.domain' for aliases
+restartedMain|2020-10-22 17:45:21.951|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.quartz.domain' for aliases
+restartedMain|2020-10-22 17:45:21.952|DEBUG|o.m.spring.SqlSessionFactoryBean|Scanned package: 'com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.packageZMIC' for aliases
+restartedMain|2020-10-22 17:45:21.985|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed configuration file: 'class path resource [mybatis/mybatis-config.xml]'
+restartedMain|2020-10-22 17:45:22.019|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\HisAdviceMapper.xml]'
+restartedMain|2020-10-22 17:45:22.033|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\LJytmxxMapper.xml]'
+restartedMain|2020-10-22 17:45:22.061|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\LLogisticsMapper.xml]'
+restartedMain|2020-10-22 17:45:22.067|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\LSampletypeMapper.xml]'
+restartedMain|2020-10-22 17:45:22.091|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\ReportPostBackMapper.xml]'
+restartedMain|2020-10-22 17:45:22.097|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\ReturnAuditMapper.xml]'
+restartedMain|2020-10-22 17:45:22.102|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\ViLisAdviseHerenMapper.xml]'
+restartedMain|2020-10-22 17:45:22.109|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-specimenInhos\target\classes\mapper\specimenInhos\ViLisBarcodeInfoMapper.xml]'
+restartedMain|2020-10-22 17:45:22.116|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\mapper\dataSync\LTsmxMapper.xml]'
+restartedMain|2020-10-22 17:45:22.124|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\mapper\dataSync\LTsxxHisMapper.xml]'
+restartedMain|2020-10-22 17:45:22.133|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\mapper\dataSync\LTsxxLisMapper.xml]'
+restartedMain|2020-10-22 17:45:22.140|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-dataSync\target\classes\mapper\dataSync\LTsxxTrMapper.xml]'
+restartedMain|2020-10-22 17:45:22.149|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-quartz\target\classes\mapper\quartz\SysJobLogMapper.xml]'
+restartedMain|2020-10-22 17:45:22.156|DEBUG|o.m.spring.SqlSessionFactoryBean|Parsed mapper file: 'file [E:\爪哇工作空间\RealLis\RealLis-quartz\target\classes\mapper\quartz\SysJobMapper.xml]'
+restartedMain|2020-10-22 17:45:23.362|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+restartedMain|2020-10-22 17:45:23.365|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@182d0793] was not registered for synchronization because synchronization is not active
+restartedMain|2020-10-22 17:45:23.370|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+restartedMain|2020-10-22 17:45:23.372|DEBUG|m.c.R.q.m.SysJobMapper.selectJobAll|==>  Preparing: select job_id, job_name, job_group, invoke_target, cron_expression, misfire_policy, concurrent, status, create_by, create_time, remark from sys_job 
+restartedMain|2020-10-22 17:45:23.381|DEBUG|m.c.R.q.m.SysJobMapper.selectJobAll|==> Parameters: 
+restartedMain|2020-10-22 17:45:23.397|DEBUG|m.c.R.q.m.SysJobMapper.selectJobAll|<==      Total: 2
+restartedMain|2020-10-22 17:45:23.398|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@182d0793]
+http-nio-20201-exec-25|2020-10-22 17:45:28.747|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+http-nio-20201-exec-25|2020-10-22 17:45:28.752|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@283b553b] was not registered for synchronization because synchronization is not active
+http-nio-20201-exec-25|2020-10-22 17:45:28.799|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+http-nio-20201-exec-25|2020-10-22 17:45:28.800|DEBUG|m.c.R.q.m.S.selectJobList_COUNT|==>  Preparing: SELECT count(0) FROM sys_job 
+http-nio-20201-exec-25|2020-10-22 17:45:28.801|DEBUG|m.c.R.q.m.S.selectJobList_COUNT|==> Parameters: 
+http-nio-20201-exec-25|2020-10-22 17:45:28.802|DEBUG|m.c.R.q.m.S.selectJobList_COUNT|<==      Total: 1
+http-nio-20201-exec-25|2020-10-22 17:45:28.808|DEBUG|m.c.R.q.m.SysJobMapper.selectJobList|==>  Preparing: SELECT * FROM ( SELECT TMP_PAGE.*, ROWNUM ROW_ID FROM ( SELECT job_id, job_name, job_group, invoke_target, cron_expression, misfire_policy, concurrent, status, create_by, create_time, remark FROM sys_job order by create_time desc ) TMP_PAGE WHERE ROWNUM <= ? ) WHERE ROW_ID > ? 
+http-nio-20201-exec-25|2020-10-22 17:45:28.810|DEBUG|m.c.R.q.m.SysJobMapper.selectJobList|==> Parameters: 10(Integer), 0(Integer)
+http-nio-20201-exec-25|2020-10-22 17:45:28.812|DEBUG|m.c.R.q.m.SysJobMapper.selectJobList|<==      Total: 2
+http-nio-20201-exec-25|2020-10-22 17:45:28.812|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@283b553b]
+http-nio-20201-exec-10|2020-10-22 17:45:29.861|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+http-nio-20201-exec-10|2020-10-22 17:45:29.861|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52786525] was not registered for synchronization because synchronization is not active
+http-nio-20201-exec-10|2020-10-22 17:45:29.862|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+http-nio-20201-exec-10|2020-10-22 17:45:29.862|DEBUG|m.c.R.q.m.SysJobMapper.selectJobById|==>  Preparing: select job_id, job_name, job_group, invoke_target, cron_expression, misfire_policy, concurrent, status, create_by, create_time, remark from sys_job where job_id = ? 
+http-nio-20201-exec-10|2020-10-22 17:45:29.863|DEBUG|m.c.R.q.m.SysJobMapper.selectJobById|==> Parameters: 200(Long)
+http-nio-20201-exec-10|2020-10-22 17:45:29.865|DEBUG|m.c.R.q.m.SysJobMapper.selectJobById|<==      Total: 1
+http-nio-20201-exec-10|2020-10-22 17:45:29.865|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52786525]
+http-nio-20201-exec-3|2020-10-22 17:45:34.507|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+http-nio-20201-exec-3|2020-10-22 17:45:34.507|DEBUG|org.mybatis.spring.SqlSessionUtils|Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5aa70c19]
+http-nio-20201-exec-3|2020-10-22 17:45:34.509|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will be managed by Spring
+http-nio-20201-exec-3|2020-10-22 17:45:34.510|DEBUG|m.c.R.q.m.SysJobMapper.selectJobById|==>  Preparing: select job_id, job_name, job_group, invoke_target, cron_expression, misfire_policy, concurrent, status, create_by, create_time, remark from sys_job where job_id = ? 
+http-nio-20201-exec-3|2020-10-22 17:45:34.511|DEBUG|m.c.R.q.m.SysJobMapper.selectJobById|==> Parameters: 200(Long)
+http-nio-20201-exec-3|2020-10-22 17:45:34.512|DEBUG|m.c.R.q.m.SysJobMapper.selectJobById|<==      Total: 1
+http-nio-20201-exec-3|2020-10-22 17:45:34.513|DEBUG|org.mybatis.spring.SqlSessionUtils|Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5aa70c19]
+http-nio-20201-exec-3|2020-10-22 17:45:34.537|DEBUG|org.mybatis.spring.SqlSessionUtils|Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5aa70c19]
+http-nio-20201-exec-3|2020-10-22 17:45:34.537|DEBUG|org.mybatis.spring.SqlSessionUtils|Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5aa70c19]
+http-nio-20201-exec-3|2020-10-22 17:45:34.538|DEBUG|org.mybatis.spring.SqlSessionUtils|Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5aa70c19]
+http-nio-20201-exec-20|2020-10-22 17:45:34.565|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+http-nio-20201-exec-20|2020-10-22 17:45:34.566|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1aa44299] was not registered for synchronization because synchronization is not active
+http-nio-20201-exec-20|2020-10-22 17:45:34.567|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+http-nio-20201-exec-20|2020-10-22 17:45:34.568|DEBUG|m.c.R.q.m.S.selectJobList_COUNT|==>  Preparing: SELECT count(0) FROM sys_job 
+http-nio-20201-exec-20|2020-10-22 17:45:34.568|DEBUG|m.c.R.q.m.S.selectJobList_COUNT|==> Parameters: 
+http-nio-20201-exec-20|2020-10-22 17:45:34.570|DEBUG|m.c.R.q.m.S.selectJobList_COUNT|<==      Total: 1
+http-nio-20201-exec-20|2020-10-22 17:45:34.571|DEBUG|m.c.R.q.m.SysJobMapper.selectJobList|==>  Preparing: SELECT * FROM ( SELECT TMP_PAGE.*, ROWNUM ROW_ID FROM ( SELECT job_id, job_name, job_group, invoke_target, cron_expression, misfire_policy, concurrent, status, create_by, create_time, remark FROM sys_job order by create_time desc ) TMP_PAGE WHERE ROWNUM <= ? ) WHERE ROW_ID > ? 
+http-nio-20201-exec-20|2020-10-22 17:45:34.572|DEBUG|m.c.R.q.m.SysJobMapper.selectJobList|==> Parameters: 10(Integer), 0(Integer)
+http-nio-20201-exec-20|2020-10-22 17:45:34.575|DEBUG|m.c.R.q.m.SysJobMapper.selectJobList|<==      Total: 2
+http-nio-20201-exec-20|2020-10-22 17:45:34.576|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1aa44299]
+LeanScheduler_Worker-1|2020-10-22 17:45:40.984|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-1|2020-10-22 17:45:40.984|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c83b396] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-1|2020-10-22 17:45:40.985|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-1|2020-10-22 17:45:40.985|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-1|2020-10-22 17:45:40.985|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-1|2020-10-22 17:45:40.986|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 0
+LeanScheduler_Worker-1|2020-10-22 17:45:40.987|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c83b396]
+LeanScheduler_Worker-2|2020-10-22 17:45:59.017|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-2|2020-10-22 17:45:59.017|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5929d2bb] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-2|2020-10-22 17:45:59.018|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-2|2020-10-22 17:45:59.018|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-2|2020-10-22 17:45:59.018|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-2|2020-10-22 17:45:59.019|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 0
+LeanScheduler_Worker-2|2020-10-22 17:45:59.019|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5929d2bb]
+LeanScheduler_Worker-3|2020-10-22 17:46:00.014|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-3|2020-10-22 17:46:00.014|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b107306] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-3|2020-10-22 17:46:00.015|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-3|2020-10-22 17:46:00.015|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-3|2020-10-22 17:46:00.015|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-3|2020-10-22 17:46:00.017|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 0
+LeanScheduler_Worker-3|2020-10-22 17:46:00.017|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3b107306]
+http-nio-20201-exec-23|2020-10-22 17:46:28.581|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+http-nio-20201-exec-23|2020-10-22 17:46:28.581|DEBUG|org.mybatis.spring.SqlSessionUtils|Registering transaction synchronization for SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b26ba15]
+http-nio-20201-exec-23|2020-10-22 17:46:28.582|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will be managed by Spring
+http-nio-20201-exec-23|2020-10-22 17:46:28.582|DEBUG|m.c.R.q.m.SysJobMapper.selectJobById|==>  Preparing: select job_id, job_name, job_group, invoke_target, cron_expression, misfire_policy, concurrent, status, create_by, create_time, remark from sys_job where job_id = ? 
+http-nio-20201-exec-23|2020-10-22 17:46:28.583|DEBUG|m.c.R.q.m.SysJobMapper.selectJobById|==> Parameters: 200(Long)
+http-nio-20201-exec-23|2020-10-22 17:46:28.584|DEBUG|m.c.R.q.m.SysJobMapper.selectJobById|<==      Total: 1
+http-nio-20201-exec-23|2020-10-22 17:46:28.585|DEBUG|org.mybatis.spring.SqlSessionUtils|Releasing transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b26ba15]
+http-nio-20201-exec-23|2020-10-22 17:46:28.595|DEBUG|org.mybatis.spring.SqlSessionUtils|Transaction synchronization committing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b26ba15]
+http-nio-20201-exec-23|2020-10-22 17:46:28.596|DEBUG|org.mybatis.spring.SqlSessionUtils|Transaction synchronization deregistering SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b26ba15]
+http-nio-20201-exec-23|2020-10-22 17:46:28.597|DEBUG|org.mybatis.spring.SqlSessionUtils|Transaction synchronization closing SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4b26ba15]
+http-nio-20201-exec-29|2020-10-22 17:46:28.612|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+http-nio-20201-exec-29|2020-10-22 17:46:28.613|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@645c5d58] was not registered for synchronization because synchronization is not active
+http-nio-20201-exec-29|2020-10-22 17:46:28.614|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+http-nio-20201-exec-29|2020-10-22 17:46:28.614|DEBUG|m.c.R.q.m.S.selectJobList_COUNT|==>  Preparing: SELECT count(0) FROM sys_job 
+http-nio-20201-exec-29|2020-10-22 17:46:28.615|DEBUG|m.c.R.q.m.S.selectJobList_COUNT|==> Parameters: 
+http-nio-20201-exec-29|2020-10-22 17:46:28.616|DEBUG|m.c.R.q.m.S.selectJobList_COUNT|<==      Total: 1
+http-nio-20201-exec-29|2020-10-22 17:46:28.618|DEBUG|m.c.R.q.m.SysJobMapper.selectJobList|==>  Preparing: SELECT * FROM ( SELECT TMP_PAGE.*, ROWNUM ROW_ID FROM ( SELECT job_id, job_name, job_group, invoke_target, cron_expression, misfire_policy, concurrent, status, create_by, create_time, remark FROM sys_job order by create_time desc ) TMP_PAGE WHERE ROWNUM <= ? ) WHERE ROW_ID > ? 
+http-nio-20201-exec-29|2020-10-22 17:46:28.618|DEBUG|m.c.R.q.m.SysJobMapper.selectJobList|==> Parameters: 10(Integer), 0(Integer)
+http-nio-20201-exec-29|2020-10-22 17:46:28.621|DEBUG|m.c.R.q.m.SysJobMapper.selectJobList|<==      Total: 2
+http-nio-20201-exec-29|2020-10-22 17:46:28.622|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@645c5d58]
+LeanScheduler_Worker-4|2020-10-22 17:47:59.013|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-4|2020-10-22 17:47:59.013|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69dfb53] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-4|2020-10-22 17:47:59.014|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-4|2020-10-22 17:47:59.015|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-4|2020-10-22 17:47:59.015|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-4|2020-10-22 17:47:59.017|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 1
+LeanScheduler_Worker-4|2020-10-22 17:47:59.017|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@69dfb53]
+LeanScheduler_Worker-4|2020-10-22 17:47:59.017|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-4|2020-10-22 17:47:59.018|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49670fcb] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-4|2020-10-22 17:47:59.018|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-4|2020-10-22 17:47:59.018|DEBUG|m.c.R.s.m.R.updateTransfer|==>  Preparing: update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = ? 
+LeanScheduler_Worker-4|2020-10-22 17:47:59.018|DEBUG|m.c.R.s.m.R.updateTransfer|==> Parameters: 688801(Long)
+LeanScheduler_Worker-4|2020-10-22 17:47:59.020|DEBUG|m.c.R.s.m.R.updateTransfer|<==    Updates: 1
+LeanScheduler_Worker-4|2020-10-22 17:47:59.021|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49670fcb]
+LeanScheduler_Worker-4|2020-10-22 17:47:59.022|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-4|2020-10-22 17:47:59.022|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a0a50c] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-4|2020-10-22 17:47:59.022|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-4|2020-10-22 17:47:59.023|DEBUG|m.c.R.s.m.R.queryPID|==>  Preparing: select * from ZHLIS.OML_O21_pid where sampleno = ? 
+LeanScheduler_Worker-4|2020-10-22 17:47:59.023|DEBUG|m.c.R.s.m.R.queryPID|==> Parameters: 20201022WSG0701(String)
+LeanScheduler_Worker-4|2020-10-22 17:47:59.025|DEBUG|m.c.R.s.m.R.queryPID|<==      Total: 1
+LeanScheduler_Worker-4|2020-10-22 17:47:59.026|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58a0a50c]
+LeanScheduler_Worker-4|2020-10-22 17:47:59.026|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-4|2020-10-22 17:47:59.026|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1cce619d] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-4|2020-10-22 17:47:59.027|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-4|2020-10-22 17:47:59.027|DEBUG|m.c.R.s.m.R.queryPV1|==>  Preparing: select * from OML_O21_pv1 where sampleno = ? 
+LeanScheduler_Worker-4|2020-10-22 17:47:59.027|DEBUG|m.c.R.s.m.R.queryPV1|==> Parameters: 20201022WSG0701(String)
+LeanScheduler_Worker-4|2020-10-22 17:47:59.030|DEBUG|m.c.R.s.m.R.queryPV1|<==      Total: 1
+LeanScheduler_Worker-4|2020-10-22 17:47:59.031|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1cce619d]
+LeanScheduler_Worker-4|2020-10-22 17:47:59.031|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-4|2020-10-22 17:47:59.031|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6445b6] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-4|2020-10-22 17:47:59.032|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-4|2020-10-22 17:47:59.032|DEBUG|m.c.R.s.m.R.queryORC|==>  Preparing: select * from OML_O21_orc where sampleno = ? 
+LeanScheduler_Worker-4|2020-10-22 17:47:59.032|DEBUG|m.c.R.s.m.R.queryORC|==> Parameters: 20201022WSG0701(String)
+LeanScheduler_Worker-4|2020-10-22 17:47:59.034|DEBUG|m.c.R.s.m.R.queryORC|<==      Total: 1
+LeanScheduler_Worker-4|2020-10-22 17:47:59.034|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6445b6]
+LeanScheduler_Worker-4|2020-10-22 17:47:59.035|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-4|2020-10-22 17:47:59.035|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e99eeb7] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-4|2020-10-22 17:47:59.035|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-4|2020-10-22 17:47:59.035|DEBUG|m.c.R.s.m.R.queryOBR|==>  Preparing: select * from OML_O21_obr where sampleno = ? 
+LeanScheduler_Worker-4|2020-10-22 17:47:59.035|DEBUG|m.c.R.s.m.R.queryOBR|==> Parameters: 20201022WSG0701(String)
+LeanScheduler_Worker-4|2020-10-22 17:47:59.038|DEBUG|m.c.R.s.m.R.queryOBR|<==      Total: 1
+LeanScheduler_Worker-4|2020-10-22 17:47:59.038|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e99eeb7]
+LeanScheduler_Worker-4|2020-10-22 17:47:59.039|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-4|2020-10-22 17:47:59.039|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34040576] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-4|2020-10-22 17:47:59.039|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-4|2020-10-22 17:47:59.040|DEBUG|m.c.R.s.m.R.queryOBX|==>  Preparing: select * from OML_O21_obx where sampleno = ? 
+LeanScheduler_Worker-4|2020-10-22 17:47:59.040|DEBUG|m.c.R.s.m.R.queryOBX|==> Parameters: 20201022WSG0701(String)
+LeanScheduler_Worker-4|2020-10-22 17:47:59.041|DEBUG|m.c.R.s.m.R.queryOBX|<==      Total: 1
+LeanScheduler_Worker-4|2020-10-22 17:47:59.042|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@34040576]
+LeanScheduler_Worker-4|2020-10-22 17:48:00.106|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-4|2020-10-22 17:48:00.106|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c0edd2f] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-4|2020-10-22 17:48:00.106|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-4|2020-10-22 17:48:00.106|DEBUG|m.c.R.s.m.R.deletePostList|==>  Preparing: delete from L_DATA_TRANSFER where jlxh = ? 
+LeanScheduler_Worker-4|2020-10-22 17:48:00.107|DEBUG|m.c.R.s.m.R.deletePostList|==> Parameters: 688801(Long)
+LeanScheduler_Worker-4|2020-10-22 17:48:00.109|DEBUG|m.c.R.s.m.R.deletePostList|<==    Updates: 1
+LeanScheduler_Worker-4|2020-10-22 17:48:00.109|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c0edd2f]
+LeanScheduler_Worker-5|2020-10-22 17:48:00.138|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-5|2020-10-22 17:48:00.138|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c06a592] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-5|2020-10-22 17:48:00.138|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-5|2020-10-22 17:48:00.138|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-5|2020-10-22 17:48:00.139|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-5|2020-10-22 17:48:00.140|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 0
+LeanScheduler_Worker-5|2020-10-22 17:48:00.140|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c06a592]
+LeanScheduler_Worker-6|2020-10-22 17:49:25.986|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:25.987|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7a7a8570] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:25.987|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:25.988|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-6|2020-10-22 17:49:25.988|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-6|2020-10-22 17:49:25.989|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 3
+LeanScheduler_Worker-6|2020-10-22 17:49:25.990|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7a7a8570]
+LeanScheduler_Worker-6|2020-10-22 17:49:25.990|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:25.990|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@74bd644f] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:25.991|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:25.991|DEBUG|m.c.R.s.m.R.updateTransfer|==>  Preparing: update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:25.991|DEBUG|m.c.R.s.m.R.updateTransfer|==> Parameters: 480123(Long)
+LeanScheduler_Worker-6|2020-10-22 17:49:25.993|DEBUG|m.c.R.s.m.R.updateTransfer|<==    Updates: 1
+LeanScheduler_Worker-6|2020-10-22 17:49:25.993|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@74bd644f]
+LeanScheduler_Worker-6|2020-10-22 17:49:25.994|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:25.994|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7082ee00] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:25.994|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:25.995|DEBUG|m.c.R.s.m.R.queryPID|==>  Preparing: select * from ZHLIS.OML_O21_pid where sampleno = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:25.995|DEBUG|m.c.R.s.m.R.queryPID|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-6|2020-10-22 17:49:25.996|DEBUG|m.c.R.s.m.R.queryPID|<==      Total: 1
+LeanScheduler_Worker-6|2020-10-22 17:49:25.997|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7082ee00]
+LeanScheduler_Worker-6|2020-10-22 17:49:25.997|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:25.997|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@35806e74] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:25.997|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:25.998|DEBUG|m.c.R.s.m.R.queryPV1|==>  Preparing: select * from OML_O21_pv1 where sampleno = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:25.998|DEBUG|m.c.R.s.m.R.queryPV1|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-6|2020-10-22 17:49:25.999|DEBUG|m.c.R.s.m.R.queryPV1|<==      Total: 1
+LeanScheduler_Worker-6|2020-10-22 17:49:25.999|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@35806e74]
+LeanScheduler_Worker-6|2020-10-22 17:49:25.999|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:25.999|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4ffbc9d] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:26.000|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:26.000|DEBUG|m.c.R.s.m.R.queryORC|==>  Preparing: select * from OML_O21_orc where sampleno = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:26.000|DEBUG|m.c.R.s.m.R.queryORC|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-6|2020-10-22 17:49:26.002|DEBUG|m.c.R.s.m.R.queryORC|<==      Total: 1
+LeanScheduler_Worker-6|2020-10-22 17:49:26.002|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4ffbc9d]
+LeanScheduler_Worker-6|2020-10-22 17:49:26.002|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:26.002|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@636ab0ec] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:26.003|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:26.003|DEBUG|m.c.R.s.m.R.queryOBR|==>  Preparing: select * from OML_O21_obr where sampleno = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:26.003|DEBUG|m.c.R.s.m.R.queryOBR|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-6|2020-10-22 17:49:26.005|DEBUG|m.c.R.s.m.R.queryOBR|<==      Total: 1
+LeanScheduler_Worker-6|2020-10-22 17:49:26.006|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@636ab0ec]
+LeanScheduler_Worker-6|2020-10-22 17:49:26.006|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:26.006|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55af913b] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:26.006|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:26.006|DEBUG|m.c.R.s.m.R.queryGermOBX|==>  Preparing: select * from OML_O21_OBX_XJ where sampleno = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:26.007|DEBUG|m.c.R.s.m.R.queryGermOBX|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-6|2020-10-22 17:49:26.010|DEBUG|m.c.R.s.m.R.queryGermOBX|<==      Total: 2
+LeanScheduler_Worker-6|2020-10-22 17:49:26.010|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55af913b]
+LeanScheduler_Worker-6|2020-10-22 17:49:26.010|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:26.011|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3757258b] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:26.011|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:26.011|DEBUG|m.c.R.s.m.R.queryGermZMIC|==>  Preparing: select * from OML_O21_ZMIC where sampleno = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:26.011|DEBUG|m.c.R.s.m.R.queryGermZMIC|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-6|2020-10-22 17:49:26.013|DEBUG|m.c.R.s.m.R.queryGermZMIC|<==      Total: 0
+LeanScheduler_Worker-6|2020-10-22 17:49:26.013|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3757258b]
+LeanScheduler_Worker-6|2020-10-22 17:49:26.479|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:26.480|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52cc183] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:26.480|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:26.480|DEBUG|m.c.R.s.m.R.updateTransfer|==>  Preparing: update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:26.481|DEBUG|m.c.R.s.m.R.updateTransfer|==> Parameters: 500111(Long)
+LeanScheduler_Worker-6|2020-10-22 17:49:26.483|DEBUG|m.c.R.s.m.R.updateTransfer|<==    Updates: 1
+LeanScheduler_Worker-6|2020-10-22 17:49:26.483|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52cc183]
+LeanScheduler_Worker-6|2020-10-22 17:49:26.484|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:26.484|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@570df485] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:26.485|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:26.485|DEBUG|m.c.R.s.m.R.queryPID|==>  Preparing: select * from ZHLIS.OML_O21_pid where sampleno = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:26.485|DEBUG|m.c.R.s.m.R.queryPID|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-6|2020-10-22 17:49:26.488|DEBUG|m.c.R.s.m.R.queryPID|<==      Total: 1
+LeanScheduler_Worker-6|2020-10-22 17:49:26.488|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@570df485]
+LeanScheduler_Worker-6|2020-10-22 17:49:26.489|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:26.489|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49297c23] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:26.490|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:26.490|DEBUG|m.c.R.s.m.R.queryPV1|==>  Preparing: select * from OML_O21_pv1 where sampleno = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:26.490|DEBUG|m.c.R.s.m.R.queryPV1|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-6|2020-10-22 17:49:26.493|DEBUG|m.c.R.s.m.R.queryPV1|<==      Total: 1
+LeanScheduler_Worker-6|2020-10-22 17:49:26.494|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@49297c23]
+LeanScheduler_Worker-6|2020-10-22 17:49:26.495|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:26.495|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d305c98] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:26.496|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:26.496|DEBUG|m.c.R.s.m.R.queryORC|==>  Preparing: select * from OML_O21_orc where sampleno = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:26.497|DEBUG|m.c.R.s.m.R.queryORC|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-6|2020-10-22 17:49:26.498|DEBUG|m.c.R.s.m.R.queryORC|<==      Total: 1
+LeanScheduler_Worker-6|2020-10-22 17:49:26.498|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d305c98]
+LeanScheduler_Worker-6|2020-10-22 17:49:26.499|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:26.499|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e73b664] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:26.499|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:26.500|DEBUG|m.c.R.s.m.R.queryOBR|==>  Preparing: select * from OML_O21_obr where sampleno = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:26.500|DEBUG|m.c.R.s.m.R.queryOBR|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-6|2020-10-22 17:49:26.502|DEBUG|m.c.R.s.m.R.queryOBR|<==      Total: 1
+LeanScheduler_Worker-6|2020-10-22 17:49:26.502|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e73b664]
+LeanScheduler_Worker-6|2020-10-22 17:49:26.502|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:26.502|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44286868] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:26.503|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:26.503|DEBUG|m.c.R.s.m.R.queryOBX|==>  Preparing: select * from OML_O21_obx where sampleno = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:26.503|DEBUG|m.c.R.s.m.R.queryOBX|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-6|2020-10-22 17:49:26.512|DEBUG|m.c.R.s.m.R.queryOBX|<==      Total: 25
+LeanScheduler_Worker-6|2020-10-22 17:49:26.512|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@44286868]
+LeanScheduler_Worker-6|2020-10-22 17:49:26.851|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:26.851|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b47dd73] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:26.851|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:26.851|DEBUG|m.c.R.s.m.R.updateTransfer|==>  Preparing: update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:26.851|DEBUG|m.c.R.s.m.R.updateTransfer|==> Parameters: 667239(Long)
+LeanScheduler_Worker-6|2020-10-22 17:49:26.853|DEBUG|m.c.R.s.m.R.updateTransfer|<==    Updates: 1
+LeanScheduler_Worker-6|2020-10-22 17:49:26.853|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1b47dd73]
+LeanScheduler_Worker-6|2020-10-22 17:49:26.854|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:26.854|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54275d1c] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:26.854|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:26.854|DEBUG|m.c.R.s.m.R.queryPID|==>  Preparing: select * from ZHLIS.OML_O21_pid where sampleno = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:26.855|DEBUG|m.c.R.s.m.R.queryPID|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-6|2020-10-22 17:49:26.856|DEBUG|m.c.R.s.m.R.queryPID|<==      Total: 1
+LeanScheduler_Worker-6|2020-10-22 17:49:26.856|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54275d1c]
+LeanScheduler_Worker-6|2020-10-22 17:49:26.856|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:26.857|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a4d3840] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:26.857|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:26.857|DEBUG|m.c.R.s.m.R.queryPV1|==>  Preparing: select * from OML_O21_pv1 where sampleno = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:26.857|DEBUG|m.c.R.s.m.R.queryPV1|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-6|2020-10-22 17:49:26.859|DEBUG|m.c.R.s.m.R.queryPV1|<==      Total: 1
+LeanScheduler_Worker-6|2020-10-22 17:49:26.859|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6a4d3840]
+LeanScheduler_Worker-6|2020-10-22 17:49:26.859|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:26.860|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@301af550] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:26.860|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:26.860|DEBUG|m.c.R.s.m.R.queryORC|==>  Preparing: select * from OML_O21_orc where sampleno = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:26.860|DEBUG|m.c.R.s.m.R.queryORC|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-6|2020-10-22 17:49:26.862|DEBUG|m.c.R.s.m.R.queryORC|<==      Total: 1
+LeanScheduler_Worker-6|2020-10-22 17:49:26.862|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@301af550]
+LeanScheduler_Worker-6|2020-10-22 17:49:26.862|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:26.862|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15931a65] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:26.863|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:26.863|DEBUG|m.c.R.s.m.R.queryOBR|==>  Preparing: select * from OML_O21_obr where sampleno = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:26.863|DEBUG|m.c.R.s.m.R.queryOBR|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-6|2020-10-22 17:49:26.865|DEBUG|m.c.R.s.m.R.queryOBR|<==      Total: 1
+LeanScheduler_Worker-6|2020-10-22 17:49:26.865|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@15931a65]
+LeanScheduler_Worker-6|2020-10-22 17:49:26.865|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-6|2020-10-22 17:49:26.866|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7bb26a76] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-6|2020-10-22 17:49:26.866|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-6|2020-10-22 17:49:26.866|DEBUG|m.c.R.s.m.R.queryOBX|==>  Preparing: select * from OML_O21_obx where sampleno = ? 
+LeanScheduler_Worker-6|2020-10-22 17:49:26.866|DEBUG|m.c.R.s.m.R.queryOBX|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-6|2020-10-22 17:49:26.872|DEBUG|m.c.R.s.m.R.queryOBX|<==      Total: 27
+LeanScheduler_Worker-6|2020-10-22 17:49:26.872|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7bb26a76]
+LeanScheduler_Worker-7|2020-10-22 17:50:25.992|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:25.992|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52256caa] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:25.993|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:25.993|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-7|2020-10-22 17:50:25.993|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-7|2020-10-22 17:50:25.995|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 4
+LeanScheduler_Worker-7|2020-10-22 17:50:25.995|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@52256caa]
+LeanScheduler_Worker-7|2020-10-22 17:50:25.996|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:25.996|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58dd07da] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:25.996|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:25.996|DEBUG|m.c.R.s.m.R.updateTransfer|==>  Preparing: update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:25.996|DEBUG|m.c.R.s.m.R.updateTransfer|==> Parameters: 480123(Long)
+LeanScheduler_Worker-7|2020-10-22 17:50:25.998|DEBUG|m.c.R.s.m.R.updateTransfer|<==    Updates: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:25.998|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@58dd07da]
+LeanScheduler_Worker-7|2020-10-22 17:50:25.998|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:25.998|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ddf82a5] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:25.999|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:25.999|DEBUG|m.c.R.s.m.R.queryPID|==>  Preparing: select * from ZHLIS.OML_O21_pid where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:25.999|DEBUG|m.c.R.s.m.R.queryPID|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.001|DEBUG|m.c.R.s.m.R.queryPID|<==      Total: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:26.001|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1ddf82a5]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.001|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.001|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c883fe2] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.001|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.002|DEBUG|m.c.R.s.m.R.queryPV1|==>  Preparing: select * from OML_O21_pv1 where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.002|DEBUG|m.c.R.s.m.R.queryPV1|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.003|DEBUG|m.c.R.s.m.R.queryPV1|<==      Total: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:26.004|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2c883fe2]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.004|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.004|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1cdb1e7e] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.004|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.005|DEBUG|m.c.R.s.m.R.queryORC|==>  Preparing: select * from OML_O21_orc where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.005|DEBUG|m.c.R.s.m.R.queryORC|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.006|DEBUG|m.c.R.s.m.R.queryORC|<==      Total: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:26.006|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1cdb1e7e]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.007|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.007|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7df07dea] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.007|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.007|DEBUG|m.c.R.s.m.R.queryOBR|==>  Preparing: select * from OML_O21_obr where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.007|DEBUG|m.c.R.s.m.R.queryOBR|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.009|DEBUG|m.c.R.s.m.R.queryOBR|<==      Total: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:26.009|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7df07dea]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.010|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.010|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ea95561] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.010|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.010|DEBUG|m.c.R.s.m.R.queryGermOBX|==>  Preparing: select * from OML_O21_OBX_XJ where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.010|DEBUG|m.c.R.s.m.R.queryGermOBX|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.013|DEBUG|m.c.R.s.m.R.queryGermOBX|<==      Total: 2
+LeanScheduler_Worker-7|2020-10-22 17:50:26.013|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2ea95561]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.014|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.014|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43330879] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.014|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.014|DEBUG|m.c.R.s.m.R.queryGermZMIC|==>  Preparing: select * from OML_O21_ZMIC where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.014|DEBUG|m.c.R.s.m.R.queryGermZMIC|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.016|DEBUG|m.c.R.s.m.R.queryGermZMIC|<==      Total: 0
+LeanScheduler_Worker-7|2020-10-22 17:50:26.016|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43330879]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.431|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.431|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a26a0c6] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.431|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.431|DEBUG|m.c.R.s.m.R.updateTransfer|==>  Preparing: update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.431|DEBUG|m.c.R.s.m.R.updateTransfer|==> Parameters: 500111(Long)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.433|DEBUG|m.c.R.s.m.R.updateTransfer|<==    Updates: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:26.434|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@a26a0c6]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.434|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.434|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d625a06] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.435|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.435|DEBUG|m.c.R.s.m.R.queryPID|==>  Preparing: select * from ZHLIS.OML_O21_pid where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.435|DEBUG|m.c.R.s.m.R.queryPID|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.437|DEBUG|m.c.R.s.m.R.queryPID|<==      Total: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:26.437|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1d625a06]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.437|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.437|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@332a2460] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.438|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.438|DEBUG|m.c.R.s.m.R.queryPV1|==>  Preparing: select * from OML_O21_pv1 where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.438|DEBUG|m.c.R.s.m.R.queryPV1|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.440|DEBUG|m.c.R.s.m.R.queryPV1|<==      Total: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:26.440|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@332a2460]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.440|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.441|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6cd00c59] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.441|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.441|DEBUG|m.c.R.s.m.R.queryORC|==>  Preparing: select * from OML_O21_orc where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.441|DEBUG|m.c.R.s.m.R.queryORC|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.443|DEBUG|m.c.R.s.m.R.queryORC|<==      Total: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:26.443|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6cd00c59]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.443|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.443|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@534fa195] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.444|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.444|DEBUG|m.c.R.s.m.R.queryOBR|==>  Preparing: select * from OML_O21_obr where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.444|DEBUG|m.c.R.s.m.R.queryOBR|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.446|DEBUG|m.c.R.s.m.R.queryOBR|<==      Total: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:26.447|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@534fa195]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.447|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.447|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c727390] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.448|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.448|DEBUG|m.c.R.s.m.R.queryOBX|==>  Preparing: select * from OML_O21_obx where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.448|DEBUG|m.c.R.s.m.R.queryOBX|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.452|DEBUG|m.c.R.s.m.R.queryOBX|<==      Total: 25
+LeanScheduler_Worker-7|2020-10-22 17:50:26.452|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5c727390]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.760|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.760|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e44c544] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.761|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.761|DEBUG|m.c.R.s.m.R.updateTransfer|==>  Preparing: update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.761|DEBUG|m.c.R.s.m.R.updateTransfer|==> Parameters: 667239(Long)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.763|DEBUG|m.c.R.s.m.R.updateTransfer|<==    Updates: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:26.763|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e44c544]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.763|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.764|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78868297] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.764|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.764|DEBUG|m.c.R.s.m.R.queryPID|==>  Preparing: select * from ZHLIS.OML_O21_pid where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.764|DEBUG|m.c.R.s.m.R.queryPID|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.766|DEBUG|m.c.R.s.m.R.queryPID|<==      Total: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:26.766|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78868297]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.766|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.766|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5342fe5a] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.767|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.767|DEBUG|m.c.R.s.m.R.queryPV1|==>  Preparing: select * from OML_O21_pv1 where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.767|DEBUG|m.c.R.s.m.R.queryPV1|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.769|DEBUG|m.c.R.s.m.R.queryPV1|<==      Total: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:26.769|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5342fe5a]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.769|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.770|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6cf672f4] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.770|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.770|DEBUG|m.c.R.s.m.R.queryORC|==>  Preparing: select * from OML_O21_orc where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.770|DEBUG|m.c.R.s.m.R.queryORC|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.772|DEBUG|m.c.R.s.m.R.queryORC|<==      Total: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:26.772|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6cf672f4]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.772|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.772|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f0e4cb] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.773|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.773|DEBUG|m.c.R.s.m.R.queryOBR|==>  Preparing: select * from OML_O21_obr where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.773|DEBUG|m.c.R.s.m.R.queryOBR|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.774|DEBUG|m.c.R.s.m.R.queryOBR|<==      Total: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:26.775|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4f0e4cb]
+LeanScheduler_Worker-7|2020-10-22 17:50:26.775|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:26.775|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@482e5cf8] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:26.775|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:26.775|DEBUG|m.c.R.s.m.R.queryOBX|==>  Preparing: select * from OML_O21_obx where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:26.776|DEBUG|m.c.R.s.m.R.queryOBX|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:26.780|DEBUG|m.c.R.s.m.R.queryOBX|<==      Total: 27
+LeanScheduler_Worker-7|2020-10-22 17:50:26.780|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@482e5cf8]
+LeanScheduler_Worker-7|2020-10-22 17:50:27.281|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:27.281|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@35d175f1] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:27.281|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:27.281|DEBUG|m.c.R.s.m.R.updateTransfer|==>  Preparing: update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:27.282|DEBUG|m.c.R.s.m.R.updateTransfer|==> Parameters: 688805(Long)
+LeanScheduler_Worker-7|2020-10-22 17:50:27.283|DEBUG|m.c.R.s.m.R.updateTransfer|<==    Updates: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:27.284|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@35d175f1]
+LeanScheduler_Worker-7|2020-10-22 17:50:27.284|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:27.284|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a874e57] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:27.285|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:27.285|DEBUG|m.c.R.s.m.R.queryPID|==>  Preparing: select * from ZHLIS.OML_O21_pid where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:27.286|DEBUG|m.c.R.s.m.R.queryPID|==> Parameters: 20201022STA0132(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:27.288|DEBUG|m.c.R.s.m.R.queryPID|<==      Total: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:27.288|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a874e57]
+LeanScheduler_Worker-7|2020-10-22 17:50:27.289|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:27.289|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54642fb1] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:27.290|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:27.290|DEBUG|m.c.R.s.m.R.queryPV1|==>  Preparing: select * from OML_O21_pv1 where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:27.290|DEBUG|m.c.R.s.m.R.queryPV1|==> Parameters: 20201022STA0132(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:27.293|DEBUG|m.c.R.s.m.R.queryPV1|<==      Total: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:27.294|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@54642fb1]
+LeanScheduler_Worker-7|2020-10-22 17:50:27.294|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:27.294|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c2bc354] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:27.295|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:27.295|DEBUG|m.c.R.s.m.R.queryORC|==>  Preparing: select * from OML_O21_orc where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:27.296|DEBUG|m.c.R.s.m.R.queryORC|==> Parameters: 20201022STA0132(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:27.299|DEBUG|m.c.R.s.m.R.queryORC|<==      Total: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:27.300|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@c2bc354]
+LeanScheduler_Worker-7|2020-10-22 17:50:27.300|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:27.301|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5641dd4b] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:27.302|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:27.302|DEBUG|m.c.R.s.m.R.queryOBR|==>  Preparing: select * from OML_O21_obr where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:27.303|DEBUG|m.c.R.s.m.R.queryOBR|==> Parameters: 20201022STA0132(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:27.308|DEBUG|m.c.R.s.m.R.queryOBR|<==      Total: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:27.309|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5641dd4b]
+LeanScheduler_Worker-7|2020-10-22 17:50:27.309|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:27.310|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@120cb735] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:27.311|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:27.311|DEBUG|m.c.R.s.m.R.queryOBX|==>  Preparing: select * from OML_O21_obx where sampleno = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:27.312|DEBUG|m.c.R.s.m.R.queryOBX|==> Parameters: 20201022STA0132(String)
+LeanScheduler_Worker-7|2020-10-22 17:50:27.316|DEBUG|m.c.R.s.m.R.queryOBX|<==      Total: 13
+LeanScheduler_Worker-7|2020-10-22 17:50:27.317|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@120cb735]
+LeanScheduler_Worker-7|2020-10-22 17:50:27.688|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-7|2020-10-22 17:50:27.688|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5343e9dc] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-7|2020-10-22 17:50:27.689|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-7|2020-10-22 17:50:27.689|DEBUG|m.c.R.s.m.R.deletePostList|==>  Preparing: delete from L_DATA_TRANSFER where jlxh = ? 
+LeanScheduler_Worker-7|2020-10-22 17:50:27.689|DEBUG|m.c.R.s.m.R.deletePostList|==> Parameters: 688805(Long)
+LeanScheduler_Worker-7|2020-10-22 17:50:27.691|DEBUG|m.c.R.s.m.R.deletePostList|<==    Updates: 1
+LeanScheduler_Worker-7|2020-10-22 17:50:27.691|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@5343e9dc]
+LeanScheduler_Worker-8|2020-10-22 17:50:27.715|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:27.715|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40d82b14] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:27.715|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:27.717|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-8|2020-10-22 17:50:27.717|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-8|2020-10-22 17:50:27.717|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 3
+LeanScheduler_Worker-8|2020-10-22 17:50:27.717|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@40d82b14]
+LeanScheduler_Worker-8|2020-10-22 17:50:27.717|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:27.718|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e1fcd7f] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:27.718|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:27.718|DEBUG|m.c.R.s.m.R.updateTransfer|==>  Preparing: update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:27.718|DEBUG|m.c.R.s.m.R.updateTransfer|==> Parameters: 480123(Long)
+LeanScheduler_Worker-8|2020-10-22 17:50:27.720|DEBUG|m.c.R.s.m.R.updateTransfer|<==    Updates: 1
+LeanScheduler_Worker-8|2020-10-22 17:50:27.720|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4e1fcd7f]
+LeanScheduler_Worker-8|2020-10-22 17:50:27.720|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:27.720|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a204064] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:27.720|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:27.721|DEBUG|m.c.R.s.m.R.queryPID|==>  Preparing: select * from ZHLIS.OML_O21_pid where sampleno = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:27.721|DEBUG|m.c.R.s.m.R.queryPID|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-8|2020-10-22 17:50:27.722|DEBUG|m.c.R.s.m.R.queryPID|<==      Total: 1
+LeanScheduler_Worker-8|2020-10-22 17:50:27.722|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4a204064]
+LeanScheduler_Worker-8|2020-10-22 17:50:27.722|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:27.722|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f22c744] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:27.723|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:27.723|DEBUG|m.c.R.s.m.R.queryPV1|==>  Preparing: select * from OML_O21_pv1 where sampleno = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:27.723|DEBUG|m.c.R.s.m.R.queryPV1|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-8|2020-10-22 17:50:27.725|DEBUG|m.c.R.s.m.R.queryPV1|<==      Total: 1
+LeanScheduler_Worker-8|2020-10-22 17:50:27.725|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@f22c744]
+LeanScheduler_Worker-8|2020-10-22 17:50:27.725|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:27.725|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ea3cd3f] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:27.725|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:27.726|DEBUG|m.c.R.s.m.R.queryORC|==>  Preparing: select * from OML_O21_orc where sampleno = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:27.726|DEBUG|m.c.R.s.m.R.queryORC|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-8|2020-10-22 17:50:27.727|DEBUG|m.c.R.s.m.R.queryORC|<==      Total: 1
+LeanScheduler_Worker-8|2020-10-22 17:50:27.727|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@ea3cd3f]
+LeanScheduler_Worker-8|2020-10-22 17:50:27.727|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:27.727|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e678da1] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:27.728|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:27.728|DEBUG|m.c.R.s.m.R.queryOBR|==>  Preparing: select * from OML_O21_obr where sampleno = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:27.728|DEBUG|m.c.R.s.m.R.queryOBR|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-8|2020-10-22 17:50:27.730|DEBUG|m.c.R.s.m.R.queryOBR|<==      Total: 1
+LeanScheduler_Worker-8|2020-10-22 17:50:27.730|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3e678da1]
+LeanScheduler_Worker-8|2020-10-22 17:50:27.730|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:27.731|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@760cd969] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:27.731|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:27.731|DEBUG|m.c.R.s.m.R.queryGermOBX|==>  Preparing: select * from OML_O21_OBX_XJ where sampleno = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:27.731|DEBUG|m.c.R.s.m.R.queryGermOBX|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-8|2020-10-22 17:50:27.733|DEBUG|m.c.R.s.m.R.queryGermOBX|<==      Total: 2
+LeanScheduler_Worker-8|2020-10-22 17:50:27.734|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@760cd969]
+LeanScheduler_Worker-8|2020-10-22 17:50:27.734|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:27.734|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f0d380b] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:27.734|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:27.734|DEBUG|m.c.R.s.m.R.queryGermZMIC|==>  Preparing: select * from OML_O21_ZMIC where sampleno = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:27.735|DEBUG|m.c.R.s.m.R.queryGermZMIC|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-8|2020-10-22 17:50:27.736|DEBUG|m.c.R.s.m.R.queryGermZMIC|<==      Total: 0
+LeanScheduler_Worker-8|2020-10-22 17:50:27.736|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f0d380b]
+LeanScheduler_Worker-8|2020-10-22 17:50:28.103|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:28.103|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38c2a42a] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:28.104|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:28.104|DEBUG|m.c.R.s.m.R.updateTransfer|==>  Preparing: update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:28.104|DEBUG|m.c.R.s.m.R.updateTransfer|==> Parameters: 500111(Long)
+LeanScheduler_Worker-8|2020-10-22 17:50:28.166|DEBUG|m.c.R.s.m.R.updateTransfer|<==    Updates: 1
+LeanScheduler_Worker-8|2020-10-22 17:50:28.166|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@38c2a42a]
+LeanScheduler_Worker-8|2020-10-22 17:50:28.166|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:28.167|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@116018d0] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:28.167|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:28.167|DEBUG|m.c.R.s.m.R.queryPID|==>  Preparing: select * from ZHLIS.OML_O21_pid where sampleno = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:28.168|DEBUG|m.c.R.s.m.R.queryPID|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-8|2020-10-22 17:50:28.169|DEBUG|m.c.R.s.m.R.queryPID|<==      Total: 1
+LeanScheduler_Worker-8|2020-10-22 17:50:28.169|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@116018d0]
+LeanScheduler_Worker-8|2020-10-22 17:50:28.169|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:28.169|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e653721] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:28.170|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:28.170|DEBUG|m.c.R.s.m.R.queryPV1|==>  Preparing: select * from OML_O21_pv1 where sampleno = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:28.170|DEBUG|m.c.R.s.m.R.queryPV1|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-8|2020-10-22 17:50:28.171|DEBUG|m.c.R.s.m.R.queryPV1|<==      Total: 1
+LeanScheduler_Worker-8|2020-10-22 17:50:28.172|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7e653721]
+LeanScheduler_Worker-8|2020-10-22 17:50:28.172|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:28.172|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41e04d8b] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:28.172|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:28.172|DEBUG|m.c.R.s.m.R.queryORC|==>  Preparing: select * from OML_O21_orc where sampleno = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:28.173|DEBUG|m.c.R.s.m.R.queryORC|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-8|2020-10-22 17:50:28.174|DEBUG|m.c.R.s.m.R.queryORC|<==      Total: 1
+LeanScheduler_Worker-8|2020-10-22 17:50:28.174|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41e04d8b]
+LeanScheduler_Worker-8|2020-10-22 17:50:28.174|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:28.174|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c2e4269] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:28.175|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:28.175|DEBUG|m.c.R.s.m.R.queryOBR|==>  Preparing: select * from OML_O21_obr where sampleno = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:28.175|DEBUG|m.c.R.s.m.R.queryOBR|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-8|2020-10-22 17:50:28.178|DEBUG|m.c.R.s.m.R.queryOBR|<==      Total: 1
+LeanScheduler_Worker-8|2020-10-22 17:50:28.178|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c2e4269]
+LeanScheduler_Worker-8|2020-10-22 17:50:28.178|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:28.178|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2a128d19] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:28.179|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:28.179|DEBUG|m.c.R.s.m.R.queryOBX|==>  Preparing: select * from OML_O21_obx where sampleno = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:28.179|DEBUG|m.c.R.s.m.R.queryOBX|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-8|2020-10-22 17:50:28.184|DEBUG|m.c.R.s.m.R.queryOBX|<==      Total: 25
+LeanScheduler_Worker-8|2020-10-22 17:50:28.184|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2a128d19]
+LeanScheduler_Worker-8|2020-10-22 17:50:28.518|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:28.518|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3aa72247] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:28.518|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:28.518|DEBUG|m.c.R.s.m.R.updateTransfer|==>  Preparing: update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:28.519|DEBUG|m.c.R.s.m.R.updateTransfer|==> Parameters: 667239(Long)
+LeanScheduler_Worker-8|2020-10-22 17:50:28.520|DEBUG|m.c.R.s.m.R.updateTransfer|<==    Updates: 1
+LeanScheduler_Worker-8|2020-10-22 17:50:28.521|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3aa72247]
+LeanScheduler_Worker-8|2020-10-22 17:50:28.521|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:28.521|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4241877e] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:28.521|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:28.522|DEBUG|m.c.R.s.m.R.queryPID|==>  Preparing: select * from ZHLIS.OML_O21_pid where sampleno = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:28.522|DEBUG|m.c.R.s.m.R.queryPID|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-8|2020-10-22 17:50:28.523|DEBUG|m.c.R.s.m.R.queryPID|<==      Total: 1
+LeanScheduler_Worker-8|2020-10-22 17:50:28.523|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4241877e]
+LeanScheduler_Worker-8|2020-10-22 17:50:28.523|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:28.523|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c908f1d] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:28.524|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:28.524|DEBUG|m.c.R.s.m.R.queryPV1|==>  Preparing: select * from OML_O21_pv1 where sampleno = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:28.524|DEBUG|m.c.R.s.m.R.queryPV1|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-8|2020-10-22 17:50:28.526|DEBUG|m.c.R.s.m.R.queryPV1|<==      Total: 1
+LeanScheduler_Worker-8|2020-10-22 17:50:28.526|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c908f1d]
+LeanScheduler_Worker-8|2020-10-22 17:50:28.526|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:28.526|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f263dd2] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:28.527|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:28.527|DEBUG|m.c.R.s.m.R.queryORC|==>  Preparing: select * from OML_O21_orc where sampleno = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:28.527|DEBUG|m.c.R.s.m.R.queryORC|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-8|2020-10-22 17:50:28.529|DEBUG|m.c.R.s.m.R.queryORC|<==      Total: 1
+LeanScheduler_Worker-8|2020-10-22 17:50:28.529|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6f263dd2]
+LeanScheduler_Worker-8|2020-10-22 17:50:28.529|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:28.529|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6580c6a6] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:28.530|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:28.530|DEBUG|m.c.R.s.m.R.queryOBR|==>  Preparing: select * from OML_O21_obr where sampleno = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:28.530|DEBUG|m.c.R.s.m.R.queryOBR|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-8|2020-10-22 17:50:28.532|DEBUG|m.c.R.s.m.R.queryOBR|<==      Total: 1
+LeanScheduler_Worker-8|2020-10-22 17:50:28.532|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6580c6a6]
+LeanScheduler_Worker-8|2020-10-22 17:50:28.532|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-8|2020-10-22 17:50:28.532|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2bb4d71f] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-8|2020-10-22 17:50:28.533|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-8|2020-10-22 17:50:28.533|DEBUG|m.c.R.s.m.R.queryOBX|==>  Preparing: select * from OML_O21_obx where sampleno = ? 
+LeanScheduler_Worker-8|2020-10-22 17:50:28.533|DEBUG|m.c.R.s.m.R.queryOBX|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-8|2020-10-22 17:50:28.538|DEBUG|m.c.R.s.m.R.queryOBX|<==      Total: 27
+LeanScheduler_Worker-8|2020-10-22 17:50:28.538|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2bb4d71f]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.018|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.019|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@556dfd2] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.019|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.019|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.019|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.021|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 3
+LeanScheduler_Worker-9|2020-10-22 17:50:59.021|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@556dfd2]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.021|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.021|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@b912108] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.021|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.021|DEBUG|m.c.R.s.m.R.updateTransfer|==>  Preparing: update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.022|DEBUG|m.c.R.s.m.R.updateTransfer|==> Parameters: 480123(Long)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.024|DEBUG|m.c.R.s.m.R.updateTransfer|<==    Updates: 1
+LeanScheduler_Worker-9|2020-10-22 17:50:59.024|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@b912108]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.025|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.025|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@faeb4a2] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.025|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.025|DEBUG|m.c.R.s.m.R.queryPID|==>  Preparing: select * from ZHLIS.OML_O21_pid where sampleno = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.026|DEBUG|m.c.R.s.m.R.queryPID|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.027|DEBUG|m.c.R.s.m.R.queryPID|<==      Total: 1
+LeanScheduler_Worker-9|2020-10-22 17:50:59.027|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@faeb4a2]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.027|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.027|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4aac2b33] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.028|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.028|DEBUG|m.c.R.s.m.R.queryPV1|==>  Preparing: select * from OML_O21_pv1 where sampleno = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.028|DEBUG|m.c.R.s.m.R.queryPV1|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.029|DEBUG|m.c.R.s.m.R.queryPV1|<==      Total: 1
+LeanScheduler_Worker-9|2020-10-22 17:50:59.030|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4aac2b33]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.030|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.030|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@79b7d5fb] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.030|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.030|DEBUG|m.c.R.s.m.R.queryORC|==>  Preparing: select * from OML_O21_orc where sampleno = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.031|DEBUG|m.c.R.s.m.R.queryORC|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.032|DEBUG|m.c.R.s.m.R.queryORC|<==      Total: 1
+LeanScheduler_Worker-9|2020-10-22 17:50:59.033|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@79b7d5fb]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.033|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.033|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b2c22a4] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.033|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.033|DEBUG|m.c.R.s.m.R.queryOBR|==>  Preparing: select * from OML_O21_obr where sampleno = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.034|DEBUG|m.c.R.s.m.R.queryOBR|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.035|DEBUG|m.c.R.s.m.R.queryOBR|<==      Total: 1
+LeanScheduler_Worker-9|2020-10-22 17:50:59.036|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7b2c22a4]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.036|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.036|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1dd82c7] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.036|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.036|DEBUG|m.c.R.s.m.R.queryGermOBX|==>  Preparing: select * from OML_O21_OBX_XJ where sampleno = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.037|DEBUG|m.c.R.s.m.R.queryGermOBX|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.040|DEBUG|m.c.R.s.m.R.queryGermOBX|<==      Total: 2
+LeanScheduler_Worker-9|2020-10-22 17:50:59.040|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1dd82c7]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.040|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.040|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d5cc4da] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.040|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.041|DEBUG|m.c.R.s.m.R.queryGermZMIC|==>  Preparing: select * from OML_O21_ZMIC where sampleno = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.041|DEBUG|m.c.R.s.m.R.queryGermZMIC|==> Parameters: 20200922ATC5537(String)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.042|DEBUG|m.c.R.s.m.R.queryGermZMIC|<==      Total: 0
+LeanScheduler_Worker-9|2020-10-22 17:50:59.042|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6d5cc4da]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.395|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.396|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2dc04029] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.396|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.396|DEBUG|m.c.R.s.m.R.updateTransfer|==>  Preparing: update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.396|DEBUG|m.c.R.s.m.R.updateTransfer|==> Parameters: 500111(Long)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.398|DEBUG|m.c.R.s.m.R.updateTransfer|<==    Updates: 1
+LeanScheduler_Worker-9|2020-10-22 17:50:59.399|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2dc04029]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.399|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.399|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@572e59be] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.399|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.400|DEBUG|m.c.R.s.m.R.queryPID|==>  Preparing: select * from ZHLIS.OML_O21_pid where sampleno = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.400|DEBUG|m.c.R.s.m.R.queryPID|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.401|DEBUG|m.c.R.s.m.R.queryPID|<==      Total: 1
+LeanScheduler_Worker-9|2020-10-22 17:50:59.401|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@572e59be]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.402|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.402|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25f02baa] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.402|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.402|DEBUG|m.c.R.s.m.R.queryPV1|==>  Preparing: select * from OML_O21_pv1 where sampleno = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.403|DEBUG|m.c.R.s.m.R.queryPV1|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.404|DEBUG|m.c.R.s.m.R.queryPV1|<==      Total: 1
+LeanScheduler_Worker-9|2020-10-22 17:50:59.405|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@25f02baa]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.405|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.405|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3dbf4df5] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.405|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.406|DEBUG|m.c.R.s.m.R.queryORC|==>  Preparing: select * from OML_O21_orc where sampleno = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.406|DEBUG|m.c.R.s.m.R.queryORC|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.408|DEBUG|m.c.R.s.m.R.queryORC|<==      Total: 1
+LeanScheduler_Worker-9|2020-10-22 17:50:59.408|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3dbf4df5]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.408|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.408|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12518363] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.409|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.409|DEBUG|m.c.R.s.m.R.queryOBR|==>  Preparing: select * from OML_O21_obr where sampleno = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.409|DEBUG|m.c.R.s.m.R.queryOBR|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.411|DEBUG|m.c.R.s.m.R.queryOBR|<==      Total: 1
+LeanScheduler_Worker-9|2020-10-22 17:50:59.412|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@12518363]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.412|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.412|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3797cb3e] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.412|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.412|DEBUG|m.c.R.s.m.R.queryOBX|==>  Preparing: select * from OML_O21_obx where sampleno = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.413|DEBUG|m.c.R.s.m.R.queryOBX|==> Parameters: 20200929XSC0198(String)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.417|DEBUG|m.c.R.s.m.R.queryOBX|<==      Total: 25
+LeanScheduler_Worker-9|2020-10-22 17:50:59.417|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@3797cb3e]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.691|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.691|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@797194e1] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.691|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.692|DEBUG|m.c.R.s.m.R.updateTransfer|==>  Preparing: update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.692|DEBUG|m.c.R.s.m.R.updateTransfer|==> Parameters: 667239(Long)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.696|DEBUG|m.c.R.s.m.R.updateTransfer|<==    Updates: 1
+LeanScheduler_Worker-9|2020-10-22 17:50:59.696|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@797194e1]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.696|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.697|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78fcbeb5] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.697|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.697|DEBUG|m.c.R.s.m.R.queryPID|==>  Preparing: select * from ZHLIS.OML_O21_pid where sampleno = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.697|DEBUG|m.c.R.s.m.R.queryPID|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.699|DEBUG|m.c.R.s.m.R.queryPID|<==      Total: 1
+LeanScheduler_Worker-9|2020-10-22 17:50:59.699|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@78fcbeb5]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.699|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.699|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d5ffbd7] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.699|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.700|DEBUG|m.c.R.s.m.R.queryPV1|==>  Preparing: select * from OML_O21_pv1 where sampleno = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.700|DEBUG|m.c.R.s.m.R.queryPV1|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.701|DEBUG|m.c.R.s.m.R.queryPV1|<==      Total: 1
+LeanScheduler_Worker-9|2020-10-22 17:50:59.702|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@d5ffbd7]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.702|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.702|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@68dd148a] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.702|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.702|DEBUG|m.c.R.s.m.R.queryORC|==>  Preparing: select * from OML_O21_orc where sampleno = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.702|DEBUG|m.c.R.s.m.R.queryORC|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.704|DEBUG|m.c.R.s.m.R.queryORC|<==      Total: 1
+LeanScheduler_Worker-9|2020-10-22 17:50:59.704|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@68dd148a]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.704|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.704|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55194547] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.705|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.705|DEBUG|m.c.R.s.m.R.queryOBR|==>  Preparing: select * from OML_O21_obr where sampleno = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.705|DEBUG|m.c.R.s.m.R.queryOBR|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.707|DEBUG|m.c.R.s.m.R.queryOBR|<==      Total: 1
+LeanScheduler_Worker-9|2020-10-22 17:50:59.707|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@55194547]
+LeanScheduler_Worker-9|2020-10-22 17:50:59.707|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-9|2020-10-22 17:50:59.707|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@488d5047] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-9|2020-10-22 17:50:59.708|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@3ab6be48] will not be managed by Spring
+LeanScheduler_Worker-9|2020-10-22 17:50:59.708|DEBUG|m.c.R.s.m.R.queryOBX|==>  Preparing: select * from OML_O21_obx where sampleno = ? 
+LeanScheduler_Worker-9|2020-10-22 17:50:59.708|DEBUG|m.c.R.s.m.R.queryOBX|==> Parameters: 20201020XEC0553(String)
+LeanScheduler_Worker-9|2020-10-22 17:50:59.713|DEBUG|m.c.R.s.m.R.queryOBX|<==      Total: 27
+LeanScheduler_Worker-9|2020-10-22 17:50:59.713|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@488d5047]
+LeanScheduler_Worker-10|2020-10-22 17:51:00.235|DEBUG|org.mybatis.spring.SqlSessionUtils|Creating a new SqlSession
+LeanScheduler_Worker-10|2020-10-22 17:51:00.235|DEBUG|org.mybatis.spring.SqlSessionUtils|SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41dc5b91] was not registered for synchronization because synchronization is not active
+LeanScheduler_Worker-10|2020-10-22 17:51:00.235|DEBUG|o.m.s.t.SpringManagedTransaction|JDBC Connection [com.alibaba.druid.proxy.jdbc.ConnectionProxyImpl@342bc267] will not be managed by Spring
+LeanScheduler_Worker-10|2020-10-22 17:51:00.236|DEBUG|m.c.R.s.m.R.queryPostList|==>  Preparing: select * from L_DATA_TRANSFER where REPEAT < 5 order by jlxh 
+LeanScheduler_Worker-10|2020-10-22 17:51:00.236|DEBUG|m.c.R.s.m.R.queryPostList|==> Parameters: 
+LeanScheduler_Worker-10|2020-10-22 17:51:00.237|DEBUG|m.c.R.s.m.R.queryPostList|<==      Total: 0
+LeanScheduler_Worker-10|2020-10-22 17:51:00.237|DEBUG|org.mybatis.spring.SqlSessionUtils|Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@41dc5b91]
