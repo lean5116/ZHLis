@@ -14,10 +14,11 @@ public class LisCommonWSServiceImpl implements LisCommonWSService{
     public String reportPostBack(String inputString) {
         String resp = "";
         try {
-            resp =WebServiceUtil.commonWsService(WSDL_URL, "MessageIn", inputString)[0].toString();
+            Object[] result = WebServiceUtil.commonWsService(WSDL_URL, "MessageIn","HL7" ,inputString);
+            resp =result[0].toString();
         }catch (Exception e){
-            logger.error(e.toString());
-            logger.error("接口调用错误");
+            logger.error("error: {}", e.getMessage(), e);
+            logger.error("接口调调用错误");
         }
         return  resp;
     }
@@ -26,9 +27,10 @@ public class LisCommonWSServiceImpl implements LisCommonWSService{
     public String returnAudit(String inputString) {
         String resp = "";
         try {
-            resp =WebServiceUtil.commonWsService(WSDL_URL, "MessageIn", inputString)[0].toString();
+            Object[] result = WebServiceUtil.commonWsService(WSDL_URL, "MessageIn", "JSON",inputString);
+            resp =result[0].toString();
         }catch (Exception e){
-            logger.error(e.toString());
+            logger.error("error: {}", e.getMessage(), e);
             logger.error("接口调用错误");
         }
         return  resp;

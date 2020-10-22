@@ -3,62 +3,66 @@
 <mapper namespace="com.RealLis.specimenInhos.mapper.ViLisBarcodeInfoMapper">
 
     <resultMap type="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo" id="ViLisBarcodeInfoMap">
-        <result property="barcode" column="BARCODE" />
-        <result property="barcode2" column="BARCODE2" />
-        <result property="requestmode" column="REQUESTMODE" />
+        <result property="barcode" column="BARCODE"/>
+        <result property="barcode2" column="BARCODE2"/>
+        <result property="requestmode" column="REQUESTMODE"/>
         <result property="requestdoctor" column="REQUESTDOCTOR"/>
-        <result property="requettime" column="REQUETTIME"  />
-        <result property="department" column="DEPARTMENT" />
-        <result property="bednum" column="BEDNUM" />
-        <result property="patienttype" column="PATIENTTYPE" />
-        <result property="patientid" column="PATIENTID" />
-        <result property="patientname" column="PATIENTNAME" />
-        <result property="patientsex" column="PATIENTSEX" />
-        <result property="birthday" column="BIRTHDAY" />
-        <result property="patientage" column="PATIENTAGE" />
-        <result property="ageunit" column="AGEUNIT" />
-        <result property="specimencode" column="SPECIMENCODE" />
-        <result property="barclass" column="BARCLASS" />
-        <result property="examcode" column="EXAMCODE" />
-        <result property="examname" column="EXAMNAME" />
-        <result property="cost" column="COST" />
-        <result property="coststatus" column="COSTSTATUS" />
-        <result property="samplingtime" column="SAMPLINGTIME" />
-        <result property="samplingdoctor" column="SAMPLINGDOCTOR" />
-        <result property="receivertime" column="RECEIVERTIME" />
+        <result property="requettime" column="REQUETTIME"/>
+        <result property="department" column="DEPARTMENT"/>
+        <result property="bednum" column="BEDNUM"/>
+        <result property="patienttype" column="PATIENTTYPE"/>
+        <result property="patientid" column="PATIENTID"/>
+        <result property="patientname" column="PATIENTNAME"/>
+        <result property="patientsex" column="PATIENTSEX"/>
+        <result property="birthday" column="BIRTHDAY"/>
+        <result property="patientage" column="PATIENTAGE"/>
+        <result property="ageunit" column="AGEUNIT"/>
+        <result property="specimencode" column="SPECIMENCODE"/>
+        <result property="barclass" column="BARCLASS"/>
+        <result property="examcode" column="EXAMCODE"/>
+        <result property="examname" column="EXAMNAME"/>
+        <result property="cost" column="COST"/>
+        <result property="coststatus" column="COSTSTATUS"/>
+        <result property="samplingtime" column="SAMPLINGTIME"/>
+        <result property="samplingdoctor" column="SAMPLINGDOCTOR"/>
+        <result property="receivertime" column="RECEIVERTIME"/>
         <result property="labdoctor" column="LABDOCTOR"/>
-        <result property="barstatus" column="BARSTATUS" />
-        <result property="canceler" column="CANCELER" />
-        <result property="canceltime" column="CANCELTIME" />
+        <result property="barstatus" column="BARSTATUS"/>
+        <result property="canceler" column="CANCELER"/>
+        <result property="canceltime" column="CANCELTIME"/>
         <result property="diagnostic" column="DIAGNOSTIC"/>
-        <result property="tube" column="TUBE" />
+        <result property="tube" column="TUBE"/>
         <result property="receiveaddr" column="RECEIVEADDR"/>
         <result property="hyxm" column="HYXM"/>
         <result property="departmentName" column="DEPARTMENTNAME"/>
     </resultMap>
-    <select id="queryInfoList" resultMap="ViLisBarcodeInfoMap" parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
+    <select id="queryInfoList" resultMap="ViLisBarcodeInfoMap"
+            parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
         select
-        BARCODE, BARCODE2,REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID, PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST, COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME, DIAGNOSTIC,TUBE,RECEIVEADDR,hyxm,departmentName
+        BARCODE, BARCODE2,REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID,
+        PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST,
+        COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME,
+        DIAGNOSTIC,TUBE,RECEIVEADDR,hyxm,departmentName
         from ZHLIS.VI_LIS_BARCODE_INFO
         <where>
-<!--            <if test="params.beginTime != null and params.beginTime != ''">-->
-<!--                and SAMPLINGTIME &gt;=  to_date(#{params.beginTime},'yyyy-MM-dd HH24:mi:ss')-->
-<!--            </if>-->
-<!--            <if test="params.endTime != null and params.endTime != ''">-->
-<!--                and SAMPLINGTIME  &lt;= to_date(#{params.endTime},'yyyy-MM-dd HH24:mi:ss')-->
-<!--            </if>-->
+            <!--            <if test="params.beginTime != null and params.beginTime != ''">-->
+            <!--                and SAMPLINGTIME &gt;=  to_date(#{params.beginTime},'yyyy-MM-dd HH24:mi:ss')-->
+            <!--            </if>-->
+            <!--            <if test="params.endTime != null and params.endTime != ''">-->
+            <!--                and SAMPLINGTIME  &lt;= to_date(#{params.endTime},'yyyy-MM-dd HH24:mi:ss')-->
+            <!--            </if>-->
             <if test="barstatus!=null and barstatus!=''">
                 and barstatus=#{barstatus}
             </if>
             <if test="department!=null and department !=''">
                 and department = #{department}
-                and   INOPERATION != '1'
+                and INOPERATION != '1'
             </if>
             <if test="startRequettime!=null">
                 and REQUETTIME &gt; #{startRequettime}
             </if>
             <if test="endRequettime!=null">
-                and REQUETTIME  &lt; #{endRequettime}
+                and REQUETTIME &lt; #{endRequettime}
             </if>
             <if test="startSamplingtime!=null">
                 and SAMPLINGTIME &gt; #{startSamplingtime}
@@ -94,13 +98,17 @@
                 and visitnumber =#{params.inpatientId}
             </if>
         </where>
-        order by  to_number(translate(BEDNUM,'0123456789'|| BEDNUM,'0123456789')),REQUETTIME
+        order by to_number(translate(BEDNUM,'0123456789'|| BEDNUM,'0123456789')),REQUETTIME
     </select>
 
 
-    <select id="queryInfo" resultMap="ViLisBarcodeInfoMap" parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
+    <select id="queryInfo" resultMap="ViLisBarcodeInfoMap"
+            parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
         select
-        BARCODE, BARCODE,REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID, PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST, COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME, DIAGNOSTIC,TUBE,RECEIVEADDR,hyxm,departmentName
+        BARCODE, BARCODE,REQUESTMODE, REQUESTDOCTOR, REQUETTIME, DEPARTMENT, BEDNUM, PATIENTTYPE, PATIENTID,
+        PATIENTNAME, PATIENTSEX, BIRTHDAY, PATIENTAGE, AGEUNIT, SPECIMENCODE, BARCLASS, EXAMCODE, EXAMNAME, COST,
+        COSTSTATUS, SAMPLINGTIME, SAMPLINGDOCTOR, RECEIVERTIME, LABDOCTOR, BARSTATUS, CANCELER, CANCELTIME,
+        DIAGNOSTIC,TUBE,RECEIVEADDR,hyxm,departmentName
         from ZHLIS.VI_LIS_BARCODE_INFO
         <where>
             <if test="department!=null and department !=''">
@@ -110,7 +118,7 @@
                 and REQUETTIME &gt; #{startRequettime}
             </if>
             <if test="endRequettime!=null">
-                and REQUETTIME  &lt; #{endRequettime}
+                and REQUETTIME &lt; #{endRequettime}
             </if>
             <if test="startSamplingtime!=null">
                 and SAMPLINGTIME &gt; #{startSamplingtime}
@@ -132,7 +140,7 @@
             </if>
             and rownum &lt; 2
         </where>
-        order by  to_number(translate(BEDNUM,'0123456789'|| BEDNUM,'0123456789'))
+        order by to_number(translate(BEDNUM,'0123456789'|| BEDNUM,'0123456789'))
     </select>
 
     <select id="queryHyxm" resultType="com.RealLis.specimenInhos.domain.GyHyxm">

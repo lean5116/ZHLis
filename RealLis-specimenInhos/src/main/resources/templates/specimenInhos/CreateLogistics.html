@@ -173,6 +173,7 @@
 
     /*打包*/
     function Packing() {
+        var preAdmission = [[${preAdmission}]]
         $.modal.loading("数据加载中");
         var allPackingData = $('#packageInfo').bootstrapTable('getData');
         var userId = [[${userCode}]];//得到当前页使用者
@@ -183,7 +184,8 @@
         }
         var postData = {
             barcodes:barcodes,
-            userCode:userId
+            userCode:userId,
+            preAdmission:preAdmission
         };
         $.ajax({
             type: "post",

@@ -3,27 +3,26 @@
 <mapper namespace="com.RealLis.specimenInhos.mapper.LLoginsticsMapper">
 
     <resultMap type="com.RealLis.specimenInhos.domain.LLogistics" id="LLogisticsMap">
-        <result property="wlbh" column="WLBH" />
+        <result property="wlbh" column="WLBH"/>
         <result property="cjsj" column="CJSJ"/>
-        <result property="dbsj" column="DBSJ" />
+        <result property="dbsj" column="DBSJ"/>
         <result property="cjr" column="CJR"/>
-        <result property="dbr" column="DBR" />
-        <result property="yssj" column="YSSJ" />
-        <result property="ysr" column="YSR" />
-        <result property="bqdm" column="BQDM" />
-        <result property="ddsj" column="DDSJ" />
-        <result property="bbsl" column="BBSL" />
-        <result property="wlzt" column="WLZT" />
-        <result property="bqmc" column="BQMC" />
-        <result property="qsr" column="QSR" />
+        <result property="dbr" column="DBR"/>
+        <result property="yssj" column="YSSJ"/>
+        <result property="ysr" column="YSR"/>
+        <result property="bqdm" column="BQDM"/>
+        <result property="ddsj" column="DDSJ"/>
+        <result property="bbsl" column="BBSL"/>
+        <result property="wlzt" column="WLZT"/>
+        <result property="bqmc" column="BQMC"/>
+        <result property="qsr" column="QSR"/>
     </resultMap>
-
 
 
     <!--通过实体作为筛选条件查询-->
     <select id="queryLlogisticsList" resultMap="LLogisticsMap">
         select
-          WLBH, CJSJ, DBSJ, CJR, DBR, YSSJ, YSR, BQDM, DDSJ, BBSL, WLZT, BQMC, QSR
+        WLBH, CJSJ, DBSJ, CJR, DBR, YSSJ, YSR, BQDM, DDSJ, BBSL, WLZT, BQMC, QSR
         from ZHLIS.L_LOGISTICS
         <where>
             <if test="wlbh != null">
@@ -69,10 +68,10 @@
                 and WLBH like concat(concat('%',#{searchValue,jdbcType=VARCHAR}),'%')
             </if>
             <if test="params.beginTime != null and params.beginTime != ''">
-                and CJSJ &gt;=  to_date(#{params.beginTime},'yyyy-MM-dd HH24:mi:ss')
+                and CJSJ &gt;= to_date(#{params.beginTime},'yyyy-MM-dd HH24:mi:ss')
             </if>
             <if test="params.endTime != null and params.endTime != ''">
-                and CJSJ  &lt;= to_date(#{params.endTime},'yyyy-MM-dd HH24:mi:ss')
+                and CJSJ &lt;= to_date(#{params.endTime},'yyyy-MM-dd HH24:mi:ss')
             </if>
         </where>
         order by cjsj desc
@@ -128,21 +127,21 @@
                 and WLBH like concat(concat('%',#{searchValue,jdbcType=VARCHAR}),'%')
             </if>
             <if test="params.beginTime != null and params.beginTime != ''">
-                and CJSJ &gt;=  to_date(#{params.beginTime},'yyyy-MM-dd HH24:mi:ss')
+                and CJSJ &gt;= to_date(#{params.beginTime},'yyyy-MM-dd HH24:mi:ss')
             </if>
             <if test="params.endTime != null and params.endTime != ''">
-                and CJSJ  &lt;= to_date(#{params.endTime},'yyyy-MM-dd HH24:mi:ss')
+                and CJSJ &lt;= to_date(#{params.endTime},'yyyy-MM-dd HH24:mi:ss')
             </if>
         </where>
         order by cjsj desc
     </select>
 
     <resultMap type="com.RealLis.specimenInhos.domain.LLogisticsDetailVO" id="LLogisticsDetailMap">
-        <result property="wlbh" column="WLBH" />
-        <result property="tmh" column="TMH" />
-        <result property="bedNum" column="BED_NO" />
-        <result property="patientName" column="PATIENTNAME" />
-        <result property="examinaim" column="EXAMINAIM" />
+        <result property="wlbh" column="WLBH"/>
+        <result property="tmh" column="TMH"/>
+        <result property="bedNum" column="BED_NO"/>
+        <result property="patientName" column="PATIENTNAME"/>
+        <result property="examinaim" column="EXAMINAIM"/>
     </resultMap>
 
     <select id="queryLlogisticsDetailByWlbh" parameterType="String" resultMap="LLogisticsDetailMap">
@@ -159,7 +158,7 @@
 
     </select>
 
-    <update id ="updateLogistics" parameterType="com.RealLis.specimenInhos.domain.LLogistics">
+    <update id="updateLogistics" parameterType="com.RealLis.specimenInhos.domain.LLogistics">
         UPDATE l_logistics Set yssj=sysdate,wlzt=2,ysr=#{ysr} Where wlbh = #{wlbh}
     </update>
 </mapper>

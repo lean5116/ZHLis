@@ -23,7 +23,11 @@ public class WebServiceUtil {
         try {
             // invoke("方法名",参数1,参数2,参数3....);
             objects = client.invoke(s, param);
-            System.out.println("返回数据:" + objects[0]);
+            for (Object object:objects
+                 ) {
+                logger.info("返回数据:" + object+"\n");
+            }
+
         } catch (Exception e) {
             System.out.println(e);
             if(e instanceof javax.xml.ws.WebServiceException){

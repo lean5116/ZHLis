@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <th:block th:include="include :: header('住院标本管理')" />
-    <th:block th:include="include :: datetimepicker-css" />
-    <th:block th:include="include :: bootstrap-editable-css" />
+    <th:block th:include="include :: header('住院标本管理')"/>
+    <th:block th:include="include :: datetimepicker-css"/>
+    <th:block th:include="include :: bootstrap-editable-css"/>
 </head>
-<body  class="gray-bg" style="min-width: 1000px;overflow-x: auto">
+<body class="gray-bg" style="min-width: 1000px;overflow-x: auto">
 <div class="wrapper wrapper-content animated fadeIn">
     <div class="row">
         <div class="col-sm-12">
@@ -13,16 +13,9 @@
                 <div class="ibox-title">
                     <h5 style="font-size: large">住院标本 <small class="m-l-sm">住院标本</small></h5>
                     <div class="ibox-tools">
-                        <a class="btn btn-default fa fa-indent"  th:text="${departmentName}">
-
-                        </a>
-                        <a class="btn btn-default fa fa-user-md" th:text="${userCode}">
-
-                        </a>
-                        <a class="btn btn-default fa fa-user-md"  onclick="downloadplugin()">
-                            插件下载
-                        </a>
-
+                        <a class="btn btn-default fa fa-indent" th:text="${departmentName}"></a>
+                        <a class="btn btn-default fa fa-user-md" th:text="${userCode}"></a>
+                        <a class="btn btn-default fa fa-user-md" onclick="downloadplugin()">插件下载</a>
                     </div>
                 </div>
                 <div class="ibox-content">
@@ -34,37 +27,47 @@
                                         <label class="font-noraml">开始时间:</label>
                                         <div class="input-group date">
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                            <input type="text" class="form-control" id="startDate" name = "params[beginTime]" placeholder="yyyy-MM-dd HH:mm:ss" readonly lay-verify="required|date">
+                                            <input type="text" class="form-control" id="startDate"
+                                                   name="params[beginTime]" placeholder="yyyy-MM-dd HH:mm:ss" readonly
+                                                   lay-verify="required|date">
                                         </div>
                                     </div>
                                     <div class="form-group" style="margin-top: 10px">
                                         <label class="font-noraml">结束时间:</label>
                                         <div class="input-group date">
                                             <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                            <input type="text" class="form-control" id="endDate" name="params[endTime]" placeholder="yyyy-MM-dd HH:mm:ss" readonly lay-verify="required|date">
+                                            <input type="text" class="form-control" id="endDate" name="params[endTime]"
+                                                   placeholder="yyyy-MM-dd HH:mm:ss" readonly
+                                                   lay-verify="required|date">
                                         </div>
                                     </div>
                                     <input name="department" th:value="${department}" hidden>
-                                    <input type="text"  name="params[isInhos]" th:value="${isInhos}" hidden>
-                                    <input type="text"  name="params[inpatientId]" th:value="${inpatientId}" hidden>
-                                    <input type="text"  name="params[operation]" th:value="${operation}" hidden>
-                                    <input type="text"  name="params[patientClass]" th:value="${patientClass}" hidden>
+                                    <input type="text" name="params[isInhos]" th:value="${isInhos}" hidden>
+                                    <input type="text" name="params[inpatientId]" th:value="${inpatientId}" hidden>
+                                    <input type="text" name="params[operation]" th:value="${operation}" hidden>
+                                    <input type="text" name="params[patientClass]" th:value="${patientClass}" hidden>
+                                    <input type="text" name="params[preAdmission]" th:value="${preAdmission}" hidden>
                                 </form>
                             </div>
                         </div>
                         <div class="col-sm-8">
-                            <div class="form-inline"  >
-                                <div class="form-group"   >
+                            <div class="form-inline">
+                                <div class="form-group">
                                     <label for="buttons">功能选项:</label>
-                                    <div id = "buttons" >
-
-                                        <button type="button" class="btn btn-primary" style="width: 110px;margin: auto auto"  onclick="infoRefresh()"><i class="fa fa-refresh"></i>信息刷新</button>
-
-                                        <button type="button" class="btn btn-danger"  style="width: 110px;margin: auto auto"><i class="fa fa-file-text"></i>危急值报表</button>
-
-                                        <!--                                            <button type="button" class="btn btn-warning"  style="width: 110px;margin: 10px auto"><i class="fa fa-reply"></i> 撤销采集</button>-->
-                                        <button type="button" class="btn btn-warning"  style="width: 110px;margin: auto auto"><i class="fa fa-upload"></i>信息更新</button>
-                                        <button type="button" class="btn btn-default" style="width: 110px;margin: auto auto"><i class="fa fa-list"></i>报告单</button>
+                                    <div id="buttons">
+                                        <button type="button" class="btn btn-primary"
+                                                style="width: 110px;margin: auto auto" onclick="infoRefresh()"><i
+                                                class="fa fa-refresh"></i>信息刷新
+                                        </button>
+                                        <button type="button" class="btn btn-danger"
+                                                style="width: 110px;margin: auto auto"><i class="fa fa-file-text"></i>危急值报表
+                                        </button>
+                                        <button type="button" class="btn btn-warning"
+                                                style="width: 110px;margin: auto auto"><i class="fa fa-upload"></i>信息更新
+                                        </button>
+                                        <button type="button" class="btn btn-default"
+                                                style="width: 110px;margin: auto auto"><i class="fa fa-list"></i>报告单
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -79,100 +82,106 @@
         <div class="ibox float-e-margins">
             <div class="ibox-content">
                 <div class="row">
-                <div class="tabs" id = "tab">
-            <ul class="nav nav-tabs nav-justified">
-                <li class="active">
-                    <a href="#orderBarCodeTabContent" data-toggle="tab" class="text-center" aria-expanded="true" id = "orderBarCodeTab" >1、医嘱条码</a>
-                </li>
-                <li class="">
-                    <a href="#collectionConfirmationTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id  ="collectionConfirmationTab" >2、采集确认</a>
-                </li>
-                <li class="">
-                    <a href="#collectionCompleteTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id = "collectionCompleteTab" > 3、采集完成</a>
-                </li>
-                <li class="">
-                    <a href="#receiveCompleteTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id = "receiveCompleteTab" >4、接收完成</a>
-                </li>
-                <li class="">
-                    <a href="#cancellationReturnTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id ="cancellationReturnTab" >5、作废退回</a>
-                </li>
-<!--                <li class="">-->
-<!--                    <a href="#inspectInformationTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id="inspectInformationTab">检验信息</a>-->
-<!--                </li>-->
-                <!--                            <li class="">-->
-                <!--                                <a href="#tabDoctorOrderContent" data-toggle="tab" class="text-center" aria-expanded="false"> <i class="fa fa-table" id = "tabDoctorOrder"></i>医生医嘱</a>-->
-                <!--                            </li>-->
-                <li class="">
-                    <a href="#overtimeBarcodeTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id = "overtimeBarcodeTab" >超时条码</a>
-                </li>
-                <li class="">
-                    <a href="#specimenLogisticsTabContent" data-toggle="tab" class="text-center" aria-expanded="false" id ="specimenLogisticsTab">标本物流</a>
-                </li>
+                    <div class="tabs" id="tab">
+                        <ul class="nav nav-tabs nav-justified">
+                            <li class="active">
+                                <a href="#orderBarCodeTabContent" data-toggle="tab" class="text-center"
+                                   aria-expanded="true" id="orderBarCodeTab">1、医嘱条码</a>
+                            </li>
+                            <li class="">
+                                <a href="#collectionConfirmationTabContent" data-toggle="tab" class="text-center"
+                                   aria-expanded="false" id="collectionConfirmationTab">2、采集确认</a>
+                            </li>
+                            <li class="">
+                                <a href="#collectionCompleteTabContent" data-toggle="tab" class="text-center"
+                                   aria-expanded="false" id="collectionCompleteTab"> 3、采集完成</a>
+                            </li>
+                            <li class="">
+                                <a href="#receiveCompleteTabContent" data-toggle="tab" class="text-center"
+                                   aria-expanded="false" id="receiveCompleteTab">4、接收完成</a>
+                            </li>
+                            <li class="">
+                                <a href="#cancellationReturnTabContent" data-toggle="tab" class="text-center"
+                                   aria-expanded="false" id="cancellationReturnTab">5、作废退回</a>
+                            <li class="">
+                                <a href="#overtimeBarcodeTabContent" data-toggle="tab" class="text-center"
+                                   aria-expanded="false" id="overtimeBarcodeTab">超时条码</a>
+                            </li>
+                            <li class="">
+                                <a href="#specimenLogisticsTabContent" data-toggle="tab" class="text-center"
+                                   aria-expanded="false" id="specimenLogisticsTab">标本物流</a>
+                            </li>
 
-            </ul>
-            <div class="tab-content">
+                        </ul>
+                        <div class="tab-content">
+                            <!--医嘱条码tab页本体-->
+                            <div id="orderBarCodeTabContent" class="tab-pane active">
+                                <div class="col-sm-12  select-table table-bordered">
+                                    <table id="orderBarCode" data-search=”true”></table>
+                                </div>
 
-                <div id="orderBarCodeTabContent" class="tab-pane active">
-                    <div class="col-sm-12  select-table table-bordered" >
-                        <table id="orderBarCode" data-search=”true” ></table></div>
-
-                </div>
-                <div id="collectionConfirmationTabContent" class="tab-pane">
-                    <div class="col-sm-12 select-table table-bordered">
-                    <table id="collectionConfirmation" data-search=”true”></table>
+                            </div>
+                            <!--采集确认tab页本体-->
+                            <div id="collectionConfirmationTabContent" class="tab-pane">
+                                <div class="col-sm-12 select-table table-bordered">
+                                    <table id="collectionConfirmation" data-search=”true”></table>
+                                </div>
+                            </div>
+                            <!--采集完成tab页本体-->
+                            <div id="collectionCompleteTabContent" class="tab-pane">
+                                <div class="col-sm-12 select-table table-bordered">
+                                    <table id="collectionComplete" data-search=”true”></table>
+                                </div>
+                            </div>
+                            <!--接收完成tab页本体-->
+                            <div id="receiveCompleteTabContent" class="tab-pane">
+                                <div class="col-sm-12 select-table table-bordered">
+                                    <table id="receiveComplete" data-search=”true”></table>
+                                </div>
+                            </div>
+                            <!--退回条码tab页本体-->
+                            <div id="cancellationReturnTabContent" class="tab-pane">
+                                <div class="col-sm-12 select-table table-bordered">
+                                    <table id="cancellationReturn" data-search=”true”></table>
+                                </div>
+                            </div>
+                            <div id="inspectInformationTabContent" class="tab-pane">
+                                检验信息tab页
+                            </div>
+                            <div id="doctorOrderTabContent" class="tab-pane">
+                                医生医嘱tab页
+                            </div>
+                            <!--超时条码tab页本体-->
+                            <div id="overtimeBarcodeTabContent" class="tab-pane">
+                                <div class="col-sm-12 select-table table-bordered">
+                                    <table id="overtimeBarcode"></table>
+                                </div>
+                            </div>
+                            <!--标本物流tab页本体-->
+                            <div id="specimenLogisticsTabContent" class="tab-pane">
+                                <div class="col-sm-12 select-table table-bordered">
+                                    <table id="specimenLogistics"></table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div id="collectionCompleteTabContent" class="tab-pane">
-                    <div class="col-sm-12 select-table table-bordered">
-                    <table id="collectionComplete" data-search=”true”></table>
-                    </div>
-                </div>
-                <div id="receiveCompleteTabContent" class="tab-pane">
-                    <div class="col-sm-12 select-table table-bordered">
-                    <table id="receiveComplete" data-search=”true”></table>
-                    </div>
-                </div>
-                <div id="cancellationReturnTabContent" class="tab-pane">
-                    <div class="col-sm-12 select-table table-bordered">
-                    <table id="cancellationReturn" data-search=”true”></table>
-                    </div>
-                </div>
-                <div id="inspectInformationTabContent" class="tab-pane">
-                    检验信息tab页
-                </div>
-                <div id="doctorOrderTabContent" class="tab-pane">
-                    医生医嘱tab页
-                </div>
-                <div id="overtimeBarcodeTabContent" class="tab-pane">
-                    <div class="col-sm-12 select-table table-bordered">
-                    <table id="overtimeBarcode"></table>
-                    </div>
-                </div>
-                <div id="specimenLogisticsTabContent" class="tab-pane">
-                    <div class="col-sm-12 select-table table-bordered">
-                        <table id="specimenLogistics"></table>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
+<!--医嘱条码toolbar-->
 <div id="orderBarCodeToolbar" class="fixed-table-toolbar">
     <div class="form-inline">
-
-        <button type="button" class="btn btn-success" onclick="barcodePrintSelect('orderBarCode')"   id="btn_barcodePrint"><i class="fa fa-print"></i>条码打印</button>
-
-        <button type="button" class="btn btn-danger" onclick="barcodeCancelSelect('orderBarCode')" disabled="disabled" id="btn_barcodeCancel"><i class="fa fa-trash-o"></i>条码作废</button>
-
+        <button type="button" class="btn btn-success" onclick="barcodePrintSelect('orderBarCode')"
+                id="btn_barcodePrint"><i class="fa fa-print"></i>条码打印
+        </button>
+        <button type="button" class="btn btn-danger" onclick="barcodeCancelSelect('orderBarCode')" disabled="disabled"
+                id="btn_barcodeCancel"><i class="fa fa-trash-o"></i>条码作废
+        </button>
         <label for="sampleState" class="label label-warning">样本状态:</label>
         <select class=" input-sm mb-md " id="sampleState" onchange="orderBarcodeFilter()">
-            <option value="-99" >0、全部</option>
+            <option value="-99">0、全部</option>
             <option value="0" selected>1、未打印</option>
             <option value="1">2、已打印</option>
             <option value="2">3、已采集</option>
@@ -183,103 +192,54 @@
         </select>
     </div>
 </div>
+<!--采集确认toolbar-->
 <div id="collectionConfirmationToolbar" class="fixed-table-toolbar">
     <div class="form-inline">
-        <button type="button" class="btn btn-primary"  style="width: 110px" onclick="collectionConfirm()"><i class="fa fa-hand-o-left"></i> 采集确认</button>
-        <input id="confirmBarcode" class="input-sm" placeholder="搜索" />
+        <button type="button" class="btn btn-primary" style="width: 110px" onclick="collectionConfirm()"><i
+                class="fa fa-hand-o-left"></i> 采集确认
+        </button>
+        <input id="confirmBarcode" class="input-sm" placeholder="搜索"/>
     </div>
 </div>
+<!--撤销采集toolbar-->
 <div id="collectionCompleteToolbar" class="fixed-table-toolbar">
     <div class="form-inline">
-        <button type="button" class="btn btn-warning"  style="width: 110px" onclick="confirmCancel()"><i class="fa fa-reply"></i> 撤销采集</button>
+        <button type="button" class="btn btn-warning" style="width: 110px" onclick="confirmCancel()"><i
+                class="fa fa-reply"></i> 撤销采集
+        </button>
     </div>
 </div>
-
+<!--标本退回toolbar-->
 <div id="cancellationReturnToolbar" class="fixed-table-toolbar">
     <div class="form-inline">
-<!--        <button type="button"   class="btn btn-success" onclick="barcodePrintSelect('cancellationReturn')"  ><i class="fa fa-print" ></i>条码打印</button>-->
     </div>
 </div>
-
+<!--标本物流toolbar-->
 <div id="specimenLogisticsToolbar" class="fixed-table-toolbar">
     <div class="form-inline">
-        <button type="button" class="btn btn-default" style="width: 110px;margin: auto auto"  onclick="createLogistics()"><i class="fa fa-ambulance"></i> 创建物流</button>
-        <button type="button" class="btn btn-success" style="width: 110px;margin: auto auto"  onclick="printlogistics()"><i class="fa fa fa-print"></i> 补打条码</button>
-        <button type="button" class="btn btn-primary" style="width: 110px;margin: auto auto"  onclick="startShipping()"><i class="fa fa-ambulance"></i> 开始运送</button>
+        <button type="button" class="btn btn-default" style="width: 110px;margin: auto auto"
+                onclick="createLogistics()"><i class="fa fa-ambulance"></i> 创建物流
+        </button>
+        <button type="button" class="btn btn-success" style="width: 110px;margin: auto auto" onclick="printlogistics()">
+            <i class="fa fa fa-print"></i> 补打条码
+        </button>
+        <button type="button" class="btn btn-primary" style="width: 110px;margin: auto auto" onclick="startShipping()">
+            <i class="fa fa-ambulance"></i> 开始运送
+        </button>
     </div>
 </div>
 
-<!--条码生成示例示例-->
-<section hidden>
-    <div > 条码预览</div>
-    <div id="barcodePrint" >
-        <table   style="width: 500px;height: 300px">
-            <tr>
-                <td ><div id="patientname" style="font-size: 15px;font-family: 微软雅黑">测试姓名</div></td>
-                <td> <div id="departmentName">测试科室</div></td>
-                <td><div id="bednum" >测试床号</div></td>
-            </tr>
-            <tr>
-                <td><div style="font-size: 30px">←</div>
-
-               </td>
-                <td><div style="text-align: left"> <svg id="imgCode" style=""/></div></td>
-                <td > <div id = "sglx" style=" margin:0 auto;width:20px;line-height:24px" >ceshi</div>
-                    <div id ="bgbs">报告标识</div>
-                </td>
-            </tr>
-
-            <tr>
-                <td colspan="3"><div id ="examname">检验目的</div></td>
-            </tr>
-            <tr>
-                <td><div id="specimencode" style="font-size: large">样本类型</div></td>
-                <td><div id="requettime" style="font-size: large;text-align: right">>申请时间</div></td>
-                <td><div id="jsdd" style="font-size: large">>接收地点</div></td>
-            </tr>
-        </table>
-    </div>
-    <button onclick="prn1_preview()">打印</button>
-</section>
-
-<!--物流条码生成示例示例-->
-<section hidden>
-    <div > 条码预览</div>
-    <div id="logisticsPrint" >
-        <table   style="width:500px;height: 300px">
-<!--            border:solid 1px black;border-collapse:collapse;-->
-            <tr >
-                <td colspan="3" align="center" style="font-size:xx-large" ><strong>台一医 标本送检单</strong></td>
-            </tr>
-            <tr>
-
-                <td colspan="3"><div style="text-align: center;"> <svg id="imgCodelogistics" style="height: 200px"></svg></div></td>
-
-            </tr>
-            <tr>
-                <td rowspan="2"><div style="text-align: center;font-size:x-large;float: left"  >样品数：</div><div id = "bbsl" style="text-align: center;font-size:x-large;float: left" >8</div></td><!--打包数量-->
-                <td colspan="2"><div id ="bqmc" style="float: right;font-size:x-large"></div></td><!--病区名字-->
-            </tr>
-            <tr>
-
-                <td colspan="2"><div id ="cjsj" style="float: right;font-size:x-large">2020-06-09 00:00:00</div></td><!--送检时间-->
-            </tr>
-        </table>
-
-    </div>
-    <button onclick="prn1_preview('logisticsPrint')">打印</button>
-</section>
 
 
-<th:block th:include="include :: footer" />
-<th:block th:include="include :: datetimepicker-js" />
-<th:block th:include="include :: bootstrap-table-editable-js" />
+<th:block th:include="include :: footer"/>
+<th:block th:include="include :: datetimepicker-js"/>
+<th:block th:include="include :: bootstrap-table-editable-js"/>
 <!--引用jsBarcode插件-->
-<th:block th:include="include :: JsBarcode-js" />
-<th:block th:include="include :: LodopFuncs-js" />
+<th:block th:include="include :: JsBarcode-js"/>
+<th:block th:include="include :: LodopFuncs-js"/>
 <script th:inline="javascript">
     /*查询时间初始化*/
-    layui.use('laydate', function(){
+    layui.use('laydate', function () {
         var laydate = layui.laydate;
         laydate.render({
             elem: '#startDate',
@@ -293,42 +253,42 @@
         });
     });
     /*日期时间格式化*/
-    Date.prototype.format = function(fmt) {
+    Date.prototype.format = function (fmt) {
         var o = {
-            "M+" : this.getMonth()+1,                 //月份
-            "d+" : this.getDate(),                    //日
-            "h+" : this.getHours(),                   //小时
-            "m+" : this.getMinutes(),                 //分
-            "s+" : this.getSeconds(),                 //秒
-            "q+" : Math.floor((this.getMonth()+3)/3), //季度
-            "S"  : this.getMilliseconds()             //毫秒
+            "M+": this.getMonth() + 1,                 //月份
+            "d+": this.getDate(),                    //日
+            "h+": this.getHours(),                   //小时
+            "m+": this.getMinutes(),                 //分
+            "s+": this.getSeconds(),                 //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds()             //毫秒
         };
-        if(/(y+)/.test(fmt)) {
-            fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+        if (/(y+)/.test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
         }
-        for(var k in o) {
-            if(new RegExp("("+ k +")").test(fmt)){
-                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+        for (var k in o) {
+            if (new RegExp("(" + k + ")").test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
             }
         }
         return fmt;
     };
     var dateNow = new Date();
     $('#endDate').val(dateNow.format("yyyy-MM-dd 23:59:59"));
-    dateNow = dateNow.setDate(dateNow.getDate()-1);
-    dateNow  = new Date(dateNow);
+    dateNow = dateNow.setDate(dateNow.getDate() - 1);
+    dateNow = new Date(dateNow);
     $('#startDate').val(dateNow.format("yyyy-MM-dd 00:00:00"));
 </script>
 
 <script th:inline="javascript">
     var prefix = ctx + "specimenInhos";
-    var SampleTypeFormatterData=[[${SampleTypeFormatter}]];  //得到所有标本类型字典值
+    var SampleTypeFormatterData = [[${SampleTypeFormatter}]];  //得到所有标本类型字典值
     var SampleTypeMap = new Map(); //创建标本类型map
     var BGBSData = [[${BGBS}]];
     var BGBSMap = new Map();
-    var currentTableId='orderBarCode'; //设置当前活动table 为医嘱条码
-    var userId= [[${userCode}]];
-    $(function() {
+    var currentTableId = 'orderBarCode'; //设置当前活动table 为医嘱条码
+    var userId = [[${userCode}]];
+    $(function () {
         //全部table 在页面刷新时初始化
         queryBarcodeData('orderBarCode');
         queryBarcodeData('collectionConfirmation');
@@ -341,233 +301,258 @@
         BGBSMapInit()
         infoRefresh();
     });
+
     /*标本类型map初始化*/
     function SampleTypeMapInit() {
         var data = JSON.parse(SampleTypeFormatterData);
-        for(i=0;i<data.length;i++){
-            SampleTypeMap.set(data[i].value,data[i].text);
+        for (i = 0; i < data.length; i++) {
+            SampleTypeMap.set(data[i].value, data[i].text);
         }
     }
 
     /*标本类型map初始化*/
     function BGBSMapInit() {
         var data = JSON.parse(BGBSData);
-        for(i=0;i<data.length;i++){
-            BGBSMap.set(data[i].hyxm,data[i].bgbs);
+        for (i = 0; i < data.length; i++) {
+            BGBSMap.set(data[i].hyxm, data[i].bgbs);
         }
     }
 
-    /*=====================================================表格初始化事件============================================*/
+    /*=====================================================表格初始化事件start============================================*/
 
     /*根据tableId 初始化bootstrapTable*/
     function queryBarcodeData(tableId) {
-        var columns ;
-        if(tableId=='orderBarCode'){//医嘱条码
-            columns=[
-                {fielId:'rownum',checkbox: true },
+        var columns;
+        if (tableId == 'orderBarCode') {//医嘱条码
+            columns = [
+                {fielId: 'rownum', checkbox: true},
                 {field: 'bednum', title: '床号', align: 'center'},
-                {field:'patientname',title:'病人姓名' ,align: 'center'},
-                {field:'patientid',title:'住院号' },
-                { field: 'barcode',  title: '条码号'  ,align: 'center' },
-                {field: 'examname', title: '检验目的' , formatter: function(value, row, index) {
+                {field: 'patientname', title: '病人姓名', align: 'center'},
+                {field: 'patientid', title: '住院号'},
+                {field: 'barcode', title: '条码号', align: 'center'},
+                {
+                    field: 'examname', title: '检验目的', formatter: function (value, row, index) {
                         return $.table.tooltip(value);
-                    }},
+                    }
+                },
                 // { field: 'status',  title: '状态',  align: 'center', formatter: 'statusFormatter'  },
-                { field: 'requettime', title: '申请时间' ,align: 'center' },
-                { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter ,align: 'center'},
-                { field: 'specimencode', title: '样本类型'  ,align: 'center' ,editable:
+                {field: 'requettime', title: '申请时间', align: 'center'},
+                {field: 'barstatus', title: '样本状态', formatter: barstatusFormatter, align: 'center'},
+                {
+                    field: 'specimencode', title: '样本类型', align: 'center', editable:
                         {
-                            type:'select',
-                            title:'类型',
-                            source:specimencodeFormatterEdit,
-                            validate:function (row) {
+                            type: 'select',
+                            title: '类型',
+                            source: specimencodeFormatterEdit,
+                            validate: function (row) {
                                 var sampleState = $('#sampleState').val();
                                 console.log(row["barstatus"]);
-                                if(sampleState=="1" || sampleState =="0"){
-                                }else {
+                                if (sampleState == "1" || sampleState == "0") {
+                                } else {
                                     return "只有未采集的标本才可以修改类型";
                                 }
-                        }}},
-                { field: 'requestdoctor', title: '申请医生'  ,align: 'center'},
-                { field: 'requestmode', title: '申请模式'  ,align: 'center',formatter:function (value,row,index) {
-                        if(value=='0'){
+                            }
+                        }
+                },
+                {field: 'requestdoctor', title: '申请医生', align: 'center'},
+                {
+                    field: 'requestmode', title: '申请模式', align: 'center', formatter: function (value, row, index) {
+                        if (value == '0') {
                             return '<span class="label label-primary">平诊</span>';
-                        }else if(value=='1'){
+                        } else if (value == '1') {
                             return '<span class="label label-danger">急诊</span>';
                         }
-                    }},
-                { field: 'cost', title: '费用'  ,formatter:feeFormatter},
-              //  { field: 'coststatus', title: '费用状态' ,formatter:coststatusFormatter ,align: 'center'},
-                { field: 'tube', title: '试管类型'  },
-             //   { field: 'xqcs', title: '血气参数'  },
-                { field: 'receiveaddr', title: '接收地点'  }
-        ]
-        }else if (tableId=='collectionConfirmation'){//采集确认
-            columns=[
-                {checkbox: true },
-                {field: 'bednum', title: '床号', align: 'center'},
-                {field:'patientname',title:'病人姓名' ,align: 'center'},
-                {field: 'patientid', title: '住院号', align: 'center'},
-                { field: 'barcode',  title: '条码号'  ,align: 'center' },
-                {field: 'examname', title: '项目内容', formatter: function(value, row, index) {
-                        return $.table.tooltip(value);
-                    }},
-                { field: 'specimencode', title: '样本类型' ,formatter:specimencodeFormatter },
-                { field: 'barcode2',  title: '条码长号'  ,align: 'center', visible:false},
-                { field: 'samplingtime', title: '采集时间' ,sortable: true },
-                { field: 'samplingdoctor', title: '采集人'  },
-               // { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
-                // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
-                { field: 'requettime', title: '申请时间' ,sortable: true },
-                { field: 'zyzt', title: '在院状态'  },]
-        }else if(tableId=='collectionComplete'){//采集完成
-            columns=[
-                {checkbox: true },
-                {field: 'bednum', title: '床号', align: 'center'},
-                {field: 'patientid', title: '住院号', align: 'center'},
-                {field:'patientname',title:'病人姓名'},
-                { field: 'barcode',  title: '条码号'  ,align: 'center' },
-                {field: 'examname', title: '项目内容', formatter: function(value, row, index) {
-                        return $.table.tooltip(value);
-                    }},
-                { field: 'specimencode', title: '样本类型' ,formatter:specimencodeFormatter },
-                { field: 'samplingtime', title: '采集时间' ,sortable: true },
-                { field: 'samplingdoctor', title: '采集人'  },
-                // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
-                { field: 'requettime', title: '申请时间' ,sortable: true },
-                { field: 'zyzt', title: '在院状态'  },
+                    }
+                },
+                {field: 'cost', title: '费用', formatter: feeFormatter},
+                //  { field: 'coststatus', title: '费用状态' ,formatter:coststatusFormatter ,align: 'center'},
+                {field: 'tube', title: '试管类型'},
+                //   { field: 'xqcs', title: '血气参数'  },
+                {field: 'receiveaddr', title: '接收地点'}
             ]
-        }else if(tableId=='receiveComplete'){//接收完成
-            columns= [
-                {checkbox: true },
-                { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
+        } else if (tableId == 'collectionConfirmation') {//采集确认
+            columns = [
+                {checkbox: true},
                 {field: 'bednum', title: '床号', align: 'center'},
-                {field:'patientname',title:'病人姓名'},
-                { field: 'barcode',  title: '条码号'  ,align: 'center' },
-                //{field: 'patientid', title: '住院号', align: 'center'},
-                {field: 'examname', title: '项目内容', formatter: function(value, row, index) {
+                {field: 'patientname', title: '病人姓名', align: 'center'},
+                {field: 'patientid', title: '住院号', align: 'center'},
+                {field: 'barcode', title: '条码号', align: 'center'},
+                {
+                    field: 'examname', title: '项目内容', formatter: function (value, row, index) {
                         return $.table.tooltip(value);
-                    }},
-                { field: 'samplingtime', title: '采集时间' ,sortable: true },
-                { field: 'samplingdoctor', title: '采集人'  },
+                    }
+                },
+                {field: 'specimencode', title: '样本类型', formatter: specimencodeFormatter},
+                {field: 'barcode2', title: '条码长号', align: 'center', visible: false},
+                {field: 'samplingtime', title: '采集时间', sortable: true},
+                {field: 'samplingdoctor', title: '采集人'},
+                // { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
+                // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
+                {field: 'requettime', title: '申请时间', sortable: true},
+                {field: 'zyzt', title: '在院状态'},]
+        } else if (tableId == 'collectionComplete') {//采集完成
+            columns = [
+                {checkbox: true},
+                {field: 'bednum', title: '床号', align: 'center'},
+                {field: 'patientid', title: '住院号', align: 'center'},
+                {field: 'patientname', title: '病人姓名'},
+                {field: 'barcode', title: '条码号', align: 'center'},
+                {
+                    field: 'examname', title: '项目内容', formatter: function (value, row, index) {
+                        return $.table.tooltip(value);
+                    }
+                },
+                {field: 'specimencode', title: '样本类型', formatter: specimencodeFormatter},
+                {field: 'samplingtime', title: '采集时间', sortable: true},
+                {field: 'samplingdoctor', title: '采集人'},
+                // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
+                {field: 'requettime', title: '申请时间', sortable: true},
+                {field: 'zyzt', title: '在院状态'},
+            ]
+        } else if (tableId == 'receiveComplete') {//接收完成
+            columns = [
+                {checkbox: true},
+                {field: 'barstatus', title: '样本状态', formatter: barstatusFormatter},
+                {field: 'bednum', title: '床号', align: 'center'},
+                {field: 'patientname', title: '病人姓名'},
+                {field: 'barcode', title: '条码号', align: 'center'},
+                {
+                    field: 'examname', title: '项目内容', formatter: function (value, row, index) {
+                        return $.table.tooltip(value);
+                    }
+                },
+                {field: 'samplingtime', title: '采集时间', sortable: true},
+                {field: 'samplingdoctor', title: '采集人'},
 
                 // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
-                { field: 'requettime', title: '申请时间' ,sortable: true },
-                { field: 'requestdoctor', title: '申请医生'  },
-                { field: 'specimencode', title: '样本类型' ,formatter:specimencodeFormatter },
-                { field: 'requestmode', title: '申请模式'  ,align: 'center',formatter:function (value,row,index) {
-                        if(value=='0'){
+                {field: 'requettime', title: '申请时间', sortable: true},
+                {field: 'requestdoctor', title: '申请医生'},
+                {field: 'specimencode', title: '样本类型', formatter: specimencodeFormatter},
+                {
+                    field: 'requestmode', title: '申请模式', align: 'center', formatter: function (value, row, index) {
+                        if (value == '0') {
                             return '<span class="label label-primary">平诊</span>';
-                        }else if(value=='1'){
+                        } else if (value == '1') {
                             return '<span class="label label-danger">急诊</span>';
                         }
-                    }},
-                { field: 'cost', title: '费用'  ,formatter:feeFormatter},
-                { field: 'coststatus', title: '费用状态' ,formatter:coststatusFormatter ,align: 'center'},
-                { field: 'tube', title: '试管类型'  },
-                { field: 'receiveaddr', title: '接收地点'  },
-                { field: 'zyzt', title: '在院状态'  },
+                    }
+                },
+                {field: 'cost', title: '费用', formatter: feeFormatter},
+                {field: 'coststatus', title: '费用状态', formatter: coststatusFormatter, align: 'center'},
+                {field: 'tube', title: '试管类型'},
+                {field: 'receiveaddr', title: '接收地点'},
+                {field: 'zyzt', title: '在院状态'},
             ]
-        }else if(tableId=='cancellationReturn'){//作废退回
-            columns= [
-                {checkbox: true },
+        } else if (tableId == 'cancellationReturn') {//作废退回
+            columns = [
+                {checkbox: true},
                 {field: 'bednum', title: '床号', align: 'center'},
-                {field:'patientname',title:'病人姓名'},
-                { field: 'barcode',  title: '条码号'  ,align: 'center' },
-                {field: 'examname', title: '检验目的', formatter: function(value, row, index) {
+                {field: 'patientname', title: '病人姓名'},
+                {field: 'barcode', title: '条码号', align: 'center'},
+                {
+                    field: 'examname', title: '检验目的', formatter: function (value, row, index) {
                         return $.table.tooltip(value);
-                    }},
-                { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
-                { field: 'bzxx', title: '备注信息'   },
+                    }
+                },
+                {field: 'barstatus', title: '样本状态', formatter: barstatusFormatter},
+                {field: 'bzxx', title: '备注信息'},
                 // { field: 'status',  title: '状态', sortable: true,  align: 'center', formatter: 'statusFormatter'  },
-                { field: 'canceler', title: '操作人'  },
-                { field: 'canceltime', title: '操作时间' ,sortable: true },
+                {field: 'canceler', title: '操作人'},
+                {field: 'canceltime', title: '操作时间', sortable: true},
 
-                { field: 'requettime', title: '申请时间' ,sortable: true },
-                { field: 'specimencode', title: '样本类型'  ,align: 'center',
+                {field: 'requettime', title: '申请时间', sortable: true},
+                {
+                    field: 'specimencode', title: '样本类型', align: 'center',
                     //editable:{type:'select',title:'类型',source:specimencodeFormatterEdit}
-                formatter:specimencodeFormatter
-                    },
-                { field: 'requestdoctor', title: '申请医生'  ,align: 'center'},
-                { field: 'requestmode', title: '申请模式'  ,align: 'center',formatter:function (value,row,index) {
-                        if(value=='0'){
+                    formatter: specimencodeFormatter
+                },
+                {field: 'requestdoctor', title: '申请医生', align: 'center'},
+                {
+                    field: 'requestmode', title: '申请模式', align: 'center', formatter: function (value, row, index) {
+                        if (value == '0') {
                             return '<span class="label label-primary">平诊</span>';
-                        }else if(value=='1'){
+                        } else if (value == '1') {
                             return '<span class="label label-danger">急诊</span>';
                         }
-                    }},
-                { field: 'cost', title: '费用'  ,formatter:feeFormatter},
-                { field: 'coststatus', title: '费用状态' ,formatter:coststatusFormatter ,align: 'center'},
-                { field: 'tube', title: '试管类型'  },
-               // { field: 'xqcs', title: '血气参数'  },
-                { field: 'receiveaddr', title: '接收地点'  },
-
-            ]
-        }else if(tableId=='overtimeBarcode'){//超时条码
-            columns=[
-                {checkbox: true },
-                { field: 'overTime', title: '超时时间' ,align:'center',formatter:function (value,row,index) {
-                        return '<span class="label label-danger">'+value+'</span>';
-                    } },
-                {field: 'bednum', title: '床号', align: 'center'},
-                {field:'patientname',title:'病人姓名'},
-                { field: 'barcode',  title: '条码号'  ,align: 'center' },
-
-                {field: 'examname', title: '检验目的', formatter: function(value, row, index) {
-                        return $.table.tooltip(value);
-                    }},
-                { field: 'requettime', title: '申请时间' ,sortable: true },
-                { field: 'barstatus', title: '样本状态'  ,formatter:barstatusFormatter },
-                { field: 'specimencode', title: '样本类型'  ,align: 'center',formatter:specimencodeFormatter},
-
-
-
-                { field: 'requestdoctor', title: '申请医生'  ,align: 'center'},
-                { field: 'requestmode', title: '申请模式'  ,align: 'center',formatter:function (value,row,index) {
-                        if(value=='0'){
-                            return '<span class="label label-primary">平诊</span>';
-                        }else if(value=='1'){
-                            return '<span class="label label-danger">急诊</span>';
-                        }
-                    }},
-                { field: 'cost', title: '费用'  ,formatter:feeFormatter},
-                { field: 'coststatus', title: '费用状态' ,formatter:coststatusFormatter ,align: 'center'},
-                { field: 'tube', title: '试管类型'  },
+                    }
+                },
+                {field: 'cost', title: '费用', formatter: feeFormatter},
+                {field: 'coststatus', title: '费用状态', formatter: coststatusFormatter, align: 'center'},
+                {field: 'tube', title: '试管类型'},
                 // { field: 'xqcs', title: '血气参数'  },
-                { field: 'receiveaddr', title: '接收地点'  },
+                {field: 'receiveaddr', title: '接收地点'},
 
             ]
-        }
-        else if(tableId=='specimenLogistics') {//标本物流
-            columns=[
-                {checkbox: true },
-                { field: 'wlbh', title: '物流编号', align: 'center'},
-                { field: 'wlzt', title: '物流状态', align: 'left',formatter:function (value) {
-                        if(value==9){
-                            return '<span class="label label-danger">任务取消</span>';
-                        }else if(value==3){
-                            return '<span class="label label-primary">任务送达</span>';
-                        }else if(value==2){
-                            return '<span class="label label-success">开始运送</span>';
-                        }else if(value==1){
-                            return '<span class="label label-black">已打包</span>';
+        } else if (tableId == 'overtimeBarcode') {//超时条码
+            columns = [
+                {checkbox: true},
+                {
+                    field: 'overTime', title: '超时时间', align: 'center', formatter: function (value, row, index) {
+                        return '<span class="label label-danger">' + value + '</span>';
+                    }
+                },
+                {field: 'bednum', title: '床号', align: 'center'},
+                {field: 'patientname', title: '病人姓名'},
+                {field: 'barcode', title: '条码号', align: 'center'},
+
+                {
+                    field: 'examname', title: '检验目的', formatter: function (value, row, index) {
+                        return $.table.tooltip(value);
+                    }
+                },
+                {field: 'requettime', title: '申请时间', sortable: true},
+                {field: 'barstatus', title: '样本状态', formatter: barstatusFormatter},
+                {field: 'specimencode', title: '样本类型', align: 'center', formatter: specimencodeFormatter},
+
+
+                {field: 'requestdoctor', title: '申请医生', align: 'center'},
+                {
+                    field: 'requestmode', title: '申请模式', align: 'center', formatter: function (value, row, index) {
+                        if (value == '0') {
+                            return '<span class="label label-primary">平诊</span>';
+                        } else if (value == '1') {
+                            return '<span class="label label-danger">急诊</span>';
                         }
-                        else if(value==0){
+                    }
+                },
+                {field: 'cost', title: '费用', formatter: feeFormatter},
+                {field: 'coststatus', title: '费用状态', formatter: coststatusFormatter, align: 'center'},
+                {field: 'tube', title: '试管类型'},
+                // { field: 'xqcs', title: '血气参数'  },
+                {field: 'receiveaddr', title: '接收地点'},
+
+            ]
+        } else if (tableId == 'specimenLogistics') {//标本物流
+            columns = [
+                {checkbox: true},
+                {field: 'wlbh', title: '物流编号', align: 'center'},
+                {
+                    field: 'wlzt', title: '物流状态', align: 'left', formatter: function (value) {
+                        if (value == 9) {
+                            return '<span class="label label-danger">任务取消</span>';
+                        } else if (value == 3) {
+                            return '<span class="label label-primary">任务送达</span>';
+                        } else if (value == 2) {
+                            return '<span class="label label-success">开始运送</span>';
+                        } else if (value == 1) {
+                            return '<span class="label label-black">已打包</span>';
+                        } else if (value == 0) {
                             return '<span class="label label-warning">未打包</span>';
                         }
 
-                    }},
-                { field: 'bbsl', title: '样品数量', align: 'left'},
-                { field: 'cjsj', title: '创建时间', align: 'left'},
-                { field: 'cjr', title: '创建人', align: 'left'},
-                { field: 'dbsj', title: '打包时间', align: 'left'},
-                { field: 'yssj', title: '运送时间', align: 'left'},
-                { field: 'ddsj', title: '到达时间', align: 'left'},
-                { field: 'bqmc', title: '病区名称', align: 'center',visible:false},
+                    }
+                },
+                {field: 'bbsl', title: '样品数量', align: 'left'},
+                {field: 'cjsj', title: '创建时间', align: 'left'},
+                {field: 'cjr', title: '创建人', align: 'left'},
+                {field: 'dbsj', title: '打包时间', align: 'left'},
+                {field: 'yssj', title: '运送时间', align: 'left'},
+                {field: 'ddsj', title: '到达时间', align: 'left'},
+                {field: 'bqmc', title: '病区名称', align: 'center', visible: false},
             ]
         }
-        var options ;
-        if(tableId=='collectionConfirmation'){
+        var options;
+        if (tableId == 'collectionConfirmation') {
             options = {
                 id: tableId,
                 url: prefix + "/list/" + tableId,
@@ -576,13 +561,13 @@
                 columns: columns,
                 pagination: false,
                 uniqueId: 'barcode',
-                height:450,
+                height: 450,
                 onEditableSave: onEditableSave,
                 onLoadSuccess: function () {
                     onLoadFix(tableId, $('#' + tableId).bootstrapTable('getData'));//加载成功事件触发合并床号方法
                 }
             }
-        }else {
+        } else {
             options = {
                 id: tableId,
                 url: prefix + "/list/" + tableId,
@@ -593,7 +578,7 @@
                 // showPageGo: true,
                 // search: true,
                 uniqueId: 'barcode2',
-                height:450,
+                height: 450,
                 onEditableSave: onEditableSave,
                 onLoadSuccess: function () {
                     onLoadFix(tableId, $('#' + tableId).bootstrapTable('getData'));//加载成功事件触发合并床号方法
@@ -605,43 +590,46 @@
             };
         }
         $.table.init(options);
-        console.log(tableId+'加载成功');
+        console.log(tableId + '加载成功');
     }
+
     /*样本状态格式化方法*/
-    function barstatusFormatter(value,row,index) {
-        if(value==-1){
+    function barstatusFormatter(value, row, index) {
+        if (value == -1) {
             return '<span class="label label-danger">已退回</span>';
-        }else if(value==1){
+        } else if (value == 1) {
             return '<span class="label label-default">已打印</span>';
-        }else if(value==2){
+        } else if (value == 2) {
             return '<span class="label label-warning">已采集</span>';
-        }else if(value==3){
+        } else if (value == 3) {
             return '<span class="label label-primary">已接收</span>';
-        }else if(value==4){
+        } else if (value == 4) {
             return '<span class="label label-success">已完成</span>';
-        }else if(value==-2){
+        } else if (value == -2) {
             return '<span class="label label-info">已作废</span>';
-        }else if (value==0){
+        } else if (value == 0) {
             return '<span class="label label-dark">未打印</span>';
         }
     }
+
     /*费用状态格式化方法*/
-    function coststatusFormatter(value,row,index) {
-        if(value==1){
+    function coststatusFormatter(value, row, index) {
+        if (value == 1) {
             return '<span class="label label-warning">未收费</span>';
-        }else if(value==2){
+        } else if (value == 2) {
             return '<span class="label label-success">已收费</span>';
-        }else if(value==4){
+        } else if (value == 4) {
             return '<span class="label label-danger">已退费</span>';
         }
     }
+
     /*BootstrapTable-edit 测试格式化方法*/
     function specimencodeFormatterEdit() {
-        var returnValue ;
-        returnValue =  SampleTypeFormatterData;
+        var returnValue;
+        returnValue = SampleTypeFormatterData;
         return returnValue;
-
     }
+
     /*标本类型格式化操作*/
     function specimencodeFormatter(value) {
         return SampleTypeMap.get(value);//在map中查找
@@ -651,15 +639,17 @@
     function feeFormatter(value) {
         return parseInt(value).toFixed(2);//保留小数点后两位
     }
-    /*-------------------------------------------------合并床位号操作-------------------------------------------------*/
+
+    /*-------------------------------------------------合并床位号操作start-------------------------------------------------*/
     /*合并床位号*/
-    function  onLoadFix(tableName,data) {
-        var fieldList=["bednum"];
-        mergeCells(data, "bednum", 0, $('#'+tableName),fieldList);
-        $("table tr").find('td').each(function(){
-            $(this).css("vertical-align","top")
+    function onLoadFix(tableName, data) {
+        var fieldList = ["bednum"];
+        mergeCells(data, "bednum", 0, $('#' + tableName), fieldList);
+        $("table tr").find('td').each(function () {
+            $(this).css("vertical-align", "top")
         })
     }
+
     /**
      * 合并单元格
      *
@@ -674,253 +664,265 @@
      * @param fieldList
      *            要合并的字段集合
      */
-    function mergeCells(data,fieldName,colspan,target,fieldList){
+    function mergeCells(data, fieldName, colspan, target, fieldList) {
 // 声明一个map计算相同属性值在data对象出现的次数和
         var sortMap = {};
-        for(var i = 0 ; i < data.length ; i++){
-            for(var prop in data[i]){
-                var fieldArr=fieldName.split(".");
-                getCount(data[i],prop,fieldArr,0,sortMap);
+        for (var i = 0; i < data.length; i++) {
+            for (var prop in data[i]) {
+                var fieldArr = fieldName.split(".");
+                getCount(data[i], prop, fieldArr, 0, sortMap);
             }
         }
         var index = 0;
-        for(var prop in sortMap){
+        for (var prop in sortMap) {
             var count = sortMap[prop];
-            for(var i = 0 ; i < fieldList.length ; i++){
-                $(target).bootstrapTable('mergeCells',{index:index, field:fieldList[i], colspan: colspan, rowspan: count});
+            for (var i = 0; i < fieldList.length; i++) {
+                $(target).bootstrapTable('mergeCells', {
+                    index: index,
+                    field: fieldList[i],
+                    colspan: colspan,
+                    rowspan: count
+                });
             }
             index += count;
         }
     }
+
     /* 递归到最后一层 统计数据重复次数*/
-    function getCount(data,prop,fieldArr,index,sortMap){
-        if(index == fieldArr.length-1){
-            if(prop == fieldArr[index]){
+    function getCount(data, prop, fieldArr, index, sortMap) {
+        if (index == fieldArr.length - 1) {
+            if (prop == fieldArr[index]) {
                 var key = data[prop] + 'a';  // 给key 加个字符。防止傻逼chrome对key为数字的 object 自动排序
-                if(sortMap.hasOwnProperty(key)){
-                    sortMap[key] = sortMap[key]+ 1;
+                if (sortMap.hasOwnProperty(key)) {
+                    sortMap[key] = sortMap[key] + 1;
                 } else {
                     sortMap[key] = 1;
                 }
             }
             return;
         }
-        if(prop == fieldArr[index]){
+        if (prop == fieldArr[index]) {
             var sdata = data[prop];
-            index=index+1;
-            getCount(sdata,fieldArr[index],fieldArr,index,sortMap);
+            index = index + 1;
+            getCount(sdata, fieldArr[index], fieldArr, index, sortMap);
         }
 
     }
-    /*-------------------------------------------------------------------------------------------------------------------*/
+
+    /*------------------------------------------------合并床位号操作end----------------------------------------------------*/
 
     /*表格行双击事件*/
-    function onDbClickTableRow(tableId,row) {
-        if(tableId=='specimenLogistics'){
-            var url = prefix +"/LogisticsDetail/"+row.wlbh+"/"+row.wlzt;
+    function onDbClickTableRow(tableId, row) {
+        if (tableId == 'specimenLogistics') {
+            var url = prefix + "/LogisticsDetail/" + row.wlbh + "/" + row.wlzt;
             $.modal.open("物流详情", url);
         }
     }
+
     /* 查询表格选择行数据值 */
-    function getSelections(tableId){
+    function getSelections(tableId) {
         var data = $("#" + tableId).bootstrapTable('getSelections');
         console.log(JSON.stringify(data));
         return data;
     }
+
     /*行内编辑事件*/
-    function onEditableSave (field, row, oldValue, $el) {
+    function onEditableSave(field, row, oldValue, $el) {
         var sampleState = $('#sampleState').val();
         var barcode = row["barcode2"]
-        var specimencode= row[field];
-        if("specimencode"==field){
-            if(sampleState=="1" || sampleState =="0"){
+        var specimencode = row[field];//样本类型
+        console.log(row);
+        if ("specimencode" == field) {
+            //仅允许未采集的标本修改样本类型--与select选择列相关--可以优化为与列相关
+            if (sampleState == "1" || sampleState == "0") {
                 $.ajax({
                     type: "post",
                     url: prefix + "/updateSpecimencode",
-                    data:{
-                        "barcode2":barcode,
-                        "specimencode":specimencode
+                    data: {
+                        "barcode2": barcode,
+                        "specimencode": specimencode
                     },
-                    success:function (r) {
+                    success: function (r) {
                         $.modal.msg(r.msg);
 
                     },
-                    error:function () {
+                    error: function () {
                         $.modal.msgError("修改失败");
                     }
                 });
-            }else{
+            } else {
                 $.modal.msgError("修改失败");
             }
         }
 
     }
-    /*=====================================================表格初始化事件============================================*/
 
-    /*=======================================================按钮事件================================================*/
+    /*=====================================================表格初始化事件end============================================*/
+
+    /*=======================================================按钮事件start================================================*/
 
     /*根据要本状态筛选医嘱条码 由下拉列表 sampleState change事件触发*/
-    function orderBarcodeFilter(){
-        if($('#sampleState').val()!=-99) {
+    // $.table.search(form, tableId, 额外检索参数);
+    function orderBarcodeFilter() {
+        //select选择值为-99时展示所有医嘱条码的页面，其他则根据select选择筛选
+        if ($('#sampleState').val() != -99) {
             $.table.search('dateSpan', 'orderBarCode', {sampleState: $('#sampleState').val()});
-        }else{
+        } else {
             $.table.search('dateSpan', 'orderBarCode', '');
         }
-        console.log($('#sampleState').val());
-        if($('#sampleState').val() !=0 && $('#sampleState').val() !=-1 && $('#sampleState').val() !=1){
-            $('#btn_barcodePrint').attr("disabled","disabled")
-        }else{
+        if ($('#sampleState').val() != 0 && $('#sampleState').val() != -1 && $('#sampleState').val() != 1) {
+            $('#btn_barcodePrint').attr("disabled", "disabled")
+        } else {
             $('#btn_barcodePrint').removeAttr("disabled")
 
         }
-        if($('#sampleState').val() ==3 || $('#sampleState').val() ==4 || $('#sampleState').val() ==-2 ||$('#sampleState').val() ==-99){
-            $('#btn_barcodeCancel').attr("disabled","disabled")
-        }else{
+        if ($('#sampleState').val() == 3 || $('#sampleState').val() == 4 || $('#sampleState').val() == -2 || $('#sampleState').val() == -99) {
+            $('#btn_barcodeCancel').attr("disabled", "disabled")
+        } else {
             $('#btn_barcodeCancel').removeAttr("disabled")
 
         }
 
     }
+
     /*根据tableId bootstrapTable条件搜索*/
     function queryBarcodeSearch(tableId) {
         // $.table.search('dateSpan',tableId,{department:'381'})  //搜索格式 搜索form，tableId，附加条件
-        if(tableId=="orderBarCode"){
-            if($('#sampleState').val()!=-99) {
+        if (tableId == "orderBarCode") {
+            if ($('#sampleState').val() != -99) {
                 $.table.search('dateSpan', 'orderBarCode', {sampleState: $('#sampleState').val()});
-            }else {
+            } else {
                 $.table.search('dateSpan', tableId, '')
             }
-        }else {
+        } else {
             $.table.search('dateSpan', tableId, '')
         }
     }
+
     /*信息刷新按钮*/
     function infoRefresh() {
         $.modal.loading("条码生成中");
         /*请求后台异步生成条码*/
         var deptId = [[${department}]];
-        var isInhos =[[${isInhos}]];
-        var operation =[[${operation}]];
+        var isInhos = [[${isInhos}]];
+        var operation = [[${operation}]];
         var inpatientId = [[${inpatientId}]]
         $.ajax({
             type: "post",
             url: prefix + "/GenerateBarcode",
-            data:{
-                "deptId":deptId,
-                "isInhos":isInhos,
-                "operation":operation,
-                "inpatientId":inpatientId
+            data: {
+                "deptId": deptId,
+                "isInhos": isInhos,
+                "operation": operation,
+                "inpatientId": inpatientId
             },
-            success:function () {
+            success: function () {
                 $.modal.closeLoading();
                 queryBarcodeSearch(currentTableId);
             },
-            error:function () {
+            error: function () {
                 $.modal.closeLoading();
             }
         });
 
     }
+
     var $tab = $('#tab');
     /*监视tab页切换事件*/
     $tab.on('show.bs.tab', function (e) {
-        currentTableId= e.target.id.replace('Tab','');
-        console.log('切换到'+currentTableId);
+        currentTableId = e.target.id.replace('Tab', '');
+        console.log('切换到' + currentTableId);
         queryBarcodeSearch(currentTableId);
     });
-    /*创建物流按钮*/
-    function  createLogistics() {
-        var deptId=  [[${department}]];
-        var userId=  [[${userCode}]];
-        var deptCode = [[${deptCode}]];
-        if(deptId!=null) {
-            var url = prefix +"/createLogistics/"+deptId+"/"+userId;
-            $.modal.open("创建物流", url);
 
-        }else {
-            if(dep)
-            $.modal.msgError("请选择科室");
-        }
+    /*创建物流按钮*/
+    function createLogistics() {
+        var deptId = [[${department}]];
+        var userId = [[${userCode}]];
+        var deptCode = [[${deptCode}]];
+        var preAdmission = [[${preAdmission}]]
+        var url = prefix + "/createLogistics/" + deptId + "/" + userId+"?preAdmission="+preAdmission;
+        $.modal.open("创建物流", url);
     }
+
     /*开始运送按钮*/
-    function startShipping(){
-        var url = prefix +"/startShipping";
+    function startShipping() {
+        var url = prefix + "/startShipping";
         $.modal.open("开始运送", url, '800', '350');
     }
+
     /*标本条码打印*/
-    function barcodePrintSelect(tableId){
-       var data = getSelections(tableId);
-       var barcodes = '';
-        for(let i=0;i<data.length;i++){
-            barcodes +=data[i].barcode2 +'|'
+    function barcodePrintSelect(tableId) {
+        var data = getSelections(tableId);
+        var barcodes = '';
+        for (let i = 0; i < data.length; i++) {
+            barcodes += data[i].barcode2 + '|'
         }
         let i = 0;
         $.ajax({
             type: "post",
             url: prefix + "/changeBarcodeStatus",
             data: {
-                "barcodes":barcodes,
-                "czz":userId,
-                "czfs":"barcodePrint"
+                "barcodes": barcodes,
+                "czz": userId,
+                "czfs": "barcodePrint"
             },
-            success: function(r) {
-                if(r.code==0){
-                    var barcode= r.msg.split("|");
-                    if(barcode.length>0){
-                        for(let i = 0 ; i<barcode.length;i++){
-                            var data = $('#'+tableId).bootstrapTable('getRowByUniqueId',barcode[i]);
-                            if(data!=null){
-                                JsBarcode("#imgCode",data.barcode,{
-                                    format:"CODE128",
-                                    width:4,
+            success: function (r) {
+                if (r.code == 0) {
+                    var barcode = r.msg.split("|");
+                    if (barcode.length > 0) {
+                        for (let i = 0; i < barcode.length; i++) {
+                            var data = $('#' + tableId).bootstrapTable('getRowByUniqueId', barcode[i]);
+                            if (data != null) {
+                                JsBarcode("#imgCode", data.barcode, {
+                                    format: "CODE128",
+                                    width: 4,
                                     height: 150
                                 });
                                 queryBarcodeSearch(currentTableId);
                                 LODOP = getLodop();
-
-                                LODOP.SET_PRINT_PAGESIZE(1,500,300,"CreateCustomPage");
+                                LODOP.SET_PRINT_PAGESIZE(1, 500, 300, "CreateCustomPage");
                                 LODOP.SET_PRINT_STYLE("FontSize", 9);
                                 LODOP.SET_PRINT_STYLE("Bold", 0);
                                 LODOP.SET_PRINTER_INDEX("Zebra  888-TT");
-                                LODOP.ADD_PRINT_TEXT(0,0,"20mm","3mm",data.patientname);
-                                LODOP.ADD_PRINT_TEXT(0,"30mm","10mm","3mm",data.departmentName);
-                                LODOP.SET_PRINT_STYLEA(0,"FontSize",6);
-                                if(data.bednum!=null) {
+                                LODOP.ADD_PRINT_TEXT(0, 0, "20mm", "3mm", data.patientname);
+                                LODOP.ADD_PRINT_TEXT(0, "30mm", "10mm", "3mm", data.departmentName);
+                                LODOP.SET_PRINT_STYLEA(0, "FontSize", 6);
+                                if (data.bednum != null) {
                                     LODOP.ADD_PRINT_TEXT(0, "37mm", "15mm", "3mm", data.bednum + "床");
-                                }else{
+                                } else {
                                     LODOP.ADD_PRINT_TEXT(0, "37mm", "15mm", "3mm", "");
                                 }
-                                LODOP.ADD_PRINT_TEXT("10mm",0,"10mm","3mm","←");
+                                LODOP.ADD_PRINT_TEXT("10mm", 0, "10mm", "3mm", "←");
                                 LODOP.ADD_PRINT_BARCODE("5mm", "9mm", "24mm", "13mm", "128Auto", data.barcode);//条码
-                                LODOP.ADD_PRINT_TEXT("3mm","42mm","8mm","15mm",data.tube);
-                                LODOP.SET_PRINT_STYLEA(4,"FontSize",12);
-                                LODOP.SET_PRINT_STYLEA(6,"FontSize",7);
-                                LODOP.SET_PRINT_STYLEA(5,"FontSize",5);
-                                LODOP.ADD_PRINT_TEXT("18mm",0,"50mm","10mm",data.examname);
-                                LODOP.SET_PRINT_STYLEA(0,"FontSize",10);//设置上面这个文本框的文字字体大小
-                                LODOP.ADD_PRINT_TEXT("28mm",0,"10mm","2mm",SampleTypeMap.get(data.specimencode));
-                                LODOP.ADD_PRINT_TEXT("28mm","15mm","30mm","2mm",data.requettime.substring(0,16));
-                                LODOP.ADD_PRINT_TEXT("28mm","40mm","10mm","2mm",data.receiveaddr);
-                                LODOP.ADD_PRINT_TEXT(0,"17mm","23mm","4mm",data.patientid);
-                                LODOP.SET_PRINT_STYLEA(0,"FontSize",8);//设置上面这个文本框的文字字体大小
-                                LODOP.ADD_PRINT_IMAGE("5mm","0mm","4mm","4mm","<img src='data:image/gif;base64,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'>");
-                                LODOP.SET_PRINT_STYLEA(0,"Stretch",1);
+                                LODOP.ADD_PRINT_TEXT("3mm", "42mm", "8mm", "15mm", data.tube);
+                                LODOP.SET_PRINT_STYLEA(4, "FontSize", 12);
+                                LODOP.SET_PRINT_STYLEA(6, "FontSize", 7);
+                                LODOP.SET_PRINT_STYLEA(5, "FontSize", 5);
+                                LODOP.ADD_PRINT_TEXT("18mm", 0, "50mm", "10mm", data.examname);
+                                LODOP.SET_PRINT_STYLEA(0, "FontSize", 10);//设置上面这个文本框的文字字体大小
+                                LODOP.ADD_PRINT_TEXT("28mm", 0, "10mm", "2mm", SampleTypeMap.get(data.specimencode));
+                                LODOP.ADD_PRINT_TEXT("28mm", "15mm", "30mm", "2mm", data.requettime.substring(0, 16));
+                                LODOP.ADD_PRINT_TEXT("28mm", "40mm", "10mm", "2mm", data.receiveaddr);
+                                LODOP.ADD_PRINT_TEXT(0, "17mm", "23mm", "4mm", data.patientid);
+                                LODOP.SET_PRINT_STYLEA(0, "FontSize", 8);//设置上面这个文本框的文字字体大小
+                                LODOP.ADD_PRINT_IMAGE("5mm", "0mm", "4mm", "4mm", "<img src='data:image/gif;base64,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'>");
+                                LODOP.SET_PRINT_STYLEA(0, "Stretch", 1);
                                 console.log(data.patientid);
                                 var hyxms = data.hyxm.split(',');
                                 console.log(data.hyxm);
-                                for(let k = 0 ;k<hyxms.length;k++){
-                                    if(BGBSMap.get(hyxms[k])!=null){
-                                        LODOP.ADD_PRINT_TEXT("15mm","40mm","10mm","4mm",BGBSMap.get(hyxms[k]));
+                                for (let k = 0; k < hyxms.length; k++) {
+                                    if (BGBSMap.get(hyxms[k]) != null) {
+                                        LODOP.ADD_PRINT_TEXT("15mm", "40mm", "10mm", "4mm", BGBSMap.get(hyxms[k]));
                                         break;
                                     }
                                 }
                                 //LODOP.PREVIEW();//预览
                                 LODOP.PRINT();//直接打印
-
                             }
                         }
                     }
-                }else{
+                } else {
                     $.modal.msgError('无可打印条码')
                 }
             }
@@ -929,30 +931,29 @@
     }
 
 
-
     /*物流标贴重打*/
     function printlogistics() {
         var data = getSelections("specimenLogistics");
         let i = 0;
-        for(i=0;i<data.length;i++){
-            JsBarcode("#imgCodelogistics",data[i].wlbh,{
-                format:"CODE128",
-                width:3,
+        for (i = 0; i < data.length; i++) {
+            JsBarcode("#imgCodelogistics", data[i].wlbh, {
+                format: "CODE128",
+                width: 3,
             });
             LODOP = getLodop();
-            LODOP.SET_PRINT_PAGESIZE(1,500,300,"CreateCustomPage");
+            LODOP.SET_PRINT_PAGESIZE(1, 500, 300, "CreateCustomPage");
             LODOP.SET_PRINT_STYLE("FontSize", 9);
             LODOP.SET_PRINT_STYLE("Bold", 0);
             LODOP.SET_PRINTER_INDEX("Zebra  888-TT");
             LODOP.ADD_PRINT_BARCODE("5mm", "9mm", "30mm", "15mm", "128Auto", data[i].wlbh);//条码
-            LODOP.SET_PRINT_STYLEA(1,"FontSize",5);//设置上面这个条码下方的文字字体大小
-            LODOP.ADD_PRINT_TEXT(0,"10mm","50mm","5mm","台一医 标本送检单");
-            LODOP.SET_PRINT_STYLEA(2,"Alignment",1);//
-            LODOP.SET_PRINT_STYLEA(2,"FontSize",9);//
-            LODOP.ADD_PRINT_TEXT("25mm","0mm","30mm","5mm","("+data[i].bbsl+")");
-            LODOP.SET_PRINT_STYLEA(3,"FontSize",13);//
-            LODOP.ADD_PRINT_TEXT("27mm","15mm","30mm","3mm",data[i].cjsj.substring(0,16));
-            LODOP.ADD_PRINT_TEXT("22mm","20mm","30mm","5mm",data[i].bqmc);
+            LODOP.SET_PRINT_STYLEA(1, "FontSize", 5);//设置上面这个条码下方的文字字体大小
+            LODOP.ADD_PRINT_TEXT(0, "10mm", "50mm", "5mm", "台一医 标本送检单");
+            LODOP.SET_PRINT_STYLEA(2, "Alignment", 1);//
+            LODOP.SET_PRINT_STYLEA(2, "FontSize", 9);//
+            LODOP.ADD_PRINT_TEXT("25mm", "0mm", "30mm", "5mm", "(" + data[i].bbsl + ")");
+            LODOP.SET_PRINT_STYLEA(3, "FontSize", 13);//
+            LODOP.ADD_PRINT_TEXT("27mm", "15mm", "30mm", "3mm", data[i].cjsj.substring(0, 16));
+            LODOP.ADD_PRINT_TEXT("22mm", "20mm", "30mm", "5mm", data[i].bqmc);
             LODOP.PRINT();//直接打印
             $("#bqmc").html(data[i].bqmc);
             $("#bbsl").html(data[i].bbsl);
@@ -960,119 +961,125 @@
             //prn1_preview("logisticsPrint");
         }
     }
+
     /*标本条码打印*/
-    function barcodeCancelSelect(tableId){
+    function barcodeCancelSelect(tableId) {
         var data = getSelections(tableId);
         var barcodes = '';
-        for(let i=0;i<data.length;i++){
-            barcodes +=data[i].barcode2 +'|'
+        for (let i = 0; i < data.length; i++) {
+            barcodes += data[i].barcode2 + '|'
         }
         $.ajax({
             type: "post",
             url: prefix + "/changeBarcodeStatus",
             data: {
-                "barcodes":barcodes,
-                "czz":userId,
-                "czfs":"barcodeCancel"
+                "barcodes": barcodes,
+                "czz": userId,
+                "czfs": "barcodeCancel"
             },
-            success: function(r) {
-                if(r.code==0){
+            success: function (r) {
+                if (r.code == 0) {
                     queryBarcodeSearch(tableId);
                 }
             }
         });
 
     }
+
+    /*采集完成*/
     function collectionConfirm() {
         var data = getSelections("collectionConfirmation");
-        var barcodes='';
+        var barcodes = '';
         let i = 0;
-        for(i=0;i<data.length;i++){
-          barcodes +=data[i].barcode2 +'|';
+        for (i = 0; i < data.length; i++) {
+            barcodes += data[i].barcode2 + '|';
         }
         $.ajax({
             type: "post",
             url: prefix + "/changeBarcodeStatus",
             data: {
-                "barcodes":barcodes,
-                "czz":userId,
-                "czfs":"collectionConfirm"
+                "barcodes": barcodes,
+                "czz": userId,
+                "czfs": "collectionConfirm"
             },
-            success: function(r) {
-                if(r.code==0){
+            success: function (r) {
+                if (r.code == 0) {
                     queryBarcodeSearch("collectionConfirmation");
-                    //$('#collectionConfirmation').bootstrapTable('refresh')
                 }
             }
         });
 
     }
-    function confirmCancel(){
+
+    /*作废*/
+    function confirmCancel() {
         var data = getSelections("collectionComplete");
-        var barcodes='';
+        var barcodes = '';
         let i = 0;
-        for(i=0;i<data.length;i++){
-            barcodes +=data[i].barcode2 +'|';
+        for (i = 0; i < data.length; i++) {
+            barcodes += data[i].barcode2 + '|';
         }
         $.ajax({
             type: "post",
             url: prefix + "/changeBarcodeStatus",
             data: {
-                "barcodes":barcodes,
-                "czz":userId,
-                "czfs":"confirmCancel"
+                "barcodes": barcodes,
+                "czz": userId,
+                "czfs": "confirmCancel"
             },
-            success: function(r) {
-                if(r.code==0){
+            success: function (r) {
+                if (r.code == 0) {
                     queryBarcodeSearch("collectionComplete");
-                    //$('#collectionConfirmation').bootstrapTable('refresh')
                 }
             }
         });
     }
-    $("#confirmBarcode").keydown(function(e) {
+
+    /*采集确认页面按-扫码选择*/
+    $("#confirmBarcode").keydown(function (e) {
         if (e.keyCode == 13) {
             var barcode = document.getElementById('confirmBarcode').value;
-            if(barcode.length>0) {
+            if (barcode.length > 0) {
                 console.log(barcode);
                 var data = $('#collectionConfirmation').bootstrapTable('getData');
-                let n = 0 ;
+                let n = 0;
                 console.log(data);
-                for(let i=0;i<data.length;i++){
-                    if(barcode ==data[i].barcode){
+                for (let i = 0; i < data.length; i++) {
+                    if (barcode == data[i].barcode) {
                         n++;
                     }
                 }
-                if(n==0){
+                if (n == 0) {
                     $.modal.msgError('未找到条码')
                 }
-                $('#collectionConfirmation').bootstrapTable('checkBy',{field:"barcode",values:[barcode]});
+                $('#collectionConfirmation').bootstrapTable('checkBy', {field: "barcode", values: [barcode]});
                 $('#confirmBarcode').val('');
-
             }
         }
     });
+
+
     function downloadplugin() {
         window.location.href = ctx + "common/download?fileName=" + '打印插件.rar';
     }
-    /*=======================================================按钮事件================================================*/
+    /*=======================================================按钮事件end================================================*/
 </script>
 <script>
     var LODOP; //声明为全局变量
     function prn1_preview(printName) {
-
         CreateOneFormPage(printName);
         //LODOP.SET_PRINT_PAGESIZE(1,500,300,"CreateCustomPage");
         //LODOP.PREVIEW();//打印预览
         LODOP.PRINT();//直接打印
     }
-    function CreateOneFormPage(printName){
+
+    function CreateOneFormPage(printName) {
         LODOP = getLodop();
-        LODOP.SET_PRINT_PAGESIZE(1,500,300,"CreateCustomPage");
+        LODOP.SET_PRINT_PAGESIZE(1, 500, 300, "CreateCustomPage");
         LODOP.SET_PRINT_STYLE("FontSize", 9);
         LODOP.SET_PRINT_STYLE("Bold", 0);
         LODOP.SET_PRINTER_INDEX("Zebra  888-TT");
-       // LODOP.SET_PRINT_MODE("WINDOW_DEFPRINTER","Zebra  888-TT");
+        // LODOP.SET_PRINT_MODE("WINDOW_DEFPRINTER","Zebra  888-TT");
         LODOP.ADD_PRINT_BARCODE("10mm", "9mm", "24mm", "15mm", "128Auto", "1234567890");//条码
         //LODOP.ADD_PRINT_TEXT(0,0,0,0,"打印页面部分内容");
         // LODOP.SET_PRINT_MODE("FULL_HEIGHT_FOR_OVERFLOW",true);//高度溢出缩放
@@ -1080,6 +1087,7 @@
         //LODOP.SET_PRINT_MODE("PRINT_PAGE_PERCENT","Full-Page");//整页缩放
         //LODOP.ADD_PRINT_HTM("0%","0%",500,300,document.getElementById(printName).innerHTML);
     }
+
     //打印大条码
     function printBig(data) {
         LODOP = getLodop();

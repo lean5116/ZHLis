@@ -47,7 +47,7 @@ public class CriticalTask {
         if (lTsxxTrList != null) {                                                                                         //如果tr中间表不为空
             for (LTsxxTr ltsxxTr : lTsxxTrList                                                                          //开始轮循
             ) {
-                logger.info("中间表：" + "~" + ltsxxTr.toString() +"操作开始~");
+                logger.info("中间表：" + "~" + ltsxxTr.toString() + "操作开始~");
                 //通过his'xh关联 tr表xh即是lis表 his'xh
                 LTsxxHis lTsxxHis = lTsxxHisService.getByXh(ltsxxTr.getXh());
 
@@ -63,7 +63,7 @@ public class CriticalTask {
                 lTsxxLisParam.setHisxh(lTsxxHis.getXh());
                 logger.info("组装lis入参：" + lTsxxLisParam.toString());
                 //region 如果his表的lisxh = -1  执行插入操作
-                if ( -1==lTsxxHis.getLisxh() ) {
+                if (-1 == lTsxxHis.getLisxh()) {
                     LTsxxLis judge = lTsxxLisService.getByHisxh(lTsxxHis.getXh());
                     if (judge == null) {
                         int i = 0;
@@ -84,9 +84,9 @@ public class CriticalTask {
                         logger.info("lis中已经存在hisxh为" + lTsxxHis.getXh() + "的记录，执行update");
                         lTsxxLisParam.setXh(judge.getXh());
                         if (lTsxxHis.toString().equals(judge.toString())) {
-                            logger.info("his数据与lis数据完全相同，不执行update~" + lTsxxHis.toString()+"但是由于lisxh为-1,update lisxh");
+                            logger.info("his数据与lis数据完全相同，不执行update~" + lTsxxHis.toString() + "但是由于lisxh为-1,update lisxh");
                             if (lTsxxLisService.updateByXh(lTsxxLisParam) > 0) {
-                                logger.info(lTsxxLisParam.getHisxh() + "记录修改成功 lis入参"+lTsxxLisParam.toString());
+                                logger.info(lTsxxLisParam.getHisxh() + "记录修改成功 lis入参" + lTsxxLisParam.toString());
                                 if (lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {                                   //操作成功删删除tr表数据
                                     logger.info(lTsxxLisParam.getHisxh() + " TR表 记录删除成功 his");
                                 }
@@ -94,7 +94,7 @@ public class CriticalTask {
                         } else {
                             logger.info("his数据与lis数据不完全完全相同，执行update~；his数据:" + lTsxxHis.toString() + "~lis数据:" + judge.toString());
                             if (lTsxxLisService.updateByXh(lTsxxLisParam) > 0) {
-                                logger.info(lTsxxLisParam.getHisxh() + "记录修改成功 lis入参"+lTsxxLisParam.toString());
+                                logger.info(lTsxxLisParam.getHisxh() + "记录修改成功 lis入参" + lTsxxLisParam.toString());
                                 if (lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {                                   //操作成功删删除tr表数据
                                     logger.info(lTsxxLisParam.getHisxh() + " TR表 记录删除成功 his");
                                 }
@@ -111,7 +111,7 @@ public class CriticalTask {
                             logger.info("中间表参数" + ltsxxTr.getEventype() + "，执行" + ltsxxTr.getEventype() + "操作");
                             if (lTsxxHis.toString().equals(lTsxxLis.toString())) {
                                 logger.info("his数据与lis数据完全相同，不执行update~" + lTsxxHis.toString());
-                                if(-1==lTsxxLis.getHisxh()){
+                                if (-1 == lTsxxLis.getHisxh()) {
                                     if (lTsxxLisService.updateByXh(lTsxxLisParam) > 0) {
                                         logger.info(lTsxxLisParam.getHisxh() + "记录修改成功 lis");
                                         if (lTsxxTrHisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {                                   //操作成功删删除tr表数据
@@ -153,12 +153,12 @@ public class CriticalTask {
                             }
                         }
                     } else {
-                        logger.info("lis出参为空，开始执行默认insert操作~" +lTsxxLisParam.toString());
+                        logger.info("lis出参为空，开始执行默认insert操作~" + lTsxxLisParam.toString());
                         int i = 0;
                         try {
                             i = lTsxxLisService.insert(lTsxxLisParam);
                         } catch (Exception e) {
-                            logger.info("lis插入出错"+lTsxxLisParam.toString());
+                            logger.info("lis插入出错" + lTsxxLisParam.toString());
                         }
                         if (i > 0) {
                             logger.info(lTsxxLisParam.getHisxh() + "记录插入成功 lis");
@@ -168,7 +168,7 @@ public class CriticalTask {
                         }
                     }
                 }
-                logger.info("中间表：" + "~" + ltsxxTr.toString() +"操作结束~");
+                logger.info("中间表：" + "~" + ltsxxTr.toString() + "操作结束~");
             }
         }
     }
@@ -180,7 +180,7 @@ public class CriticalTask {
         if (lTsxxTrList != null) {                                                                                         //如果tr中间表不为空
             for (LTsxxTr ltsxxTr : lTsxxTrList                                                                          //开始轮循
             ) {
-                logger.info("中间表：" + "~" + ltsxxTr.toString() +"操作开始~");
+                logger.info("中间表：" + "~" + ltsxxTr.toString() + "操作开始~");
                 LTsxxLis lTsxxLis = lTsxxLisService.getByxh(ltsxxTr.getXh());
                 logger.info("xh检索lis库tsxx表，入参：" + ltsxxTr.getXh() + "~出参：" + lTsxxLis.toString());
                 if (lTsxxLis == null) {                                                                                    //若lis表检索不到该xh信息，则为无效数据，删除
@@ -193,7 +193,7 @@ public class CriticalTask {
                 BeanUtils.copyBeanProp(lTsxxHisParam, lTsxxLis);                                                    //实体类复制从lis到his入参类
                 lTsxxHisParam.setLisxh(lTsxxLis.getXh());
                 logger.info("组装his入参：" + lTsxxHisParam.toString());
-                if  (-1==lTsxxLis.getHisxh() ) {
+                if (-1 == lTsxxLis.getHisxh()) {
                     LTsxxHis judge = lTsxxHisService.getByLisxh(lTsxxLis.getXh());
 
                     if (judge == null) {
@@ -234,15 +234,15 @@ public class CriticalTask {
                     }
                 } else {
                     LTsxxHis lTsxxHis = lTsxxHisService.getByXh(lTsxxLis.getHisxh());
-              //      logger.info("lis库lisxh不为-1,通过lis的hisxh查询his的xh;检索条件 getByXh;his入参：" + lTsxxLis.getHisxh() + "~his出参:" + lTsxxHis.toString());
+                    //      logger.info("lis库lisxh不为-1,通过lis的hisxh查询his的xh;检索条件 getByXh;his入参：" + lTsxxLis.getHisxh() + "~his出参:" + lTsxxHis.toString());
                     lTsxxHisParam.setXh(lTsxxLis.getHisxh());
                     if (lTsxxHis != null) {
                         logger.info("his出参不为空，开始执行相关操作");
                         if ("INSERT".equals(ltsxxTr.getEventype()) || "UPDATE".equals(ltsxxTr.getEventype())) {
                             logger.info("中间表参数" + ltsxxTr.getEventype() + "，执行" + ltsxxTr.getEventype() + "操作");
                             if (lTsxxLis.toString().equals(lTsxxHis.toString())) {
-                                logger.info("lis数据与his完全相同不执行update~"+lTsxxHis.toString());
-                                if(-1==lTsxxHis.getLisxh()){
+                                logger.info("lis数据与his完全相同不执行update~" + lTsxxHis.toString());
+                                if (-1 == lTsxxHis.getLisxh()) {
                                     if (lTsxxHisService.updateByXh(lTsxxHisParam) > 0) {
                                         logger.info(lTsxxHisParam.getLisxh() + "记录修改成功  his");
                                         if (lTsxxTrLisService.deleteByJlxh(ltsxxTr.getJlxh()) > 0) {
@@ -284,12 +284,12 @@ public class CriticalTask {
                             }
                         }
                     } else {
-                        logger.info("his出参为空，开始执行默认insert操作~"+lTsxxHisParam.toString());
+                        logger.info("his出参为空，开始执行默认insert操作~" + lTsxxHisParam.toString());
                         int i = 0;
                         try {
                             i = lTsxxHisService.insert(lTsxxHisParam);
                         } catch (Exception e) {
-                            logger.info("his插入出错"+lTsxxHisParam.toString());
+                            logger.info("his插入出错" + lTsxxHisParam.toString());
                         }
                         if (i > 0) {
                             logger.info(lTsxxHisParam.getLisxh() + "记录插入成功 his");
@@ -299,7 +299,7 @@ public class CriticalTask {
                         }
                     }
                 }
-                logger.info("中间表：" + "~" + ltsxxTr.toString() +"操作结束~");
+                logger.info("中间表：" + "~" + ltsxxTr.toString() + "操作结束~");
 
             }
         }
