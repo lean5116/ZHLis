@@ -113,9 +113,10 @@
                 title: '操作',
                 align: 'center',
                 formatter: function(value, row, index) {
-                    var actions = [];
-                    actions.push('<a class="btn btn-danger btn-xs" href="javascript:void(0)" onclick="remove(\'' + row.barcode + '\')"><i class="fa fa-remove"></i>删除</a>');
-                    return actions.join('');
+                    var action='<button href="#" class="btn btn-danger"  onclick="del(\'' + row.barcode + '\')">删除</button>';
+                    // var actions = [];
+                    // actions.push('<a class="btn btn-danger btn-xs" href="javascript:void(0)" onclick="remove('+row.barcode+')"><i class="fa fa-remove"></i>删除</a>');
+                    return action;
                 }
             }
         ];
@@ -160,9 +161,9 @@
         $('#barcode').val("");//业务完成清空barcode
     }
     /*移除标本按钮*/
-    function remove(barcode) {
-        if(confirm("确定要删除吗?")){
-
+    function del(barcode) {
+        var i='';
+        if(confirm("确定要删除吗")===true){
             var barcodes=[];
             barcodes.push(barcode);
             var removeInfo = {field:'barcode',values:barcodes};
@@ -197,7 +198,7 @@
                 if (r.code == 0) {
                     $.modal.closeLoading();
                     console.log(msg.Body.rtncode);
-                    if(confirm("打包成功是否直接打印") ==true){
+                    if(confirm("打包成功是否直接打印") ===true){
                         LODOP = getLodop();
                         LODOP.SET_PRINT_PAGESIZE(1,500,300,"CreateCustomPage");
                         LODOP.SET_PRINT_STYLE("FontSize", 9);
