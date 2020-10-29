@@ -114,7 +114,9 @@ public class SpecimenInhosController extends BaseController {
     public String createLogistics(@PathVariable String deptId, @PathVariable String userId, String preAdmission, Model model) {
         model.addAttribute("department", deptId);
         model.addAttribute("userCode", userId);
-        model.addAttribute("preAdmission", preAdmission);
+        if(preAdmission!=null&&preAdmission.trim().length()>0) {
+            model.addAttribute("preAdmission", preAdmission);
+        }
         if ("10401000".equals(deptId)) {
             return "specimenInhos/CreateLogisticsInfected";
         }
@@ -288,7 +290,8 @@ public class SpecimenInhosController extends BaseController {
             String wsdlUrl = "http://172.16.0.100:6700/hyyy_wsbarcode/interface_hr.asmx?WSDL";
             String response = "";
             try {
-                if (StringUtils.isNotNull(preAdmission) && StringUtils.isNotEmpty(preAdmission)) {
+                System.out.println(preAdmission);
+                if (StringUtils.isNotNull(preAdmission) && StringUtils.isNotEmpty(preAdmission) &&preAdmission.length()>0 &&preAdmission.trim()!="null") {
                     response = WebServiceUtil.commonWsService(wsdlUrl, "uf_pack2", "入院准备中心", barcodes, preAdmission, "入院准备中心")[0].toString();
                 } else {
                     response = WebServiceUtil.commonWsService(wsdlUrl, "uf_pack", userCode, barcodes)[0].toString();
@@ -315,7 +318,7 @@ public class SpecimenInhosController extends BaseController {
         ViLisBarcodeInfo params = new ViLisBarcodeInfo();
         params.setDepartment("10401000");
         params.setBarstatus("2");
-        List<ViLisBarcodeInfo> viLisBarcodeInfoList = viLisBarcodeInfoService.getInfoList(params);
+        List<ViLisBarcodeInfo> viLisBarcodeInfoList = viLisBarcodeInfoService.getInfoInfect(params);
         return getDataTable(viLisBarcodeInfoList);
     }
 

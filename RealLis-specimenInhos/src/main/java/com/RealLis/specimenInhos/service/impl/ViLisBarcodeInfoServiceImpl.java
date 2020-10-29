@@ -24,6 +24,11 @@ public class ViLisBarcodeInfoServiceImpl implements IViLisBarcodeInfoService {
     }
 
     @Override
+    public List<ViLisBarcodeInfo> getInfoInfect(ViLisBarcodeInfo viLisBarcodeInfo) {
+        return viLisBarcodeInfoMapper.queryInfoListInfect(viLisBarcodeInfo);
+    }
+
+    @Override
     public ViLisBarcodeInfo getInfo(ViLisBarcodeInfo viLisBarcodeInfo) {
         return viLisBarcodeInfoMapper.queryInfo(viLisBarcodeInfo);
     }

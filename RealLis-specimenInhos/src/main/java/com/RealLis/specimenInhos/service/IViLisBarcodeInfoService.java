@@ -9,6 +9,7 @@ import java.util.List;
 public interface IViLisBarcodeInfoService {
     List<ViLisBarcodeInfo> getInfoList(ViLisBarcodeInfo viLisBarcodeInfo);
     List<ViLisBarcodeInfo> getInfoListWard(ViLisBarcodeInfo viLisBarcodeInfo);
+    List<ViLisBarcodeInfo> getInfoInfect(ViLisBarcodeInfo viLisBarcodeInfo);
     ViLisBarcodeInfo getInfo(ViLisBarcodeInfo viLisBarcodeInfo);
     List<GyHyxm> queryHyxm();
     GyKsdm getKsdmByKsdm(String ksdm);

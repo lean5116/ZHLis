@@ -182,10 +182,12 @@
         for(i = 0 ; i<allPackingData.length;i++){
             barcodes+=allPackingData[i].barcode+',';
         }
+        var deptCode = [[${department}]];
         var postData = {
             barcodes:barcodes,
             userCode:userId,
-            preAdmission:preAdmission
+            preAdmission:preAdmission,
+            deptCode:deptCode
         };
         $.ajax({
             type: "post",

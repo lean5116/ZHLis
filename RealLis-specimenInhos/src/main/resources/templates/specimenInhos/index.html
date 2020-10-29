@@ -897,6 +897,9 @@
         var userId = [[${userCode}]];
         var deptCode = [[${deptCode}]];
         var preAdmission = [[${preAdmission}]]
+        if(preAdmission==null){
+            preAdmission='';
+        }
         var url = prefix + "/createLogistics/" + deptId + "/" + userId+"?preAdmission="+preAdmission;
         $.modal.open("创建物流", url);
     }

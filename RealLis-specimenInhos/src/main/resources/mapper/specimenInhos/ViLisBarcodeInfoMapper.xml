@@ -157,6 +157,74 @@
         order by to_number(translate(BEDNUM,'0123456789'|| BEDNUM,'0123456789')),REQUETTIME
     </select>
 
+
+    <select id="queryInfoListInfect" resultMap="ViLisBarcodeInfoMap"
+            parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
+        select
+        vlbi.BARCODE, vlbi.BARCODE2,vlbi.REQUESTMODE, vlbi.REQUESTDOCTOR, vlbi.REQUETTIME, vlbi.DEPARTMENT, vlbi.BEDNUM, vlbi.PATIENTTYPE, vlbi.PATIENTID,
+        vlbi.PATIENTNAME, vlbi.PATIENTSEX, vlbi.BIRTHDAY, vlbi.PATIENTAGE, vlbi.AGEUNIT, vlbi.SPECIMENCODE, vlbi.BARCLASS, vlbi.EXAMCODE, vlbi.EXAMNAME, vlbi.COST,
+        vlbi.COSTSTATUS, vlbi.SAMPLINGTIME, vlbi.SAMPLINGDOCTOR, vlbi.RECEIVERTIME, vlbi.LABDOCTOR, vlbi.BARSTATUS, vlbi.CANCELER, vlbi.CANCELTIME,
+        vlbi.DIAGNOSTIC,vlbi.TUBE,vlbi.RECEIVEADDR,vlbi.hyxm,departmentName
+        from ZHLIS.VI_LIS_BARCODE_INFO vlbi
+        LEFT JOIN HIS_PATIENTINFO hi on hi.VISIT_NUMBER = vlbi.VISITNUMBER
+        <where>
+            <!--            <if test="params.beginTime != null and params.beginTime != ''">-->
+            <!--                and SAMPLINGTIME &gt;=  to_date(#{params.beginTime},'yyyy-MM-dd HH24:mi:ss')-->
+            <!--            </if>-->
+            <!--            <if test="params.endTime != null and params.endTime != ''">-->
+            <!--                and SAMPLINGTIME  &lt;= to_date(#{params.endTime},'yyyy-MM-dd HH24:mi:ss')-->
+            <!--            </if>-->
+            <if test="barstatus!=null and barstatus!=''">
+                and vlbi.barstatus=#{barstatus}
+            </if>
+            <if test="department!=null and department !=''">
+                and vlbi.department = #{department}
+                and vlbi.INOPERATION != '1'
+            </if>
+            <if test="startRequettime!=null">
+                and vlbi.REQUETTIME &gt; #{startRequettime}
+            </if>
+            <if test="endRequettime!=null">
+                and vlbi.REQUETTIME &lt; #{endRequettime}
+            </if>
+            <if test="startSamplingtime!=null">
+                and vlbi.SAMPLINGTIME &gt; #{startSamplingtime}
+            </if>
+            <if test="endSamplingtime!=null">
+                and vlbi.SAMPLINGTIME &lt; #{endSamplingtime}
+            </if>
+            <if test="sampleState!=null and sampleState !=''">
+                and vlbi.Barstatus in (${sampleState})
+            </if>
+            <if test="searchValue!=null and searchValue!=''">
+                and vlbi.BARCODE like concat(concat('%',#{searchValue,jdbcType=VARCHAR}),'%')
+            </if>
+            <if test="params.isInhos==-1">
+                and vlbi.PREADMISSION = '1'
+            </if>
+            <if test="params.isInhos==-2 and params.patientClass!='' and params.patientClass!=null">
+                and vlbi.PATIENT_CLASS = #{params.patientClass}
+            </if>
+            <if test="params.isInhos==1 ">
+                and vlbi.PREADMISSION = '0'
+                and vlbi.INOPERATION!='1'
+            </if>
+            <if test="params.isInhos==4 ">
+                and vlbi.PREADMISSION = '0'
+                and vlbi.INOPERATION!='1'
+            </if>
+            <if test="params.operation==1 and params.isInhos==3">
+                and vlbi.INOPERATION = '1'
+                and vlbi.PREADMISSION = '0'
+            </if>
+            <if test="params.inpatientId!=null and params.inpatientId!=''">
+                and vlbi.visitnumber =#{params.inpatientId}
+            </if>
+            and HI.WARD is  not  null
+        </where>
+        order by to_number(translate(vlbi.BEDNUM,'0123456789'|| vlbi.BEDNUM,'0123456789')),REQUETTIME
+    </select>
+
     <select id="queryInfo" resultMap="ViLisBarcodeInfoMap"
             parameterType="com.RealLis.specimenInhos.domain.ViLisBarcodeInfo">
         select

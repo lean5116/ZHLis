@@ -29,13 +29,6 @@
                                 <div class="col-sm-1">
                                     <div id = "totalCount" name="totalCount"><h1>0</h1></div>
                                 </div>
-<!--                                <div class="col-sm-1">-->
-<!--                                    当前物流号：-->
-<!--                                </div>-->
-
-<!--                                <div class="col-sm-3">-->
-<!--                                    <input type="text" readonly="true" class="form-control" name = "logisticsNo" id="logisticsNo"/>-->
-<!--                                </div>-->
                             </div>
                         </div>
                     </div>
@@ -101,7 +94,7 @@
         $.ajax({
             type: "post",
             url: prefix + "/logistics/infected" ,
-            async:false,//取消异步，防止因异步产生的刷入两条相同条码
+            async:false,
             success: function (r) {
                 console.log(r);
                 totalCount=r.total;
@@ -112,7 +105,6 @@
     /*表格初始化事件*/
     function tableInit() {
         var columns=[
-
             {field: 'barcode', title: '条码号', align: 'center'},
             {field: 'patientname', title: '姓名', align: 'left'},
             {field: 'bednum', title: '床号', align: 'left'},
@@ -169,7 +161,8 @@
     }
     /*移除标本按钮*/
     function remove(barcode) {
-        $.modal.confirm("确定要删除吗?", function() {
+        if(confirm("确定要删除吗?")){
+
             var barcodes=[];
             barcodes.push(barcode);
             var removeInfo = {field:'barcode',values:barcodes};
@@ -177,7 +170,7 @@
             $('#packageInfo').bootstrapTable('remove',removeInfo); //表格移除该标本信息
             totalCount--;
             $('#totalCount').html('<h1 style="color: red">'+totalCount+'</h1>');//计数-1
-        });
+        }
 
     }
 
@@ -205,10 +198,6 @@
                     $.modal.closeLoading();
                     console.log(msg.Body.rtncode);
                     if(confirm("打包成功是否直接打印") ==true){
-                        JsBarcode("#imgCodelogistics",msg.Body.rtncode,{
-                            format:"CODE128",
-                            width:2,
-                        });
                         LODOP = getLodop();
                         LODOP.SET_PRINT_PAGESIZE(1,500,300,"CreateCustomPage");
                         LODOP.SET_PRINT_STYLE("FontSize", 9);
