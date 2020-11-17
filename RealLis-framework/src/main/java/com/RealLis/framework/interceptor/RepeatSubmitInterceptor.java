@@ -26,6 +26,9 @@ public abstract class RepeatSubmitInterceptor extends HandlerInterceptorAdapter
             HandlerMethod handlerMethod = (HandlerMethod) handler;
             Method method = handlerMethod.getMethod();
             RepeatSubmit annotation = method.getAnnotation(RepeatSubmit.class);
+            try {
+                this.setIntervalTime(annotation.timeOut());
+            }catch (Exception e){}
             if (annotation != null)
             {
                 if (this.isRepeatSubmit(request))
@@ -42,6 +45,8 @@ public abstract class RepeatSubmitInterceptor extends HandlerInterceptorAdapter
             return super.preHandle(request, response, handler);
         }
     }
+
+    public abstract void setIntervalTime(int timeOut);
 
     /**
      * 验证是否重复提交由子类实现具体的防重复提交的规则

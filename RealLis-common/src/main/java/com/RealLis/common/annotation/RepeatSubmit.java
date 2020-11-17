@@ -10,5 +10,5 @@ import java.lang.annotation.*;
 @Documented
 public @interface RepeatSubmit
 {
-
+    public int timeOut() default 10;
 }

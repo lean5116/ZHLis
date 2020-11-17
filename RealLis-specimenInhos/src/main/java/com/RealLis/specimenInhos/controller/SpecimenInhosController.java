@@ -236,7 +236,7 @@ public class SpecimenInhosController extends BaseController {
         }
     }
 
-    @RepeatSubmit
+    @RepeatSubmit(timeOut = 20)
     @ApiOperation("异步生成检验条码")
     @ApiImplicitParam(name = "deptId", value = "科室id", dataType = "String")
     @PostMapping("/GenerateBarcode")
