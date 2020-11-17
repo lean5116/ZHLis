@@ -1,5 +1,6 @@
 package com.RealLis.specimenInhos.controller;
 
+import com.RealLis.common.annotation.RepeatSubmit;
 import com.RealLis.common.core.controller.BaseController;
 import com.RealLis.common.core.domain.AjaxResult;
 import com.RealLis.common.core.page.TableDataInfo;
@@ -235,6 +236,7 @@ public class SpecimenInhosController extends BaseController {
         }
     }
 
+    @RepeatSubmit
     @ApiOperation("异步生成检验条码")
     @ApiImplicitParam(name = "deptId", value = "科室id", dataType = "String")
     @PostMapping("/GenerateBarcode")
