@@ -29,8 +29,8 @@
         <result property="preinhosstatus" column="PREINHOSSTATUS" />
     </resultMap>
     <select id="queryDistinctAdviseList" parameterType="com.RealLis.specimenInhos.domain.ViLisAdviseHeren" resultMap="ViLisAdviseHerenMap">
-        select
-        PATIENTID, VISITNUMBER, ADVISEID, DEPTCODE, DEPRTNAME, CLINICDIAG, LABGROUPID, LABGROUPNAME, SPECIMENTYPE, LABTUBE, REPORT_FLAG, LABORATORY, REQUESTTIME, ITEMPRICE, ITEMSUM, DOCTORCODE, ADVISEGROUPCODE, REQUESTMODE, SAMPLE_FLAG, ORDER_STATUS, LABGROUPCODE, INHOSSTAUS, DOCSUBMIT, PREINHOSSTATUS
+        select distinct
+        VISITNUMBER
         from ZHLIS.VI_LIS_ADVISE_HEREN
         <where>
             <if test="patientid != null">
