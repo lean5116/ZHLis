@@ -176,6 +176,8 @@
 
     /*打包*/
     function Packing() {
+        var preAdmission = [[${preAdmission}]]
+        var deptCode = [[${department}]];
         $.modal.loading("数据加载中");
         var allPackingData = $('#packageInfo').bootstrapTable('getData');
         var userId = [[${userCode}]];//得到当前页使用者
@@ -184,9 +186,13 @@
         for(i = 0 ; i<allPackingData.length;i++){
             barcodes+=allPackingData[i].barcode+',';
         }
+        var departmentName =[[${departmentName}]];
         var postData = {
             barcodes:barcodes,
-            userCode:userId
+            userCode:userId,
+            preAdmission:preAdmission,
+            deptCode:deptCode,
+            departmentName:departmentName
         };
         $.ajax({
             type: "post",

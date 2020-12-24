@@ -112,9 +112,10 @@ public class SpecimenInhosController extends BaseController {
     }
 
     @GetMapping("/createLogistics/{deptId}/{userId}")
-    public String createLogistics(@PathVariable String deptId, @PathVariable String userId, String preAdmission, Model model) {
+    public String createLogistics(@PathVariable String deptId, @PathVariable String userId, String preAdmission, String departmentName,Model model) {
         model.addAttribute("department", deptId);
         model.addAttribute("userCode", userId);
+        model.addAttribute("departmentName",departmentName);
         if(preAdmission!=null&&preAdmission.trim().length()>0) {
             model.addAttribute("preAdmission", preAdmission);
         }
@@ -287,7 +288,7 @@ public class SpecimenInhosController extends BaseController {
     })
     @PostMapping("/Packing")
     @ResponseBody
-    public AjaxResult Packing(String barcodes, String userCode, String preAdmission) {
+    public AjaxResult Packing(String barcodes, String userCode, String preAdmission,String deptCode,String departmentName) {
         if (barcodes != null && userCode != null) {
             String wsdlUrl = "http://172.16.0.100:6700/hyyy_wsbarcode/interface_hr.asmx?WSDL";
             String response = "";
@@ -296,7 +297,7 @@ public class SpecimenInhosController extends BaseController {
                 if (StringUtils.isNotNull(preAdmission) && StringUtils.isNotEmpty(preAdmission) &&preAdmission.length()>0 &&preAdmission.trim()!="null") {
                     response = WebServiceUtil.commonWsService(wsdlUrl, "uf_pack2", "入院准备中心", barcodes, preAdmission, "入院准备中心")[0].toString();
                 } else {
-                    response = WebServiceUtil.commonWsService(wsdlUrl, "uf_pack", userCode, barcodes)[0].toString();
+                    response = WebServiceUtil.commonWsService(wsdlUrl, "uf_pack2", userCode, barcodes,deptCode,departmentName)[0].toString();
                 }
             } catch (Exception e) {
                 return error(e.getMessage());

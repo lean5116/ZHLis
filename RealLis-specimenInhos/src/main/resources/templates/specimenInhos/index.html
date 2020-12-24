@@ -896,11 +896,12 @@
         var deptId = [[${department}]];
         var userId = [[${userCode}]];
         var deptCode = [[${deptCode}]];
+        var departmentName =[[${departmentName}]];
         var preAdmission = [[${preAdmission}]]
         if(preAdmission==null){
             preAdmission='';
         }
-        var url = prefix + "/createLogistics/" + deptId + "/" + userId+"?preAdmission="+preAdmission;
+        var url = prefix + "/createLogistics/" + deptId + "/" + userId+"?preAdmission="+preAdmission+"&departmentName="+departmentName;
         $.modal.open("创建物流", url);
     }
 
