@@ -50,6 +50,7 @@ public class ViLisBarcodeInfo extends BaseEntity {
   private String hyxm;
   private String departmentName;
   private String trans;
+  private String deptStayed;
 
   public String getDepartmentName() {
     return departmentName;
@@ -386,6 +387,14 @@ public class ViLisBarcodeInfo extends BaseEntity {
 
   public void setTrans(String trans) {
     this.trans = trans;
+  }
+
+  public String getDeptStayed() {
+    return deptStayed;
+  }
+
+  public void setDeptStayed(String deptStayed) {
+    this.deptStayed = deptStayed;
   }
 
   public ViLisBarcodeInfo(String barcode, String barcode2, String requestmode, String requestdoctor, Date requettime, String department, String departmentname, String bednum, String patienttype, String patientid, String patientname, String patientsex, Date birthday, String patientage, String ageunit, String specimencode, String barclass, String examcode, String examname, String cost, String coststatus, Date samplingtime, String samplingdoctor, Date receivertime, String labdoctor, String barstatus, String canceler, Date canceltime, String diagnostic, Date startRequettime, Date endRequettime, Date startReceivertime, Date endReceivertime, Date startSamplingtime, Date endSamplingtime, String overTime, String sampleState, String searchValue, String tube, String receiveaddr, String hyxm, String departmentName, String trans) {

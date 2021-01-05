@@ -204,14 +204,14 @@ public class SpecimenInhosController extends BaseController {
             List<LLogistics> logisticses = lLogisticsService.getLlogisticsList(lLogistics);
             return getDataTable(logisticses);
         } else {
-            String isInhos ;
+            String isInhos ="1" ;
             try{
                 isInhos = viLisBarcodeInfo.getParams().get("isInhos").toString();
             }catch (Exception e){
                 isInhos ="1";
             }
             if("1".equals(isInhos)){
-                viLisBarcodeInfoList = viLisBarcodeInfoService.getInfoListWard(viLisBarcodeInfo);
+                viLisBarcodeInfoList = viLisBarcodeInfoService.getInfoList(viLisBarcodeInfo);
                 for(int i =0;i<viLisBarcodeInfoList.size();i++){
                     if(!viLisBarcodeInfo.getDepartment().equals(viLisBarcodeInfoList.get(i).getDepartment())){
                         viLisBarcodeInfoList.get(i).setTrans("转");

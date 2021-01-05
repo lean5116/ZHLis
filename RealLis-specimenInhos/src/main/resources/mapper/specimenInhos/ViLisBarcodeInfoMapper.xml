@@ -56,7 +56,7 @@
                 and barstatus=#{barstatus}
             </if>
             <if test="department!=null and department !=''">
-                and department = #{department}
+                and deptStayed = #{department}
                 and INOPERATION != '1'
             </if>
             <if test="startRequettime!=null">
