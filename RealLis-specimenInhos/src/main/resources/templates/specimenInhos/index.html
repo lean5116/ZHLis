@@ -237,7 +237,7 @@
                     <div class="col-md-2">&nbsp;</div>
                     <div class="col-md-3">
                         <select class="form-control" id="selectType">
-<!--                            <option value="patientname">病人姓名</option>-->
+                            <option value="patientname">病人姓名</option>
                             <option value="patientid" selected="true">住院号</option>
                         </select>
                     </div>
@@ -869,8 +869,14 @@
 
     }
     function barcodeBeforeSign(){
-        // $('#selectType').options[$('#selectType').selectedIndex].value
-        $.table.search('dateSpan', 'orderBarCode', { preAdmission:1,patientid: $('#patientInfo').val()});
+        var select=document.getElementById("selectType");
+        var data;
+        if( select.options[select.selectedIndex].value=='patientid'){
+            data={preAdmission:1,patientid: $('#patientInfo').val()};
+        }else {
+            data={preAdmission:1,patientname: $('#patientInfo').val()};
+        }
+        $.table.search('dateSpan', 'orderBarCode', data);
         $('#patientInfo').val("");
     }
 
