@@ -869,9 +869,14 @@
 
     }
     function barcodeBeforeSign(){
-        var select=document.getElementById("selectType");
+        // var select=document.getElementById("selectType");
         var data;
-        if( select.options[select.selectedIndex].value=='patientid'){
+        // if( select.options[select.selectedIndex].value=='patientid'){
+        //     data={preAdmission:1,patientid: $('#patientInfo').val()};
+        // }else {
+        //     data={preAdmission:1,patientname: $('#patientInfo').val()};
+        // }
+        if($('#selectType').val()=='patientid'){
             data={preAdmission:1,patientid: $('#patientInfo').val()};
         }else {
             data={preAdmission:1,patientname: $('#patientInfo').val()};
