@@ -51,6 +51,7 @@ public class ViLisBarcodeInfo extends BaseEntity {
   private String departmentName;
   private String trans;
   private String deptStayed;
+  private String preAdmission;
 
   public String getDepartmentName() {
     return departmentName;
@@ -397,7 +398,15 @@ public class ViLisBarcodeInfo extends BaseEntity {
     this.deptStayed = deptStayed;
   }
 
-  public ViLisBarcodeInfo(String barcode, String barcode2, String requestmode, String requestdoctor, Date requettime, String department, String departmentname, String bednum, String patienttype, String patientid, String patientname, String patientsex, Date birthday, String patientage, String ageunit, String specimencode, String barclass, String examcode, String examname, String cost, String coststatus, Date samplingtime, String samplingdoctor, Date receivertime, String labdoctor, String barstatus, String canceler, Date canceltime, String diagnostic, Date startRequettime, Date endRequettime, Date startReceivertime, Date endReceivertime, Date startSamplingtime, Date endSamplingtime, String overTime, String sampleState, String searchValue, String tube, String receiveaddr, String hyxm, String departmentName, String trans) {
+  public String getPreAdmission() {
+    return preAdmission;
+  }
+
+  public void setPreAdmission(String preAdmission) {
+    this.preAdmission = preAdmission;
+  }
+
+  public ViLisBarcodeInfo(String barcode, String barcode2, String requestmode, String requestdoctor, Date requettime, String department, String departmentname, String bednum, String patienttype, String patientid, String patientname, String patientsex, Date birthday, String patientage, String ageunit, String specimencode, String barclass, String examcode, String examname, String cost, String coststatus, Date samplingtime, String samplingdoctor, Date receivertime, String labdoctor, String barstatus, String canceler, Date canceltime, String diagnostic, Date startRequettime, Date endRequettime, Date startReceivertime, Date endReceivertime, Date startSamplingtime, Date endSamplingtime, String overTime, String sampleState, String searchValue, String tube, String receiveaddr, String hyxm, String departmentName, String trans, String deptStayed, String preAdmission) {
     this.barcode = barcode;
     this.barcode2 = barcode2;
     this.requestmode = requestmode;
@@ -441,6 +450,8 @@ public class ViLisBarcodeInfo extends BaseEntity {
     this.hyxm = hyxm;
     this.departmentName = departmentName;
     this.trans = trans;
+    this.deptStayed = deptStayed;
+    this.preAdmission = preAdmission;
   }
 
   public ViLisBarcodeInfo() {
@@ -450,10 +461,12 @@ public class ViLisBarcodeInfo extends BaseEntity {
   public String toString() {
     return "ViLisBarcodeInfo{" +
             "barcode='" + barcode + '\'' +
+            ", barcode2='" + barcode2 + '\'' +
             ", requestmode='" + requestmode + '\'' +
             ", requestdoctor='" + requestdoctor + '\'' +
             ", requettime=" + requettime +
             ", department='" + department + '\'' +
+            ", departmentname='" + departmentname + '\'' +
             ", bednum='" + bednum + '\'' +
             ", patienttype='" + patienttype + '\'' +
             ", patientid='" + patientid + '\'' +
@@ -485,6 +498,13 @@ public class ViLisBarcodeInfo extends BaseEntity {
             ", overTime='" + overTime + '\'' +
             ", sampleState='" + sampleState + '\'' +
             ", searchValue='" + searchValue + '\'' +
+            ", tube='" + tube + '\'' +
+            ", receiveaddr='" + receiveaddr + '\'' +
+            ", hyxm='" + hyxm + '\'' +
+            ", departmentName='" + departmentName + '\'' +
+            ", trans='" + trans + '\'' +
+            ", deptStayed='" + deptStayed + '\'' +
+            ", preAdmission='" + preAdmission + '\'' +
             '}';
   }
 }

@@ -189,6 +189,7 @@
             <option value="-1">5、已退回</option>
             <option value="4">6、已完成</option>
             <option value="-2">7、已作废</option>
+            <option value="-100">8、院前医嘱</option>
         </select>
     </div>
 </div>
@@ -226,6 +227,29 @@
         <button type="button" class="btn btn-primary" style="width: 110px;margin: auto auto" onclick="startShipping()">
             <i class="fa fa-ambulance"></i> 开始运送
         </button>
+    </div>
+</div>
+<div class="modal fade " id="Modal1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-2">&nbsp;</div>
+                    <div class="col-md-3">
+                        <select class="form-control" id="selectType">
+<!--                            <option value="patientname">病人姓名</option>-->
+                            <option value="patientid" selected="true">住院号</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" id="patientInfo" class="form-control" >
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="barcodeBeforeSign()">查询</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -821,11 +845,15 @@
     // $.table.search(form, tableId, 额外检索参数);
     function orderBarcodeFilter() {
         //select选择值为-99时展示所有医嘱条码的页面，其他则根据select选择筛选
-        if ($('#sampleState').val() != -99) {
-            $.table.search('dateSpan', 'orderBarCode', {sampleState: $('#sampleState').val()});
-        } else {
+        if ($('#sampleState').val() == -99) {
             $.table.search('dateSpan', 'orderBarCode', '');
+        } else if($('#sampleState').val()==-100){//院前检查
+            $('#Modal1').modal();
+            //$.table.search('dateSpan', 'orderBarCode', { preAdmission:1});
+        } else {
+            $.table.search('dateSpan', 'orderBarCode', {sampleState: $('#sampleState').val()});
         }
+
         if ($('#sampleState').val() != 0 && $('#sampleState').val() != -1 && $('#sampleState').val() != 1) {
             $('#btn_barcodePrint').attr("disabled", "disabled")
         } else {
@@ -839,6 +867,11 @@
 
         }
 
+    }
+    function barcodeBeforeSign(){
+        // $('#selectType').options[$('#selectType').selectedIndex].value
+        $.table.search('dateSpan', 'orderBarCode', { preAdmission:1,patientid: $('#patientInfo').val()});
+        $('#patientInfo').val("");
     }
 
     /*根据tableId bootstrapTable条件搜索*/

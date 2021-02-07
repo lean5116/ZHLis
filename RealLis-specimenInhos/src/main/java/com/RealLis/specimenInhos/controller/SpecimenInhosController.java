@@ -210,6 +210,10 @@ public class SpecimenInhosController extends BaseController {
             }catch (Exception e){
                 isInhos ="1";
             }
+            if("1".equals(viLisBarcodeInfo.getPreAdmission())) {
+                isInhos="-1";
+                viLisBarcodeInfo.getParams().put("isInhos",-1);
+            }
             if("1".equals(isInhos)){
                 viLisBarcodeInfoList = viLisBarcodeInfoService.getInfoList(viLisBarcodeInfo);
                 for(int i =0;i<viLisBarcodeInfoList.size();i++){
@@ -258,8 +262,7 @@ public class SpecimenInhosController extends BaseController {
         }
         List<ViLisAdviseHeren> viLisAdviseHerenList = viLisAdviseHerenService.getDistinctAdviseList(params);
         if (viLisAdviseHerenList != null) {
-            for (ViLisAdviseHeren viLisAdviseHeren : viLisAdviseHerenList
-            ) {
+            for (ViLisAdviseHeren viLisAdviseHeren : viLisAdviseHerenList) {
                 System.out.println(viLisAdviseHeren.getVisitnumber());
                 logger.info(viLisAdviseHeren.getVisitnumber() + zhlisWsHerenLetService.LabBarMake(viLisAdviseHeren.getVisitnumber()));
             }

@@ -55,13 +55,20 @@
             <if test="barstatus!=null and barstatus!=''">
                 and barstatus=#{barstatus}
             </if>
-            <if test="department!=null and department !=''">
+            <if test="patientid!=null and patientid!=''">
+                and patientid = #{patientid}
+            </if>
+            <if test="patientname!=null and patientname!=''">
+                and patientname = #{patientname}
+            </if>
+            <if test="department!=null and department !='' and preAdmission !=1">
                 and deptStayed = #{department}
-                and INOPERATION != '1'
+
             </if>
             <if test="startRequettime!=null">
                 and REQUETTIME &gt; #{startRequettime}
             </if>
+
             <if test="endRequettime!=null">
                 and REQUETTIME &lt; #{endRequettime}
             </if>
@@ -79,6 +86,7 @@
             </if>
             <if test="params.isInhos==-1">
                 and PREADMISSION = '1'
+                and INOPERATION != '1'
             </if>
             <if test="params.isInhos==-2 and params.patientClass!='' and params.patientClass!=null">
                 and PATIENT_CLASS = #{params.patientClass}
@@ -88,12 +96,12 @@
                 and INOPERATION!='1'
             </if>
             <if test="params.isInhos==4 ">
-                and PREADMISSION = '0'
+                 and PREADMISSION = '0'
                 and INOPERATION!='1'
             </if>
             <if test="params.operation==1 and params.isInhos==3">
                 and INOPERATION = '1'
-                and PREADMISSION = '0'
+--                 and PREADMISSION = '0'
             </if>
             <if test="params.inpatientId!=null and params.inpatientId!=''">
                 and visitnumber =#{params.inpatientId}
