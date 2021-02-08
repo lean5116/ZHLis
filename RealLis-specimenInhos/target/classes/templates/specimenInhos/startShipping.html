@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="include :: header('开始运送')" />
+</head>
+<body  class="gray-bg" style="overflow-x: auto">
+    <div class="wrapper wrapper-content animated fadeIn">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5 style="font-size: large">住院标本 <small class="m-l-sm">开始运送</small></h5>
+                        <div class="ibox-tools">
+
+
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="form-horizontal m-t" >
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">请刷入物流条码条码:</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control" id ="barcode" name="barcode"/>
+                                    </div>
+
+                                    <div class="col-sm-6" style="text-align: center">
+                                        <div id = "totalCount" name="totalCount"><h1>0</h1></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                           <div class="col-sm-12">
+                               <div class="col-sm-6">
+                                   <h3>运送员信息</h3>
+                                   <div class="col-sm-12">
+                                       <input type="text" class="form-control" id ="ysr" name="ysr" placeholder="请输入工号"/>
+                                   </div>
+                               </div>
+                               <div class="col-sm-6">
+                                   <h3>物流条码号</h3>
+                                   <div class="col-sm-12">
+                                        <input type="text" class="form-control" id ="wlbh" name="wlbh" readonly/></div>
+                               </div>
+                           </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<th:block th:include="include :: footer" />
+</body>
+<script th:inline="javascript">
+    var prefix = ctx + "specimenInhos";
+    var totalCount= 0 ; //默认数量 0
+    /*监视barcode回车事件*/
+    $("#barcode").keydown(function(e) {
+        if (e.keyCode == 13) {
+            getWlbh();
+        }
+    });
+    /*监视barcode失去焦点*/
+    $("#barcode").blur(function(){
+        getWlbh();
+    });
+    /*获取物流编号*/
+    function getWlbh() {
+        var barcode = document.getElementById('barcode').value;
+        if(barcode.length>0) {
+            $.ajax({
+                type: "put",
+                url: prefix + "/startShipping/" + barcode,
+                success: function (r) {
+                    if (r.code == 0) {
+                        var response = JSON.parse(r.msg);
+                        if(response.wlzt !=1){
+                            $.modal.msgError("只有标本状态为【已打包】的标本才能【开始运送】");
+                            $('#barcode').val('');//查询完成清空barcode文本框，防止重复输入
+                        }else{
+                            $('#wlbh').val(response.wlbh);
+                            $('#totalCount').html("<h1>"+response.bbsl+"</h1>");
+                            $('#barcode').val('');//查询完成清空barcode文本框，防止重复输入
+                        }
+                    } else {
+                        $.modal.msgError(r.msg);
+                        $('#barcode').val('');//业务结束清空barcode文本框
+                    }
+                }
+            });
+        }
+
+    }
+    /*确定回调函数*/
+    function submitHandler() {
+        var ysr = $('#ysr').val();
+        if(ysr.length>0){
+            var wlbh = $('#wlbh').val();
+            var ysr  = $('#ysr').val();
+            $.ajax({
+                type: "post",
+                url: prefix + "/startShipping" ,
+                data:{
+                    "wlbh":wlbh,
+                    "ysr":ysr
+                },
+                success: function (r) {
+                    if (r.code == 0) {
+                        $.modal.msgSuccess("修改成功");
+                        $('#wlbh').val('');
+                        $('#ysr').val('');
+                        parent.$.table.refresh(); //提交成功刷新父窗体
+                    } else {
+                        $.modal.msgError("修改失败");
+                    }
+                },
+                error:function () {
+                    $.modal.msgError("修改失败");
+                }
+            });
+        }else{
+            $.modal.msgError("请输入运送人工号");
+        }
+    }
+</script>
+</html>

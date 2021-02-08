@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.RealLis.specimenInhos.mapper.HisAdviceMapper">
+
+    <resultMap type="com.RealLis.specimenInhos.domain.HisAdvice" id="HisAdvice">
+        <result property="adviceId" column="ADVICE_ID" />
+        <result property="patientId" column="PATIENT_ID"/>
+        <result property="examNo" column="EXAM_NO" />
+        <result property="testGroupNo" column="TEST_GROUP_NO" />
+        <result property="orderStatus" column="ORDER_STATUS" />
+        <result property="responseFlag" column="RESPONSE_FLAG"/>
+        <result property="priority" column="PRIORITY" />
+        <result property="transactionDatetime" column="TRANSACTION_DATETIME" />
+        <result property="operationId" column="OPERATION_ID" />
+        <result property="operationName" column="OPERATION_NAME" />
+        <result property="reqPhysicianId" column="REQ_PHYSICIAN_ID" />
+        <result property="reqPhysician" column="REQ_PHYSICIAN" />
+        <result property="orderingDeptCode" column="ORDERING_DEPT_CODE" />
+        <result property="orderingDeptName" column="ORDERING_DEPT_NAME"/>
+        <result property="reqPhysicianPhone" column="REQ_PHYSICIAN_PHONE" />
+        <result property="orderEffectiveDatetime" column="ORDER_EFFECTIVE_DATETIME" />
+        <result property="examReasonId" column="EXAM_REASON_ID" />
+        <result property="examReason" column="EXAM_REASON" />
+        <result property="reqDeptNo" column="REQ_DEPT_NO" />
+        <result property="reqDeptName" column="REQ_DEPT_NAME" />
+        <result property="area" column="AREA" />
+        <result property="performedByCode" column="PERFORMED_BY_CODE" />
+        <result property="performedByName" column="PERFORMED_BY_NAME" />
+        <result property="itemNo" column="ITEM_NO" />
+        <result property="placerOrderNumber" column="PLACER_ORDER_NUMBER"/>
+        <result property="fillerOrderNumber" column="FILLER_ORDER_NUMBER" />
+        <result property="clinDiag" column="CLIN_DIAG" />
+        <result property="examItemCode" column="EXAM_ITEM_CODE" />
+        <result property="examItem" column="EXAM_ITEM"/>
+        <result property="examSubClass" column="EXAM_SUB_CLASS" />
+        <result property="itemClass" column="ITEM_CLASS" />
+        <result property="requestedDatetime" column="REQUESTED_DATETIME" />
+        <result property="relevantClinicalInfo" column="RELEVANT_CLINICAL_INFO" />
+        <result property="specimenRole" column="SPECIMEN_ROLE"/>
+        <result property="specimen" column="SPECIMEN" />
+        <result property="placerField1" column="PLACER_FIELD1"/>
+        <result property="placerField2" column="PLACER_FIELD2" />
+        <result property="fillerField1" column="FILLER_FIELD1" />
+        <result property="performedBy" column="PERFORMED_BY" />
+        <result property="chargeToPractice" column="CHARGE_TO_PRACTICE" />
+        <result property="recordDefaultDatetime" column="RECORD_DEFAULT_DATETIME" />
+        <result property="sampleFlag" column="SAMPLE_FLAG" />
+    </resultMap>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryDistinctList" resultMap="HisAdvice" parameterType="com.RealLis.specimenInhos.domain.HisAdvice">
+        select
+            DISTINCT PATIENT_ID
+        from ZHLIS.HIS_ADVICE
+        <where>
+            <if test="adviceId != null">
+                and ADVICE_ID = #{adviceId}
+            </if>
+            <if test="patientId != null">
+                and PATIENT_ID = #{patientId}
+            </if>
+            <if test="examNo != null">
+                and EXAM_NO = #{examNo}
+            </if>
+            <if test="testGroupNo != null">
+                and TEST_GROUP_NO = #{testGroupNo}
+            </if>
+            <if test="testGroupName != null">
+                and TEST_GROUP_NAME = #{testGroupName}
+            </if>
+            <if test="orderStatus != null">
+                and ORDER_STATUS = #{orderStatus}
+            </if>
+            <if test="responseFlag != null">
+                and RESPONSE_FLAG = #{responseFlag}
+            </if>
+            <if test="priority != null">
+                and PRIORITY = #{priority}
+            </if>
+            <if test="transactionDatetime != null">
+                and TRANSACTION_DATETIME = #{transactionDatetime}
+            </if>
+            <if test="operationId != null">
+                and OPERATION_ID = #{operationId}
+            </if>
+            <if test="operationName != null">
+                and OPERATION_NAME = #{operationName}
+            </if>
+            <if test="reqPhysicianId != null">
+                and REQ_PHYSICIAN_ID = #{reqPhysicianId}
+            </if>
+            <if test="reqPhysician != null">
+                and REQ_PHYSICIAN = #{reqPhysician}
+            </if>
+            <if test="orderingDeptCode != null">
+                and ORDERING_DEPT_CODE = #{orderingDeptCode}
+            </if>
+            <if test="orderingDeptName != null">
+                and ORDERING_DEPT_NAME = #{orderingDeptName}
+            </if>
+            <if test="reqPhysicianPhone != null">
+                and REQ_PHYSICIAN_PHONE = #{reqPhysicianPhone}
+            </if>
+            <if test="orderEffectiveDatetime != null">
+                and ORDER_EFFECTIVE_DATETIME = #{orderEffectiveDatetime}
+            </if>
+            <if test="examReasonId != null">
+                and EXAM_REASON_ID = #{examReasonId}
+            </if>
+            <if test="examReason != null">
+                and EXAM_REASON = #{examReason}
+            </if>
+            <if test="reqDeptNo != null">
+                and REQ_DEPT_NO = #{reqDeptNo}
+            </if>
+            <if test="reqDeptName != null">
+                and REQ_DEPT_NAME = #{reqDeptName}
+            </if>
+            <if test="area != null">
+                and AREA = #{area}
+            </if>
+            <if test="performedByCode != null">
+                and PERFORMED_BY_CODE = #{performedByCode}
+            </if>
+            <if test="performedByName != null">
+                and PERFORMED_BY_NAME = #{performedByName}
+            </if>
+            <if test="itemNo != null">
+                and ITEM_NO = #{itemNo}
+            </if>
+            <if test="placerOrderNumber != null">
+                and PLACER_ORDER_NUMBER = #{placerOrderNumber}
+            </if>
+            <if test="fillerOrderNumber != null">
+                and FILLER_ORDER_NUMBER = #{fillerOrderNumber}
+            </if>
+            <if test="clinDiag != null">
+                and CLIN_DIAG = #{clinDiag}
+            </if>
+            <if test="examItemCode != null">
+                and EXAM_ITEM_CODE = #{examItemCode}
+            </if>
+            <if test="examItem != null">
+                and EXAM_ITEM = #{examItem}
+            </if>
+            <if test="examSubClass != null">
+                and EXAM_SUB_CLASS = #{examSubClass}
+            </if>
+            <if test="itemClass != null">
+                and ITEM_CLASS = #{itemClass}
+            </if>
+            <if test="requestedDatetime != null">
+                and REQUESTED_DATETIME = #{requestedDatetime}
+            </if>
+            <if test="relevantClinicalInfo != null">
+                and RELEVANT_CLINICAL_INFO = #{relevantClinicalInfo}
+            </if>
+            <if test="specimenRole != null">
+                and SPECIMEN_ROLE = #{specimenRole}
+            </if>
+            <if test="specimen != null">
+                and SPECIMEN = #{specimen}
+            </if>
+            <if test="placerField1 != null">
+                and PLACER_FIELD1 = #{placerField1}
+            </if>
+            <if test="placerField2 != null">
+                and PLACER_FIELD2 = #{placerField2}
+            </if>
+            <if test="fillerField1 != null">
+                and FILLER_FIELD1 = #{fillerField1}
+            </if>
+            <if test="performedBy != null">
+                and PERFORMED_BY = #{performedBy}
+            </if>
+            <if test="chargeToPractice != null">
+                and CHARGE_TO_PRACTICE = #{chargeToPractice}
+            </if>
+            <if test="recordDefaultDatetime != null">
+                and RECORD_DEFAULT_DATETIME = #{recordDefaultDatetime}
+            </if>
+            <if test="sampleFlag != null">
+                and SAMPLE_FLAG = #{sampleFlag}
+            </if>
+        </where>
+    </select>
+</mapper>
