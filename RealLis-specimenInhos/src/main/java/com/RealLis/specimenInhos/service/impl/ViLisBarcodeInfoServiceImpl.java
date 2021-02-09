@@ -34,14 +34,14 @@ public class ViLisBarcodeInfoServiceImpl implements IViLisBarcodeInfoService {
     @Override
     public ViLisBarcodeInfo getInfo(String barcode) {
         ViLisBarcodeInfo params = new ViLisBarcodeInfo();
-        String bar = (DateUtils.dateTimeNow()).substring(2);
+        String bar = (DateUtils.dateTimeNow()).substring(0,3);
         params.setBarcode2(bar + barcode);
         ViLisBarcodeInfo viLisBarcodeInfo = viLisBarcodeInfoMapper.queryInfo(params);
         if(viLisBarcodeInfo!=null){
             return viLisBarcodeInfo;
         }else{
             String lastYear = DateUtils.parseDateToStr(DateUtils.YYYYMMDDHHMMSS,DateUtils.addDays(DateUtils.getNowDate(),-1));
-            bar = lastYear.substring(2);
+            bar = lastYear.substring(0,3);
             params.setBarcode2(bar + barcode);
             viLisBarcodeInfo = viLisBarcodeInfoMapper.queryInfo(params);
             return viLisBarcodeInfo;
