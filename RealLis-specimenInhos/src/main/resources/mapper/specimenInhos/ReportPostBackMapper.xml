@@ -282,16 +282,16 @@
 
 
     <resultMap id="ZMIC" type="com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.ZMIC">
+        <id column="ZMIC3_1" property="ZMIC_ID"/>
         <result property="ZMIC1" column="ZMIC1" />
         <result property="ZMIC2" column="ZMIC2" />
-
         <result property="ZMIC4" column="ZMIC4" />
         <result property="ZMIC5" column="ZMIC5" />
         <result property="ZMIC6" column="ZMIC6" />
         <result property="ZMIC7" column="ZMIC7" />
         <result property="ZMIC8" column="ZMIC8" />
         <result property="ZMIC9" column="ZMIC9" />
-        <association property="ZMIC3" javaType="com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.packageZMIC.ZMIC3">
+        <association property="ZMIC3"  javaType="com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.packageZMIC.ZMIC3">
             <id property="ZMIC3_1" column="ZMIC3_1"/>
             <result property="ZMIC3_2" column="ZMIC3_2"/>
         </association>

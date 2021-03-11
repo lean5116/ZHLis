@@ -19,6 +19,7 @@ public class LLogistics extends BaseEntity {
   private String wlzt;
   private String bqmc;
   private String qsr;
+  private String cjrxm;
 
   public LLogistics(String wlbh, Date cjsj, Date dbsj, String cjr, String dbr, Date yssj, String ysr, String bqdm, Date ddsj, String bbsl, String wlzt, String bqmc, String qsr) {
     this.wlbh = wlbh;
@@ -141,5 +142,13 @@ public class LLogistics extends BaseEntity {
 
   public void setQsr(String qsr) {
     this.qsr = qsr;
+  }
+
+  public String getCjrxm() {
+    return cjrxm;
+  }
+
+  public void setCjrxm(String cjrxm) {
+    this.cjrxm = cjrxm;
   }
 }

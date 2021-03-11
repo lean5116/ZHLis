@@ -7,6 +7,8 @@ public class ZMIC {
     private String ZMIC1 ="";
     /**/
     private String ZMIC2 ="";
+
+    private String ZMIC_ID ="";
     /*药敏信息*/
     private ZMIC3 ZMIC3 =new ZMIC3();
     /*第N个药敏*/
@@ -107,6 +109,14 @@ public class ZMIC {
 
     public void setZMIC9(String ZMIC9) {
         this.ZMIC9 = ZMIC9;
+    }
+
+    public String getZMIC_ID() {
+        return ZMIC_ID;
+    }
+
+    public void setZMIC_ID(String ZMIC_ID) {
+        this.ZMIC_ID = ZMIC_ID;
     }
 
     @Override

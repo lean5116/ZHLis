@@ -16,14 +16,15 @@
         <result property="wlzt" column="WLZT"/>
         <result property="bqmc" column="BQMC"/>
         <result property="qsr" column="QSR"/>
+        <result property="cjrxm" column="CJRXM"/>
     </resultMap>
 
 
     <!--通过实体作为筛选条件查询-->
     <select id="queryLlogisticsList" resultMap="LLogisticsMap">
         select
-        WLBH, CJSJ, DBSJ, CJR, DBR, YSSJ, YSR, BQDM, DDSJ, BBSL, WLZT, BQMC, QSR
-        from ZHLIS.L_LOGISTICS
+        l.WLBH, l.CJSJ, l.DBSJ, l.CJR,(select ygxm from gy_ygdm where ygdm = l.cjr and rownum= 1) as cjrxm,l.DBR, l.YSSJ, l.YSR, l.BQDM, l.DDSJ, l.BBSL, l.WLZT, l.BQMC, l.QSR
+        from ZHLIS.L_LOGISTICS l
         <where>
             <if test="wlbh != null">
                 and WLBH = #{wlbh}
