@@ -274,9 +274,7 @@ public class SpecimenInhosController extends BaseController {
     @GetMapping("/getBarcode/{barcode}")
     @ResponseBody
     public AjaxResult getBarcode(@PathVariable String barcode) {
-        ViLisBarcodeInfo params = new ViLisBarcodeInfo();
-        params.setBarcode(barcode);
-        ViLisBarcodeInfo response = viLisBarcodeInfoService.getInfo(params);
+        ViLisBarcodeInfo response = viLisBarcodeInfoService.getInfo(barcode);
         if (response != null) {
             return success(JSON.toJSONString(response));
         } else {

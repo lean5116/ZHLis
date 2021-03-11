@@ -266,6 +266,9 @@
             <if test="barcode!=null and barcode !=''">
                 and BARCODE = #{barcode}
             </if>
+            <if test="barcode2!=null and barcode2 !=''">
+                and BARCODE2  like concat(concat('',#{barcode2,jdbcType=VARCHAR}),'%')
+            </if>
             <if test="params.isInhos==-1">
                 and PREADMISSION = '1'
             </if>
