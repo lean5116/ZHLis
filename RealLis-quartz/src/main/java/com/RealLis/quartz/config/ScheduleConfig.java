@@ -40,7 +40,8 @@ public class ScheduleConfig
         prop.put("org.quartz.jobStore.misfireThreshold", "12000");
         prop.put("org.quartz.jobStore.tablePrefix", "QRTZ_");
         factory.setQuartzProperties(prop);
-
+        factory.setWaitForJobsToCompleteOnShutdown(true);//解决spring 集成quartz内存溢出问题
+        factory.setOverwriteExistingJobs(true);
         factory.setSchedulerName("LeanScheduler");
         // 延时启动
         factory.setStartupDelay(1);

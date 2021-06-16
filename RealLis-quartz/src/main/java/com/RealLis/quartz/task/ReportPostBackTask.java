@@ -47,41 +47,48 @@ public class ReportPostBackTask {
             if(postList.size()>0){
                 for (PostList post:postList
                      ) {
-
                     if("CK01".equals(post.getEventName())){
-                        String result ="";
-                        reportPostBackService.updateTransfer(post.getJlxh());
-                        if(post.getMicType()==0){
-
-                            result=  ReportPostBack(post.getEventData());
-//                            log.info(result);
-                        }else if(post.getMicType()==1){
-
-                            result=germReportPostBack(post.getEventData());
-                        }
-//                        log.info("条码号:" +post.getEventData()+" 返回值："+result);
-                        if(result.indexOf("MSA|AA")>-1){
-                           int delFlag= reportPostBackService.deletePostList(post.getJlxh());
-//                           log.info("条码号："+post.getEventData() +" 删除标志:"+ Integer.toString(delFlag));
-                        }
+                        CK01PostBack(post);
                     }else if("CK99".equals(post.getEventName())){
-                        reportPostBackService.updateTransfer(post.getJlxh());
-                        auditHead auditHead = new auditHead("LAB203",
-                                DateUtils.parseDateToStr("yyyy-MM-dd HH:mm:ss",new Date()),
-                                UUID.randomUUID().toString(),
-                                "01",
-                                "",
-                                "HIS",
-                                "xBzrURjFUl4Q1E9nTaCu5C==");
-                        post.setOrderId(post.getOrderId().replaceAll(",","\",\""));
-                        String inputString = '{'+auditHead.toString()+","+returnAuditToString(post)+'}';
-                        String result = lisCommonWSService.returnAudit(inputString);
-                        auditRes auditRes = JSON.parseObject(result,auditRes.class);
-                        if("AA".equals(auditRes.getHead().getTradeStatus())){
-                            reportPostBackService.deletePostList(post.getJlxh());
-                        }
+                        Ck99PostBack(post);
                     }
                 }
+            }
+        }
+    }
+    public void CK01PostBack(PostList post){
+        String result ="";
+        if(reportPostBackService.updateTransfer(post.getJlxh())>0) {
+            if (post.getMicType() == 0) {
+                result = ReportPostBack(post.getEventData());
+            } else if (post.getMicType() == 1) {
+                result = germReportPostBack(post.getEventData());
+            }
+            if (result.contains("MSA|AA")) {
+                reportPostBackService.deletePostList(post.getJlxh());
+            }else {
+                CK01PostBack(post);
+            }
+        }
+    }
+
+    public void Ck99PostBack(PostList post){
+        if(reportPostBackService.updateTransfer(post.getJlxh())>0) {
+            auditHead auditHead = new auditHead("LAB203",
+                    DateUtils.parseDateToStr("yyyy-MM-dd HH:mm:ss", new Date()),
+                    UUID.randomUUID().toString(),
+                    "01",
+                    "",
+                    "HIS",
+                    "xBzrURjFUl4Q1E9nTaCu5C==");
+            post.setOrderId(post.getOrderId().replaceAll(",", "\",\""));
+            String inputString = '{' + auditHead.toString() + "," + returnAuditToString(post) + '}';
+            String result = lisCommonWSService.returnAudit(inputString);
+            auditRes auditRes = JSON.parseObject(result, auditRes.class);
+            if ("AA".equals(auditRes.getHead().getTradeStatus())) {
+                reportPostBackService.deletePostList(post.getJlxh());
+            }else{
+                Ck99PostBack(post);
             }
         }
     }

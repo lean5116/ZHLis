@@ -342,10 +342,10 @@
         <result property="operTime" column="OPERTIME" />
     </resultMap>
     <select id="queryPostList" resultMap="postList">
-        select * from L_DATA_TRANSFER  where REPEAT &lt; 5 order by jlxh
+        select * from L_DATA_TRANSFER  where REPEAT &lt; 5 and <![CDATA[ opertime<=sysdate and opertime>sysdate - 1/24/60 ]]> order by jlxh
     </select>
     <update id="updateTransfer" >
-        update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = #{jlxh}
+        update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = #{jlxh} and  REPEAT &lt; 6
     </update>
     <delete id="deletePostList">
         delete from L_DATA_TRANSFER where jlxh = #{jlxh}
