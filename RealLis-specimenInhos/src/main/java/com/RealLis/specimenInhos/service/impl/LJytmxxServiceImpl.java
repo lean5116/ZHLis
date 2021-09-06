@@ -6,6 +6,8 @@ import com.RealLis.specimenInhos.service.LJytmxxService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class LJytmxxServiceImpl implements LJytmxxService {
     @Autowired
@@ -13,9 +15,13 @@ public class LJytmxxServiceImpl implements LJytmxxService {
     @Override
     public int updateByBarcode(LJytmxx lJytmxx) {
         if(!lJytmxx.getParams().containsKey("confirmCancel")) {
+            try {
+                ljytmxxMapper.updateHisAdvice(lJytmxx);
+            }catch (Exception e ){}
             return ljytmxxMapper.update(lJytmxx);
         }else{
             return ljytmxxMapper.removeExecutTime(lJytmxx);
         }
     }
+
 }

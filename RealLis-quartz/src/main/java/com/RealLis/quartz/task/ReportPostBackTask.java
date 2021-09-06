@@ -47,11 +47,17 @@ public class ReportPostBackTask {
             if(postList.size()>0){
                 for (PostList post:postList
                      ) {
+                    Date startDate = new Date();
                     if("CK01".equals(post.getEventName())){
                         CK01PostBack(post);
                     }else if("CK99".equals(post.getEventName())){
                         Ck99PostBack(post);
                     }
+                    Date endDate = new Date();
+                    log.info(post.toString()+"||回传结束，消耗时间:"+
+//                            ((endDate.getTime()-startDate.getTime())/(60 * 1000)) / 60+"秒"
+                            DateUtils.getDatePoor(endDate,startDate)
+                    );
                 }
             }
         }
@@ -176,7 +182,7 @@ public class ReportPostBackTask {
         } else {
             result += new ZMIC().toString();
         }
-        log.info(result);
+//        log.info(result);
         return lisCommonWSService.reportPostBack(result);
     }
     public String ReportPostBack(String sampleno){
@@ -236,7 +242,7 @@ public class ReportPostBackTask {
         List<OBX> obxList = reportPostBackService.getOBXbySampleno(sampleno);
         if (obxList != null) {
             if (obxList.size() > 0) {
-                log.info(Convert.toStr(obxList.size()));
+//                log.info(Convert.toStr(obxList.size()));
                 for (int i = 0; i < obxList.size(); i++) {
                     obxList.get(i).setOBX1(Convert.toStr(i + 1));
                     result += obxList.get(i).toString().replace("\n"," ")+"\n";
@@ -246,7 +252,7 @@ public class ReportPostBackTask {
         } else {
             result += new OBX().toString();
         }
-        log.info(result);
+//        log.info(result);
         return lisCommonWSService.reportPostBack(result);
     }
 

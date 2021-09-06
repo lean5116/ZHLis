@@ -1,9 +1,12 @@
 package com.RealLis.specimenInhos.ws.service.LisCommonWS;
 
+import com.RealLis.common.utils.DateUtils;
 import com.RealLis.common.utils.WebServiceUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
+import java.util.Date;
 
 @Service
 public class LisCommonWSServiceImpl implements LisCommonWSService{
@@ -13,6 +16,7 @@ public class LisCommonWSServiceImpl implements LisCommonWSService{
     @Override
     public String reportPostBack(String inputString) {
         String resp = "";
+        Date startDate = new Date();
         try {
             Object[] result = WebServiceUtil.commonWsService(WSDL_URL, "MessageIn","HL7" ,inputString);
             resp =result[0].toString();
@@ -20,12 +24,18 @@ public class LisCommonWSServiceImpl implements LisCommonWSService{
             logger.error("error: {}", e.getMessage(), e);
             logger.error("接口调调用错误");
         }
+        Date endDate = new Date();
+        logger.info(inputString+"--||返回内容:"+resp+"--||调用结束，接口消耗时间:"+
+//                ((endDate.getTime()-startDate.getTime())/(60 * 1000)) / 60+"秒"
+                DateUtils.getDatePoor(endDate,startDate)
+        );
         return  resp;
     }
 
     @Override
     public String returnAudit(String inputString) {
         String resp = "";
+        Date startDate = new Date();
         try {
             Object[] result = WebServiceUtil.commonWsService(WSDL_URL, "MessageIn", "JSON",inputString);
             resp =result[0].toString();
@@ -33,6 +43,8 @@ public class LisCommonWSServiceImpl implements LisCommonWSService{
             logger.error("error: {}", e.getMessage(), e);
             logger.error("接口调用错误");
         }
+        Date endDate = new Date();
+        logger.info(inputString+"--||返回内容:"+resp+"--||调用结束，接口消耗时间:"+((endDate.getTime()-startDate.getTime())/(60 * 1000)) % 60+"秒");
         return  resp;
     }
 }

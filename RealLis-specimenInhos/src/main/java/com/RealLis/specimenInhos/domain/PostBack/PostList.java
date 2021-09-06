@@ -129,4 +129,22 @@ public class PostList {
     public void setOperTime(Date operTime) {
         this.operTime = operTime;
     }
+
+    @Override
+    public String toString() {
+        return "PostList{" +
+                "jlxh=" + jlxh +
+                ", eventName='" + eventName + '\'' +
+                ", eventData='" + eventData + '\'' +
+                ", micType=" + micType +
+                ", repeat=" + repeat +
+                ", patientId='" + patientId + '\'' +
+                ", visitNo='" + visitNo + '\'' +
+                ", orderId='" + orderId + '\'' +
+                ", reportId='" + reportId + '\'' +
+                ", operdocId='" + operdocId + '\'' +
+                ", operdocName='" + operdocName + '\'' +
+                ", operTime=" + operTime +
+                '}';
+    }
 }

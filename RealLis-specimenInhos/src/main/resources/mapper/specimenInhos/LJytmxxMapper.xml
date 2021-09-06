@@ -247,7 +247,9 @@
             </if>
         </where>
     </update>
-
+    <update id="updateHisAdvice" parameterType="com.RealLis.specimenInhos.domain.LJytmxx">
+        update zhlis.his_advice   set sample_flag = 0 where exam_no in (select exam_no from zhlis.l_jytmxx_mx where doctadviseno = #{doctadviseno})
+    </update>
 
     <!--通过主键修改数据-->
     <update id="removeExecutTime" parameterType="com.RealLis.specimenInhos.domain.LJytmxx">
