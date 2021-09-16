@@ -230,7 +230,6 @@
     </div>
 </div>
 <div class="modal fade " id="Modal1" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" data-keyboard="false">
-    >
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -256,6 +255,15 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<div class="modal fade" id="loadingModal">
+    <div style="width: 500px;height:100px;  position: absolute; text-align: center; left: 45%; top: 50%;margin-left:-100px;margin-top:-10px">
+        <div class="progress progress-striped active" style="margin-bottom: 0;">
+            <div id="labBarMakerBar" class="progress-bar" role='progressbar' aria-valuenow='50' aria-valuemin='0' aria-valuemax='100' style="width:0;"></div>
+        </div>
+        <h5 style="font-size: 6em;color: #87CEEB">条码生成中,请稍后</h5>
     </div>
 </div>
 
@@ -909,32 +917,96 @@
 
     /*信息刷新按钮*/
     function infoRefresh() {
-        $.modal.loading("条码生成中");
+        // $.modal.loading("条码生成中");
         /*请求后台异步生成条码*/
         var deptId = [[${department}]];
         var isInhos = [[${isInhos}]];
         var operation = [[${operation}]];
         var inpatientId = [[${inpatientId}]]
+        if(deptId.length>0){
+            $('#loadingModal').modal({backdrop: 'static', keyboard: false});
+            $("#loadingModal").show(function () {
+                getVisitNumberByDeptId(deptId,function (data) {
+                    if(data.length==0){
+                        $('#labBarMakerBar').attr("style","width:"+100+"%");
+                        $("#loadingModal").modal('hide');
+                    }
+                    var j = 0;
+                    for(var i = 0;i<data.length;i++){
+                        setTimeout(fn(i),100);
+                        function fn(a){
+                            return function () {
+                                console.log("输入就诊流水号为："+data[a].visitnumber);
+                                makeBarCodeByVisitNumer(data[a].visitnumber,function (b) {
+                                    j++
+                                    var percent = ((j)/data.length*100);
+                                    console.log("进度条值"+percent);
+                                    $('#labBarMakerBar').attr("style","width:"+percent+"%");
+                                    if(percent>=100){
+                                        queryBarcodeSearch(currentTableId);
+                                        $("#loadingModal").modal('hide');
+                                    }
+                                })
+                            }
+                        }
+
+                    }
+                });
+            });
+
+
+        }else{
+            $.modal.loading("条码生成中");
+            $.ajax({
+                type: "post",
+                url: prefix + "/GenerateBarcode",
+                data: {
+                    "deptId": deptId,
+                    "isInhos": isInhos,
+                    "operation": operation,
+                    "inpatientId": inpatientId
+                },
+                success: function () {
+                    $.modal.closeLoading();
+                    queryBarcodeSearch(currentTableId);
+                },
+                error: function () {
+                    $.modal.closeLoading();
+                }
+            });
+        }
+    }
+    function makeBarCodeByVisitNumer(visitNumber,callback) {
         $.ajax({
             type: "post",
-            url: prefix + "/GenerateBarcode",
+            url: prefix + "/GenerateBarcodeByVisitNumber",
             data: {
-                "deptId": deptId,
-                "isInhos": isInhos,
-                "operation": operation,
-                "inpatientId": inpatientId
+                "visitNumber": visitNumber
             },
             success: function () {
-                $.modal.closeLoading();
-                queryBarcodeSearch(currentTableId);
+               callback(1);
             },
             error: function () {
-                $.modal.closeLoading();
+                callback(0);
+            }
+        });
+    }
+    function getVisitNumberByDeptId(deptId,callback) {
+        $.ajax({
+            type: "get",
+            url: prefix + "/findVisitNumberByDeptId",
+            data: {
+                "deptId": deptId
+            },
+            success: function (data) {
+                callback(data);
+            },
+            error: function () {
+                callback()
             }
         });
 
     }
-
     var $tab = $('#tab');
     /*监视tab页切换事件*/
     $tab.on('show.bs.tab', function (e) {

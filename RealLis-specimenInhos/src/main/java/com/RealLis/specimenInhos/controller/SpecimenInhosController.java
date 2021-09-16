@@ -261,6 +261,20 @@ public class SpecimenInhosController extends BaseController {
             }
         }
     }
+    @GetMapping("/findVisitNumberByDeptId")
+    @ResponseBody
+    public  List<ViLisAdviseHeren> findVisitNumberByDeptId(String deptId){
+        ViLisAdviseHeren params = new ViLisAdviseHeren();
+        params.setOrderStatus("1");
+        params.setSampleFlag("0");
+        params.setDeptcode(deptId);
+        return viLisAdviseHerenService.getDistinctAdviseList(params);
+    }
+    @PostMapping("/GenerateBarcodeByVisitNumber")
+    @ResponseBody
+    public void generateBarcodeByVisitNumber(String visitNumber){
+        logger.info(visitNumber + zhlisWsHerenLetService.LabBarMake(visitNumber));
+    }
 
     @ApiOperation("获取单个条码信息")
     @ApiImplicitParam(name = "barcode", value = "条码号", dataType = "String", paramType = "path")
