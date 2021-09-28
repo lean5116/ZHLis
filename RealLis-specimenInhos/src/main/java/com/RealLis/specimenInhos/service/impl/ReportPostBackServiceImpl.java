@@ -56,6 +56,11 @@ public class ReportPostBackServiceImpl implements ReportPostBackService {
     }
 
     @Override
+    public List<PostList> getPostListAll() {
+        return reportPostBackMapper.queryPostListAll();
+    }
+
+    @Override
     public int deletePostList(Long jlxh) {
         return reportPostBackMapper.deletePostList(jlxh);
     }

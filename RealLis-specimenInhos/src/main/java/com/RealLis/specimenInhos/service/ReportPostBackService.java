@@ -18,6 +18,7 @@ public interface ReportPostBackService {
     List<germOBX> getGermOBXBySampleno(String sampleno);
 
     List<PostList> getPostList();
+    List<PostList> getPostListAll();
     int deletePostList(Long jlxh);
     int updateTransfer(Long jlxh);
 }

@@ -272,8 +272,10 @@ public class SpecimenInhosController extends BaseController {
     }
     @PostMapping("/GenerateBarcodeByVisitNumber")
     @ResponseBody
-    public void generateBarcodeByVisitNumber(String visitNumber){
-        logger.info(visitNumber + zhlisWsHerenLetService.LabBarMake(visitNumber));
+    public String generateBarcodeByVisitNumber(String visitNumber){
+        String  log = visitNumber + zhlisWsHerenLetService.LabBarMake(visitNumber);
+        logger.info(log);
+        return log;
     }
 
     @ApiOperation("获取单个条码信息")

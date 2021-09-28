@@ -19,6 +19,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -26,6 +27,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Component("ReportPostBackTask")
+@Repository
 public class ReportPostBackTask {
     @Autowired
     private zhlisWsHerenLetService zhlisWsHerenLetService;
@@ -57,6 +59,27 @@ public class ReportPostBackTask {
                     log.info(post.toString()+"||回传结束，消耗时间:"+
 //                            ((endDate.getTime()-startDate.getTime())/(60 * 1000)) / 60+"秒"
                             DateUtils.getDatePoor(endDate,startDate)
+                    );
+                }
+            }
+        }
+    }
+    public void reportPostBackAll(){
+        List<PostList> postList = reportPostBackService.getPostListAll();
+        if(postList!=null){
+            if(postList.size()>0){
+                for (PostList post:postList
+                ) {
+                    Date startDate = new Date();
+                    if("CK01".equals(post.getEventName())){
+                        CK01PostBack(post);
+                    }else if("CK99".equals(post.getEventName())){
+                        Ck99PostBack(post);
+                    }
+                    Date endDate = new Date();
+                    log.info(post.toString()+"||回传结束，消耗时间:"+
+//                            ((endDate.getTime()-startDate.getTime())/(60 * 1000)) / 60+"秒"
+                                    DateUtils.getDatePoor(endDate,startDate)
                     );
                 }
             }

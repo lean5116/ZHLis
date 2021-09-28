@@ -20,6 +20,7 @@ public interface ReportPostBackMapper {
     List<germOBX> queryGermOBX(String sampleno);
 
     List<PostList> queryPostList();
+    List<PostList> queryPostListAll();
     int deletePostList(Long jlxh);
     int updateTransfer(Long jlxh);
 }

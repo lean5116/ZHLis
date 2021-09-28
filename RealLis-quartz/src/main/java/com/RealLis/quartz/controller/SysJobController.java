@@ -11,6 +11,7 @@ import com.RealLis.common.utils.poi.ExcelUtil;
 import com.RealLis.quartz.anno.Auth;
 import com.RealLis.quartz.domain.SysJob;
 import com.RealLis.quartz.service.ISysJobService;
+import com.RealLis.quartz.task.ReportPostBackTask;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,8 @@ public class SysJobController extends BaseController
 
     @Autowired
     private ISysJobService jobService;
+    @Autowired
+    private ReportPostBackTask reportPostBackTask;
 
     @GetMapping("/{loginName}/{password}")
     public String job(@PathVariable  String loginName,@PathVariable String password)
@@ -161,5 +164,11 @@ public class SysJobController extends BaseController
     public boolean checkCronExpressionIsValid(SysJob job)
     {
         return jobService.checkCronExpressionIsValid(job.getCronExpression());
+    }
+
+    @GetMapping("/all")
+    @ResponseBody
+    public void test (){
+        reportPostBackTask.reportPostBackAll();
     }
 }

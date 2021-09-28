@@ -344,6 +344,11 @@
     <select id="queryPostList" resultMap="postList">
         select * from L_DATA_TRANSFER  where REPEAT &lt; 5 and <![CDATA[ opertime<=sysdate and opertime>sysdate - 5/24/60 ]]> order by jlxh
     </select>
+
+    <select id="queryPostListAll" resultMap="postList">
+        select * from L_DATA_TRANSFER  where REPEAT &lt; 5  order by jlxh
+    </select>
+
     <update id="updateTransfer" >
         update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = #{jlxh} and  REPEAT &lt; 6
     </update>
