@@ -39,7 +39,9 @@ public class LisCommonWSServiceImpl implements LisCommonWSService{
         String resp = "";
         Date startDate = new Date();
         try {
-            resp=  lisCommonWSSoap.messageIn("HL7",inputString);
+            Object[] result = WebServiceUtil.commonWsService(WSDL_URL, "MessageIn", "JSON",inputString);
+            resp =result[0].toString();
+           // resp=  lisCommonWSSoap.messageIn("HL7",inputString);
         }catch (Exception e){
             logger.error("error: {}", e.getMessage(), e);
             logger.error("接口调调用错误");
