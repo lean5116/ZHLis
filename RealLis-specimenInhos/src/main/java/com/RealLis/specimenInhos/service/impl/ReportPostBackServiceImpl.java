@@ -69,4 +69,9 @@ public class ReportPostBackServiceImpl implements ReportPostBackService {
     public int updateTransfer(Long jlxh) {
         return reportPostBackMapper.updateTransfer(jlxh);
     }
+
+    @Override
+    public List<String> querySampleNoByPatientId(String patientId) {
+        return reportPostBackMapper.querySampleNoByPatientId(patientId);
+    }
 }

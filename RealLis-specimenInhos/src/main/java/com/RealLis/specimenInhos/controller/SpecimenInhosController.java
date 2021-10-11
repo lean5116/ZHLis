@@ -522,6 +522,16 @@ public class SpecimenInhosController extends BaseController {
         System.out.println(result);
         return lisCommonWSService.reportPostBack(result);
     }
+    @GetMapping("/ReportPostBackByPatientId/{patientId}")
+    @ResponseBody
+    public String getReportPostBackByPatientId(@PathVariable String patientId){
+        StringBuilder returns = new StringBuilder();
+        List<String> sampleNos = reportPostBackService.querySampleNoByPatientId(patientId);
+        for (String s :sampleNos) {
+            returns.append(getReportPostBack(s)).append("\n");
+        }
+        return returns.toString();
+    }
 
     @ApiOperation("细菌报告回传接口")
     @ApiImplicitParam(name = "barcode", value = "检验条码号", dataType = "String", paramType = "path")

@@ -23,4 +23,5 @@ public interface ReportPostBackMapper {
     List<PostList> queryPostListAll();
     int deletePostList(Long jlxh);
     int updateTransfer(Long jlxh);
+    List<String> querySampleNoByPatientId(String patientId);
 }

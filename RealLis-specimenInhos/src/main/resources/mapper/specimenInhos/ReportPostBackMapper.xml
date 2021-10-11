@@ -355,4 +355,7 @@
     <delete id="deletePostList">
         delete from L_DATA_TRANSFER where jlxh = #{jlxh}
     </delete>
+    <select id="querySampleNoByPatientId" resultType="java.lang.String">
+        select sampleno from l_patientinfo where patientid = #{patientId}
+    </select>
 </mapper>

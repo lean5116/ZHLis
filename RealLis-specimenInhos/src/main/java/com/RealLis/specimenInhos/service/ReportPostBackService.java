@@ -21,4 +21,5 @@ public interface ReportPostBackService {
     List<PostList> getPostListAll();
     int deletePostList(Long jlxh);
     int updateTransfer(Long jlxh);
+    List<String> querySampleNoByPatientId(String patientId);
 }
