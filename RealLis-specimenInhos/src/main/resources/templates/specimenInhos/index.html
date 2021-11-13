@@ -1037,7 +1037,7 @@
 
     /*标本条码打印*/
     function barcodePrintSelect(tableId) {
-        $('#btn_barcodePrint').attr("disabled",true);
+        // $('#btn_barcodePrint').attr("disabled",true);
         var data = getSelections(tableId);
         var barcodes = '';
         for (let i = 0; i < data.length; i++) {
@@ -1098,8 +1098,12 @@
                                     }
                                 }
                                 //LODOP.PREVIEW();//预览
-                                LODOP.PRINT();//直接打印
-                                $('#btn_barcodePrint').attr("disabled",true);
+                                try {
+                                    LODOP.PRINT();//直接打印
+                                    $('#btn_barcodePrint').attr("disabled",true);
+                                }catch (e) {
+                                    $('#btn_barcodePrint').attr("disabled",true);
+                                }
                             }
                         }
                     }

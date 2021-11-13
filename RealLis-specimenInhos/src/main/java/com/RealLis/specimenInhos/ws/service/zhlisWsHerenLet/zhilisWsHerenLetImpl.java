@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class zhilisWsHerenLetImpl  implements zhlisWsHerenLetService {
-    WebServiceLis webServiceLis = new WebServiceLis();
-    WebServiceLisSoap  webServiceLisSoap = webServiceLis.getWebServiceLisSoap();
+//    WebServiceLis webServiceLis = new WebServiceLis();
+//    WebServiceLisSoap  webServiceLisSoap = webServiceLis.getWebServiceLisSoap();
     private static final Logger logger = LoggerFactory.getLogger(zhilisWsHerenLetImpl.class);
     private final String WSDL_URL = "http://172.16.17.94:20202/WebServiceLis.asmx?WSDL";
     @Override
