@@ -277,7 +277,7 @@
         </association>
     </resultMap>
     <select id="queryOBX" resultMap="OBX">
-        select * from OML_O21_obx where sampleno = #{sampleno}
+        select * from OML_O21_obx where sampleno = #{sampleno} order by to_number(nvl(obx4,0))
     </select>
 
 
