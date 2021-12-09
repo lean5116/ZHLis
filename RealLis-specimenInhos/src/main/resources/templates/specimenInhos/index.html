@@ -1100,16 +1100,16 @@
                                 //LODOP.PREVIEW();//预览
                                 try {
                                     LODOP.PRINT();//直接打印
-                                    $('#btn_barcodePrint').attr("disabled",true);
+                                   // $('#btn_barcodePrint').attr("disabled",true);
                                 }catch (e) {
-                                    $('#btn_barcodePrint').attr("disabled",true);
+                                    //$('#btn_barcodePrint').attr("disabled",true);
                                 }
                             }
                         }
                     }
                 } else {
                     $.modal.msgError('无可打印条码')
-                    $('#btn_barcodePrint').attr("disabled",true);
+                    //$('#btn_barcodePrint').attr("disabled",true);
                 }
             }
         });
