@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ViLisAdviseHerenMapper {
     List<ViLisAdviseHeren> queryDistinctAdviseList(ViLisAdviseHeren viLisAdviseHerenis);
+
+    List<ViLisAdviseHeren> queryDistinctAdviseListNew(ViLisAdviseHeren viLisAdviseHerenis);
 }

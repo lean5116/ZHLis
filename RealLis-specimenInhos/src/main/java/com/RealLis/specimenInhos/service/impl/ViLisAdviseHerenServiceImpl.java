@@ -15,4 +15,9 @@ public class ViLisAdviseHerenServiceImpl implements ViLisAdviseHerenService {
     public List<ViLisAdviseHeren> getDistinctAdviseList(ViLisAdviseHeren viLisAdviseHerenis) {
         return viLisAdviseHerenMapper.queryDistinctAdviseList(viLisAdviseHerenis);
     }
+
+    @Override
+    public List<ViLisAdviseHeren> getDistinctAdviseListNew(ViLisAdviseHeren viLisAdviseHerenis) {
+        return viLisAdviseHerenMapper.queryDistinctAdviseListNew(viLisAdviseHerenis);
+    }
 }

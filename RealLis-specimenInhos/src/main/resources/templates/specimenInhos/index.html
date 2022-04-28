@@ -59,15 +59,15 @@
                                                 style="width: 110px;margin: auto auto" onclick="infoRefresh()"><i
                                                 class="fa fa-refresh"></i>信息刷新
                                         </button>
-                                        <button type="button" class="btn btn-danger"
-                                                style="width: 110px;margin: auto auto"><i class="fa fa-file-text"></i>危急值报表
-                                        </button>
-                                        <button type="button" class="btn btn-warning"
-                                                style="width: 110px;margin: auto auto"><i class="fa fa-upload"></i>信息更新
-                                        </button>
-                                        <button type="button" class="btn btn-default"
-                                                style="width: 110px;margin: auto auto"><i class="fa fa-list"></i>报告单
-                                        </button>
+<!--                                        <button type="button" class="btn btn-danger"-->
+<!--                                                style="width: 110px;margin: auto auto"><i class="fa fa-file-text"></i>危急值报表-->
+<!--                                        </button>-->
+<!--                                        <button type="button" class="btn btn-warning"-->
+<!--                                                style="width: 110px;margin: auto auto"><i class="fa fa-upload"></i>信息更新-->
+<!--                                        </button>-->
+<!--                                        <button type="button" class="btn btn-default"-->
+<!--                                                style="width: 110px;margin: auto auto"><i class="fa fa-list"></i>报告单-->
+<!--                                        </button>-->
                                     </div>
                                 </div>
                             </div>
@@ -263,7 +263,7 @@
         <div class="progress progress-striped active" style="margin-bottom: 0;">
             <div id="labBarMakerBar" class="progress-bar" role='progressbar' aria-valuenow='50' aria-valuemin='0' aria-valuemax='100' style="width:0;"></div>
         </div>
-        <h5 style="font-size: 6em;color: #87CEEB">条码生成中...</h5>
+        <h5 id="labBarMakerLoadingMsg" style="font-size: 4em;color: #87CEEB"></h5>
     </div>
 </div>
 
@@ -927,30 +927,16 @@
             $('#loadingModal').modal({backdrop: 'static', keyboard: false});
             $("#loadingModal").show(function () {
                 getVisitNumberByDeptId(deptId,function (data) {
-                    if(data.length==0){
+                    if(data.length===0){
+                        $('#labBarMakerLoadingMsg').html("没有需要生成的条码");
                         $('#labBarMakerBar').attr("style","width:"+100+"%");
                         queryBarcodeSearch(currentTableId);
                         $("#loadingModal").modal('hide');
-                    }
-                    var j = 0;
-                    for(var i = 0;i<data.length;i++){
-                        setTimeout(fn(i),100);
-                        function fn(a){
-                            return function () {
-                                console.log("输入就诊流水号为："+data[a].visitnumber);
-                                makeBarCodeByVisitNumer(data[a].visitnumber,function (b) {
-                                    j++
-                                    var percent = ((j)/data.length*100);
-                                    console.log("进度条值"+percent);
-                                    $('#labBarMakerBar').attr("style","width:"+percent+"%");
-                                    if(percent>=100){
-                                        queryBarcodeSearch(currentTableId);
-                                        $("#loadingModal").modal('hide');
-                                    }
-                                })
-                            }
-                        }
-
+                    }else{
+                        makeBarCodeByVisitNumberCallBak(0,data,function (){
+                            $("#loadingModal").modal('hide');
+                            queryBarcodeSearch(currentTableId);
+                        });
                     }
                 });
             });
@@ -975,7 +961,57 @@
             });
         }
     }
-    function makeBarCodeByVisitNumer(visitNumber,callback) {
+    function makeBarCodeByVisitNumberNew(rowNum,visitNumberData){
+        if(rowNum<visitNumberData.length){
+            $.ajax({
+                type: "post",
+                url: prefix + "/GenerateBarcodeByVisitNumber",
+                data: {
+                    "visitNumber": visitNumberData[rowNum].visitnumber
+                },
+                success: function (data) {
+                    console.log(data);
+                    var percent = ((rowNum+1)/visitNumberData.length*100);
+                    console.log("进度条值"+percent);
+                    $('#labBarMakerBar').attr("style","width:"+percent+"%");
+                    makeBarCodeByVisitNumberNew(rowNum+1,visitNumberData);
+                },
+                error: function () {
+                }
+            });
+        }else{
+            $("#loadingModal").modal('hide');
+            queryBarcodeSearch(currentTableId);
+        }
+    }
+    function makeBarCodeByVisitNumberCallBak(rowNum,visitNumberData,callback){
+        if(rowNum<visitNumberData.length){
+            $('#labBarMakerLoadingMsg').html("正在生成【"+visitNumberData[rowNum].bedLabel+"】床【"+visitNumberData[rowNum].patientName+"】条码");
+            $.ajax({
+                type: "post",
+                url: prefix + "/GenerateBarcodeByVisitNumber",
+                data: {
+                    "visitNumber": visitNumberData[rowNum].visitnumber
+                },
+                success: function (data) {
+                    console.log(data);
+                    var percent = ((rowNum+1)/visitNumberData.length*100);
+                    console.log("进度条值"+percent);
+                    $('#labBarMakerBar').attr("style","width:"+percent+"%");
+                    makeBarCodeByVisitNumberCallBak(rowNum+1,visitNumberData,callback);
+                },
+                error: function () {
+                    $("#loadingModal").modal('hide');
+                    $.modal.alertError("条码生成异常请重新点击信息刷新");
+                    queryBarcodeSearch(currentTableId);
+                }
+            });
+        }else{
+            callback();
+        }
+    }
+    function makeBarCodeByVisitNumber(visitNumber) {
+        var defer = $.Deferred();
         $.ajax({
             type: "post",
             url: prefix + "/GenerateBarcodeByVisitNumber",
@@ -984,12 +1020,13 @@
             },
             success: function (data) {
                 console.log(data);
-               callback(1);
+                defer.resolve(data);
             },
             error: function () {
-                callback(0);
+                defer.resolve();
             }
         });
+         return defer.promise();
     }
     function getVisitNumberByDeptId(deptId,callback) {
         $.ajax({

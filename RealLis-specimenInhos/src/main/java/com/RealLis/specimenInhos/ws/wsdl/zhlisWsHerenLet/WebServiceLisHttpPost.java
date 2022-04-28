@@ -204,4 +204,17 @@ public interface WebServiceLisHttpPost {
         @WebParam(name = "string", targetNamespace = "http://www.w3.org/2001/XMLSchema", partName = "strmess")
         String strmess);
 
+    /**
+     * ----ºËËá½á¹û²éÑ¯£¬JSON
+     * 
+     * @param strJson
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "QueryCov19")
+    @WebResult(name = "string", targetNamespace = "http://172.16.1.36", partName = "Body")
+    public String queryCov19(
+        @WebParam(name = "string", targetNamespace = "http://www.w3.org/2001/XMLSchema", partName = "strJson")
+        String strJson);
+
 }

@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface ViLisAdviseHerenService {
     List<ViLisAdviseHeren> getDistinctAdviseList(ViLisAdviseHeren viLisAdviseHerenis);
+
+    List<ViLisAdviseHeren> getDistinctAdviseListNew(ViLisAdviseHeren viLisAdviseHerenis);
 }

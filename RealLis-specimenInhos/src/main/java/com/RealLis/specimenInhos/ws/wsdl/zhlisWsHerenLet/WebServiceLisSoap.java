@@ -232,4 +232,19 @@ public interface WebServiceLisSoap {
         @WebParam(name = "strmess", targetNamespace = "http://172.16.1.36")
         String strmess);
 
+    /**
+     * ----ºËËá½á¹û²éÑ¯£¬JSON
+     * 
+     * @param strJson
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "QueryCov19", action = "http://172.16.1.36/QueryCov19")
+    @WebResult(name = "QueryCov19Result", targetNamespace = "http://172.16.1.36")
+    @RequestWrapper(localName = "QueryCov19", targetNamespace = "http://172.16.1.36", className = "com.RealLis.specimenInhos.ws.wsdl.zhlisWsHerenLet.QueryCov19")
+    @ResponseWrapper(localName = "QueryCov19Response", targetNamespace = "http://172.16.1.36", className = "com.RealLis.specimenInhos.ws.wsdl.zhlisWsHerenLet.QueryCov19Response")
+    public String queryCov19(
+        @WebParam(name = "strJson", targetNamespace = "http://172.16.1.36")
+        String strJson);
+
 }

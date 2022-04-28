@@ -106,6 +106,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link QueryCov19 }
+     * 
+     */
+    public QueryCov19 createQueryCov19() {
+        return new QueryCov19();
+    }
+
+    /**
      * Create an instance of {@link WebTestResponse }
      * 
      */
@@ -239,6 +247,14 @@ public class ObjectFactory {
      */
     public LabDownInfoItemResponse createLabDownInfoItemResponse() {
         return new LabDownInfoItemResponse();
+    }
+
+    /**
+     * Create an instance of {@link QueryCov19Response }
+     * 
+     */
+    public QueryCov19Response createQueryCov19Response() {
+        return new QueryCov19Response();
     }
 
     /**

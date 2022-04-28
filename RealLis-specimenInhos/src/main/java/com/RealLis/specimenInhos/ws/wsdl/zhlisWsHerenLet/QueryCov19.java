@@ -17,8 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="strBarCode" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
- *         &lt;element name="intChargeStatus" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="strJson" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,53 +28,35 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "strBarCode",
-    "intChargeStatus"
+    "strJson"
 })
-@XmlRootElement(name = "LabFeeCharge")
-public class LabFeeCharge {
+@XmlRootElement(name = "QueryCov19")
+public class QueryCov19 {
 
-    protected String strBarCode;
-    protected int intChargeStatus;
+    protected String strJson;
 
     /**
-     * 获取strBarCode属性的值。
+     * 获取strJson属性的值。
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getStrBarCode() {
-        return strBarCode;
+    public String getStrJson() {
+        return strJson;
     }
 
     /**
-     * 设置strBarCode属性的值。
+     * 设置strJson属性的值。
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setStrBarCode(String value) {
-        this.strBarCode = value;
-    }
-
-    /**
-     * 获取intChargeStatus属性的值。
-     * 
-     */
-    public int getIntChargeStatus() {
-        return intChargeStatus;
-    }
-
-    /**
-     * 设置intChargeStatus属性的值。
-     * 
-     */
-    public void setIntChargeStatus(int value) {
-        this.intChargeStatus = value;
+    public void setStrJson(String value) {
+        this.strJson = value;
     }
 
 }

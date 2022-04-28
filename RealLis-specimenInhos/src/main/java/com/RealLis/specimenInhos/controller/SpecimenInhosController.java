@@ -54,6 +54,17 @@ public class SpecimenInhosController extends BaseController {
     @Autowired
     private ViLisAdviseHerenService viLisAdviseHerenService;
 
+    @PostMapping("time-out")
+    @ResponseBody
+    public String test(String visitNumber) throws InterruptedException {
+        String s = "测试";
+        for(int i  = 0 ;i<5-Integer.parseInt(visitNumber);i++){
+            s+=i;
+            Thread.sleep(1000);
+        }
+
+        return s;
+    }
     @GetMapping("")
     public String specimenInhos(String appDeptCode, String userCode, String inpatient_id, String operation, String isInhos, String patientClass, Model model) {
         List<Formatter> formatters = lSampletypeService.getLSampleTypeFormatter(null);
@@ -253,7 +264,7 @@ public class SpecimenInhosController extends BaseController {
         if (inpatientId.length() > 0) {
             params.setVisitnumber(inpatientId);
         }
-        List<ViLisAdviseHeren> viLisAdviseHerenList = viLisAdviseHerenService.getDistinctAdviseList(params);
+        List<ViLisAdviseHeren> viLisAdviseHerenList = viLisAdviseHerenService.getDistinctAdviseListNew(params);
         if (viLisAdviseHerenList != null) {
             for (ViLisAdviseHeren viLisAdviseHeren : viLisAdviseHerenList) {
                 System.out.println(viLisAdviseHeren.getVisitnumber());
@@ -268,7 +279,7 @@ public class SpecimenInhosController extends BaseController {
         params.setOrderStatus("1");
         params.setSampleFlag("0");
         params.setDeptcode(deptId);
-        return viLisAdviseHerenService.getDistinctAdviseList(params);
+        return viLisAdviseHerenService.getDistinctAdviseListNew(params);
     }
     @PostMapping("/GenerateBarcodeByVisitNumber")
     @ResponseBody

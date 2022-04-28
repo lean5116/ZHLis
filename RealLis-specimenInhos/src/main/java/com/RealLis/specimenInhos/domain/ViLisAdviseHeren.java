@@ -29,7 +29,8 @@ public class ViLisAdviseHeren {
   private String inhosstaus;
   private String docsubmit;
   private String preinhosstatus;
-
+  private String patientName;
+  private String bedLabel;
 
   public String getPatientid() {
     return patientid;
@@ -245,4 +246,19 @@ public class ViLisAdviseHeren {
     this.preinhosstatus = preinhosstatus;
   }
 
+  public String getPatientName() {
+    return patientName;
+  }
+
+  public void setPatientName(String patientName) {
+    this.patientName = patientName;
+  }
+
+  public String getBedLabel() {
+    return bedLabel;
+  }
+
+  public void setBedLabel(String bedLabel) {
+    this.bedLabel = bedLabel;
+  }
 }

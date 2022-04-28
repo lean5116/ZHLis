@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="LabFeeChargeResult" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="QueryCov19Result" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,36 +29,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "labFeeChargeResult"
+    "queryCov19Result"
 })
-@XmlRootElement(name = "LabFeeChargeResponse")
-public class LabFeeChargeResponse {
+@XmlRootElement(name = "QueryCov19Response")
+public class QueryCov19Response {
 
-    @XmlElement(name = "LabFeeChargeResult")
-    protected String labFeeChargeResult;
+    @XmlElement(name = "QueryCov19Result")
+    protected String queryCov19Result;
 
     /**
-     * 获取labFeeChargeResult属性的值。
+     * 获取queryCov19Result属性的值。
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getLabFeeChargeResult() {
-        return labFeeChargeResult;
+    public String getQueryCov19Result() {
+        return queryCov19Result;
     }
 
     /**
-     * 设置labFeeChargeResult属性的值。
+     * 设置queryCov19Result属性的值。
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setLabFeeChargeResult(String value) {
-        this.labFeeChargeResult = value;
+    public void setQueryCov19Result(String value) {
+        this.queryCov19Result = value;
     }
 
 }

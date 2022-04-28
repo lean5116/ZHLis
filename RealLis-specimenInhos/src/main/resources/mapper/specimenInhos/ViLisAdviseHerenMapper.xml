@@ -27,6 +27,8 @@
         <result property="inhosstaus" column="INHOSSTAUS" />
         <result property="docsubmit" column="DOCSUBMIT" />
         <result property="preinhosstatus" column="PREINHOSSTATUS" />
+        <result property="patientName" column="patient_name" />
+        <result property="bedLabel" column="bed_label" />
     </resultMap>
     <select id="queryDistinctAdviseList" parameterType="com.RealLis.specimenInhos.domain.ViLisAdviseHeren" resultMap="ViLisAdviseHerenMap">
         select distinct
@@ -104,6 +106,86 @@
             </if>
             <if test="preinhosstatus != null">
                 and PREINHOSSTATUS = #{preinhosstatus}
+            </if>
+        </where>
+    </select>
+
+    <select id="queryDistinctAdviseListNew" parameterType="com.RealLis.specimenInhos.domain.ViLisAdviseHeren" resultMap="ViLisAdviseHerenMap">
+        select distinct
+        la.VISITNUMBER,lp.PATIENT_NAME,lp.BED_LABEL
+        from ZHLIS.VI_LIS_ADVISE_HEREN la left join HIS_PATIENTINFO lp on lp.visit_number = la.VISITNUMBER
+        <where>
+            <if test="patientid != null">
+                and la.PATIENTID = #{patientid}
+            </if>
+            <if test="visitnumber != null">
+                and la.VISITNUMBER = #{visitnumber}
+            </if>
+            <if test="adviseid != null">
+                and la.ADVISEID = #{adviseid}
+            </if>
+            <if test="deptcode != null">
+                and la.DEPTCODE = #{deptcode}
+            </if>
+            <if test="deprtname != null">
+                and la.DEPRTNAME = #{deprtname}
+            </if>
+            <if test="clinicdiag != null">
+                and la.CLINICDIAG = #{clinicdiag}
+            </if>
+            <if test="labgroupid != null">
+                and la.LABGROUPID = #{labgroupid}
+            </if>
+            <if test="labgroupname != null">
+                and la.LABGROUPNAME = #{labgroupname}
+            </if>
+            <if test="specimentype != null">
+                and la.SPECIMENTYPE = #{specimentype}
+            </if>
+            <if test="labtube != null">
+                and la.LABTUBE = #{labtube}
+            </if>
+            <if test="reportFlag != null">
+                and la.REPORT_FLAG = #{reportFlag}
+            </if>
+            <if test="laboratory != null">
+                and la.LABORATORY = #{laboratory}
+            </if>
+            <if test="requesttime != null">
+                and la.REQUESTTIME = #{requesttime}
+            </if>
+            <if test="itemprice != null">
+                and la.ITEMPRICE = #{itemprice}
+            </if>
+            <if test="itemsum != null">
+                and la.ITEMSUM = #{itemsum}
+            </if>
+            <if test="doctorcode != null">
+                and la.DOCTORCODE = #{doctorcode}
+            </if>
+            <if test="advisegroupcode != null">
+                and la.ADVISEGROUPCODE = #{advisegroupcode}
+            </if>
+            <if test="requestmode != null">
+                and la.REQUESTMODE = #{requestmode}
+            </if>
+            <if test="sampleFlag != null">
+                and la.SAMPLE_FLAG = #{sampleFlag}
+            </if>
+            <if test="orderStatus != null">
+                and la.ORDER_STATUS = #{orderStatus}
+            </if>
+            <if test="labgroupcode != null">
+                and la.LABGROUPCODE = #{labgroupcode}
+            </if>
+            <if test="inhosstaus != null">
+                and la.INHOSSTAUS = #{inhosstaus}
+            </if>
+            <if test="docsubmit != null">
+                and la.DOCSUBMIT = #{docsubmit}
+            </if>
+            <if test="preinhosstatus != null">
+                and la.PREINHOSSTATUS = #{preinhosstatus}
             </if>
         </where>
     </select>
