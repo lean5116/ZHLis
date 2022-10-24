@@ -398,6 +398,7 @@ public class SpecimenInhosController extends BaseController {
             @ApiImplicitParam(name = "czfs", value = "操作方式", dataType = "String")
     })
     @PostMapping("/changeBarcodeStatus")
+    @RepeatSubmit(timeOut = 3)
     @ResponseBody
     public AjaxResult changeBarcodeStatus(String barcodes, String czz, String czfs) {
         LJytmxx lJytmxx = new LJytmxx();

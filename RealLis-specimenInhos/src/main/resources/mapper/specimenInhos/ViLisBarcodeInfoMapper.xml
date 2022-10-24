@@ -95,13 +95,12 @@
                 and PREADMISSION = '0'
                 and INOPERATION!='1'
             </if>
-            <if test="params.isInhos==4 ">
-                 and PREADMISSION = '0'
-                and INOPERATION!='1'
-            </if>
+<!--            <if test="params.isInhos==4 ">-->
+<!--                  and PREADMISSION = '0'-->
+<!--                 and INOPERATION!='1'-->
+<!--           </if>-->
             <if test="params.operation==1 and params.isInhos==3">
                 and INOPERATION = '1'
---                 and PREADMISSION = '0'
             </if>
             <if test="params.inpatientId!=null and params.inpatientId!=''">
                 and visitnumber =#{params.inpatientId}

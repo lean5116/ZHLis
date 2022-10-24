@@ -69,7 +69,9 @@ spring:
     restart:
       # 热部署开关
       enabled: true
-
+  mvc:
+    async:
+      request-timeout: 90000
 # MyBatis
 mybatis:
     # 搜索指定包别名
