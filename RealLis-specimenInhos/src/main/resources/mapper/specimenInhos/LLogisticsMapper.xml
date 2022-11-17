@@ -82,7 +82,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryLlogistics" resultMap="LLogisticsMap">
         select
-        WLBH, CJSJ, DBSJ, CJR, DBR, YSSJ, YSR, BQDM, DDSJ, BBSL, WLZT, BQMC, QSR,(select xm from gy_zgxx where zgid = l.cjr and rownum= 1) as cjrxm
+        WLBH, CJSJ, DBSJ, CJR, DBR, YSSJ, YSR, BQDM, DDSJ, BBSL, WLZT, BQMC, QSR,(select xm from gy_zgxx where zgid = cjr and rownum= 1) as cjrxm
         from ZHLIS.L_LOGISTICS
         <where>
             <if test="wlbh != null">
