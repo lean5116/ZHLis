@@ -23,7 +23,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryLlogisticsList" resultMap="LLogisticsMap">
         select
-        l.WLBH, l.CJSJ, l.DBSJ, l.CJR,(select ygxm from gy_ygdm where ygdm = l.cjr and rownum= 1) as cjrxm,l.DBR, l.YSSJ, l.YSR, l.BQDM, l.DDSJ, l.BBSL, l.WLZT, l.BQMC, l.QSR
+        l.WLBH, l.CJSJ, l.DBSJ, l.CJR,(select xm from gy_zgxx where zgid = l.cjr and rownum= 1) as cjrxm,l.DBR, l.YSSJ, l.YSR, l.BQDM, l.DDSJ, l.BBSL, l.WLZT, l.BQMC, l.QSR
         from ZHLIS.L_LOGISTICS l
         <where>
             <if test="wlbh != null">
@@ -82,7 +82,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryLlogistics" resultMap="LLogisticsMap">
         select
-        WLBH, CJSJ, DBSJ, CJR, DBR, YSSJ, YSR, BQDM, DDSJ, BBSL, WLZT, BQMC, QSR
+        WLBH, CJSJ, DBSJ, CJR, DBR, YSSJ, YSR, BQDM, DDSJ, BBSL, WLZT, BQMC, QSR,(select xm from gy_zgxx where zgid = l.cjr and rownum= 1) as cjrxm
         from ZHLIS.L_LOGISTICS
         <where>
             <if test="wlbh != null">
