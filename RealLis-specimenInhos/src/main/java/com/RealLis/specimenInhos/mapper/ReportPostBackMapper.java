@@ -7,6 +7,7 @@ import com.RealLis.specimenInhos.domain.PostBack.reportPostBack.*;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public interface ReportPostBackMapper {
@@ -21,6 +22,7 @@ public interface ReportPostBackMapper {
 
     List<PostList> queryPostList();
     List<PostList> queryPostListAll();
+    List<PostList> queryPostListHistory(Map<String,Object> param);
     int deletePostList(Long jlxh);
     int updateTransfer(Long jlxh);
     List<String> querySampleNoByPatientId(String patientId);

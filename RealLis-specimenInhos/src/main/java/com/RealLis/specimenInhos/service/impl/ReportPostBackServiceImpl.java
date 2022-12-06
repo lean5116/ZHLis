@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class ReportPostBackServiceImpl implements ReportPostBackService {
@@ -60,6 +61,10 @@ public class ReportPostBackServiceImpl implements ReportPostBackService {
         return reportPostBackMapper.queryPostListAll();
     }
 
+    @Override
+    public List<PostList> getPostListHistory(Map<String,Object> param){
+        return reportPostBackMapper.queryPostListHistory( param);
+    }
     @Override
     public int deletePostList(Long jlxh) {
         return reportPostBackMapper.deletePostList(jlxh);

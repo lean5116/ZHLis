@@ -6,6 +6,7 @@ import com.RealLis.specimenInhos.domain.PostBack.germReportPostBack.germOBX;
 import com.RealLis.specimenInhos.domain.PostBack.reportPostBack.*;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ReportPostBackService {
     PID getPIDbySampleno(String sampleno);
@@ -19,6 +20,7 @@ public interface ReportPostBackService {
 
     List<PostList> getPostList();
     List<PostList> getPostListAll();
+    List<PostList> getPostListHistory(Map<String,Object> param);
     int deletePostList(Long jlxh);
     int updateTransfer(Long jlxh);
     List<String> querySampleNoByPatientId(String patientId);

@@ -349,6 +349,30 @@
         select * from L_DATA_TRANSFER  where REPEAT &lt; 5  order by jlxh
     </select>
 
+    <select id="queryPostListHistory" resultMap="postList">
+        select  -1 as JLXH,
+                LD.EVENNAME,
+                LD.EVENTDATA,
+                LD.MICTYPE,
+                LD.REPEAT,
+                LD.PATIENTID,
+                LD.VISITNO,
+                LD.ORDERID,
+                LD.REPORTID,
+                LD.OPERDOCID,
+                LD.OPERDOCNAME,
+                LD.OPERTIME  from l_data_transfer_del ld
+        <where>
+            <if test="startDate != null">
+                and ld.opertime &gt; to_date(#{startDate},'yyyy-MM-dd')
+            </if>
+            <if test="endDate!=null">
+                and ld.opertime &lt; to_date(#{endDate},'yyyy-MM-dd')
+            </if>
+        </where>
+        order by ld.jlxh
+    </select>
+
     <update id="updateTransfer" >
         update L_DATA_TRANSFER set REPEAT=REPEAT+1 where jlxh = #{jlxh} and  REPEAT &lt; 6
     </update>

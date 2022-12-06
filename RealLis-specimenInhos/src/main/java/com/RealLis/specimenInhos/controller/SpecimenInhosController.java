@@ -644,4 +644,18 @@ public class SpecimenInhosController extends BaseController {
         lJytmxx.setSampletype(specimencode);
         return toAjax(lJytmxxService.updateByBarcode(lJytmxx));
     }
+
+    @Autowired
+    private  ReportPostBackTaskService reportPostBackTaskService;
+    @ApiOperation("历史报告回传")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "startDate", value = "开始时间", dataType = "String"),
+            @ApiImplicitParam(name = "endDate", value = "结束时间", dataType = "String")
+    })
+    @GetMapping("/report-past-back-history")
+    @ResponseBody
+    public AjaxResult reportPostBackHistory(String startDate,String endDate){
+        reportPostBackTaskService.reportPostBackHistory(startDate,endDate);
+        return AjaxResult.success();
+    }
 }

@@ -917,6 +917,7 @@
 
     /*信息刷新按钮*/
     function infoRefresh() {
+        $('#btn_barcodePrint').attr("disabled",false);
         // $.modal.loading("条码生成中");
         /*请求后台异步生成条码*/
         var deptId = [[${department}]];
@@ -1074,7 +1075,7 @@
 
     /*标本条码打印*/
     function barcodePrintSelect(tableId) {
-        // $('#btn_barcodePrint').attr("disabled",true);
+        $('#btn_barcodePrint').attr("disabled",true);
         var data = getSelections(tableId);
         var barcodes = '';
         for (let i = 0; i < data.length; i++) {
@@ -1092,7 +1093,7 @@
             success: function (r) {
                 if (r.code == 0) {
                     var barcode = r.msg.split("|");
-                    if (barcode.length > 0) {
+                    if (barcode.length > 0 &&barcode!='') {
                         for (let i = 0; i < barcode.length; i++) {
                             var data = $('#' + tableId).bootstrapTable('getRowByUniqueId', barcode[i]);
                             if (data != null) {
@@ -1137,16 +1138,20 @@
                                 //LODOP.PREVIEW();//预览
                                 try {
                                     LODOP.PRINT();//直接打印
-                                   // $('#btn_barcodePrint').attr("disabled",true);
+                                    setTimeout(function (){
+                                        $('#btn_barcodePrint').attr("disabled",false);
+                                    },1000)
                                 }catch (e) {
-                                    //$('#btn_barcodePrint').attr("disabled",true);
+                                    $('#btn_barcodePrint').attr("disabled",false);
                                 }
                             }
                         }
+                    }else{
+                        $('#btn_barcodePrint').attr("disabled",false);
                     }
                 } else {
                     $.modal.msgError('无可打印条码')
-                    //$('#btn_barcodePrint').attr("disabled",true);
+                    $('#btn_barcodePrint').attr("disabled",false);
                 }
             }
         });
